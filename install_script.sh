@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# exit script immediately on error
+set -e
+
 # update the system clock
 timedatectl set-ntp true
 
