@@ -112,6 +112,8 @@ echo "linux /vmlinuz-linux" >> /mnt/boot/loader/entries/archlinux.conf
 echo "initrd /intel-ucode.img" >> /mnt/boot/loader/entries/archlinux.conf
 echo "initrd /initramfs-linux.img" >> /mnt/boot/loader/entries/archlinux.conf
 uuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/nvme0n1p3)
+# for virtual machine
+# uuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/sda3)
 echo "options root=UUID=${uuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
 
 # install and configure some packages, services
