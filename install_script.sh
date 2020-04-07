@@ -132,7 +132,7 @@ echo "127.0.1.1    archlinux.localdomain    archlinux" >> /mnt/etc/hosts
 echo -e "${rootpass1}\n${rootpass1}" | arch-chroot /mnt passwd
 
 # add new user
-arch-chroot /mnt useradd -G wheel,audio,lp,optical,storage,video,power -s /bin/bash -m $newusername -d /home/$newusername -c $realname
+arch-chroot /mnt useradd -G wheel,audio,lp,optical,storage,video,power -s /bin/bash -m $newusername -d /home/$newusername -c "$realname"
 echo -e "${userpass1}\n${userpass1}" | arch-chroot /mnt passwd $newusername
 
 # allow user in wheel group execute any command
