@@ -4,23 +4,67 @@
 set -e
 
 # global variables
-install_dev=nvme0n1
-part=p
-size_of_ram=16
+install_dev=
+part=
+size_of_ram=
+rootpass1=
+rootpass2=
+userpass1=
+userpass2=
+newusername=
+realname=
 
 # let user choose device to install
 lsblk
 echo -n "Enter device to install: "
 read install_dev
 
-if [ $install_dev != nvme0n1 ]
+if [ $install_dev = nvme0n1 ]
 then
-	part=
+	part=p
 fi
 
 # let user enter size of RAM to determine swap's size
 echo -n "Enter size of RAM (in GB): "
 read size_of_ram
+
+# set root's password
+echo "SET ROOT'S PASSWORD"
+echo -n "Enter new root's password: "
+read -s rootpass1
+echo -n -e "\nRetype root's password: "
+read -s rootpass2
+
+while [ $rootpass1 != $rootpass2 ]
+do
+	echo -e "\nSorry, passwords do not match. Please try again!"
+	echo -n "Enter root's password: "
+	read -s rootpass1
+	echo -n -e "\nRetype root's password: "
+	read -s rootpass2
+done
+echo -e "\nroot's password set successfully!"
+
+# create a new user
+echo "CREATE A NEW USER"
+echo -n "Enter username: "
+read newusername
+echo -n "Enter real name: "
+read realname
+echo -n "Enter ${newusername}'s password: "
+read -s userpass1
+echo -n -e "\nRetype $newusername's password: "
+read -s userpass2
+
+while [ $userpass1 != $userpass2 ]
+do
+	echo -e "\nSorry, passwords do not match. Please try again!"
+	echo -n "Enter $newusername's password: "
+	read -s userpass1
+	echo -n -e "\nRetype $newusername's password: "
+	read -s userpass2
+done
+echo -e "\n$newusername's password set successfully!"
 
 # update the system clock
 timedatectl set-ntp true
@@ -85,11 +129,11 @@ echo "::1          localhost" >> /mnt/etc/hosts
 echo "127.0.1.1    archlinux.localdomain    archlinux" >> /mnt/etc/hosts
 
 # root password
-# echo -e "123\n123" | arch-chroot /mnt passwd
+echo -e "${rootpass1}\n${rootpass1}" | arch-chroot /mnt passwd
 
 # add new user
-arch-chroot /mnt useradd -G wheel,audio,lp,optical,storage,video,power -s /bin/bash -m leanhtai01 -d /home/leanhtai01 -c "Le Anh Tai"
-# echo -e "123\n123" | arch-chroot /mnt passwd leanhtai01
+arch-chroot /mnt useradd -G wheel,audio,lp,optical,storage,video,power -s /bin/bash -m $newusername -d /home/$newusername -c $realname
+echo -e "${userpass1}\n${userpass1}" | arch-chroot /mnt passwd $newusername
 
 # allow user in wheel group execute any command
 linum=$(arch-chroot /mnt sed -n "/%wheel ALL=(ALL) ALL/=" /etc/sudoers)
