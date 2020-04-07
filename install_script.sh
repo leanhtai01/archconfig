@@ -6,15 +6,20 @@ set -e
 # update the system clock
 timedatectl set-ntp true
 
+# let user choose device to install
+lsblk
+echo -n "Enter device to install: "
+read install_dev
+
 # partition the disks
-dd if=/dev/zero of=/dev/sda bs=512 count=1
-dd if=/dev/zero of=/dev/nvme0n1 bs=512 count=1
-parted /dev/sda mklabel gpt
-parted /dev/nvme0n1 mklabel gpt
-parted /dev/nvme0n1 mkpart efi fat32 0% 1GiB
-parted /dev/nvme0n1 set 1 esp on
-parted /dev/nvme0n1 mkpart swap linux-swap 1GiB 32GiB
-parted /dev/nvme0n1 mkpart root ext4 32GiB 100%
+# dd if=/dev/zero of=/dev/sda bs=512 count=1
+# parted /dev/sda mklabel gpt
+dd if=/dev/zero of=/dev/$install_dev bs=512 count=1
+parted /dev/$install_dev mklabel gpt
+parted /dev/$install_dev mkpart efi fat32 0% 1GiB
+parted /dev/$install_dev set 1 esp on
+parted /dev/$install_dev mkpart swap linux-swap 1GiB 32GiB
+parted /dev/$install_dev mkpart root ext4 32GiB 100%
 
 # # partition the disks (virtual machine)
 # dd if=/dev/zero of=/dev/sda bs=512 count=1
@@ -25,13 +30,13 @@ parted /dev/nvme0n1 mkpart root ext4 32GiB 100%
 # parted /dev/sda mkpart root ext4 4608MiB 100%
 
 # format the partitions
-dd if=/dev/zero of=/dev/nvme0n1p1 bs=1M count=1
-dd if=/dev/zero of=/dev/nvme0n1p2 bs=1M count=1
-dd if=/dev/zero of=/dev/nvme0n1p3 bs=1M count=1
-mkfs.fat -F32 /dev/nvme0n1p1
-mkswap /dev/nvme0n1p2
-swapon /dev/nvme0n1p2
-mkfs.ext4 /dev/nvme0n1p3
+dd if=/dev/zero of=/dev/${install_dev}1 bs=1M count=1
+dd if=/dev/zero of=/dev/${install_dev}2 bs=1M count=1
+dd if=/dev/zero of=/dev/${install_dev}3 bs=1M count=1
+mkfs.fat -F32 /dev/${install_dev}1
+mkswap /dev/${install_dev}2
+swapon /dev/${install_dev}2
+mkfs.ext4 /dev/${install_dev}3
 
 # # format the partitions (virtual machine)
 # dd if=/dev/zero of=/dev/sda1 bs=1M count=1
@@ -43,9 +48,9 @@ mkfs.ext4 /dev/nvme0n1p3
 # mkfs.ext4 /dev/sda3
 
 # mount the file systems
-mount /dev/nvme0n1p3 /mnt
+mount /dev/${install_dev}3 /mnt
 mkdir /mnt/boot
-mount /dev/nvme0n1p1 /mnt/boot
+mount /dev/${install_dev}1 /mnt/boot
 
 # # mount the file systems (virtual machine)
 # mount /dev/sda3 /mnt
