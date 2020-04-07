@@ -11,6 +11,10 @@ lsblk
 echo -n "Enter device to install: "
 read install_dev
 
+# let user enter size of RAM to determine swap's size
+echo -n "Enter size of RAM (in GB): "
+read size_of_ram
+
 # partition the disks
 # dd if=/dev/zero of=/dev/sda bs=512 count=1
 # parted /dev/sda mklabel gpt
@@ -18,8 +22,8 @@ dd if=/dev/zero of=/dev/$install_dev bs=512 count=1
 parted /dev/$install_dev mklabel gpt
 parted /dev/$install_dev mkpart efi fat32 0% 1GiB
 parted /dev/$install_dev set 1 esp on
-parted /dev/$install_dev mkpart swap linux-swap 1GiB 32GiB
-parted /dev/$install_dev mkpart root ext4 32GiB 100%
+parted /dev/$install_dev mkpart swap linux-swap 1GiB $((size_of_ram+1))GiB
+parted /dev/$install_dev mkpart root ext4 $((size_of_ram+1))GiB 100%
 
 # # partition the disks (virtual machine)
 # dd if=/dev/zero of=/dev/sda bs=512 count=1
