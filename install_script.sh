@@ -125,7 +125,7 @@ echo "title Arch Linux" > /mnt/boot/loader/entries/archlinux.conf
 echo "linux /vmlinuz-linux" >> /mnt/boot/loader/entries/archlinux.conf
 echo "initrd /intel-ucode.img" >> /mnt/boot/loader/entries/archlinux.conf
 echo "initrd /initramfs-linux.img" >> /mnt/boot/loader/entries/archlinux.conf
-uuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/nvme0n1p3)
+uuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
 # for virtual machine
 # uuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/sda3)
 echo "options root=UUID=${uuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
