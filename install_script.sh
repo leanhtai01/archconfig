@@ -25,14 +25,6 @@ parted /dev/$install_dev set 1 esp on
 parted /dev/$install_dev mkpart swap linux-swap 1GiB $((size_of_ram+1))GiB
 parted /dev/$install_dev mkpart root ext4 $((size_of_ram+1))GiB 100%
 
-# # partition the disks (virtual machine)
-# dd if=/dev/zero of=/dev/sda bs=512 count=1
-# parted /dev/sda mklabel gpt
-# parted /dev/sda mkpart efi fat32 0% 512MiB
-# parted /dev/sda set 1 esp on
-# parted /dev/sda mkpart swap linux-swap 512MiB 4608MiB
-# parted /dev/sda mkpart root ext4 4608MiB 100%
-
 # format the partitions
 part=
 if [ $install_dev = nvme0n1 ]
@@ -47,24 +39,10 @@ mkswap /dev/${install_dev}${part}2
 swapon /dev/${install_dev}${part}2
 mkfs.ext4 /dev/${install_dev}${part}3
 
-# # format the partitions (virtual machine)
-# dd if=/dev/zero of=/dev/sda1 bs=1M count=1
-# dd if=/dev/zero of=/dev/sda2 bs=1M count=1
-# dd if=/dev/zero of=/dev/sda3 bs=1M count=1
-# mkfs.fat -F32 /dev/sda1
-# mkswap /dev/sda2
-# swapon /dev/sda2
-# mkfs.ext4 /dev/sda3
-
 # mount the file systems
 mount /dev/${install_dev}${part}3 /mnt
 mkdir /mnt/boot
 mount /dev/${install_dev}${part}1 /mnt/boot
-
-# # mount the file systems (virtual machine)
-# mount /dev/sda3 /mnt
-# mkdir /mnt/boot
-# mount /dev/sda1 /mnt/boot
 
 # select the mirrors
 linum=$(sed -n '/f.archlinuxvn.org/=' /etc/pacman.d/mirrorlist) # find a line and get line number
