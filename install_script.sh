@@ -3,17 +3,27 @@
 # exit script immediately on error
 set -e
 
-# update the system clock
-timedatectl set-ntp true
+# global variables
+install_dev=nvme0n1
+part=p
+size_of_ram=16
 
 # let user choose device to install
 lsblk
 echo -n "Enter device to install: "
 read install_dev
 
+if [ $install_dev != nvme0n1 ]
+then
+	part=
+fi
+
 # let user enter size of RAM to determine swap's size
 echo -n "Enter size of RAM (in GB): "
 read size_of_ram
+
+# update the system clock
+timedatectl set-ntp true
 
 # partition the disks
 # dd if=/dev/zero of=/dev/sda bs=512 count=1
@@ -26,11 +36,6 @@ parted /dev/$install_dev mkpart swap linux-swap 1GiB $((size_of_ram+1))GiB
 parted /dev/$install_dev mkpart root ext4 $((size_of_ram+1))GiB 100%
 
 # format the partitions
-part=
-if [ $install_dev = nvme0n1 ]
-then
-	part=p
-fi
 dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=1M count=1
 dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
 dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=1M count=1
