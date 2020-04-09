@@ -152,8 +152,15 @@ echo "title Arch Linux" > /mnt/boot/loader/entries/archlinux.conf
 echo "linux /vmlinuz-linux" >> /mnt/boot/loader/entries/archlinux.conf
 echo "initrd /intel-ucode.img" >> /mnt/boot/loader/entries/archlinux.conf
 echo "initrd /initramfs-linux.img" >> /mnt/boot/loader/entries/archlinux.conf
-uuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
-echo "options root=UUID=${uuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
+rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
+echo "options root=UUID=${rootuuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
+
+# setup hibernation
+linum=$(arch-chroot /mnt sed -n '/^HOOKS=.*filesystems.*/=' /etc/mkinitcpio.conf)
+arch-chroot /mnt sed -i "${linum}s/filesystems/& resume/" /etc/mkinitcpio.conf
+mkinitcpio -p linux
+swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
+echo "options resume=UUID=${swapuuidvalue}" >> /mnt/boot/loader/entries/archlinux.conf
 
 # install and configure some packages, services
 # system packages
