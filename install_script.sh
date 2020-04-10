@@ -117,9 +117,9 @@ arch-chroot /mnt locale-gen
 echo LANG=en_US.UTF-8 > /mnt/etc/locale.conf
 
 # configure respositories for 64-bit system
-linum=$(arch-chroot /mnt sed -n "/#Include = \/etc\/pacman.d\/mirrorlist/=" /etc/pacman.conf | tail -1)
+linum=$(arch-chroot /mnt sed -n "/\\[multilib\\]/=" /etc/pacman.conf)
 arch-chroot /mnt sed -i "${linum}s/^#//" /etc/pacman.conf
-((linum--))
+((linum++))
 arch-chroot /mnt sed -i "${linum}s/^#//" /etc/pacman.conf
 
 # network configuration
