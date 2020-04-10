@@ -111,7 +111,7 @@ arch-chroot /mnt ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
 arch-chroot /mnt hwclock --systohc
 
 # localization
-linum=$(arch-chroot /mnt sed -n '/en_US.UTF-8/=' /etc/locale.gen | tail -1)
+linum=$(arch-chroot /mnt sed -n '/^#en_US.UTF-8 UTF-8  $/=' /etc/locale.gen)
 arch-chroot /mnt sed -i "${linum}s/^#//" /etc/locale.gen
 arch-chroot /mnt locale-gen
 echo LANG=en_US.UTF-8 > /mnt/etc/locale.conf
