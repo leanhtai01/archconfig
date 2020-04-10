@@ -136,9 +136,8 @@ arch-chroot /mnt useradd -G wheel,audio,lp,optical,storage,video,power -s /bin/b
 echo -e "${userpass1}\n${userpass1}" | arch-chroot /mnt passwd $newusername
 
 # allow user in wheel group execute any command
-linum=$(arch-chroot /mnt sed -n "/%wheel ALL=(ALL) ALL/=" /etc/sudoers)
-arch-chroot /mnt sed -i "${linum}s/^#//" /etc/sudoers # uncomment line
-arch-chroot /mnt sed -i "${linum}s/^[ \t]*//" /etc/sudoers # trim leading spaces
+linum=$(arch-chroot /mnt sed -n "/^# %wheel ALL=(ALL) ALL$/=" /etc/sudoers)
+arch-chroot /mnt sed -i "${linum}s/^# //" /etc/sudoers # uncomment line
 
 # configure the bootloader
 arch-chroot /mnt pacman -Syu --noconfirm && arch-chroot /mnt pacman -S --needed --noconfirm efibootmgr intel-ucode
