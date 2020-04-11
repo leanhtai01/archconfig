@@ -24,7 +24,7 @@ arch-chroot /mnt pacman -Syu --noconfirm && arch-chroot /mnt pacman -S --needed 
 # arch-chroot /mnt systemctl enable gdm
 
 # Plasma
-arch-chroot /mnt pacman -Syu --noconfirm && arch-chroot /mnt pacman -S --needed --noconfirm plasma digikam ktorrent ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kamoso kate kcalc kdegraphics-mobipocket kdegraphics-thumbnailers kdf khelpcenter kleopatra kmousetool knotes kolourpaint kompare konsole krdc krfb kruler ksystemlog ktimer kwalletmanager okular spectacle sweeper umbrello
+arch-chroot /mnt pacman -Syu --noconfirm && arch-chroot /mnt pacman -S --needed --noconfirm plasma digikam ktorrent ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kamoso kate kcalc kdegraphics-mobipocket kdegraphics-thumbnailers kdf khelpcenter kleopatra kmousetool knotes kolourpaint kompare konsole krdc krfb kruler ksystemlog ktimer kwalletmanager okular spectacle sweeper umbrello gnome-disk-utility
 # arch-chroot /mnt pacman -Syu --noconfirm && arch-chroot /mnt pacman -S --needed --noconfirm kde-applications
 arch-chroot /mnt systemctl enable sddm
 
