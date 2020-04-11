@@ -100,7 +100,7 @@ sed -i '6 a ## My preferred mirrors' /etc/pacman.d/mirrorlist # insert line afte
 sed -i "7 a $preferredmirror" /etc/pacman.d/mirrorlist
 
 # install essential packages
-pacstrap /mnt base base-devel linux linux-firmware
+pacstrap /mnt base base-devel linux linux-headers linux-firmware
 
 # CONFIGURE THE SYSTEM
 # fstab

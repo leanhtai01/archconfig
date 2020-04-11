@@ -2,7 +2,7 @@
 
 # install and configure some packages, services
 # system packages
-arch-chroot /mnt pacman -Syu --noconfirm && arch-chroot /mnt pacman -S --needed --noconfirm linux-headers lm_sensors ufw gparted dosfstools ntfs-3g p7zip unrar
+arch-chroot /mnt pacman -Syu --noconfirm && arch-chroot /mnt pacman -S --needed --noconfirm lm_sensors ufw gparted dosfstools ntfs-3g p7zip unrar
 
 # fonts
 arch-chroot /mnt pacman -Syu --noconfirm && arch-chroot /mnt pacman -S --needed --noconfirm ttf-dejavu ttf-liberation adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts noto-fonts-emoji
