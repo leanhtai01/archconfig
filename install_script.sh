@@ -127,6 +127,8 @@ echo archlinux > /mnt/etc/hostname
 echo "127.0.0.1    localhost" >> /mnt/etc/hosts
 echo "::1          localhost" >> /mnt/etc/hosts
 echo "127.0.1.1    archlinux.localdomain    archlinux" >> /mnt/etc/hosts
+arch-chroot /mnt pacman -Syu --needed --noconfirm networkmanager
+arch-chroot /mnt systemctl enable NetworkManager
 
 # root password
 echo -e "${rootpass1}\n${rootpass1}" | arch-chroot /mnt passwd
@@ -160,7 +162,3 @@ arch-chroot /mnt sed -i "${linum}s/filesystems/& resume/" /etc/mkinitcpio.conf
 arch-chroot /mnt mkinitcpio -p linux
 swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
 echo "options resume=UUID=${swapuuidvalue}" >> /mnt/boot/loader/entries/archlinux.conf
-
-# network
-arch-chroot /mnt pacman -Syu --needed --noconfirm networkmanager
-arch-chroot /mnt systemctl enable NetworkManager
