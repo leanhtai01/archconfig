@@ -37,7 +37,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm firefox-developer-edition
 # arch-chroot /mnt pacman -Syu --needed --noconfirm atom
 # arch-chroot /mnt pacman -Syu --needed --noconfirm geany
 arch-chroot /mnt pacman -Syu --needed --noconfirm nano
-# arch-chroot /mnt pacman -Syu --needed --noconfirm vi
+arch-chroot /mnt pacman -Syu --needed --noconfirm vi
 arch-chroot /mnt pacman -Syu --needed --noconfirm emacs
 arch-chroot /mnt pacman -Syu --needed --noconfirm gvim
 
