@@ -10,8 +10,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm lm_sensors ufw gparted dosfsto
 arch-chroot /mnt pacman -Syu --needed --noconfirm ttf-dejavu ttf-liberation adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts noto-fonts-emoji
 
 # network
-arch-chroot /mnt pacman -Syu --needed --noconfirm networkmanager modemmanager usb_modeswitch wvdial
-arch-chroot /mnt systemctl enable NetworkManager
+arch-chroot /mnt pacman -Syu --needed --noconfirm modemmanager usb_modeswitch wvdial
 arch-chroot /mnt systemctl enable ModemManager
 
 # audio
