@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # install and configure some packages, services
 # system packages
 arch-chroot /mnt pacman -Syu --needed --noconfirm lm_sensors ufw gparted dosfstools ntfs-3g p7zip unrar
