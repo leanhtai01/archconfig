@@ -15,9 +15,12 @@ newusername=
 realname=
 
 # let user choose device to install
-lsblk
-echo -n "Enter device to install: "
-read install_dev
+if [ -z $install_dev ]
+then
+    lsblk
+    echo -n "Enter device to install: "
+    read install_dev
+fi
 
 if [ $install_dev = nvme0n1 ]
 then
@@ -25,25 +28,31 @@ then
 fi
 
 # let user enter size of RAM to determine swap's size
-echo -n "Enter size of RAM (in GB): "
-read size_of_ram
+if [ -z $size_of_ram ]
+then
+    echo -n "Enter size of RAM (in GB): "
+    read size_of_ram
+fi
 
 # set root's password
-echo "SET ROOT'S PASSWORD"
-echo -n "Enter new root's password: "
-read -s rootpass1
-echo -n -e "\nRetype root's password: "
-read -s rootpass2
+if [[ ( -z $rootpass1 ) || ( -z $rootpass2 ) ]]
+then
+    echo "SET ROOT'S PASSWORD"
+    echo -n "Enter new root's password: "
+    read -s rootpass1
+    echo -n -e "\nRetype root's password: "
+    read -s rootpass2
 
-while [ $rootpass1 != $rootpass2 ]
-do
+    while [ $rootpass1 != $rootpass2 ]
+    do
 	echo -e "\nSorry, passwords do not match. Please try again!"
 	echo -n "Enter root's password: "
 	read -s rootpass1
 	echo -n -e "\nRetype root's password: "
 	read -s rootpass2
-done
-echo -e "\nroot's password set successfully!"
+    done
+    echo -e "\nroot's password set successfully!"
+fi
 
 # create a new user
 echo "CREATE A NEW USER"
