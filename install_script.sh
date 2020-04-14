@@ -35,7 +35,7 @@ then
 fi
 
 # set root's password
-if [[ ( -z $rootpass1 ) || ( -z $rootpass2 ) ]]
+if [ -z $rootpass1 ] || [ -z $rootpass2 ] || [ $rootpass1 != $rootpass2 ]
 then
     echo "SET ROOT'S PASSWORD"
     echo -n "Enter new root's password: "
@@ -43,7 +43,7 @@ then
     echo -n -e "\nRetype root's password: "
     read -s rootpass2
 
-    while [ $rootpass1 != $rootpass2 ]
+    while [ -z $rootpass1 ] || [ -z $rootpass2 ] || [ $rootpass1 != $rootpass2 ]
     do
 	echo -e "\nSorry, passwords do not match. Please try again!"
 	echo -n "Enter root's password: "
@@ -51,8 +51,8 @@ then
 	echo -n -e "\nRetype root's password: "
 	read -s rootpass2
     done
-    echo -e "\nroot's password set successfully!"
 fi
+echo -e "\nroot's password set successfully!"
 
 # create a new user
 echo "CREATE A NEW USER"
