@@ -24,7 +24,7 @@ fi
 
 if [ $install_dev = nvme0n1 ]
 then
-	part=p
+    part=p
 fi
 
 # let user enter size of RAM to determine swap's size
@@ -35,9 +35,9 @@ then
 fi
 
 # set root's password
+echo "SET ROOT'S PASSWORD"
 if [ -z $rootpass1 ] || [ -z $rootpass2 ] || [ $rootpass1 != $rootpass2 ]
 then
-    echo "SET ROOT'S PASSWORD"
     echo -n "Enter new root's password: "
     read -s rootpass1
     echo -n -e "\nRetype root's password: "
@@ -56,24 +56,36 @@ echo -e "\nroot's password set successfully!"
 
 # create a new user
 echo "CREATE A NEW USER"
-echo -n "Enter username: "
-read newusername
-echo -n "Enter real name: "
-read realname
-echo -n "Enter ${newusername}'s password: "
-read -s userpass1
-echo -n -e "\nRetype $newusername's password: "
-read -s userpass2
 
-while [ $userpass1 != $userpass2 ]
-do
+if [ -z $newusername ]
+then
+    echo -n "Enter username: "
+    read newusername
+fi
+
+if [ -z $realname ]
+then
+    echo -n "Enter real name: "
+    read realname
+fi
+
+if [ -z $userpass1 ] || [ -z $userpass2 ] || [ $userpass1 != $userpass2 ]
+then
+    echo -n "Enter ${newusername}'s password: "
+    read -s userpass1
+    echo -n -e "\nRetype $newusername's password: "
+    read -s userpass2
+
+    while [ -z $userpass1 ] || [ -z $userpass2 ] || [ $userpass1 != $userpass2 ]
+    do
 	echo -e "\nSorry, passwords do not match. Please try again!"
 	echo -n "Enter $newusername's password: "
 	read -s userpass1
 	echo -n -e "\nRetype $newusername's password: "
 	read -s userpass2
-done
-echo -e "\n$newusername's password set successfully!"
+    done
+fi
+echo -e "\nUser $newusername created successfully!"
 
 # update the system clock
 timedatectl set-ntp true
