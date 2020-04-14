@@ -63,7 +63,7 @@ then
     read newusername
 fi
 
-if [ -z $realname ]
+if [ -z "$realname" ]
 then
     echo -n "Enter real name: "
     read realname
