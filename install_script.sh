@@ -92,13 +92,10 @@ timedatectl set-ntp true
 
 # partition the disks
 # dd if=/dev/zero of=/dev/sda bs=512 count=1
-# parted /dev/sda mklabel gpt
-dd if=/dev/zero of=/dev/$install_dev bs=512 count=1
-parted /dev/$install_dev mklabel gpt
-parted /dev/$install_dev mkpart efi fat32 0% 1GiB
-parted /dev/$install_dev set 1 esp on
-parted /dev/$install_dev mkpart swap linux-swap 1GiB $((size_of_ram+1))GiB
-parted /dev/$install_dev mkpart root ext4 $((size_of_ram+1))GiB 100%
+sgdisk -Z /dev/$install_dev
+sgdisk -n 0:0:+1G -t 0:ef00 -c 0:"efi" /dev/$install_dev
+sgdisk -n 0:0:+`expr 2 \* $size_of_ram`G -t 0:8200 -c 0:"swap" /dev/$install_dev
+sgdisk -n 0:0:0 -t 0:8304 -c 0:"root" /dev/$install_dev
 
 # format the partitions
 dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=1M count=1
