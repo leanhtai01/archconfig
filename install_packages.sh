@@ -9,7 +9,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm lm_sensors ufw gparted dosfsto
 # fonts
 arch-chroot /mnt pacman -Syu --needed --noconfirm ttf-dejavu ttf-liberation adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts noto-fonts-emoji
 
-# network
+# usb 3g modem
 arch-chroot /mnt pacman -Syu --needed --noconfirm modemmanager usb_modeswitch wvdial
 arch-chroot /mnt systemctl enable ModemManager
 
@@ -25,7 +25,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm xorg-server xorg-xrandr lib32-
 # arch-chroot /mnt systemctl enable gdm
 
 # Plasma
-arch-chroot /mnt pacman -Syu --needed --noconfirm plasma digikam ktorrent ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kamoso kate kcalc kdegraphics-mobipocket kdegraphics-thumbnailers kdf khelpcenter kleopatra kmousetool knotes kolourpaint kompare konsole krdc krfb kruler ksystemlog ktimer kwalletmanager okular spectacle sweeper umbrello gnome-disk-utility
+arch-chroot /mnt pacman -Syu --needed --noconfirm plasma digikam ktorrent ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kamoso kate kcalc kdegraphics-mobipocket kdegraphics-thumbnailers kdf khelpcenter kleopatra kmousetool knotes kolourpaint kompare konsole krdc krfb kruler ksystemlog ktimer kwalletmanager okular spectacle sweeper umbrello gnome-disk-utility thunderbird
 # arch-chroot /mnt pacman -Syu --needed --noconfirm kde-applications
 arch-chroot /mnt systemctl enable sddm
 
