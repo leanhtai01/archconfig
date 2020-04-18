@@ -25,7 +25,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm xorg-server xorg-xrandr lib32-
 # arch-chroot /mnt systemctl enable gdm
 
 # Plasma
-arch-chroot /mnt pacman -Syu --needed --noconfirm plasma digikam ktorrent ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kamoso kate kcalc kdegraphics-mobipocket kdegraphics-thumbnailers kdf khelpcenter kleopatra kmousetool knotes kolourpaint kompare konsole krdc krfb kruler ksystemlog ktimer kwalletmanager okular spectacle sweeper umbrello gnome-disk-utility thunderbird
+arch-chroot /mnt pacman -Syu --needed --noconfirm plasma digikam ktorrent ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kamoso kate kcalc kdegraphics-mobipocket kdegraphics-thumbnailers kdf khelpcenter kleopatra kmousetool knotes kolourpaint kompare konsole krdc krfb kruler ksystemlog ktimer kwalletmanager okular spectacle sweeper umbrello gnome-disk-utility
 # arch-chroot /mnt pacman -Syu --needed --noconfirm kde-applications
 arch-chroot /mnt systemctl enable sddm
 
@@ -50,7 +50,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wiml
 
 # office and learning
 # arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave
-arch-chroot /mnt pacman -Syu --needed --noconfirm libreoffice-fresh gimp inkscape calibre klavaro goldendict kchmviewer geogebra freemind
+arch-chroot /mnt pacman -Syu --needed --noconfirm libreoffice-fresh gimp inkscape calibre klavaro goldendict kchmviewer geogebra freemind irssi thunderbird
 
 # multimedia
 arch-chroot /mnt pacman -Syu --needed --noconfirm obs-studio vlc
