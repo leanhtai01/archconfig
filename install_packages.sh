@@ -50,7 +50,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wiml
 
 # office and learning
 # arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave
-arch-chroot /mnt pacman -Syu --needed --noconfirm libreoffice-fresh gimp inkscape calibre klavaro goldendict kchmviewer geogebra freemind irssi thunderbird
+arch-chroot /mnt pacman -Syu --needed --noconfirm libreoffice-fresh gimp inkscape calibre klavaro kchmviewer geogebra freemind irssi thunderbird
 
 # multimedia
 arch-chroot /mnt pacman -Syu --needed --noconfirm obs-studio vlc
