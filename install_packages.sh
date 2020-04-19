@@ -46,7 +46,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm gvim
 arch-chroot /mnt pacman -Syu --needed --noconfirm gdb cmake jdk-openjdk jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples git go dotnet-sdk lazarus-qt5 intellij-idea-community-edition pycharm-community-edition valgrind eclipse-java tk
 
 # tools
-arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wimlib
+arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wimlib expect
 
 # office and learning
 # arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave
