@@ -112,7 +112,7 @@ mysql -u root -p < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql
 
 # setup database user
 cp data/setup_database_user.sql data/setup_database_user.sql.bak
-sed -i "s/pmapass/${pmapass}" data/setup_database_user.sql
+sed -i "s/pmapass/${pmapass}/" data/setup_database_user.sql
 mysql -u root -p < data/setup_database_user.sql
 cp data/setup_database_user.sql.bak data/setup_database_user.sql
 rm data/setup_database_user.sql.bak
