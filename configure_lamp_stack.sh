@@ -123,3 +123,6 @@ sed -i "${linum} a \$cfg\['TempDir'\] = '\/tmp\/phpmyadmin';" /usr/share/webapps
 
 # remove config directory
 rm -r /usr/share/webapps/phpMyAdmin/config
+
+# restart httpd.service
+systemctl restart httpd
