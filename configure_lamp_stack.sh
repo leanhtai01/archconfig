@@ -77,3 +77,6 @@ sed -i "${linum} a Include conf\/extra\/phpmyadmin.conf" /etc/httpd/conf/httpd.c
 mkdir /usr/share/webapps/phpMyAdmin/config
 chown http:http /usr/share/webapps/phpMyAdmin/config
 chmod 750 /usr/share/webapps/phpMyAdmin/config
+
+# add blowfish_secret passphrase
+sed -i "/^\$cfg\['blowfish_secret'\] = '';/s/''/'$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32)'/" /usr/share/webapps/phpMyAdmin/config.inc.php
