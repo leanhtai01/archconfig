@@ -109,3 +109,17 @@ sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['export_templates'\] = 'pma__export_tem
 
 # setup database
 mysql -u root -p < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql
+
+# setup database user
+cp data/setup_database_user.sql data/setup_database_user.sql.bak
+sed -i "s/pmapass/${pmapass}" data/setup_database_user.sql
+mysql -u root -p < data/setup_database_user.sql
+cp data/setup_database_user.sql.bak data/setup_database_user.sql
+rm data/setup_database_user.sql.bak
+
+# enabling template caching
+linum=$(sed -n "/\$cfg\['SaveDir'\] = '';/=" /usr/share/webapps/phpMyAdmin/config.inc.php)
+sed -i "${linum} a \$cfg\['TempDir'\] = '\/tmp\/phpmyadmin';" /usr/share/webapps/phpMyAdmin/config.inc.php
+
+# remove config directory
+rm -r /usr/share/webapps/phpMyAdmin/config
