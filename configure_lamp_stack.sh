@@ -82,3 +82,30 @@ chmod 750 /usr/share/webapps/phpMyAdmin/config
 sed -i "/^\$cfg\['blowfish_secret'\] = '';/s/''/'$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32)'/" /usr/share/webapps/phpMyAdmin/config.inc.php
 
 # enabling configuration storage
+pmapass=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32)
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['controluser'\] = 'pma';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['controlpass'\] = 'pmapass';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\$cfg\['Servers'\]\[\$i\]\['controlpass'\] = 'pmapass';/s/pmapass/${pmapass}/" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['pmadb'\] = 'phpmyadmin';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['bookmarktable'\] = 'pma__bookmark';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['relation'\] = 'pma__relation';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['table_info'\] = 'pma__table_info';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['table_coords'\] = 'pma__table_coords';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['pdf_pages'\] = 'pma__pdf_pages';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['column_info'\] = 'pma__column_info';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['history'\] = 'pma__history';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['table_uiprefs'\] = 'pma__table_uiprefs';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['tracking'\] = 'pma__tracking';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['userconfig'\] = 'pma__userconfig';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['recent'\] = 'pma__recent';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['favorite'\] = 'pma__favorite';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['users'\] = 'pma__users';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['usergroups'\] = 'pma__usergroups';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['navigationhiding'\] = 'pma__navigationhiding';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['savedsearches'\] = 'pma__savedsearches';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['central_columns'\] = 'pma__central_columns';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['designer_settings'\] = 'pma__designer_settings';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['export_templates'\] = 'pma__export_templates';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
+
+# setup database
+mysql -u root -p < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql
