@@ -2,5 +2,6 @@
 
 set -e
 
-systemctl enable bluetooth
+pacman -Syu --needed --noconfirm tlp acpi_call
+systemctl enable tlp
 systemctl start tlp
