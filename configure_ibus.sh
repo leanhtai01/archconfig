@@ -3,4 +3,4 @@
 set -e
 
 yay -Syu --needed --noconfirm ibus-bamboo
-cp data/my_xprofile_file ~/.xprofile
+cat data/ibus_config_data >> ~/.xprofile
