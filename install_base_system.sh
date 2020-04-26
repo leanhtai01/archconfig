@@ -13,6 +13,9 @@ userpass1=
 userpass2=
 newusername=
 realname=
+lvm_on_luks=
+luks_on_lvm=
+dual_boot_with_win10=
 
 # get user info
 . ./get_user_info.sh
