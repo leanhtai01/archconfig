@@ -29,6 +29,7 @@ lvcreate -L `expr 2 \* $size_of_ram`G sys_vol_group -n swap
 lvcreate -l +100%FREE sys_vol_group -n root
 
 # format the partitions
+dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=1M count=1
 mkfs.fat -F32 /dev/${install_dev}${part}1
 mkswap /dev/sys_vol_group/swap
 swapon /dev/sys_vol_group/swap
