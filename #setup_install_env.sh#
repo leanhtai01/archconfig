@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -e
-
-# swap caplocks - left ctrl
-wget https://raw.githubusercontent.com/leanhtai01/archlinuxconfiguration/master/swap_caps_left_ctrl_console.sh
-bash swap_caps_left_ctrl_console.sh
-
