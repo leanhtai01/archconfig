@@ -14,102 +14,14 @@ userpass2=
 newusername=
 realname=
 
-# let user choose device to install
-if [ -z $install_dev ]
-then
-    lsblk
-    echo -n "Enter device to install: "
-    read install_dev
-fi
-
-if [ $install_dev = nvme0n1 ]
-then
-    part=p
-fi
-
-# let user enter size of RAM to determine swap's size
-if [ -z $size_of_ram ]
-then
-    echo -n "Enter size of RAM (in GB): "
-    read size_of_ram
-fi
-
-# set root's password
-echo "SET ROOT'S PASSWORD"
-if [ -z $rootpass1 ] || [ -z $rootpass2 ] || [ $rootpass1 != $rootpass2 ]
-then
-    echo -n "Enter new root's password: "
-    read -s rootpass1
-    echo -n -e "\nRetype root's password: "
-    read -s rootpass2
-
-    while [ -z $rootpass1 ] || [ -z $rootpass2 ] || [ $rootpass1 != $rootpass2 ]
-    do
-	echo -e "\nSorry, passwords do not match. Please try again!"
-	echo -n "Enter root's password: "
-	read -s rootpass1
-	echo -n -e "\nRetype root's password: "
-	read -s rootpass2
-    done
-fi
-echo -e "\nroot's password set successfully!"
-
-# create a new user
-echo "CREATE A NEW USER"
-
-if [ -z $newusername ]
-then
-    echo -n "Enter username: "
-    read newusername
-fi
-
-if [ -z "$realname" ]
-then
-    echo -n "Enter real name: "
-    read realname
-fi
-
-if [ -z $userpass1 ] || [ -z $userpass2 ] || [ $userpass1 != $userpass2 ]
-then
-    echo -n "Enter ${newusername}'s password: "
-    read -s userpass1
-    echo -n -e "\nRetype $newusername's password: "
-    read -s userpass2
-
-    while [ -z $userpass1 ] || [ -z $userpass2 ] || [ $userpass1 != $userpass2 ]
-    do
-	echo -e "\nSorry, passwords do not match. Please try again!"
-	echo -n "Enter $newusername's password: "
-	read -s userpass1
-	echo -n -e "\nRetype $newusername's password: "
-	read -s userpass2
-    done
-fi
-echo -e "\nUser $newusername created successfully!"
+# get user info
+. ./get_user_info.sh
 
 # update the system clock
 timedatectl set-ntp true
 
-# partition the disks
-# dd if=/dev/zero of=/dev/sda bs=512 count=1
-sgdisk -Z /dev/$install_dev
-sgdisk -n 0:0:+1G -t 0:ef00 -c 0:"efi" /dev/$install_dev
-sgdisk -n 0:0:+`expr 2 \* $size_of_ram`G -t 0:8200 -c 0:"swap" /dev/$install_dev
-sgdisk -n 0:0:0 -t 0:8304 -c 0:"root" /dev/$install_dev
-
-# format the partitions
-dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=1M count=1
-dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
-dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=1M count=1
-mkfs.fat -F32 /dev/${install_dev}${part}1
-mkswap /dev/${install_dev}${part}2
-swapon /dev/${install_dev}${part}2
-mkfs.ext4 /dev/${install_dev}${part}3
-
-# mount the file systems
-mount /dev/${install_dev}${part}3 /mnt
-mkdir /mnt/boot
-mount /dev/${install_dev}${part}1 /mnt/boot
+# preparing disk for install
+. ./prepare_disk_normal_install.sh
 
 # select the mirrors
 linum=$(sed -n '/^Server = http:\/\/f.archlinuxvn.org\/archlinux\/\$repo\/os\/\$arch$/=' /etc/pacman.d/mirrorlist) # find a line and get line number
