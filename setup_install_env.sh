@@ -13,6 +13,10 @@ bash setup_mirrors.sh
 # install git
 pacman -Sy --noconfirm git
 
+# # setup git user mail and name
+# git config --global user.email ""
+# git config --global user.name ""
+
 # clone archlinuxconfigurion repo
 git clone https://github.com/leanhtai01/archlinuxconfiguration
 
