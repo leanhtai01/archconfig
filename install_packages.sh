@@ -14,10 +14,10 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm modemmanager usb_modeswitch wv
 arch-chroot /mnt systemctl enable ModemManager
 
 # audio
-arch-chroot /mnt pacman -Syu --needed --noconfirm pulseaudio-alsa alsa-utils lib32-libpulse
+arch-chroot /mnt pacman -Syu --needed --noconfirm pulseaudio-alsa alsa-utils
 
 # desktop environment
-arch-chroot /mnt pacman -Syu --needed --noconfirm xorg-server xorg-xrandr lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel xf86-video-intel lib32-mesa mesa mesa-demos lib32-glu
+arch-chroot /mnt pacman -Syu --needed --noconfirm xorg-server xorg-xrandr lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel xf86-video-intel lib32-mesa mesa mesa-demos
 
 # # GNOME
 # arch-chroot /mnt pacman -Syu --needed --noconfirm gnome alacarte file-roller seahorse gst-libav seahorse-nautilus gnome-clocks gnome-calendar rhythmbox gprename gnuchess transmission-gtk chrome-gnome-shell gedit gedit-plugins gnome-sound-recorder gnome-tweaks gnome-builder devhelp dconf-editor
@@ -60,4 +60,4 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm obs-studio vlc
 arch-chroot /mnt pacman -Syu --needed --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-dkms
 
 # games
-# arch-chroot /mnt pacman -Syu --needed --noconfirm supertuxkart wesnoth minetest minetest-server teeworlds kbounce kigo bovo quadrapassel
+# arch-chroot /mnt pacman -Syu --needed --noconfirm supertuxkart wesnoth minetest minetest-server teeworlds kbounce kigo bovo quadrapassel steam steam-native-runtime
