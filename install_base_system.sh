@@ -26,6 +26,9 @@ timedatectl set-ntp true
 # preparing disk for install
 . ./prepare_disk_normal_install.sh
 
+# setup mirrors
+. ./setup_mirrors.sh
+
 # install essential packages
 pacstrap /mnt base base-devel linux linux-headers linux-firmware man-pages man-db
 
