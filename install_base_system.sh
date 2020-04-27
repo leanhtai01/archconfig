@@ -13,6 +13,7 @@ userpass1=
 userpass2=
 newusername=
 realname=
+normal_install=
 lvm_on_luks=
 luks_on_lvm=
 dual_boot_with_win10=
@@ -24,7 +25,12 @@ dual_boot_with_win10=
 timedatectl set-ntp true
 
 # preparing disk for install
-. ./prepare_disk_normal_install.sh
+if [ ! -z $lvm_on_luks ]
+then
+    . ./prepare_disk_lvm_on_luks.sh
+else # normal install by default
+    . ./prepare_disk_normal_install.sh
+fi
 
 # setup mirrors
 . ./setup_mirrors.sh
@@ -72,7 +78,7 @@ linum=$(arch-chroot /mnt sed -n "/^# %wheel ALL=(ALL) ALL$/=" /etc/sudoers)
 arch-chroot /mnt sed -i "${linum}s/^# //" /etc/sudoers # uncomment line
 
 # configure the bootloader
-arch-chroot /mnt pacman -Syu --noconfirm && arch-chroot /mnt pacman -S --needed --noconfirm efibootmgr intel-ucode
+arch-chroot /mnt pacman -Syu --needed --noconfirm efibootmgr intel-ucode
 arch-chroot /mnt bootctl install
 echo "default archlinux" > /mnt/boot/loader/loader.conf
 echo "timeout 5" >> /mnt/boot/loader/loader.conf
@@ -83,12 +89,37 @@ echo "title Arch Linux" > /mnt/boot/loader/entries/archlinux.conf
 echo "linux /vmlinuz-linux" >> /mnt/boot/loader/entries/archlinux.conf
 echo "initrd /intel-ucode.img" >> /mnt/boot/loader/entries/archlinux.conf
 echo "initrd /initramfs-linux.img" >> /mnt/boot/loader/entries/archlinux.conf
-rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
-echo "options root=UUID=${rootuuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
+
+if [ ! -z $lvm_on_luks ]
+then
+    cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
+    echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=/dev/sys_vol_group/root rw" >> /mnt/boot/loader/entries/archlinux.conf
+else # normal install by default
+    rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
+    echo "options root=UUID=${rootuuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
+fi
+
+# configure mkinitcpio for encrypted system
+if [ ! -z $lvm_on_luks ]
+then
+    arch-chroot /mnt pacman -Syu --needed --noconfirm lvm2
+    arch-chroot /mnt sed -i '/^HOOKS=(.*/s/ keyboard//' /etc/mkinitcpio.conf
+    arch-chroot /mnt sed -i '/^HOOKS=(.*/s/autodetect/& keyboard keymap/' /etc/mkinitcpio.conf
+    arch-chroot /mnt sed -i '/^HOOKS=(.*/s/block/& encrypt lvm2/' /etc/mkinitcpio.conf
+    arch-chroot /mnt mkinitcpio -p linux
+fi
 
 # setup hibernation
 linum=$(arch-chroot /mnt sed -n '/^HOOKS=.*filesystems.*/=' /etc/mkinitcpio.conf)
 arch-chroot /mnt sed -i "${linum}s/filesystems/& resume/" /etc/mkinitcpio.conf
 arch-chroot /mnt mkinitcpio -p linux
-swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
+
+swapuuidvalue=
+if [ ! -z $lvm_on_luks ]
+then
+    swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/sys_vol_group/swap)
+else # normal install by default
+    swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
+fi
+
 echo "options resume=UUID=${swapuuidvalue}" >> /mnt/boot/loader/entries/archlinux.conf
