@@ -26,12 +26,6 @@ timedatectl set-ntp true
 # preparing disk for install
 . ./prepare_disk_normal_install.sh
 
-# select the mirrors
-linum=$(sed -n '/^Server = http:\/\/f.archlinuxvn.org\/archlinux\/\$repo\/os\/\$arch$/=' /etc/pacman.d/mirrorlist) # find a line and get line number
-preferredmirror=$(sed -n "$linum"p /etc/pacman.d/mirrorlist) # get line know line number
-sed -i '6 a ## My preferred mirrors' /etc/pacman.d/mirrorlist # insert line after
-sed -i "7 a $preferredmirror" /etc/pacman.d/mirrorlist
-
 # install essential packages
 pacstrap /mnt base base-devel linux linux-headers linux-firmware man-pages man-db
 
