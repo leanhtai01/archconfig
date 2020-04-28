@@ -59,3 +59,6 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm supertuxkart wesnoth minetest 
 
 # wine
 arch-chroot /mnt pacman -Syu --needed --noconfirm wine wine-gecko wine-mono lib32-alsa-lib lib32-alsa-plugins lib32-libpulse lib32-openal lib32-mpg123 lib32-giflib lib32-libpng lib32-gnutls lib32-gst-plugins-base lib32-gst-plugins-good lib32-libldap
+
+# enable bluetooth service
+arch-chroot /mnt systemctl enable bluetooth
