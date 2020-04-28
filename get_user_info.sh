@@ -75,3 +75,41 @@ then
     done
 fi
 echo -e "\nUser $newusername created successfully!"
+
+# let user choose type of install
+display_menu()
+{
+    printf "Choose type of install:\n"
+    printf "1. Normal install\n"
+    printf "2. LVM on LUKS\n"
+    printf "3. LUKS on LVM\n"
+    printf "4. Dual-boot with Windows 10\n"
+    printf "Enter your choice: "
+}
+
+re="[1-4]"
+
+display_menu
+read user_choice
+
+while [[ ! "$user_choice" =~ $re ]]
+do
+    printf "\nInvalid choice! Please try again!\n"
+    display_menu
+    read user_choice
+done
+
+case $user_choice in
+    1)
+	normal_install=y
+	;;
+    2)
+	lvm_on_luks=y
+	;;
+    3)
+	luks_on_lvm=y
+	;;
+    4)
+	dual_boot_with_win10=y
+	;;
+esac
