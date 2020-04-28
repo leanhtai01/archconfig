@@ -61,3 +61,6 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm virtualbox virtualbox-guest-is
 
 # games
 # arch-chroot /mnt pacman -Syu --needed --noconfirm supertuxkart wesnoth minetest minetest-server teeworlds kbounce kigo bovo quadrapassel steam steam-native-runtime
+
+# Wine
+arch-chroot /mnt pacman -Syu --needed --noconfirm wine wine-gecko wine-mono
