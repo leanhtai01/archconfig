@@ -13,10 +13,7 @@ userpass1=
 userpass2=
 newusername=
 realname=
-normal_install=
-lvm_on_luks=
-luks_on_lvm=
-dual_boot_with_win10=
+user_choice=1
 
 # get user info
 . ./get_user_info.sh
@@ -25,12 +22,14 @@ dual_boot_with_win10=
 timedatectl set-ntp true
 
 # preparing disk for install
-if [ ! -z $lvm_on_luks ]
-then
-    . ./prepare_disk_lvm_on_luks.sh
-else # normal install by default
-    . ./prepare_disk_normal_install.sh
-fi
+case $user_choice in
+    1) # normal install
+	. ./prepare_disk_normal_install.sh
+	;;
+    2) # lvm on luks
+	. ./prepare_disk_lvm_on_luks.sh
+	;;
+esac
 
 # setup mirrors
 . ./setup_mirrors.sh
@@ -100,7 +99,8 @@ else # normal install by default
 fi
 
 # configure mkinitcpio for encrypted system
-if [ ! -z $lvm_on_luks ]
+re="[23]"
+if [[ "$user_choice" =~ $re ]]
 then
     arch-chroot /mnt pacman -Syu --needed --noconfirm lvm2
     arch-chroot /mnt sed -i '/^HOOKS=(.*/s/ keyboard//' /etc/mkinitcpio.conf
@@ -115,11 +115,13 @@ arch-chroot /mnt sed -i "${linum}s/filesystems/& resume/" /etc/mkinitcpio.conf
 arch-chroot /mnt mkinitcpio -p linux
 
 swapuuidvalue=
-if [ ! -z $lvm_on_luks ]
-then
-    swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/sys_vol_group/swap)
-else # normal install by default
-    swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
-fi
+case $user_choice in
+    1) # normal install
+	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
+	;;
+    2) # lvm on luks
+	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/sys_vol_group/swap)
+	;;
+esac
 
 echo "options resume=UUID=${swapuuidvalue}" >> /mnt/boot/loader/entries/archlinux.conf

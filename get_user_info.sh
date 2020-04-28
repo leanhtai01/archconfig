@@ -99,17 +99,18 @@ do
     read user_choice
 done
 
+printf "You have chosen "
 case $user_choice in
     1)
-	normal_install=y
+        printf "Normal install!\n"
 	;;
     2)
-	lvm_on_luks=y
+        printf "LVM on LUKS!\n"
 	;;
     3)
-	luks_on_lvm=y
+        printf "LUKS on LVM!\n"
 	;;
     4)
-	dual_boot_with_win10=y
+        printf "dual-boot with Windows 10!\n"
 	;;
 esac
