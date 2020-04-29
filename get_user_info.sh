@@ -74,12 +74,12 @@ then
 	read -s userpass2
     done
 fi
-echo -e "\nUser $newusername created successfully!"
+echo -e "\nUser $newusername created successfully!\n"
 
 # let user choose type of install
 display_menu()
 {
-    printf "\nChoose type of install:\n"
+    printf "Choose type of install:\n"
     printf "1. Normal install\n"
     printf "2. LVM on LUKS\n"
     printf "3. LUKS on LVM\n"
