@@ -105,14 +105,16 @@ echo "linux /vmlinuz-linux" >> /mnt/boot/loader/entries/archlinux.conf
 echo "initrd /intel-ucode.img" >> /mnt/boot/loader/entries/archlinux.conf
 echo "initrd /initramfs-linux.img" >> /mnt/boot/loader/entries/archlinux.conf
 
-if [ ! -z $lvm_on_luks ]
-then
-    cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
-    echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=/dev/sys_vol_group/root rw" >> /mnt/boot/loader/entries/archlinux.conf
-else # normal install by default
-    rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
-    echo "options root=UUID=${rootuuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
-fi
+case $user_choice in
+    1) # normal install
+	rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
+	echo "options root=UUID=${rootuuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
+	;;
+    2) # lvm on luks
+	cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
+	echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=/dev/sys_vol_group/root rw" >> /mnt/boot/loader/entries/archlinux.conf
+	;;
+esac
 
 # setup hibernation
 linum=$(arch-chroot /mnt sed -n '/^HOOKS=.*filesystems.*/=' /etc/mkinitcpio.conf)
