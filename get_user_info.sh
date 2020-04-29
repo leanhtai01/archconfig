@@ -122,7 +122,7 @@ esac
 re="[23]"
 if [[ "$user_choice" =~ $re ]]
 then
-    printf "SET STORAGE'S PASSWORD:\n"
+    printf "\nSET STORAGE'S PASSWORD:\n"
     if [ -z $storagepass1 ] || [ -z $storagepass2 ] || [ $storagepass1 != $storagepass2 ]
     then
 	printf "Enter storage's password: "
