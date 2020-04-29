@@ -13,7 +13,7 @@ userpass1=
 userpass2=
 newusername=
 realname=
-user_choice=1
+user_choice=
 
 # get user info
 . ./get_user_info.sh
