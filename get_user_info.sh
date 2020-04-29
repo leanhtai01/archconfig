@@ -117,3 +117,28 @@ case $user_choice in
         printf "dual-boot with Windows 10!\n"
 	;;
 esac
+
+# set storage's password if needed
+re="[23]"
+if [[ "$user_choice" =~ $re ]]
+then
+    printf "SET STORAGE'S PASSWORD:\n"
+    if [ -z $storagepass1 ] || [ -z $storagepass2 ] || [ $storagepass1 != $storagepass2 ]
+    then
+	printf "Enter storage's password: "
+	read -s storagepass1
+	printf "\nRetype storage's password: "
+	read -s storagepass2
+
+	while [ -z $storagepass1 ] || [ -z $storagepass2 ] || [ $storagepass1 != $storagepass2 ]
+	do
+	    printf "\nSorry, passwords do not match. Please try again!\n"
+	    printf "Enter storage's password: "
+	    read -s storagepass1
+	    printf "\nRetype storage's password: "
+	    read -s storagepass2
+	done
+    fi
+
+    printf "\nStorage's password set successfully!\n"
+fi

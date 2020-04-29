@@ -14,6 +14,8 @@ userpass2=
 newusername=
 realname=
 user_choice=
+storagepass1=
+storagepass2=
 
 # get user info
 . ./get_user_info.sh

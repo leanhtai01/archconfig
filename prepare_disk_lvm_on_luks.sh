@@ -9,10 +9,10 @@ sgdisk -n 0:0:0 -t 0:8309 -c 0:"cryptlvm" /dev/$install_dev
 
 # create the LUKS encrypted container
 dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
-cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}2
+printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}2 -
 
 # open the container
-cryptsetup open /dev/${install_dev}${part}2 cryptlvm
+printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}2 cryptlvm -
 
 # create a physical volume on top of the opened LUKS container
 pvcreate /dev/mapper/cryptlvm
