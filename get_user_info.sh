@@ -79,25 +79,28 @@ echo -e "\nUser $newusername created successfully!"
 # let user choose type of install
 display_menu()
 {
-    printf "Choose type of install:\n"
+    printf "\nChoose type of install:\n"
     printf "1. Normal install\n"
     printf "2. LVM on LUKS\n"
     printf "3. LUKS on LVM\n"
     printf "4. Dual-boot with Windows 10\n"
     printf "Enter your choice: "
 }
+    
+if [ -z $user_choice ]
+then
+    re="[1-4]"
 
-re="[1-4]"
-
-display_menu
-read user_choice
-
-while [[ ! "$user_choice" =~ $re ]]
-do
-    printf "\nInvalid choice! Please try again!\n"
     display_menu
     read user_choice
-done
+
+    while [[ ! "$user_choice" =~ $re ]]
+    do
+	printf "\nInvalid choice! Please try again!\n"
+	display_menu
+	read user_choice
+    done
+fi
 
 printf "You have chosen "
 case $user_choice in
