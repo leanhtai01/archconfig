@@ -80,6 +80,18 @@ cp /mnt/etc/sudoers .
 linum=$(arch-chroot /mnt sed -n "/^# %wheel ALL=(ALL) ALL$/=" /etc/sudoers)
 arch-chroot /mnt sed -i "${linum}s/^# //" /etc/sudoers # uncomment line
 
+# configure mkinitcpio for encrypted system
+cp /mnt/etc/mkinitcpio.conf .
+re="[23]"
+if [[ "$user_choice" =~ $re ]]
+then
+    arch-chroot /mnt pacman -Syu --needed --noconfirm lvm2
+    arch-chroot /mnt sed -i '/^HOOKS=(.*/s/ keyboard//' /etc/mkinitcpio.conf
+    arch-chroot /mnt sed -i '/^HOOKS=(.*/s/autodetect/& keyboard keymap/' /etc/mkinitcpio.conf
+    arch-chroot /mnt sed -i '/^HOOKS=(.*/s/block/& encrypt lvm2/' /etc/mkinitcpio.conf
+    arch-chroot /mnt mkinitcpio -p linux
+fi
+
 # configure the bootloader
 arch-chroot /mnt pacman -Syu --needed --noconfirm efibootmgr intel-ucode
 arch-chroot /mnt bootctl install
@@ -100,18 +112,6 @@ then
 else # normal install by default
     rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
     echo "options root=UUID=${rootuuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
-fi
-
-# configure mkinitcpio for encrypted system
-cp /mnt/etc/mkinitcpio.conf .
-re="[23]"
-if [[ "$user_choice" =~ $re ]]
-then
-    arch-chroot /mnt pacman -Syu --needed --noconfirm lvm2
-    arch-chroot /mnt sed -i '/^HOOKS=(.*/s/ keyboard//' /etc/mkinitcpio.conf
-    arch-chroot /mnt sed -i '/^HOOKS=(.*/s/autodetect/& keyboard keymap/' /etc/mkinitcpio.conf
-    arch-chroot /mnt sed -i '/^HOOKS=(.*/s/block/& encrypt lvm2/' /etc/mkinitcpio.conf
-    arch-chroot /mnt mkinitcpio -p linux
 fi
 
 # setup hibernation
