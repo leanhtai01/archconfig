@@ -85,7 +85,7 @@ display_menu()
     printf "3. LUKS on LVM\n"
     printf "4. Dual-boot with Windows 10 (normal install)\n"
     printf "5. Dual-boot with Windows 10 (LVM on LUKS)\n"
-    printf "6. Dual-boot with Windows 10 (LUKS on LVM)"
+    printf "6. Dual-boot with Windows 10 (LUKS on LVM)\n"
     printf "Enter your choice: "
 }
     
@@ -117,6 +117,12 @@ case $user_choice in
 	;;
     4)
         printf "dual-boot with Windows 10 (normal install)!\n"
+	;;
+    5)
+	printf "dual-boot with Windows 10 (LVM on LUKS)!\n"
+	;;
+    6)
+	printf "dual-boot with Windows 10 (LUKS on LVM)\n"
 	;;
 esac
 
