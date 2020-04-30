@@ -18,7 +18,7 @@ storagepass1=
 storagepass2=
 
 # create place to save original config files before modified
-original_config_files_path=/root/original_config_files
+original_config_files_path=original_config_files
 mkdir $original_config_files_path
 
 # get user info

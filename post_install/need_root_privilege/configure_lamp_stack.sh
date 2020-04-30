@@ -24,6 +24,7 @@ mysql_secure_installation
 pacman -Syu --needed --noconfirm php php-apache
 
 # set timezone
+cp /etc/php/php.ini $original_config_files_path
 linum=$(sed -n '/^;date.timezone =$/=' /etc/php/php.ini)
 sed -i "${linum}s/^;//" /etc/php/php.ini
 sed -i "${linum}s/=/& Asia\/Ho_Chi_Minh/" /etc/php/php.ini
@@ -32,6 +33,7 @@ sed -i "${linum}s/=/& Asia\/Ho_Chi_Minh/" /etc/php/php.ini
 sed -i "/^display_errors = Off$/s/Off/On/" /etc/php/php.ini
 
 # comment line LoadModule mpm_event_module modules/mod_mpm_event.so
+cp /etc/httpd/conf/httpd.conf $original_config_files_path
 linum=$(sed -n '/^LoadModule mpm_event_module modules\/mod_mpm_event.so$/=' /etc/httpd/conf/httpd.conf)
 sed -i "${linum}s/^/#&/" /etc/httpd/conf/httpd.conf
 
@@ -79,6 +81,7 @@ chown http:http /usr/share/webapps/phpMyAdmin/config
 chmod 750 /usr/share/webapps/phpMyAdmin/config
 
 # add blowfish_secret passphrase
+cp /usr/share/webapps/phpMyAdmin/config.inc.php $original_config_files_path
 sed -i "/^\$cfg\['blowfish_secret'\] = '';/s/''/'$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32)'/" /usr/share/webapps/phpMyAdmin/config.inc.php
 
 # enabling configuration storage

@@ -8,7 +8,8 @@ cp /usr/share/kbd/keymaps/i386/qwerty/us.map.gz /usr/local/share/kbd/keymaps/
 gunzip /usr/local/share/kbd/keymaps/us.map.gz
 mv /usr/local/share/kbd/keymaps/us.map /usr/local/share/kbd/keymaps/personal.map
 
-# make the Right Alt key same as Left Alt key 
+# make the Right Alt key same as Left Alt key
+cp /usr/local/share/kbd/keymaps/personal.map $original_config_files_path
 linum=$(sed -n '/^include "linux-with-alt-and-altgr"$/=' /usr/local/share/kbd/keymaps/personal.map)
 sed -i "${linum} a include \"linux-with-two-alt-keys\"" /usr/local/share/kbd/keymaps/personal.map
 
