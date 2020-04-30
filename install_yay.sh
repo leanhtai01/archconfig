@@ -5,6 +5,6 @@ set -e
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
 tar -xvf yay.tar.gz
 cd yay/
-makepkg -sri
+makepkg -sri --noconfirm
 cd ..
-rm -r yay/ yay.tar.gz
+rm -rf yay/ yay.tar.gz
