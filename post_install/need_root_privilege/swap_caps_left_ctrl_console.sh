@@ -3,6 +3,12 @@
 # exit script immediately on error
 set -e
 
+# make place to save original config files (if not exist)
+if [ ! -d "$original_config_files_path" ]
+then
+    mkdir original_config_files
+fi
+
 mkdir -p /usr/local/share/kbd/keymaps
 cp /usr/share/kbd/keymaps/i386/qwerty/us.map.gz /usr/local/share/kbd/keymaps/
 gunzip /usr/local/share/kbd/keymaps/us.map.gz

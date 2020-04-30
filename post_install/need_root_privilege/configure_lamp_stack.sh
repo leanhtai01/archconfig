@@ -2,6 +2,12 @@
 
 set -e
 
+# make place to save original config files (if not exist)
+if [ ! -d "$original_config_files_path" ]
+then
+    mkdir original_config_files
+fi
+
 ##################
 # install Apache #
 ##################
