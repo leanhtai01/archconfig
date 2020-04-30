@@ -24,7 +24,7 @@ then
 fi
 
 # set root's password
-echo "\nSET ROOT'S PASSWORD"
+printf "\nSET ROOT'S PASSWORD\n"
 if [ -z $rootpass1 ] || [ -z $rootpass2 ] || [ $rootpass1 != $rootpass2 ]
 then
     echo -n "Enter new root's password: "
@@ -44,7 +44,7 @@ fi
 echo -e "\nroot's password set successfully!"
 
 # create a new user
-echo "\nCREATE A NEW USER"
+printf "\nCREATE A NEW USER\n"
 
 if [ -z $newusername ]
 then
