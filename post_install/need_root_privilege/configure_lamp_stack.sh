@@ -65,7 +65,7 @@ sed -i "/^;extension=bz2$/s/^;//" /etc/php/php.ini
 sed -i "/^;extension=zip$/s/^;//" /etc/php/php.ini
 
 # create the Apache configuration file
-cp data/phpmyadmin.conf /etc/httpd/conf/extra/phpmyadmin.conf
+cp ../../data/phpmyadmin.conf /etc/httpd/conf/extra/phpmyadmin.conf
 
 # include the Apache configuration file in /etc/httpd/conf/httpd.conf
 linum=$(sed -n $= /etc/httpd/conf/httpd.conf)
@@ -111,11 +111,11 @@ sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['export_templates'\] = 'pma__export_tem
 mysql -u root -p < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql
 
 # setup database user
-cp data/setup_database_user.sql data/setup_database_user.sql.bak
-sed -i "s/pmapass/${pmapass}/" data/setup_database_user.sql
-mysql -u root -p < data/setup_database_user.sql
-cp data/setup_database_user.sql.bak data/setup_database_user.sql
-rm data/setup_database_user.sql.bak
+cp ../../data/setup_database_user.sql ../../data/setup_database_user.sql.bak
+sed -i "s/pmapass/${pmapass}/" ../../data/setup_database_user.sql
+mysql -u root -p < ../../data/setup_database_user.sql
+cp ../../data/setup_database_user.sql.bak ../../data/setup_database_user.sql
+rm ../../data/setup_database_user.sql.bak
 
 # enabling template caching
 linum=$(sed -n "/\$cfg\['SaveDir'\] = '';/=" /usr/share/webapps/phpMyAdmin/config.inc.php)
