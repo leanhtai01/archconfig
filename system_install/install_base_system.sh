@@ -39,7 +39,7 @@ esac
 
 # setup mirrors
 cp /etc/pacman.d/mirrorlist $original_config_files_path
-printf "mirrorlist: /etc/pacman.d/mirrorlist" > $original_config_files_path/original_path.txt
+printf "mirrorlist: /etc/pacman.d/mirrorlist\n" > $original_config_files_path/original_path.txt
 . ./setup_mirrors.sh
 
 # install essential packages
@@ -55,7 +55,7 @@ arch-chroot /mnt hwclock --systohc
 
 # localization
 cp /mnt/etc/locale.gen $original_config_files_path
-printf "locale.gen: /mnt/etc/locale.gen" >> $original_config_files_path/original_path.txt
+printf "locale.gen: /mnt/etc/locale.gen\n" >> $original_config_files_path/original_path.txt
 linum=$(arch-chroot /mnt sed -n '/^#en_US.UTF-8 UTF-8  $/=' /etc/locale.gen)
 arch-chroot /mnt sed -i "${linum}s/^#//" /etc/locale.gen
 arch-chroot /mnt locale-gen
@@ -63,7 +63,7 @@ echo LANG=en_US.UTF-8 > /mnt/etc/locale.conf
 
 # configure respositories for 64-bit system
 cp /mnt/etc/pacman.conf $original_config_files_path
-printf "pacman.conf: /mnt/etc/pacman.conf" >> $original_config_files_path/original_path.txt
+printf "pacman.conf: /mnt/etc/pacman.conf\n" >> $original_config_files_path/original_path.txt
 linum=$(arch-chroot /mnt sed -n "/\\[multilib\\]/=" /etc/pacman.conf)
 arch-chroot /mnt sed -i "${linum}s/^#//" /etc/pacman.conf
 ((linum++))
@@ -86,13 +86,13 @@ echo -e "${userpass1}\n${userpass1}" | arch-chroot /mnt passwd $newusername
 
 # allow user in wheel group execute any command
 cp /mnt/etc/sudoers $original_config_files_path
-printf "sudoers: /mnt/etc/sudoers" >> $original_config_files_path/original_path.txt
+printf "sudoers: /mnt/etc/sudoers\n" >> $original_config_files_path/original_path.txt
 linum=$(arch-chroot /mnt sed -n "/^# %wheel ALL=(ALL) ALL$/=" /etc/sudoers)
 arch-chroot /mnt sed -i "${linum}s/^# //" /etc/sudoers # uncomment line
 
 # configure mkinitcpio for encrypted system
 cp /mnt/etc/mkinitcpio.conf $original_config_files_path
-printf "mkinitcpio.conf: /mnt/etc/mkinitcpio.conf" >> $original_config_files_path/original_path.txt
+printf "mkinitcpio.conf: /mnt/etc/mkinitcpio.conf\n" >> $original_config_files_path/original_path.txt
 re="[23]"
 if [[ "$user_choice" =~ $re ]]
 then
