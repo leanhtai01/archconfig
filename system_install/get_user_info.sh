@@ -83,13 +83,15 @@ display_menu()
     printf "1. Normal install\n"
     printf "2. LVM on LUKS\n"
     printf "3. LUKS on LVM\n"
-    printf "4. Dual-boot with Windows 10\n"
+    printf "4. Dual-boot with Windows 10 (normal install)\n"
+    printf "5. Dual-boot with Windows 10 (LVM on LUKS)\n"
+    printf "6. Dual-boot with Windows 10 (LUKS on LVM)"
     printf "Enter your choice: "
 }
     
 if [ -z $user_choice ]
 then
-    re="[1-4]"
+    re="[1-6]"
 
     display_menu
     read user_choice
@@ -119,7 +121,7 @@ case $user_choice in
 esac
 
 # set storage's password if needed
-re="[23]"
+re="[2356]"
 if [[ "$user_choice" =~ $re ]]
 then
     printf "\nSET STORAGE'S PASSWORD:\n"
