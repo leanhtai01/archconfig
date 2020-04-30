@@ -38,6 +38,9 @@ case $user_choice in
     2) # lvm on luks
 	. ./prepare_disk_lvm_on_luks.sh
 	;;
+    4) # dual-boot with Windows 10 (normal install)
+	. ./prepare_disk_dual-boot_with_windows_10_normal_install.sh
+	;;
 esac
 
 # setup mirrors

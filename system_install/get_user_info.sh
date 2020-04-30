@@ -114,7 +114,7 @@ case $user_choice in
         printf "LUKS on LVM!\n"
 	;;
     4)
-        printf "dual-boot with Windows 10!\n"
+        printf "dual-boot with Windows 10 (normal install)!\n"
 	;;
 esac
 
