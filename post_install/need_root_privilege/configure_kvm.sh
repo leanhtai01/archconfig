@@ -3,9 +3,10 @@
 set -e
 
 # make place to save original config files (if not exist)
+original_config_files_path=original_config_files
 if [ ! -d "$original_config_files_path" ]
 then
-    mkdir original_config_files
+    mkdir $original_config_files_path
 fi
 
 pacman -Syu --needed --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat virt-viewer dmidecode
