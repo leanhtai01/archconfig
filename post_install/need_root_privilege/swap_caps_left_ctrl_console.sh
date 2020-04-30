@@ -4,7 +4,7 @@
 set -e
 
 # make place to save original config files (if not exist)
-original_config_files_path=original_config_files
+original_config_files_path=$(dirname $0)/original_config_files
 if [ ! -d "$original_config_files_path" ]
 then
     mkdir $original_config_files_path
