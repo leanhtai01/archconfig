@@ -134,6 +134,14 @@ case $user_choice in
 	cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
 	echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=/dev/sys_vol_group/root rw" >> /mnt/boot/loader/entries/archlinux.conf
 	;;
+    4) # dual-boot with Windows 10 (normal install)
+	rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}6)
+	echo "options root=UUID=${rootuuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
+	;;
+    5) # dual-boot with Windows 10 (LVM on LUKS)
+	cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}5)
+	echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=/dev/sys_vol_group/root rw" >> /mnt/boot/loader/entries/archlinux.conf
+	;;
 esac
 
 # setup hibernation
@@ -146,7 +154,12 @@ case $user_choice in
     1) # normal install
 	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
 	;;
+    4) # dual-boot with Windows 10 (normal install)
+	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}5)
+	;;
     2) # lvm on luks
+	;&
+    5) # dual-boot with Windows 10 (LVM on LUKS)
 	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/sys_vol_group/swap)
 	;;
 esac
