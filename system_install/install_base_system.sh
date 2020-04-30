@@ -17,9 +17,12 @@ user_choice=
 storagepass1=
 storagepass2=
 
-# create place to save original config files before modified
-original_config_files_path=original_config_files
-mkdir $original_config_files_path
+# make place to save original config files (if not exist)
+original_config_files_path=$(dirname $0)/original_config_files
+if [ ! -d "$original_config_files_path" ]
+then
+    mkdir $original_config_files_path
+fi
 
 # get user info
 . ./get_user_info.sh
