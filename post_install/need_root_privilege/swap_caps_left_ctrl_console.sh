@@ -10,7 +10,7 @@ mv /usr/local/share/kbd/keymaps/us.map /usr/local/share/kbd/keymaps/personal.map
 
 # make the Right Alt key same as Left Alt key
 cp /usr/local/share/kbd/keymaps/personal.map $original_config_files_path
-printf "personal.map: /usr/local/share/kbd/keymaps/personal.map" >> $original_config_files_path/original_path.txt
+printf "personal.map: /usr/local/share/kbd/keymaps/personal.map\n" >> $original_config_files_path/original_path.txt
 linum=$(sed -n '/^include "linux-with-alt-and-altgr"$/=' /usr/local/share/kbd/keymaps/personal.map)
 sed -i "${linum} a include \"linux-with-two-alt-keys\"" /usr/local/share/kbd/keymaps/personal.map
 
