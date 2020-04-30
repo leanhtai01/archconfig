@@ -2,4 +2,4 @@
 
 set -e
 
-sed -i "6 r data/preferredmirrors" /etc/pacman.d/mirrorlist
+sed -i "6 r ../data/preferredmirrors" /etc/pacman.d/mirrorlist
