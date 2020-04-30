@@ -4,8 +4,7 @@ set -e
 
 # install and configure some packages, services
 # system packages
-arch-chroot /mnt pacman -Syu --needed --noconfirm lm_sensors ufw gparted dosfstools ntfs-3g p7zip unrar smartmontools screen psensor
-arch-chroot /mnt systemctl enable ufw
+arch-chroot /mnt pacman -Syu --needed --noconfirm lm_sensors gparted dosfstools ntfs-3g p7zip unrar smartmontools screen psensor
 
 # fonts
 arch-chroot /mnt pacman -Syu --needed --noconfirm ttf-dejavu ttf-liberation adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts noto-fonts-emoji
