@@ -4,8 +4,15 @@ set -e
 
 # global variables
 install_dev=
-part=
-size_of_ram=
+
+# let user choose device to make partitions
+printf "MAKE PARTITIONS FOR WINDOWS 10\n"
+if [ -z $install_dev ]
+then
+    lsblk
+    echo -n "Enter device to install: "
+    read install_dev
+fi
 
 # partition the disk
 sgdisk -Z /dev/$install_dev
