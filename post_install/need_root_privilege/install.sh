@@ -2,9 +2,11 @@
 
 set -e
 
+current_dir=$(dirname $0)
+
 # create place to save original config files before modified
-. ./configure_kvm.sh
-. ./configure_lamp_stack.sh
-./configure_tlp.sh
-./configure_ufw.sh
-. ./swap_caps_left_ctrl_console.sh
+. $current_dir/configure_kvm.sh
+. $current_dir/configure_lamp_stack.sh
+$current_dir/configure_tlp.sh
+$current_dir/configure_ufw.sh
+. $current_dir/swap_caps_left_ctrl_console.sh
