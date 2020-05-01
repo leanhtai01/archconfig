@@ -53,7 +53,7 @@ esac
 # setup mirrors
 cp /etc/pacman.d/mirrorlist $original_config_files_path
 printf "mirrorlist: /etc/pacman.d/mirrorlist\n" > $original_config_files_path/original_path.txt
-. ./setup_mirrors.sh
+. $current_dir/setup_mirrors.sh
 
 # install essential packages
 pacstrap /mnt base base-devel linux linux-headers linux-firmware man-pages man-db
