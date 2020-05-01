@@ -102,7 +102,7 @@ arch-chroot /mnt sed -i "${linum}s/^# //" /etc/sudoers # uncomment line
 # configure mkinitcpio for encrypted system
 cp /mnt/etc/mkinitcpio.conf $original_config_files_path
 printf "mkinitcpio.conf: /mnt/etc/mkinitcpio.conf\n" >> $original_config_files_path/original_path.txt
-re="[23]"
+re="[2356]"
 if [[ "$user_choice" =~ $re ]]
 then
     arch-chroot /mnt pacman -Syu --needed --noconfirm lvm2
