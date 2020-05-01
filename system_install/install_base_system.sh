@@ -176,3 +176,14 @@ if [[ ! $user_choice =~ $re ]] # not setup hibernation for LUKS on LVM
 then
     echo "options resume=UUID=${swapuuidvalue}" >> /mnt/boot/loader/entries/archlinux.conf
 fi
+
+# configure fstab and crypttab for swap (LUKS on LVM)
+re="[36]"
+if [[ $user_choice =~ $re ]]
+then
+    # crypttab
+    printf "swap    /dev/sys_vol_group/cryptswap    /dev/urandom    swap,cipher=aes-cbc-essiv:sha256,size=256\n" >> /mnt/etc/crypttab
+
+    # fstab
+    printf "/dev/mapper/swap    none    swap    sw    0 0\n" >> /mnt/etc/fstab
+fi
