@@ -152,9 +152,13 @@ case $user_choice in
 esac
 
 # setup hibernation
-linum=$(arch-chroot /mnt sed -n '/^HOOKS=.*filesystems.*/=' /etc/mkinitcpio.conf)
-arch-chroot /mnt sed -i "${linum}s/filesystems/& resume/" /etc/mkinitcpio.conf
-arch-chroot /mnt mkinitcpio -p linux
+re="[36]"
+if [[ ! $user_choice =~ $re ]] # not setup hibernation for LUKS on LVM
+then
+    linum=$(arch-chroot /mnt sed -n '/^HOOKS=.*filesystems.*/=' /etc/mkinitcpio.conf)
+    arch-chroot /mnt sed -i "${linum}s/filesystems/& resume/" /etc/mkinitcpio.conf
+    arch-chroot /mnt mkinitcpio -p linux
+fi
 
 swapuuidvalue=
 case $user_choice in
