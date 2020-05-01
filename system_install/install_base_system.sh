@@ -48,6 +48,9 @@ case $user_choice in
     5) # dual-boot with Windows 10 (LVM on LUKS)
 	. $current_dir/prepare_disk_dual-boot_with_windows_10_lvm_on_luks.sh
 	;;
+    6) # dual-boot with Windows 10 (LUKS on LVM)
+	. $current_dir/prepare_disk_dual-boot_with_windows_10_luks_on_lvm.sh
+	;;
 esac
 
 # setup mirrors
@@ -139,6 +142,8 @@ case $user_choice in
 	echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=/dev/sys_vol_group/root rw" >> /mnt/boot/loader/entries/archlinux.conf
 	;;
     3) # luks on lvm
+	;&
+    6) # dual-boot with Windows 10 (LUKS on LVM)
 	cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/sys_vol_group/cryptroot)
 	echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:root root=/dev/mapper/root rw" >> /mnt/boot/loader/entries/archlinux.conf
 	;;
