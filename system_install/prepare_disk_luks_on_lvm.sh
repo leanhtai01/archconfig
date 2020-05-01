@@ -20,7 +20,7 @@ lvcreate -l +100%FREE sys_vol_group -n cryptroot
 
 # encrypt and format root partition
 printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/sys_vol_group/cryptroot -
-cryptsetup open /dev/sys_vol_group/cryptroot root
+printf "$storagepass1" | cryptsetup open /dev/sys_vol_group/cryptroot root -
 
 # format the partitions
 dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=1M count=1
