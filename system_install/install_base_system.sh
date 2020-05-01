@@ -137,6 +137,10 @@ case $user_choice in
 	cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
 	echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=/dev/sys_vol_group/root rw" >> /mnt/boot/loader/entries/archlinux.conf
 	;;
+    3) # luks on lvm
+	cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/sys_vol_group/cryptroot)
+	echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:root root=/dev/mapper/root rw" >> /mnt/boot/loader/entries/archlinux.conf
+	;;
     4) # dual-boot with Windows 10 (normal install)
 	rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}6)
 	echo "options root=UUID=${rootuuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
