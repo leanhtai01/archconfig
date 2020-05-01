@@ -171,4 +171,8 @@ case $user_choice in
 	;;
 esac
 
-echo "options resume=UUID=${swapuuidvalue}" >> /mnt/boot/loader/entries/archlinux.conf
+re="[36]"
+if [[ ! $user_choice =~ $re ]] # not setup hibernation for LUKS on LVM
+then
+    echo "options resume=UUID=${swapuuidvalue}" >> /mnt/boot/loader/entries/archlinux.conf
+fi
