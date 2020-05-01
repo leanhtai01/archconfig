@@ -2,6 +2,9 @@
 
 set -e
 
+parent_dir=$(cd $(dirname $0)/..; pwd)
+grandpa_dir=$(cd $parent_dir/..; pwd)
+
 # make place to save original config files (if not exist)
 original_config_files_path=$(dirname $0)/original_config_files
 if [ ! -d "$original_config_files_path" ]
@@ -124,11 +127,11 @@ sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['export_templates'\] = 'pma__export_tem
 mysql -u root -p < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql
 
 # setup database user
-cp ../../data/setup_database_user.sql ../../data/setup_database_user.sql.bak
-sed -i "s/pmapass/${pmapass}/" ../../data/setup_database_user.sql
-mysql -u root -p < ../../data/setup_database_user.sql
-cp ../../data/setup_database_user.sql.bak ../../data/setup_database_user.sql
-rm ../../data/setup_database_user.sql.bak
+cp $grandpa_dir/data/setup_database_user.sql $grandpa_dir/data/setup_database_user.sql.bak
+sed -i "s/pmapass/${pmapass}/" $grandpa_dir/data/setup_database_user.sql
+mysql -u root -p < $grandpa_dir/data/setup_database_user.sql
+cp $grandpa_dir/data/setup_database_user.sql.bak $grandpa_dir/data/setup_database_user.sql
+rm $grandpa_dir/data/setup_database_user.sql.bak
 
 # enabling template caching
 linum=$(sed -n "/\$cfg\['SaveDir'\] = '';/=" /usr/share/webapps/phpMyAdmin/config.inc.php)
