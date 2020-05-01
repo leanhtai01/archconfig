@@ -79,7 +79,7 @@ sed -i "/^;extension=bz2$/s/^;//" /etc/php/php.ini
 sed -i "/^;extension=zip$/s/^;//" /etc/php/php.ini
 
 # create the Apache configuration file
-cp ../../data/phpmyadmin.conf /etc/httpd/conf/extra/phpmyadmin.conf
+cp $grandpa_dir/data/phpmyadmin.conf /etc/httpd/conf/extra/phpmyadmin.conf
 
 # include the Apache configuration file in /etc/httpd/conf/httpd.conf
 linum=$(sed -n $= /etc/httpd/conf/httpd.conf)
