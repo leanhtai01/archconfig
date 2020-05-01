@@ -4,6 +4,7 @@
 set -e
 
 # global variables
+current_dir=$(dirname $0)
 install_dev=
 part=
 size_of_ram=
@@ -18,14 +19,14 @@ storagepass1=
 storagepass2=
 
 # make place to save original config files (if not exist)
-original_config_files_path=$(dirname $0)/original_config_files
+original_config_files_path=$current_dir/original_config_files
 if [ ! -d "$original_config_files_path" ]
 then
     mkdir $original_config_files_path
 fi
 
 # get user info
-. ./get_user_info.sh
+. $current_dir/get_user_info.sh
 
 # update the system clock
 timedatectl set-ntp true
@@ -33,19 +34,19 @@ timedatectl set-ntp true
 # preparing disk for install
 case $user_choice in
     1) # normal install
-	. ./prepare_disk_normal_install.sh
+	. $current_dir/prepare_disk_normal_install.sh
 	;;
     2) # lvm on luks
-	. ./prepare_disk_lvm_on_luks.sh
+	. $current_dir/prepare_disk_lvm_on_luks.sh
 	;;
     3) # luks on lvm
-	. ./prepare_disk_luks_on_lvm.sh
+	. $current_dir/prepare_disk_luks_on_lvm.sh
 	;;
     4) # dual-boot with Windows 10 (normal install)
-	. ./prepare_disk_dual-boot_with_windows_10_normal_install.sh
+	. $current_dir/prepare_disk_dual-boot_with_windows_10_normal_install.sh
 	;;
     5) # dual-boot with Windows 10 (LVM on LUKS)
-	. ./prepare_disk_dual-boot_with_windows_10_lvm_on_luks.sh
+	. $current_dir/prepare_disk_dual-boot_with_windows_10_lvm_on_luks.sh
 	;;
 esac
 
