@@ -2,5 +2,7 @@
 
 set -e
 
-./install_base_system.sh
-./install_packages.sh
+current_dir=$(dirname $0)
+
+$current_dir/install_base_system.sh
+$current_dir/install_packages.sh
