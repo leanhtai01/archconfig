@@ -90,7 +90,7 @@ echo archlinux > /mnt/etc/hostname
 echo "127.0.0.1    localhost" >> /mnt/etc/hosts
 echo "::1          localhost" >> /mnt/etc/hosts
 echo "127.0.1.1    archlinux.localdomain    archlinux" >> /mnt/etc/hosts
-arch-chroot /mnt pacman -Syu --needed --noconfirm networkmanager
+arch-chroot /mnt pacman -Syu --needed --noconfirm networkmanager dhcpcd iwd
 arch-chroot /mnt systemctl enable NetworkManager
 
 # root password
