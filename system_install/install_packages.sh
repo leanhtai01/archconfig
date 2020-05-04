@@ -57,7 +57,7 @@ arch-chroot /mnt gpasswd -a leanhtai01 docker
 arch-chroot /mnt pacman -Syu --needed --noconfirm supertuxkart wesnoth minetest minetest-server teeworlds kbounce kigo bovo quadrapassel steam steam-native-runtime
 
 # wine
-arch-chroot /mnt pacman -Syu --needed --noconfirm wine lib32-alsa-lib lib32-alsa-plugins lib32-libpulse lib32-openal lib32-mpg123 lib32-giflib lib32-libpng lib32-gnutls lib32-gst-plugins-base lib32-gst-plugins-good lib32-libldap
+arch-chroot /mnt pacman -Syu --needed --noconfirm wine lib32-alsa-lib lib32-alsa-plugins lib32-libpulse lib32-openal lib32-mpg123 lib32-giflib lib32-libpng lib32-gnutls lib32-gst-plugins-base lib32-gst-plugins-good lib32-libldap lutris
 
 # enable bluetooth service
 arch-chroot /mnt systemctl enable bluetooth
