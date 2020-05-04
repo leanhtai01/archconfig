@@ -17,7 +17,7 @@ arch-chroot /mnt systemctl enable ModemManager
 arch-chroot /mnt pacman -Syu --needed --noconfirm pulseaudio-alsa alsa-utils alsa-plugins pulseaudio-bluetooth
 
 # desktop environment
-arch-chroot /mnt pacman -Syu --needed --noconfirm xorg-server xorg-xrandr lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel xf86-video-intel lib32-mesa mesa mesa-demos
+arch-chroot /mnt pacman -Syu --needed --noconfirm xorg-server xorg-xrandr lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel lib32-vulkan-intel xf86-video-intel lib32-mesa mesa mesa-demos
 
 # Plasma
 arch-chroot /mnt pacman -Syu --needed --noconfirm plasma digikam ktorrent ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kamoso kate kcalc kdegraphics-mobipocket kdegraphics-thumbnailers kdf khelpcenter kleopatra kmousetool knotes kolourpaint kompare konsole krdc krfb kruler ksystemlog kwalletmanager okular spectacle sweeper umbrello gnome-disk-utility gnome-clocks
