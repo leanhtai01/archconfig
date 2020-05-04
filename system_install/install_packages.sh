@@ -14,7 +14,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm modemmanager usb_modeswitch wv
 arch-chroot /mnt systemctl enable ModemManager
 
 # audio
-arch-chroot /mnt pacman -Syu --needed --noconfirm pulseaudio-alsa alsa-utils alsa-plugins pulseaudio-bluetooth
+arch-chroot /mnt pacman -Syu --needed --noconfirm pulseaudio-alsa alsa-utils pulseaudio-bluetooth
 
 # desktop environment
 arch-chroot /mnt pacman -Syu --needed --noconfirm xorg-server xorg-xrandr lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel lib32-vulkan-intel lib32-vkd3d vkd3d xf86-video-intel lib32-mesa mesa mesa-demos
@@ -57,7 +57,7 @@ arch-chroot /mnt gpasswd -a leanhtai01 docker
 arch-chroot /mnt pacman -Syu --needed --noconfirm supertuxkart wesnoth minetest minetest-server teeworlds kbounce kigo bovo quadrapassel steam steam-native-runtime
 
 # wine
-arch-chroot /mnt pacman -Syu --needed --noconfirm wine lib32-alsa-lib lib32-alsa-plugins lib32-libpulse lib32-openal lib32-mpg123 lib32-giflib lib32-libpng lib32-gnutls lib32-gst-plugins-base lib32-gst-plugins-good lib32-libldap lutris
+arch-chroot /mnt pacman -Syu --needed --noconfirm wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs
 
 # enable bluetooth service
 arch-chroot /mnt systemctl enable bluetooth
