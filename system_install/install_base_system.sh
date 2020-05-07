@@ -106,6 +106,9 @@ printf "sudoers: /mnt/etc/sudoers\n" >> $original_config_files_path/original_pat
 linum=$(arch-chroot /mnt sed -n "/^# %wheel ALL=(ALL) ALL$/=" /etc/sudoers)
 arch-chroot /mnt sed -i "${linum}s/^# //" /etc/sudoers # uncomment line
 
+# Reduce the number of times re-enter password using sudo
+arch-chroot /mnt sed -i "$(sed -n "/^# Defaults\!.*/=" /etc/sudoers | tail -1) a Defaults timestamp_timeout=20" /etc/sudoers
+
 # configure mkinitcpio for encrypted system
 cp /mnt/etc/mkinitcpio.conf $original_config_files_path
 printf "mkinitcpio.conf: /mnt/etc/mkinitcpio.conf\n" >> $original_config_files_path/original_path.txt
