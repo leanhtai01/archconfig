@@ -20,5 +20,13 @@ mkfs.ext4 /dev/${install_dev}${part}3
 
 # mount the file systems
 mount /dev/${install_dev}${part}3 /mnt
-mkdir /mnt/boot
-mount /dev/${install_dev}${part}1 /mnt/boot
+case $bootloader in
+    1)
+	mkdir /mnt/boot
+	mount /dev/${install_dev}${part}1 /mnt/boot
+	;;
+    2)
+	mkdir -p /mnt/boot/efi
+	mount /dev/${install_dev}${part}1 /mnt/boot/efi
+	;;
+esac

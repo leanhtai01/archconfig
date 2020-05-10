@@ -150,3 +150,38 @@ then
 
     printf "\nStorage's password set successfully!\n"
 fi
+
+# let user choose boot loader to install
+display_menu_bootloader()
+{
+    printf "Choose a boot loader to install:\n"
+    printf "1. systemd-boot\n"
+    printf "2. GRUB\n"
+    printf "Enter your choice: "
+}
+
+if [ -z $bootloader ]
+then
+    re="[1-2]"
+
+    display_menu_bootloader
+    read bootloader
+
+    while [[ ! "$bootloader" =~ $re ]]
+    do
+	printf "\nInvalid choice! Please try again!\n"
+	display_menu_bootloader
+	read bootloader
+    done
+fi
+
+printf "You have chosen "
+case $bootloader in
+    1)
+	printf "systemd-boot"
+	;;
+    2)
+	printf "GRUB"
+	;;
+esac
+printf " boot loader!\n"
