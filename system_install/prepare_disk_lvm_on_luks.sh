@@ -43,7 +43,7 @@ lvcreate -l +100%FREE sys_vol_group -n root
 # format the partitions
 dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=1M count=1
 mkfs.fat -F32 /dev/${install_dev}${part}1
-if [ $bootloader = 1 ]
+if [ $bootloader = 2 ]
 then
     dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
     mkfs.ext4 /dev/${install_dev}${part}2
