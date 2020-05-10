@@ -5,7 +5,7 @@ set -e
 # partition the disk
 sgdisk -Z /dev/$install_dev
 sgdisk -n 0:0:+1G -t 0:ef00 -c 0:"efi" /dev/$install_dev
-if [ $bootloader = 1 ]
+if [ $bootloader = 2 ]
 then
     sgdisk -n 0:0:+1G -t 0:8309 -c 0:"cryptboot" /dev/$install_dev
 fi
