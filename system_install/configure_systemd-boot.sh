@@ -65,7 +65,7 @@ esac
 re="[36]"
 if [[ ! $user_choice =~ $re ]] # not setup hibernation for LUKS on LVM
 then
-    echo "options resume=UUID=${swapuuidvalue}" >> /mnt/boot/loader/entries/archlinux.conf
+    sed -i "/^options.*/s/rw/resume=UUID=${swapuuidvalue} &/" /mnt/boot/loader/entries/archlinux.conf
 fi
 
 # configure fstab and crypttab for swap (LUKS on LVM)
