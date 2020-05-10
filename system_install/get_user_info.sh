@@ -164,6 +164,7 @@ if [ -z $bootloader ]
 then
     re="[1-2]"
 
+    printf "\n"
     display_menu_bootloader
     read bootloader
 
