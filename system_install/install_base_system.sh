@@ -17,6 +17,8 @@ realname=
 user_choice=
 storagepass1=
 storagepass2=
+bootpass1=
+bootpass2=
 bootloader= # 1 - systemd-boot, 2 - GRUB
 
 # make place to save original config files (if not exist)

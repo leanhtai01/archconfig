@@ -21,6 +21,10 @@ case $bootloader in
 	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}2 cryptlvm -
 	;;
     2) # GRUB
+        dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
+	printf "$bootpass1" | cryptsetup luksFormat --type luks1 /dev/${install_dev}${part}2 -
+	printf "$bootpass1" | cryptsetup open /dev/${install_dev}${part}3 cryptboot -
+	
 	# create the LUKS encrypted container
 	dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=1M count=1
 	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}3 -
@@ -45,8 +49,7 @@ dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=1M count=1
 mkfs.fat -F32 /dev/${install_dev}${part}1
 if [ $bootloader = 2 ]
 then
-    dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
-    mkfs.ext4 /dev/${install_dev}${part}2
+    mkfs.ext4 /dev/mapper/cryptboot
 fi
 mkswap /dev/sys_vol_group/swap
 swapon /dev/sys_vol_group/swap
@@ -61,7 +64,7 @@ case $bootloader in
 	;;
     2) # GRUB
 	mkdir /mnt/boot
-	mount /dev/${install_dev}${part}2 /mnt/boot
+	mount /dev/mapper/cryptboot /mnt/boot
 	mkdir /mnt/boot/efi
 	mount /dev/${install_dev}${part}1 /mnt/boot/efi
 	;;

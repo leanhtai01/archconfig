@@ -186,3 +186,27 @@ case $bootloader in
 	;;
 esac
 printf " boot loader!\n"
+
+# let user enter password for encrypted boot partition (only for GRUB)
+re="[25]"
+if [ $bootloader = 2 ] && [[ "$user_choice" =~ $re ]]
+then
+    printf "\nSET BOOT'S PASSWORD\n"
+    if [ -z $bootpass1 ] || [ -z $bootpass2 ] || [ $bootpass1 != $bootpass2 ]
+    then
+	echo -n "Enter new boot's password: "
+	read -s bootpass1
+	echo -n -e "\nRetype boot's password: "
+	read -s bootpass2
+
+	while [ -z $bootpass1 ] || [ -z $bootpass2 ] || [ $bootpass1 != $bootpass2 ]
+	do
+	    echo -e "\nSorry, passwords do not match. Please try again!"
+	    echo -n "Enter boot's password: "
+	    read -s bootpass1
+	    echo -n -e "\nRetype boot's password: "
+	    read -s bootpass2
+	done
+    fi
+    echo -e "\nboot's password set successfully!"
+fi
