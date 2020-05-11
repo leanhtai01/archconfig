@@ -6,7 +6,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm grub
 
 case $user_choice in
     2) # lvm on luks
-        sed -i "/^GRUB_CMDLINE_LINUX=\"\"/s/\"\"/\"cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=\/dev\/sys_vol_group\/root rw\"" /mnt/etc/default/grub
+        sed -i "/^GRUB_CMDLINE_LINUX=\"\"/s/\"\"/\"cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=\/dev\/sys_vol_group\/root rw\"/" /mnt/etc/default/grub
 	sed -i "/^#GRUB_ENABLE_CRYPTODISK=y/s/^#//" /mnt/etc/default/grub
 	sed -i "/^GRUB_CMDLINE_LINUX=\"\"/s/rw/resume=UUID=${swapuuidvalue} &/" /mnt/etc/default/grub
 	;;
