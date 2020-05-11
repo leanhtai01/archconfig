@@ -23,7 +23,7 @@ case $bootloader in
     2) # GRUB
         dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
 	printf "$bootpass1" | cryptsetup luksFormat --type luks1 /dev/${install_dev}${part}2 -
-	printf "$bootpass1" | cryptsetup open /dev/${install_dev}${part}3 cryptboot -
+	printf "$bootpass1" | cryptsetup open /dev/${install_dev}${part}2 cryptboot -
 	
 	# create the LUKS encrypted container
 	dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=1M count=1
