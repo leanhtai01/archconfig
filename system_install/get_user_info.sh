@@ -208,5 +208,5 @@ then
 	    read -s bootpass2
 	done
     fi
-    echo -e "\nboot's password set successfully!"
+    echo -e "\nboot's password set successfully!\n"
 fi
