@@ -10,10 +10,10 @@ case $user_choice in
         sed -i "/^GRUB_CMDLINE_LINUX=\"\"/s/\"\"/\"cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=\/dev\/sys_vol_group\/root rw\"/" /mnt/etc/default/grub
 	sed -i "/^#GRUB_ENABLE_CRYPTODISK=y/s/^#//" /mnt/etc/default/grub
 	sed -i "/^GRUB_CMDLINE_LINUX=/s/rw/resume=UUID=${swapuuidvalue} &/" /mnt/etc/default/grub
-	mkdir -m 700 /etc/luks-keys
-	dd if=/dev/random of=/etc/luks-keys/cryptboot.key bs=1 count=256 status=progress
-        printf "$bootpass1" | cryptsetup luksAddKey /dev/${install_dev}${part}2 /etc/luks-keys/cryptboot.key -
-	printf "cryptboot    /dev/${install_dev}${part}2    /etc/luks-keys/cryptboot.key"
+	mkdir -m 700 /mnt/etc/luks-keys
+	dd if=/dev/random of=/mnt/etc/luks-keys/cryptboot.key bs=1 count=256 status=progress
+        printf "$bootpass1" | cryptsetup luksAddKey /dev/${install_dev}${part}2 /mnt/etc/luks-keys/cryptboot.key -
+	printf "cryptboot    /dev/${install_dev}${part}2    /etc/luks-keys/cryptboot.key" /mnt/etc/crypttab
 	;;
 esac
 
