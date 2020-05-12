@@ -15,5 +15,13 @@ mkfs.ext4 /dev/${install_dev}${part}6
 
 # mount the filesystems
 mount /dev/${install_dev}${part}6 /mnt
-mkdir /mnt/boot
-mount /dev/${install_dev}${part}2 /mnt/boot
+case $bootloader in
+    1)
+	mkdir /mnt/boot
+	mount /dev/${install_dev}${part}2 /mnt/boot
+	;;
+    2)
+	mkdir -p /mnt/boot/efi
+	mount /dev/${install_dev}${part}2 /mnt/boot/efi
+	;;
+esac
