@@ -157,7 +157,7 @@ display_menu_bootloader()
     printf "Choose a boot loader to install:\n"
     printf "1. systemd-boot\n"
     printf "2. GRUB (encrypted boot)\n"
-    printf "3. GRUB (non-encrypted boot)"
+    printf "3. GRUB (non-encrypted boot)\n"
     printf "Enter your choice: "
 }
 
