@@ -15,9 +15,16 @@ fi
 cryptlvmuuidvalue=
 case $user_choice in
     2) # lvm on luks
-	cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
-        printf "$bootpass1" | cryptsetup luksAddKey /dev/${install_dev}${part}2 /mnt/etc/luks-keys/cryptboot.key -
-	printf "cryptboot    /dev/${install_dev}${part}2    /etc/luks-keys/cryptboot.key\n" >> /mnt/etc/crypttab
+	case $bootloader in
+	    2) # GRUB (encrypted boot)
+		cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
+		printf "$bootpass1" | cryptsetup luksAddKey /dev/${install_dev}${part}2 /mnt/etc/luks-keys/cryptboot.key -
+		printf "cryptboot    /dev/${install_dev}${part}2    /etc/luks-keys/cryptboot.key\n" >> /mnt/etc/crypttab
+		;;
+	    3) # GRUB (non-encrypted boot)
+		cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
+		;;
+	esac
 	;;
     5) # dual-boot with Windows 10 (LVM on LUKS)
 	case $bootloader in
