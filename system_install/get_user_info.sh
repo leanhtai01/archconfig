@@ -156,13 +156,14 @@ display_menu_bootloader()
 {
     printf "Choose a boot loader to install:\n"
     printf "1. systemd-boot\n"
-    printf "2. GRUB\n"
+    printf "2. GRUB (encrypted boot)\n"
+    printf "3. GRUB (non-encrypted boot)"
     printf "Enter your choice: "
 }
 
 if [ -z $bootloader ]
 then
-    re="[1-2]"
+    re="[1-3]"
 
     printf "\n"
     display_menu_bootloader
@@ -182,7 +183,10 @@ case $bootloader in
 	printf "systemd-boot"
 	;;
     2)
-	printf "GRUB"
+	printf "GRUB (encrypted boot)"
+	;;
+    3)
+	printf "GRUB (non-encrypted boot)"
 	;;
 esac
 printf " boot loader!\n"
