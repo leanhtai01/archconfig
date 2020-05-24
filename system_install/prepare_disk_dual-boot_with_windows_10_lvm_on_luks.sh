@@ -3,10 +3,14 @@
 set -e
 
 # partition the disk
-if [ $bootloader = 2 ]
-then
-    sgdisk -n 0:0:+1G -t 0:8309 -c 0:"cryptboot" /dev/$install_dev
-fi
+case $bootloader in
+    2) # GRUB (encrypted boot)
+	sgdisk -n 0:0:+1G -t 0:8309 -c 0:"cryptboot" /dev/$install_dev
+	;;
+    3) # GRUB (non-encrypted boot)
+	sgdisk -n 0:0:+1G -t 0:8300 -c 0:"boot" /dev/$install_dev
+	;;
+esac
 sgdisk -n 0:0:0 -t 0:8309 -c 0:"cryptlvm" /dev/$install_dev
 
 case $bootloader in
@@ -18,11 +22,19 @@ case $bootloader in
 	# open the container
 	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}5 cryptlvm -
 	;;
-    2) # GRUB
+    2) # GRUB (encrypted boot)
 	dd if=/dev/zero of=/dev/${install_dev}${part}5 bs=1M count=1
 	printf "$bootpass1" | cryptsetup luksFormat --type luks1 /dev/${install_dev}${part}5 -
 	printf "$bootpass1" | cryptsetup open /dev/${install_dev}${part}5 cryptboot -
 	
+	# create the LUKS encrypted container
+	dd if=/dev/zero of=/dev/${install_dev}${part}6 bs=1M count=1
+	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}6 -
+
+	# open the container
+	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}6 cryptlvm -
+	;;
+    3) # GRUB (non-encrypted boot)
 	# create the LUKS encrypted container
 	dd if=/dev/zero of=/dev/${install_dev}${part}6 bs=1M count=1
 	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}6 -
@@ -43,10 +55,14 @@ lvcreate -L `expr 2 \* $size_of_ram`G sys_vol_group -n swap
 lvcreate -l +100%FREE sys_vol_group -n root
 
 # format the partitions
-if [ $bootloader = 2 ]
-then
-    mkfs.ext4 /dev/mapper/cryptboot
-fi
+case $bootloader in
+    2) # GRUB (encrypted boot)
+	mkfs.ext4 /dev/mapper/cryptboot
+	;;
+    3) # GRUB (non-encrypted boot)
+	mkfs.ext4 /dev/${install_dev}${part}5
+	;;
+esac
 mkswap /dev/sys_vol_group/swap
 swapon /dev/sys_vol_group/swap
 mkfs.ext4 /dev/sys_vol_group/root
@@ -58,9 +74,15 @@ case $bootloader in
 	mkdir /mnt/boot
 	mount /dev/${install_dev}${part}2 /mnt/boot
 	;;
-    2) # GRUB
+    2) # GRUB (encrypted boot)
 	mkdir /mnt/boot
 	mount /dev/mapper/cryptboot /mnt/boot
+	mkdir /mnt/boot/efi
+	mount /dev/${install_dev}${part}2 /mnt/boot/efi
+	;;
+    3) # GRUB (non-encrypted boot)
+	mkdir /mnt/boot
+	mount /dev/${install_dev}${part}5 /mnt/boot
 	mkdir /mnt/boot/efi
 	mount /dev/${install_dev}${part}2 /mnt/boot/efi
 	;;
