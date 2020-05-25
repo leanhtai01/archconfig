@@ -157,6 +157,8 @@ case $bootloader in
 	. $current_dir/configure_systemd-boot.sh
 	;;
     2)
+	;&
+    3)
 	. $current_dir/configure_grub.sh
 	;;
 esac
