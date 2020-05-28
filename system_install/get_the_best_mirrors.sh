@@ -15,3 +15,12 @@ done
 reflector --latest 5 --protocol http --protocol https --sort rate | sed -n '/^Server.*/,$p' >> $current_dir/tmp/closestmirrors
 rankmirrors -n 5 $current_dir/tmp/closestmirrors > /etc/pacman.d/mirrorlist
 
+# try the best mirror 3 times before move forward
+linum=$(sed -n '/^Server.*/=' /etc/pacman.d/mirrorlist | head -1)
+bestmirror=$(sed -n "${linum}"p /etc/pacman.d/mirrorlist)
+for i in {1..2..1}
+do    
+    sed -i "${linum} a ${bestmirror}" /etc/pacman.d/mirrorlist
+done
+
+
