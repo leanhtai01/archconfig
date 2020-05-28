@@ -173,3 +173,5 @@ then
     # fstab
     printf "/dev/mapper/swap    none    swap    sw    0 0\n" >> /mnt/etc/fstab
 fi
+
+. $current_dir/setup_secure_boot.sh
