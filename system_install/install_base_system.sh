@@ -21,6 +21,7 @@ bootpass1=
 bootpass2=
 bootloader= # 1 - systemd-boot, 2 - GRUB
 swapuuidvalue=
+setupsecureboot=
 
 # make place to save original config files (if not exist)
 original_config_files_path=$current_dir/original_config_files
@@ -174,4 +175,8 @@ then
     printf "/dev/mapper/swap    none    swap    sw    0 0\n" >> /mnt/etc/fstab
 fi
 
-. $current_dir/setup_secure_boot.sh
+if [ $setupsecureboot = "y" ]
+then    
+    . $current_dir/setup_secure_boot.sh
+fi
+

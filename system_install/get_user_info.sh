@@ -214,3 +214,16 @@ then
     fi
     echo -e "\nboot's password set successfully!\n"
 fi
+
+# ask user for setup secure boot
+printf "Do you want setup secure boot? [Y/n] "
+read setupsecureboot
+
+if [ -z $setupsecureboot ] || [ $setupsecureboot = "y" ] || [ $setupsecureboot = "Y" ]
+then
+    setupsecureboot="y"
+    printf "Ok! Secure boot will be setup!\n"
+else
+    setupsecureboot="n"
+    printf "Secure boot won't be setup!\n"
+fi
