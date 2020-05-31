@@ -24,7 +24,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm plasma digikam ktorrent ark do
 arch-chroot /mnt systemctl enable sddm
 
 # browsers
-arch-chroot /mnt pacman -Syu --needed --noconfirm firefox-developer-edition
+arch-chroot /mnt pacman -Syu --needed --noconfirm chromium
 
 # editors
 arch-chroot /mnt pacman -Syu --needed --noconfirm nano vi emacs gvim
