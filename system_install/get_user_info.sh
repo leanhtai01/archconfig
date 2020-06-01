@@ -222,8 +222,8 @@ read setupsecureboot
 if [ -z $setupsecureboot ] || [ $setupsecureboot = "y" ] || [ $setupsecureboot = "Y" ]
 then
     setupsecureboot="y"
-    printf "Ok! Secure boot will be setup!\n"
+    printf "Ok! Secure boot will be setup!\n\n"
 else
     setupsecureboot="n"
-    printf "Secure boot won't be setup!\n"
+    printf "Secure boot won't be setup!\n\n"
 fi
