@@ -2,37 +2,39 @@
 
 set -e
 
+current_dir=$(dirname $0)
+keys_dir=$current_dir/secure_boot_key_set
+
 printf "Enter a name to embed in the keys: "
 read NAME
 
+mkdir $keys_dir
+
 # create a GUID for owner identification
-uuidgen --random > GUID.txt
+uuidgen --random > $keys_dir/GUID.txt
 
 # Platform Key (PK)
-openssl req -newkey rsa:4096 -nodes -keyout PK.key -new -x509 -sha256 -days 3650 -subj "/CN=$NAME PK/" -out PK.crt
-openssl x509 -outform DER -in PK.crt -out PK.cer
-cert-to-efi-sig-list -g "$(< GUID.txt)" PK.crt PK.esl
-sign-efi-sig-list -g "$(< GUID.txt)" -k PK.key -c PK.crt PK PK.esl PK.auth
+openssl req -newkey rsa:4096 -nodes -keyout $keys_dir/PK.key -new -x509 -sha256 -days 3650 -subj "/CN=$NAME PK/" -out $keys_dir/PK.crt
+openssl x509 -outform DER -in $keys_dir/PK.crt -out $keys_dir/PK.cer
+cert-to-efi-sig-list -g "$(< $keys_dir/GUID.txt)" $keys_dir/PK.crt $keys_dir/PK.esl
+sign-efi-sig-list -g "$(< $keys_dir/GUID.txt)" -k $keys_dir/PK.key -c $keys_dir/PK.crt PK $keys_dir/PK.esl $keys_dir/PK.auth
 
 # Sign an empty file to allow removing Platform Key when in "User Mode"
-sign-efi-sig-list -g "$(< GUID.txt)" -c PK.crt -k PK.key PK /dev/null rm_PK.auth
+sign-efi-sig-list -g "$(< $keys_dir/GUID.txt)" -c $keys_dir/PK.crt -k $keys_dir/PK.key PK /dev/null $keys_dir/rm_PK.auth
 
 # Key Exchange Key (KEK)
-openssl req -newkey rsa:4096 -nodes -keyout KEK.key -new -x509 -sha256 -days 3650 -subj "/CN=$NAME KEK/" -out KEK.crt
-openssl x509 -outform DER -in KEK.crt -out KEK.cer
-cert-to-efi-sig-list -g "$(< GUID.txt)" KEK.crt KEK.esl
-sign-efi-sig-list -g "$(< GUID.txt)" -k PK.key -c PK.crt KEK KEK.esl KEK.auth
+openssl req -newkey rsa:4096 -nodes -keyout $keys_dir/KEK.key -new -x509 -sha256 -days 3650 -subj "/CN=$NAME KEK/" -out $keys_dir/KEK.crt
+openssl x509 -outform DER -in $keys_dir/KEK.crt -out $keys_dir/KEK.cer
+cert-to-efi-sig-list -g "$(< $keys_dir/GUID.txt)" $keys_dir/KEK.crt $keys_dir/KEK.esl
+sign-efi-sig-list -g "$(< $keys_dir/GUID.txt)" -k $keys_dir/PK.key -c $keys_dir/PK.crt KEK $keys_dir/KEK.esl $keys_dir/KEK.auth
 
 # Signature Database Key (db)
-openssl req -newkey rsa:4096 -nodes -keyout db.key -new -x509 -sha256 -days 3650 -subj "/CN=$NAME db/" -out db.crt
-openssl x509 -outform DER -in db.crt -out db.cer
-cert-to-efi-sig-list -g "$(< GUID.txt)" db.crt db.esl
-sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db db.esl db.auth
+openssl req -newkey rsa:4096 -nodes -keyout $keys_dir/db.key -new -x509 -sha256 -days 3650 -subj "/CN=$NAME db/" -out $keys_dir/db.crt
+openssl x509 -outform DER -in $keys_dir/db.crt -out $keys_dir/db.cer
+cert-to-efi-sig-list -g "$(< $keys_dir/GUID.txt)" $keys_dir/db.crt $keys_dir/db.esl
+sign-efi-sig-list -g "$(< $keys_dir/GUID.txt)" -k $keys_dir/KEK.key -c $keys_dir/KEK.crt db $keys_dir/db.esl $keys_dir/db.auth
 
-chmod 0600 *.key
-
-mkdir secure_boot_key_set
-mv *.key *.crt *.cer *.esl *.auth GUID.txt secure_boot_key_set/
+chmod 0600 $keys_dir/*.key
 
 echo ""
 echo "For use with KeyTool, copy the *.auth and *.esl files to a FAT USB"
