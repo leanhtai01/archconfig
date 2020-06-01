@@ -31,7 +31,9 @@ sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db db.esl db.auth
 
 chmod 0600 *.key
 
-echo ""
+mkdir secure_boot_key_set
+mv *.key *.crt *.cer *.esl *.auth GUID.txt secure_boot_key_set/
+
 echo ""
 echo "For use with KeyTool, copy the *.auth and *.esl files to a FAT USB"
 echo "flash drive or to your EFI System Partition (ESP)."
