@@ -33,7 +33,10 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm nano vi emacs gvim
 arch-chroot /mnt pacman -Syu --needed --noconfirm gdb cmake jdk-openjdk jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples git go dotnet-sdk lazarus-qt5 intellij-idea-community-edition pycharm-community-edition valgrind tk dia
 
 # tools
-arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wimlib expect cdrtools mc pacman-contrib fuseiso efitools sbsigntools hdparm keepassxc remmina
+arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wimlib expect cdrtools mc pacman-contrib fuseiso efitools sbsigntools hdparm keepassxc
+
+# remote desktop
+arch-chroot /mnt pacman -Syu --needed --noconfirm remmina libvncserver freerdp
 
 # office and learning
 arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave libreoffice-fresh gimp inkscape calibre klavaro kchmviewer geogebra freemind irssi hexchat thunderbird
