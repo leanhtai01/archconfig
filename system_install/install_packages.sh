@@ -39,7 +39,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wiml
 arch-chroot /mnt pacman -Syu --needed --noconfirm remmina libvncserver freerdp
 
 # office and learning
-arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave libreoffice-fresh gimp inkscape calibre klavaro kchmviewer geogebra freemind irssi hexchat thunderbird
+arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave libreoffice-fresh gimp inkscape calibre klavaro kchmviewer geogebra freemind irssi hexchat thunderbird goldendict
 
 # multimedia
 arch-chroot /mnt pacman -Syu --needed --noconfirm obs-studio vlc kdenlive frei0r-plugins audacity aegisub kid3 kodi
