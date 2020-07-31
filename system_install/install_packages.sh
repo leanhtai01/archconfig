@@ -19,9 +19,12 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm pulseaudio-alsa alsa-utils pul
 # desktop environment
 arch-chroot /mnt pacman -Syu --needed --noconfirm xorg-server xorg-xrandr lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel lib32-vulkan-intel lib32-vkd3d vkd3d xf86-video-intel lib32-mesa mesa mesa-demos
 
+# GNOME
+arch-chroot /mnt pacman -Syu --needed --noconfirm gnome alacarte file-roller seahorse gst-libav seahorse-nautilus gnome-sound-recorder gnome-tweak-tool gnome-clocks gnome-calendar rhythmbox gedit gedit-plugins gprename gnome-builder gnome-chess gnuchess transmission-gtk chrome-gnome-shell
+arch-chroot /mnt systemctl enable gdm
+
 # Plasma
-arch-chroot /mnt pacman -Syu --needed --noconfirm plasma digikam ktorrent ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kamoso kate kcalc kdegraphics-mobipocket kdegraphics-thumbnailers kdf khelpcenter kleopatra kmousetool knotes kolourpaint kompare konsole krdc krfb kruler ksystemlog kwalletmanager okular spectacle sweeper umbrello gnome-disk-utility gnome-clocks krusader
-arch-chroot /mnt systemctl enable sddm
+arch-chroot /mnt pacman -Syu --needed --noconfirm plasma digikam ktorrent ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kamoso kate kcalc kdegraphics-mobipocket kdegraphics-thumbnailers kdf khelpcenter kleopatra kmousetool knotes kolourpaint kompare konsole krdc krfb kruler ksystemlog kwalletmanager okular spectacle sweeper umbrello gnome-disk-utility krusader
 
 # browsers
 arch-chroot /mnt pacman -Syu --needed --noconfirm chromium firefox-developer-edition opera torbrowser-launcher
@@ -33,7 +36,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm nano vi emacs gvim
 arch-chroot /mnt pacman -Syu --needed --noconfirm gdb cmake jdk-openjdk jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples git go dotnet-sdk lazarus-qt5 intellij-idea-community-edition pycharm-community-edition valgrind tk dia
 
 # tools
-arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wimlib expect cdrtools mc pacman-contrib fuseiso efitools sbsigntools hdparm keepassxc transmission-qt
+arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wimlib expect cdrtools mc pacman-contrib fuseiso efitools sbsigntools hdparm keepassxc
 
 # remote desktop
 arch-chroot /mnt pacman -Syu --needed --noconfirm remmina libvncserver freerdp
