@@ -3,11 +3,11 @@
 set -e
 
 current_dir=$(dirname $0)
-closest_country="VN"
+closest_countries="CN TW VN SG TH US GB RU JP IN"
 
 mkdir $current_dir/tmp
 
-for country in $closest_country
+for country in $closest_countries
 do
     curl -s "https://www.archlinux.org/mirrorlist/?country=$country&protocol=http&protocol=https&ip_version=4&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' >> $current_dir/tmp/closestmirrors
 done
