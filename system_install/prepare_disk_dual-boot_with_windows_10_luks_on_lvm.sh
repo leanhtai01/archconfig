@@ -6,11 +6,11 @@ set -e
 sgdisk -n 0:0:0 -t 0:8e00 -c 0:"lvm" /dev/$install_dev
 
 # create physical volume
-dd if=/dev/zero of=/dev/${install_dev}${part}5 bs=1M count=1
-pvcreate /dev/${install_dev}${part}5
+dd if=/dev/zero of=/dev/${install_dev}${part}4 bs=1M count=1
+pvcreate /dev/${install_dev}${part}4
 
 # create volume group
-vgcreate sys_vol_group /dev/${install_dev}${part}5
+vgcreate sys_vol_group /dev/${install_dev}${part}4
 
 # create logical volumes
 lvcreate -L `expr 2 \* $size_of_ram`G sys_vol_group -n cryptswap
