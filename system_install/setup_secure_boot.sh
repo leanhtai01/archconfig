@@ -3,13 +3,7 @@
 set -e
 
 parent_dir=$(cd $(dirname $0)/..; pwd)
-partnum=2
-
-re="[123]"
-if [[ "$user_choice" =~ $re ]]
-then
-    partnum=1
-fi
+partnum=1
 
 arch-chroot /mnt pacman -Syu --needed --noconfirm efitools
 
