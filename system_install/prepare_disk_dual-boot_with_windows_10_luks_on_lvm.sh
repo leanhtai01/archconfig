@@ -26,4 +26,4 @@ mkfs.ext4 /dev/mapper/root
 # mount the filesystems
 mount /dev/mapper/root /mnt
 mkdir /mnt/boot
-mount /dev/${install_dev}${part}2 /mnt/boot
+mount /dev/${install_dev}${part}1 /mnt/boot

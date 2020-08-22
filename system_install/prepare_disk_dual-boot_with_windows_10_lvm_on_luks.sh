@@ -72,18 +72,18 @@ mount /dev/sys_vol_group/root /mnt
 case $bootloader in
     1) # systemd-boot
 	mkdir /mnt/boot
-	mount /dev/${install_dev}${part}2 /mnt/boot
+	mount /dev/${install_dev}${part}1 /mnt/boot
 	;;
     2) # GRUB (encrypted boot)
 	mkdir /mnt/boot
 	mount /dev/mapper/cryptboot /mnt/boot
 	mkdir /mnt/boot/efi
-	mount /dev/${install_dev}${part}2 /mnt/boot/efi
+	mount /dev/${install_dev}${part}1 /mnt/boot/efi
 	;;
     3) # GRUB (non-encrypted boot)
 	mkdir /mnt/boot
 	mount /dev/${install_dev}${part}5 /mnt/boot
 	mkdir /mnt/boot/efi
-	mount /dev/${install_dev}${part}2 /mnt/boot/efi
+	mount /dev/${install_dev}${part}1 /mnt/boot/efi
 	;;
 esac

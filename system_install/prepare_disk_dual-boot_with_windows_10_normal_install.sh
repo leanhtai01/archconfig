@@ -18,10 +18,10 @@ mount /dev/${install_dev}${part}6 /mnt
 case $bootloader in
     1)
 	mkdir /mnt/boot
-	mount /dev/${install_dev}${part}2 /mnt/boot
+	mount /dev/${install_dev}${part}1 /mnt/boot
 	;;
     2)
 	mkdir -p /mnt/boot/efi
-	mount /dev/${install_dev}${part}2 /mnt/boot/efi
+	mount /dev/${install_dev}${part}1 /mnt/boot/efi
 	;;
 esac
