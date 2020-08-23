@@ -3,7 +3,7 @@
 set -e
 
 arch-chroot /mnt bootctl install
-echo "default Arch Linux" > /mnt/boot/loader/loader.conf
+echo "default archlinux" > /mnt/boot/loader/loader.conf
 echo "timeout 5" >> /mnt/boot/loader/loader.conf
 echo "console-mode keep" >> /mnt/boot/loader/loader.conf
 echo "editor no" >> /mnt/boot/loader/loader.conf
