@@ -219,7 +219,8 @@ fi
 printf "\nDo you want setup secure boot? [y/N] "
 read setupsecureboot
 
-if [ $setupsecureboot = "y" ] || [ $setupsecureboot = "Y" ]
+re="[yY]"
+if [ -z $setupsecureboot ] || ! [[ "$setupsecureboot" =~ $re ]]
 then
     setupsecureboot="y"
     printf "Ok! Secure boot will be setup!\n\n"
