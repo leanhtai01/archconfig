@@ -8,7 +8,7 @@ sgdisk -n 0:0:+1G -t 0:ef00 -c 0:"efi" /dev/$install_dev
 sgdisk -n 0:0:0 -t 0:8e00 -c 0:"lvm" /dev/$install_dev
 
 # create physical volume
-dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
+dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=4M count=1
 pvcreate /dev/${install_dev}${part}2
 
 # create volume group
@@ -23,7 +23,7 @@ printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/sys_vol_group/c
 printf "$storagepass1" | cryptsetup open /dev/sys_vol_group/cryptroot root -
 
 # format the partitions
-dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=1M count=1
+dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=4M count=1
 mkfs.fat -F32 /dev/${install_dev}${part}1
 mkfs.ext4 /dev/mapper/root
 

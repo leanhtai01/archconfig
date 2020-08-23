@@ -21,8 +21,9 @@ then
 fi
 
 # partition the disk
+dd if=/dev/zero of=/dev/$install_dev bs=4M count=1
 sgdisk -Z /dev/$install_dev
 sgdisk -n 0:0:+1G -t 0:ef00 -c 0:"efi" /dev/$install_dev
 sgdisk -n 0:0:+1G -t 0:0c01 -c 0:"ms_reserved" /dev/$install_dev
-dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=1M count=1
-dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
+dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=4M count=1
+dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=4M count=1

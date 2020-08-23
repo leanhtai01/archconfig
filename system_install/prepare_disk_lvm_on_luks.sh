@@ -18,19 +18,19 @@ sgdisk -n 0:0:0 -t 0:8309 -c 0:"cryptlvm" /dev/$install_dev
 case $bootloader in
     1) # systemd-boot
 	# create the LUKS encrypted container
-	dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
+	dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=4M count=1
 	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}2 -
 
 	# open the container
 	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}2 cryptlvm -
 	;;
     2) # GRUB (encrypted boot)
-        dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=1M count=1
+        dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=4M count=1
 	printf "$bootpass1" | cryptsetup luksFormat --type luks1 /dev/${install_dev}${part}2 -
 	printf "$bootpass1" | cryptsetup open /dev/${install_dev}${part}2 cryptboot -
 	
 	# create the LUKS encrypted container
-	dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=1M count=1
+	dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=4M count=1
 	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}3 -
 
 	# open the container
@@ -38,7 +38,7 @@ case $bootloader in
 	;;
     3) # GRUB (non-encrypted boot)
 	# create the LUKS encrypted container
-	dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=1M count=1
+	dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=4M count=1
 	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}3 -
 
 	# open the container
@@ -57,7 +57,7 @@ lvcreate -L `expr 2 \* $size_of_ram`G sys_vol_group -n swap
 lvcreate -l +100%FREE sys_vol_group -n root
 
 # format the partitions
-dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=1M count=1
+dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=4M count=1
 mkfs.fat -F32 /dev/${install_dev}${part}1
 case $bootloader in
     2) # GRUB (encrypted boot)
