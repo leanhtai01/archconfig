@@ -31,7 +31,7 @@ case $user_choice in
 	    2) # GRUB (encrypted boot)
 		cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}5)
 		printf "$bootpass1" | cryptsetup luksAddKey /dev/${install_dev}${part}4 /mnt/etc/luks-keys/cryptboot.key -
-		printf "cryptboot    /dev/${install_dev}${part}5    /etc/luks-keys/cryptboot.key\n" >> /mnt/etc/crypttab
+		printf "cryptboot    /dev/${install_dev}${part}4    /etc/luks-keys/cryptboot.key\n" >> /mnt/etc/crypttab
 		;;
 	    3) # GRUB (non-encrypted boot)
 		cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}5)
