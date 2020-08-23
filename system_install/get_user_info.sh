@@ -222,9 +222,9 @@ read setupsecureboot
 re="[yY]"
 if [ -z $setupsecureboot ] || ! [[ "$setupsecureboot" =~ $re ]]
 then
-    setupsecureboot="y"
-    printf "Ok! Secure boot will be setup!\n\n"
-else
     setupsecureboot="n"
     printf "Secure boot won't be setup!\n\n"
+else
+    setupsecureboot="y"
+    printf "Ok! Secure boot will be setup!\n\n"
 fi
