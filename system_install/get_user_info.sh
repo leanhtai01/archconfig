@@ -216,10 +216,10 @@ then
 fi
 
 # ask user for setup secure boot
-printf "\nDo you want setup secure boot? [Y/n] "
+printf "\nDo you want setup secure boot? [y/N] "
 read setupsecureboot
 
-if [ -z $setupsecureboot ] || [ $setupsecureboot = "y" ] || [ $setupsecureboot = "Y" ]
+if [ $setupsecureboot = "y" ] || [ $setupsecureboot = "Y" ]
 then
     setupsecureboot="y"
     printf "Ok! Secure boot will be setup!\n\n"
