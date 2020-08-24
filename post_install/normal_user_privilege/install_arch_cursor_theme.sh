@@ -5,7 +5,7 @@ set -e
 parent_dir=$(cd $(dirname $0)/..; pwd)
 grandpa_dir=$(cd $parent_dir/..; pwd)
 
-if ! [ -d "~/.icons" ]
+if ! [ -d ~/.icons ]
 then
     mkdir ~/.icons
 fi
