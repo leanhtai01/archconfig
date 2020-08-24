@@ -2,7 +2,7 @@
 
 set -e
 
-arch-chroot /mnt pacman -Syu --needed --noconfirm grub
+arch-chroot /mnt pacman -Syu --needed --noconfirm grub grub-customizer
 
 # create keyfile for encrypted boot partition (LVM on LUKS)
 re="[25]"
