@@ -49,12 +49,12 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm virtualbox virtualbox-guest-is
 
 # wireshark
 arch-chroot /mnt pacman -Syu --needed --noconfirm wireshark-qt
-arch-chroot /mnt gpasswd -a leanhtai01 wireshark
+arch-chroot /mnt gpasswd -a $newusername wireshark
 
 # docker
 arch-chroot /mnt pacman -Syu --needed --noconfirm docker
 arch-chroot /mnt systemctl enable docker
-arch-chroot /mnt gpasswd -a leanhtai01 docker
+arch-chroot /mnt gpasswd -a $newusername docker
 
 # games
 arch-chroot /mnt pacman -Syu --needed --noconfirm supertuxkart wesnoth minetest minetest-server teeworlds kbounce kigo bovo quadrapassel steam steam-native-runtime
