@@ -54,11 +54,12 @@ then
     fi
 fi
 
+arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id="Arch Linux" --recheck
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+
 # configure GRUB background image
 mkdir /mnt/boot/grub/background
 cp $parent_dir/data/grubimage.png /mnt/boot/grub/background
 sed -i "/^#GRUB_BACKGROUND=/s/^#//" /mnt/etc/default/grub
 sed -i "/^GRUB_BACKGROUND=/s/\".*\"/\"\/boot\/grub\/background\/grubimage.png\"/" /mnt/etc/default/grub
-
-arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id="Arch Linux" --recheck
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
