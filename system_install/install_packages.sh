@@ -24,7 +24,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm gnome alacarte file-roller sea
 arch-chroot /mnt systemctl enable gdm
 
 # KDE packages
-arch-chroot /mnt pacman -Syu --needed --noconfirm digikam khelpcenter kolourpaint umbrello krusader
+arch-chroot /mnt pacman -Syu --needed --noconfirm digikam khelpcenter kolourpaint krusader
 
 # browsers
 arch-chroot /mnt pacman -Syu --needed --noconfirm chromium firefox-developer-edition opera torbrowser-launcher
@@ -33,7 +33,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm chromium firefox-developer-edi
 arch-chroot /mnt pacman -Syu --needed --noconfirm nano vi emacs gvim
 
 # programming packages
-arch-chroot /mnt pacman -Syu --needed --noconfirm gdb cmake jdk-openjdk jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples git go dotnet-sdk lazarus-qt5 intellij-idea-community-edition pycharm-community-edition valgrind tk dia
+arch-chroot /mnt pacman -Syu --needed --noconfirm gdb cmake jdk-openjdk jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples git go dotnet-sdk lazarus-qt5 intellij-idea-community-edition pycharm-community-edition valgrind tk dia plantuml umbrello
 
 # tools
 arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wimlib expect cdrtools mc pacman-contrib fuseiso efitools sbsigntools hdparm keepassxc
