@@ -23,8 +23,8 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm xorg-server xorg-xrandr lib32-
 arch-chroot /mnt pacman -Syu --needed --noconfirm gnome alacarte file-roller seahorse gst-libav seahorse-nautilus gnome-sound-recorder gnome-tweak-tool gnome-clocks gnome-calendar rhythmbox gedit gedit-plugins gprename gnome-builder gnome-chess gnuchess transmission-gtk chrome-gnome-shell
 arch-chroot /mnt systemctl enable gdm
 
-# Plasma
-arch-chroot /mnt pacman -Syu --needed --noconfirm plasma digikam ark dolphin dolphin-plugins ffmpegthumbs gwenview kalarm kamoso kate kcalc kdegraphics-mobipocket kdegraphics-thumbnailers kdf khelpcenter kleopatra kmousetool knotes kolourpaint kompare konsole krdc krfb kruler ksystemlog kwalletmanager okular spectacle sweeper umbrello gnome-disk-utility krusader
+# KDE packages
+arch-chroot /mnt pacman -Syu --needed --noconfirm digikam khelpcenter kolourpaint umbrello krusader
 
 # browsers
 arch-chroot /mnt pacman -Syu --needed --noconfirm chromium firefox-developer-edition opera torbrowser-launcher
