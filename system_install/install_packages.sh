@@ -20,11 +20,8 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm pulseaudio-alsa alsa-utils pul
 arch-chroot /mnt pacman -Syu --needed --noconfirm xorg-server xorg-xrandr lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel lib32-vulkan-intel lib32-vkd3d vkd3d xf86-video-intel lib32-mesa mesa mesa-demos
 
 # GNOME
-arch-chroot /mnt pacman -Syu --needed --noconfirm gnome alacarte file-roller seahorse gst-libav seahorse-nautilus gnome-sound-recorder gnome-tweak-tool gnome-clocks gnome-calendar rhythmbox gedit gedit-plugins gprename gnome-builder gnome-chess gnuchess transmission-gtk chrome-gnome-shell
-arch-chroot /mnt systemctl enable gdm
-
-# KDE packages
-arch-chroot /mnt pacman -Syu --needed --noconfirm digikam khelpcenter kolourpaint krusader
+arch-chroot /mnt pacman -Syu --needed --noconfirm gnome alacarte file-roller seahorse gst-libav seahorse-nautilus gnome-sound-recorder gnome-tweak-tool gnome-clocks gnome-calendar rhythmbox gedit gedit-plugins gprename gnome-builder gnome-chess gnuchess transmission-gtk chrome-gnome-shell khelpcenter
+arch-chroot /mnt systemctl enable gdm  
 
 # browsers
 arch-chroot /mnt pacman -Syu --needed --noconfirm chromium firefox-developer-edition opera torbrowser-launcher
@@ -36,16 +33,16 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm nano vi emacs gvim
 arch-chroot /mnt pacman -Syu --needed --noconfirm gdb cmake jdk-openjdk jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples git go dotnet-sdk lazarus-qt5 intellij-idea-community-edition pycharm-community-edition valgrind tk dia plantuml umbrello
 
 # tools
-arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wimlib expect cdrtools mc pacman-contrib fuseiso efitools sbsigntools hdparm keepassxc
+arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl reflector wimlib expect cdrtools mc pacman-contrib fuseiso efitools sbsigntools hdparm keepassxc krusader
 
 # remote desktop
 arch-chroot /mnt pacman -Syu --needed --noconfirm remmina libvncserver freerdp
 
 # office and learning
-arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave libreoffice-fresh gimp inkscape calibre klavaro kchmviewer geogebra freemind irssi hexchat thunderbird goldendict sweethome3d
+arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave libreoffice-fresh gimp inkscape calibre klavaro kchmviewer geogebra freemind irssi hexchat thunderbird goldendict sweethome3d kolourpaint
 
 # multimedia
-arch-chroot /mnt pacman -Syu --needed --noconfirm obs-studio vlc kdenlive frei0r-plugins audacity aegisub kid3 kodi
+arch-chroot /mnt pacman -Syu --needed --noconfirm obs-studio vlc kdenlive frei0r-plugins audacity aegisub kid3 kodi digikam
 
 # virtualbox
 arch-chroot /mnt pacman -Syu --needed --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-dkms
