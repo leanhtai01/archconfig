@@ -42,7 +42,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm remmina libvncserver freerdp
 arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave libreoffice-fresh gimp inkscape calibre klavaro kchmviewer geogebra freemind irssi hexchat thunderbird goldendict sweethome3d kolourpaint gnome-calendar
 
 # multimedia
-arch-chroot /mnt pacman -Syu --needed --noconfirm obs-studio vlc kdenlive frei0r-plugins audacity aegisub kid3 kodi digikam rhythmbox gst-libav blender
+arch-chroot /mnt pacman -Syu --needed --noconfirm obs-studio vlc kdenlive frei0r-plugins audacity aegisub kid3 kodi digikam rhythmbox gst-libav blender shotcut openshot
 
 # virtualbox
 arch-chroot /mnt pacman -Syu --needed --noconfirm virtualbox virtualbox-guest-iso virtualbox-host-dkms
