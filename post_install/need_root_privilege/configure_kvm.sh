@@ -9,7 +9,7 @@ then
     mkdir $original_config_files_path
 fi
 
-pacman -Syu --needed --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat virt-viewer dmidecode
+pacman -Syu --needed --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils virt-viewer dmidecode
 systemctl enable libvirtd
 systemctl start libvirtd
 
