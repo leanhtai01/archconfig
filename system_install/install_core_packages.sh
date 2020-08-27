@@ -32,7 +32,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm gdb cmake git go
 arch-chroot /mnt pacman -Syu --needed --noconfirm reflector wimlib transmission-gtk gnome-clocks alacarte file-roller
 
 # office and learning
-arch-chroot /mnt pacman -Syu --needed --noconfirm libreoffice-fresh calibre kchmviewer goldendict kolourpaint
+arch-chroot /mnt pacman -Syu --needed --noconfirm libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird
 
 # multimedia
 arch-chroot /mnt pacman -Syu --needed --noconfirm obs-studio vlc kdenlive frei0r-plugins

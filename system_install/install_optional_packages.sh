@@ -25,7 +25,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl expect cdrtool
 arch-chroot /mnt pacman -Syu --needed --noconfirm remmina libvncserver freerdp
 
 # office and learning
-arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave gimp inkscape klavaro geogebra freemind irssi hexchat thunderbird sweethome3d texstudio stellarium
+arch-chroot /mnt pacman -Syu --needed --noconfirm librecad qcad lilypond gnucash octave gimp inkscape klavaro geogebra freemind irssi hexchat sweethome3d texstudio stellarium
 
 # multimedia
 arch-chroot /mnt pacman -Syu --needed --noconfirm audacity aegisub kid3 kodi digikam rhythmbox gst-libav blender shotcut openshot handbrake handbrake-cli mkvtoolnix-gui pencil2d
