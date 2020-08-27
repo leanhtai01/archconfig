@@ -26,7 +26,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm chromium
 arch-chroot /mnt pacman -Syu --needed --noconfirm emacs
 
 # programming packages
-arch-chroot /mnt pacman -Syu --needed --noconfirm gdb cmake git
+arch-chroot /mnt pacman -Syu --needed --noconfirm gdb cmake git go
 
 # tools
 arch-chroot /mnt pacman -Syu --needed --noconfirm reflector wimlib transmission-gtk gnome-clocks alacarte file-roller

@@ -16,7 +16,7 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm firefox-developer-edition oper
 arch-chroot /mnt pacman -Syu --needed --noconfirm nano vi gvim gedit gedit-plugins
 
 # programming packages
-arch-chroot /mnt pacman -Syu --needed --noconfirm jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples lazarus-qt5 jdk-openjdk go dotnet-sdk intellij-idea-community-edition pycharm-community-edition valgrind tk dia plantuml umbrello
+arch-chroot /mnt pacman -Syu --needed --noconfirm jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples lazarus-qt5 jdk-openjdk dotnet-sdk intellij-idea-community-edition pycharm-community-edition valgrind tk dia plantuml umbrello
 
 # tools
 arch-chroot /mnt pacman -Syu --needed --noconfirm wget youtube-dl expect cdrtools mc pacman-contrib fuseiso efitools sbsigntools hdparm keepassxc krusader gprename pdftk
