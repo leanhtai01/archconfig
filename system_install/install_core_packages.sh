@@ -22,7 +22,7 @@ $install_command ttf-dejavu ttf-liberation adobe-source-han-sans-cn-fonts adobe-
 $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
 
 # desktop environment
-$install_command xorg-server xorg-xrandr lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel lib32-vulkan-intel lib32-vkd3d vkd3d xf86-video-intel lib32-mesa mesa mesa-demos
+$install_command xorg lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel lib32-vulkan-intel lib32-vkd3d vkd3d xf86-video-intel lib32-mesa mesa mesa-demos
 
 # GNOME
 $install_command gnome gnome-extra seahorse seahorse-nautilus chrome-gnome-shell khelpcenter gnome-calendar
