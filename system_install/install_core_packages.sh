@@ -57,10 +57,10 @@ $install_command docker
 ${prefix}systemctl enable docker
 
 # add user to group wireshark, docker
-if [ ! -z $1 ]
+if [ ! -z $2 ]
 then
-    ${prefix}gpasswd -a $1 wireshark
-    ${prefix}gpasswd -a $1 docker
+    ${prefix}gpasswd -a $2 wireshark
+    ${prefix}gpasswd -a $2 docker
 fi
 
 # games
