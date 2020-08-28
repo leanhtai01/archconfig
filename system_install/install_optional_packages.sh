@@ -28,7 +28,7 @@ $install_command nano vi gvim gedit gedit-plugins
 $install_command jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples lazarus-qt5 jdk-openjdk dotnet-sdk intellij-idea-community-edition pycharm-community-edition valgrind tk dia plantuml umbrello
 
 # tools
-$install_command wget youtube-dl expect cdrtools mc pacman-contrib fuseiso efitools sbsigntools hdparm keepassxc krusader gprename pdftk
+$install_command wget youtube-dl expect cdrtools mc pacman-contrib fuseiso efitools sbsigntools krusader gprename pdftk
 
 # remote desktop
 $install_command remmina libvncserver freerdp
