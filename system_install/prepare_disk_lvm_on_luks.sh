@@ -64,6 +64,7 @@ case $bootloader in
 	mkfs.ext4 /dev/mapper/cryptboot
 	;;
     3) # GRUB (non-encrypted boot)
+	dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=4M count=1
 	mkfs.ext4 /dev/${install_dev}${part}2
 	;;
 esac
