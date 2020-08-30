@@ -3,6 +3,8 @@
 set -e
 
 # partition the disk
+dd if=/dev/zero of=/dev/$install_dev bs=4M count=1
+parted /dev/$install_dev mklabel gpt
 sgdisk -Z /dev/$install_dev
 sgdisk -n 0:0:+1G -t 0:ef00 -c 0:"efi" /dev/$install_dev
 case $bootloader in
