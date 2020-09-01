@@ -20,7 +20,7 @@ sudo mkfs.fat -F32 /dev/${device}1 -n "WINDOWS10"
 sudo mkdir win_img tmp bootable_usb
 sudo mount $path_to_iso win_img -o loop
 sudo cp -r win_img/* tmp/
-sudo wimplit tmp/sources/install.wim tmp/sources/install.swm 2500
+sudo wimsplit tmp/sources/install.wim tmp/sources/install.swm 2500
 sudo rm tmp/sources/install.wim
 sudo mount /dev/${device}1 bootable_usb
 sudo cp -r tmp/* bootable_usb/
