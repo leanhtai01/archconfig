@@ -7,3 +7,4 @@ newusername=
 
 . $current_dir/install_base_system.sh
 . $current_dir/install_core_packages.sh in_chroot $newusername intel
+. $current_dir/install_optional_packages.sh in_chroot
