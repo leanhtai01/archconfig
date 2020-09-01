@@ -21,7 +21,7 @@ sudo mkdir win_img tmp bootable_usb
 sudo mount $path_to_iso win_img -o loop
 sudo cp -r win_img/* tmp/
 sudo wimsplit tmp/sources/install.wim tmp/sources/install.swm 2500
-sudo printf "[Channel]\r\nRetail\r\n" > /tmp/sources/ei.cfg
+sudo printf "[Channel]\r\nRetail\r\n" > tmp/sources/ei.cfg
 sudo rm tmp/sources/install.wim
 sudo mount /dev/${device}1 bootable_usb
 sudo cp -r tmp/* bootable_usb/
