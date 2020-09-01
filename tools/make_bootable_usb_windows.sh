@@ -16,7 +16,7 @@ sudo dd if=/dev/zero of=/dev/$device bs=4M count=1
 sudo parted /dev/$device mklabel gpt
 sudo sgdisk -Z /dev/$device
 sudo sgdisk -n 0:0:0 /dev/$device
-sudo mkfs.fat -F32 /dev/$device -n "WINDOWS10"
+sudo mkfs.fat -F32 /dev/${device}1 -n "WINDOWS10"
 sudo mkdir win_img tmp bootable_usb
 sudo mount path_to_iso win_img -o loop
 sudo cp -r win_img/* tmp/
