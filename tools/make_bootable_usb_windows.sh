@@ -17,14 +17,14 @@ sudo parted /dev/$device mklabel gpt
 sudo sgdisk -Z /dev/$device
 sudo sgdisk -n 0:0:0 /dev/$device
 sudo mkfs.fat -F32 /dev/${device}1 -n "WINDOWS10"
-sudo mkdir win_img tmp bootable_usb
+mkdir win_img tmp bootable_usb
 sudo mount $path_to_iso win_img -o loop
-sudo cp -r win_img/* tmp/
-sudo wimsplit tmp/sources/install.wim tmp/sources/install.swm 2500
-sudo printf "[Channel]\r\nRetail\r\n" > tmp/sources/ei.cfg
-sudo rm tmp/sources/install.wim
+cp -r win_img/* tmp/
+wimsplit tmp/sources/install.wim tmp/sources/install.swm 2500
+printf "[Channel]\r\nRetail\r\n" > tmp/sources/ei.cfg
+rm tmp/sources/install.wim
 sudo mount /dev/${device}1 bootable_usb
-sudo cp -r tmp/* bootable_usb/
+cp -r tmp/* bootable_usb/
 sudo umount bootable_usb/ win_img/
 sudo rm -r tmp/ win_img/ bootable_usb/
 udisksctl power-off -b /dev/$device
