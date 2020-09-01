@@ -3,7 +3,7 @@
 set -e
 
 path_to_iso=
-path_to_sig
+path_to_sig=
 device=
 
 lsblk
