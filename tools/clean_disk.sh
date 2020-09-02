@@ -13,6 +13,6 @@ then
     read device
 fi
 
-dd if=/dev/zero of=/dev/$device bs=4M count=1
-parted /dev/$device mklabel gpt
-sgdisk -Z /dev/$device
+sudo dd if=/dev/zero of=/dev/$device bs=4M count=1
+sudo parted /dev/$device mklabel gpt
+sudo sgdisk -Z /dev/$device
