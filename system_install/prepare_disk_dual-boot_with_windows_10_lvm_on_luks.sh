@@ -90,7 +90,7 @@ case $bootloader in
 	;;
     3) # GRUB (non-encrypted boot)
 	mkdir /mnt/boot
-	mount /dev/${install_dev}${part}${luks_partnum} /mnt/boot
+	mount /dev/${install_dev}${part}${boot_partnum} /mnt/boot
 	mkdir /mnt/boot/efi
 	mount /dev/${install_dev}${part}${efi_partnum} /mnt/boot/efi
 	;;
