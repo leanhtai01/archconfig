@@ -2,6 +2,10 @@
 
 set -e
 
+# variables
+root_partnum=6
+luks_partnum=5
+
 arch-chroot /mnt bootctl install
 echo "default archlinux" > /mnt/boot/loader/loader.conf
 echo "timeout 5" >> /mnt/boot/loader/loader.conf
@@ -29,11 +33,11 @@ case $user_choice in
 	echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:root root=/dev/mapper/root rw" >> /mnt/boot/loader/entries/archlinux.conf
 	;;
     4) # dual-boot with Windows 10 (normal install)
-	rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}5)
+	rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}${root_partnum})
 	echo "options root=UUID=${rootuuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
 	;;
     5) # dual-boot with Windows 10 (LVM on LUKS)
-	cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}4)
+	cryptlvmuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}${luks_partnum})
 	echo "options cryptdevice=UUID=${cryptlvmuuidvalue}:cryptlvm root=/dev/sys_vol_group/root rw" >> /mnt/boot/loader/entries/archlinux.conf
 	;;
 esac

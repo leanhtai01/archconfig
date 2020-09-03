@@ -2,15 +2,19 @@
 
 set -e
 
+# variables
+efi_partnum=1
+lvm_partnum=5
+
 # partition the disk
 sgdisk -n 0:0:0 -t 0:8e00 -c 0:"lvm" /dev/$install_dev
 
 # create physical volume
-dd if=/dev/zero of=/dev/${install_dev}${part}4 bs=4M count=1
-pvcreate /dev/${install_dev}${part}4
+dd if=/dev/zero of=/dev/${install_dev}${part}${lvm_partnum} bs=4M count=1
+pvcreate /dev/${install_dev}${part}${lvm_partnum}
 
 # create volume group
-vgcreate sys_vol_group /dev/${install_dev}${part}4
+vgcreate sys_vol_group /dev/${install_dev}${part}${lvm_partnum}
 
 # create logical volumes
 lvcreate -L `expr 2 \* $size_of_ram`G sys_vol_group -n cryptswap
@@ -26,4 +30,4 @@ mkfs.ext4 /dev/mapper/root
 # mount the filesystems
 mount /dev/mapper/root /mnt
 mkdir /mnt/boot
-mount /dev/${install_dev}${part}1 /mnt/boot
+mount /dev/${install_dev}${part}${efi_partnum} /mnt/boot

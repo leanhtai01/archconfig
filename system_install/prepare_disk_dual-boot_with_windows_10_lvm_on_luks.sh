@@ -2,6 +2,11 @@
 
 set -e
 
+# variables
+efi_partnum=1
+boot_partnum=5
+luks_partnum=6
+
 # partition the disk
 case $bootloader in
     2) # GRUB (encrypted boot)
@@ -15,32 +20,35 @@ sgdisk -n 0:0:0 -t 0:8309 -c 0:"cryptlvm" /dev/$install_dev
 
 case $bootloader in
     1) # systemd-boot
-	# create the LUKS encrypted container
-	dd if=/dev/zero of=/dev/${install_dev}${part}4 bs=4M count=1
-	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}4 -
-
-	# open the container
-	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}4 cryptlvm -
-	;;
-    2) # GRUB (encrypted boot)
-	dd if=/dev/zero of=/dev/${install_dev}${part}4 bs=4M count=1
-	printf "$bootpass1" | cryptsetup luksFormat --type luks1 /dev/${install_dev}${part}4 -
-	printf "$bootpass1" | cryptsetup open /dev/${install_dev}${part}4 cryptboot -
+	luks_partnum=5
 	
 	# create the LUKS encrypted container
-	dd if=/dev/zero of=/dev/${install_dev}${part}5 bs=4M count=1
-	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}5 -
+	dd if=/dev/zero of=/dev/${install_dev}${part}${luks_partnum} bs=4M count=1
+	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}${luks_partnum} -
 
 	# open the container
-	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}5 cryptlvm -
+	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}${luks_partnum} cryptlvm -
+	;;
+    2) # GRUB (encrypted boot)
+	# create encrypted boot
+	dd if=/dev/zero of=/dev/${install_dev}${part}${boot_partnum} bs=4M count=1
+	printf "$bootpass1" | cryptsetup luksFormat --type luks1 /dev/${install_dev}${part}${boot_partnum} -
+	printf "$bootpass1" | cryptsetup open /dev/${install_dev}${part}${boot_partnum} cryptboot -
+	
+	# create the LUKS encrypted container
+	dd if=/dev/zero of=/dev/${install_dev}${part}${luks_partnum} bs=4M count=1
+	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}${luks_partnum} -
+
+	# open the container
+	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}${luks_partnum} cryptlvm -
 	;;
     3) # GRUB (non-encrypted boot)
 	# create the LUKS encrypted container
-	dd if=/dev/zero of=/dev/${install_dev}${part}5 bs=4M count=1
-	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}5 -
+	dd if=/dev/zero of=/dev/${install_dev}${part}${luks_partnum} bs=4M count=1
+	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}${luks_partnum} -
 
 	# open the container
-	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}5 cryptlvm -
+	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}${luks_partnum} cryptlvm -
 	;;
 esac
 
@@ -60,7 +68,7 @@ case $bootloader in
 	mkfs.ext4 /dev/mapper/cryptboot
 	;;
     3) # GRUB (non-encrypted boot)
-	mkfs.ext4 /dev/${install_dev}${part}4
+	mkfs.ext4 /dev/${install_dev}${part}${boot_partnum}
 	;;
 esac
 mkswap /dev/sys_vol_group/swap
@@ -72,18 +80,18 @@ mount /dev/sys_vol_group/root /mnt
 case $bootloader in
     1) # systemd-boot
 	mkdir /mnt/boot
-	mount /dev/${install_dev}${part}1 /mnt/boot
+	mount /dev/${install_dev}${part}${efi_partnum} /mnt/boot
 	;;
     2) # GRUB (encrypted boot)
 	mkdir /mnt/boot
 	mount /dev/mapper/cryptboot /mnt/boot
 	mkdir /mnt/boot/efi
-	mount /dev/${install_dev}${part}1 /mnt/boot/efi
+	mount /dev/${install_dev}${part}${efi_partnum} /mnt/boot/efi
 	;;
     3) # GRUB (non-encrypted boot)
 	mkdir /mnt/boot
-	mount /dev/${install_dev}${part}4 /mnt/boot
+	mount /dev/${install_dev}${part}${luks_partnum} /mnt/boot
 	mkdir /mnt/boot/efi
-	mount /dev/${install_dev}${part}1 /mnt/boot/efi
+	mount /dev/${install_dev}${part}${efi_partnum} /mnt/boot/efi
 	;;
 esac
