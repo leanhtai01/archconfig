@@ -22,11 +22,14 @@ fi
 
 # partition the disk
 dd if=/dev/zero of=/dev/$install_dev bs=4M count=1
+parted /dev/$install_dev mklabel gpt
 sgdisk -Z /dev/$install_dev
 sgdisk -n 0:0:+1G -t 0:ef00 -c 0:"efi" /dev/$install_dev
 sgdisk -n 0:0:+1G -t 0:0c01 -c 0:"ms_reserved" /dev/$install_dev
-sgdisk -n 0:0:+1G -t 0:0700 -c 0:"ms_data" /dev/$install_dev
+sgdisk -n 4:-1G:0 -t 0:2700 -c 0:"win_re" /dev/$install_dev
+sgdisk -n 0:0:+5G -t 0:0700 -c 0:"ms_data" /dev/$install_dev
 dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=4M count=1
 dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=4M count=1
 dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=4M count=1
+dd if=/dev/zero of=/dev/${install_dev}${part}4 bs=4M count=1
 mkfs.fat -F32 /dev/${install_dev}${part}1
