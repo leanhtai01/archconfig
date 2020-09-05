@@ -12,7 +12,7 @@ do
     curl -s "https://www.archlinux.org/mirrorlist/?country=$country&protocol=http&protocol=https&ip_version=4&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' >> $current_dir/tmp/closestmirrors
 done
 
-reflector --latest 5 --protocol http --protocol https --sort rate | sed -n '/^Server.*/,$p' >> $current_dir/tmp/closestmirrors
+# reflector --latest 5 --protocol http --protocol https --sort rate | sed -n '/^Server.*/,$p' >> $current_dir/tmp/closestmirrors
 rankmirrors -n 5 $current_dir/tmp/closestmirrors > /etc/pacman.d/mirrorlist
 
 # try the best mirror 3 times before move forward
