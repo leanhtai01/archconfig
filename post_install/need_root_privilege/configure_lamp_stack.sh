@@ -44,38 +44,38 @@ systemctl start httpd
 ###################
 # install MariaDB #
 ###################
-pacman -Syu --needed --noconfirm mariadb
+pacman -Syu --needed --noconfirm mariadb expect
 mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 systemctl enable mariadb
 systemctl start mariadb
 SECURE_MYSQL=$(expect -c "
 spawn mysql_secure_installation
 
-expect \"Enter current password for root (enter for none): \"
+expect \"Enter current password for root (enter for none):\"
 send \"\r\"
 
-expect \"Switch to unix_socket authentication [Y/n] \"
+expect \"Switch to unix_socket authentication\"
 send \"n\r\"
 
-expect \"Change the root password? [Y/n] \"
+expect \"Change the root password?\"
 send \"y\r\"
 
-expect \"New password: \"
+expect \"New password:\"
 send \"${mysqlroot_pass1}\r\"
 
-expect \"Re-enter new password: \"
+expect \"Re-enter new password:\"
 send \"${mysqlroot_pass1}\r\"
 
-expect \"Remove anonymous users? [Y/n] \"
+expect \"Remove anonymous users?\"
 send \"y\r\"
 
-expect \"Disallow root login remotely? [Y/n] \"
+expect \"Disallow root login remotely?\"
 send \"y\r\"
 
-expect \"Remove test database and access to it? [Y/n] \"
+expect \"Remove test database and access to it?\"
 send \"y\r\"
 
-expect \"Reload privilege tables now? [Y/n] \"
+expect \"Reload privilege tables now?\"
 send \"y\r\"
 
 expect eof
