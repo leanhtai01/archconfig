@@ -2,6 +2,8 @@
 
 set -e
 
+mysqlroot_pass1=
+mysqlroot_pass2=
 parent_dir=$(cd $(dirname $0)/..; pwd)
 grandpa_dir=$(cd $parent_dir/..; pwd)
 
@@ -11,6 +13,26 @@ if [ ! -d "$original_config_files_path" ]
 then
     mkdir $original_config_files_path
 fi
+
+# set MySQL root's password
+printf "\nSET MYSQL ROOT'S PASSWORD\n"
+if [ -z $mysqlroot_pass1 ] || [ -z $mysqlroot_pass2 ] || [ $mysqlroot_pass1 != $mysqlroot_pass2 ]
+then
+    echo -n "Enter new MySQL root's password: "
+    read -s mysqlroot_pass1
+    echo -n -e "\nRetype MySQL root's password: "
+    read -s mysqlroot_pass2
+
+    while [ -z $mysqlroot_pass1 ] || [ -z $mysqlroot_pass2 ] || [ $mysqlroot_pass1 != $mysqlroot_pass2 ]
+    do
+	echo -e "\nSorry, passwords do not match. Please try again!"
+	echo -n "Enter MySQL root's password: "
+	read -s mysqlroot_pass1
+	echo -n -e "\nRetype MySQL root's password: "
+	read -s mysqlroot_pass2
+    done
+fi
+echo -e "\nMySQL root's password set successfully!"
 
 ##################
 # install Apache #
@@ -26,7 +48,40 @@ pacman -Syu --needed --noconfirm mariadb
 mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 systemctl enable mariadb
 systemctl start mariadb
-mysql_secure_installation
+SECURE_MYSQL=$(expect -c "
+spawn mysql_secure_installation
+
+expect "Enter current password for root (enter for none): "
+send "\r"
+
+expect "Switch to unix_socket authentication [Y/n] "
+send "n\r"
+
+expect "Change the root password? [Y/n] "
+send "y\r"
+
+expect "New password: "
+send "${mysqlroot_pass1}\r"
+
+expect "Re-enter new password: "
+send "${mysqlroot_pass1}\r"
+
+expect "Remove anonymous users? [Y/n] "
+send "y\r"
+
+expect "Disallow root login remotely? [Y/n] "
+send "y\r"
+
+expect "Remove test database and access to it? [Y/n] "
+send "y\r"
+
+expect "Reload privilege tables now? [Y/n] "
+send "y\r"
+
+expect eof
+")
+
+echo "${SECURE_MYSQL}"
 
 ###############
 # install PHP #
@@ -124,12 +179,12 @@ sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['designer_settings'\] = 'pma__designer_
 sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['export_templates'\] = 'pma__export_templates';/s/\/\/ //" /usr/share/webapps/phpMyAdmin/config.inc.php
 
 # setup database
-mysql -u root -p < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql
+mysql -u root --password=${mysqlroot_pass1} < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql
 
 # setup database user
 cp $grandpa_dir/data/setup_database_user.sql $grandpa_dir/data/setup_database_user.sql.bak
 sed -i "s/pmapass/${pmapass}/" $grandpa_dir/data/setup_database_user.sql
-mysql -u root -p < $grandpa_dir/data/setup_database_user.sql
+mysql -u root --password=${mysqlroot_pass1} < $grandpa_dir/data/setup_database_user.sql
 cp $grandpa_dir/data/setup_database_user.sql.bak $grandpa_dir/data/setup_database_user.sql
 rm $grandpa_dir/data/setup_database_user.sql.bak
 
