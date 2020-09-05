@@ -56,7 +56,7 @@ $install_command emacs
 $install_command gdb cmake git go
 
 # tools
-$install_command reflector wimlib transmission-gtk gnome-clocks alacarte file-roller hdparm keepassxc expect
+$install_command reflector wimlib transmission-gtk gnome-clocks alacarte file-roller hdparm keepassxc expect pacman-contrib
 
 # office and learning
 $install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird
