@@ -36,6 +36,7 @@ case $3 in
     virtualbox)
 	$install_command virtualbox-guest-utils virtualbox-guest-dkms
 	${prefix}systemctl enable vboxservice
+	${prefix}gpasswd -a $2 vboxsf
 	;;
     vmware)
 	;;
