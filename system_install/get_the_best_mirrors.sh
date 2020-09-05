@@ -26,4 +26,5 @@ do
     sed -i "${linum} a ${bestmirror}" /etc/pacman.d/mirrorlist
 done
 
-
+# remove tmp directory after use
+rm -r tmp
