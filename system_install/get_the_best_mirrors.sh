@@ -17,7 +17,10 @@ rankmirrors -n 3 $current_dir/tmp/closestmirrors > /etc/pacman.d/mirrorlist
 
 # try the best mirror 3 times before move forward
 linum=$(sed -n '/^Server.*/=' /etc/pacman.d/mirrorlist | head -1)
+specialmirror="Server = http://ftp.sh.cvut.cz/arch/\$repo/os/\$arch"
 bestmirror=$(sed -n "${linum}"p /etc/pacman.d/mirrorlist)
+
+sed -i "${linum} a ${specialmirror}" /etc/pacman.d/mirrorlist
 for i in {1..2..1}
 do    
     sed -i "${linum} a ${bestmirror}" /etc/pacman.d/mirrorlist
