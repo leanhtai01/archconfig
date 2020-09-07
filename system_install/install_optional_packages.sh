@@ -18,7 +18,7 @@ $install_command gvim
 $install_command jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples jdk-openjdk dotnet-sdk intellij-idea-community-edition pycharm-community-edition valgrind tk dia
 
 # tools
-$install_command cdrtools pacman-contrib fuseiso efitools sbsigntools gprename pdftk
+$install_command cdrtools fuseiso efitools sbsigntools gprename pdftk
 
 # remote desktop
 $install_command remmina libvncserver freerdp
