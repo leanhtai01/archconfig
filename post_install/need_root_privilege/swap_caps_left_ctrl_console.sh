@@ -31,4 +31,4 @@ sudo sed -i "${linum}s/Caps_Lock/Control/" /usr/local/share/kbd/keymaps/personal
 sudo loadkeys /usr/local/share/kbd/keymaps/personal.map
 
 # load the keymap at boot
-sudo echo "KEYMAP=/usr/local/share/kbd/keymaps/personal.map" > /etc/vconsole.conf
+echo "KEYMAP=/usr/local/share/kbd/keymaps/personal.map" | sudo tee /etc/vconsole.conf
