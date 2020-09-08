@@ -43,8 +43,8 @@ case $3 in
 esac
 
 # GNOME
-$install_command gnome seahorse seahorse-nautilus chrome-gnome-shell khelpcenter gnome-calendar dconf-editor gnome-tweaks
-${prefix}systemctl enable gdm  
+$install_command baobab cheese eog evince file-roller gdm gnome-backgrounds gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-control-center gnome-disk-utility gnome-keyring gnome-logs gnome-menus gnome-photos gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-system-monitor gnome-terminal gnome-themes-extra mutter nautilus sushi seahorse seahorse-nautilus chrome-gnome-shell khelpcenter dconf-editor gnome-tweaks
+${prefix}systemctl enable gdm
 
 # browsers
 $install_command chromium
@@ -56,7 +56,7 @@ $install_command emacs
 $install_command gdb cmake git go valgrind tk dia
 
 # tools
-$install_command reflector wimlib transmission-gtk gnome-clocks alacarte file-roller hdparm keepassxc expect pacman-contrib
+$install_command reflector wimlib transmission-gtk alacarte hdparm keepassxc expect pacman-contrib
 
 # office and learning
 $install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird
