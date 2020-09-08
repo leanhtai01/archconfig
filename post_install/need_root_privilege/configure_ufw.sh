@@ -2,6 +2,6 @@
 
 set -e
 
-pacman -Syu --needed --noconfirm ufw
-systemctl enable ufw
-ufw enable
+sudo pacman -Syu --needed --noconfirm ufw
+sudo systemctl enable ufw
+sudo ufw enable

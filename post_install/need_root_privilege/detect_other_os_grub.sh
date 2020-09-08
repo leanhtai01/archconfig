@@ -2,5 +2,5 @@
 
 set -e
 
-pacman -Syu --needed --noconfirm os-prober
-grub-mkconfig -o /boot/grub/grub.cfg
+sudo pacman -Syu --needed --noconfirm os-prober
+sudo grub-mkconfig -o /boot/grub/grub.cfg
