@@ -4,7 +4,7 @@ set -e
 
 prefix=
 
-if [ ! -z $1 ] && [ $1 = "in_chroot" ]
+if [ ! -z $3 ] && [ $3 = "in_chroot" ]
 then
     prefix="arch-chroot /mnt "
 fi
@@ -25,7 +25,7 @@ $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
 $install_command xorg
 
 # driver installation
-case $3 in
+case $1 in
     intel)
 	$install_command lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel lib32-vulkan-intel lib32-vkd3d vkd3d xf86-video-intel lib32-mesa mesa mesa-demos
 	;;
