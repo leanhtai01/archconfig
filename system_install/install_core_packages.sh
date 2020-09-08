@@ -16,7 +16,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 $install_command lm_sensors gparted dosfstools ntfs-3g p7zip unrar
 
 # fonts
-$install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack
+$install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack ttf-anonymous-pro
 
 # audio
 $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
@@ -43,7 +43,7 @@ case $3 in
 esac
 
 # GNOME
-$install_command gnome gnome-extra seahorse seahorse-nautilus chrome-gnome-shell khelpcenter gnome-calendar
+$install_command gnome seahorse seahorse-nautilus chrome-gnome-shell khelpcenter gnome-calendar dconf-editor gnome-tweaks
 ${prefix}systemctl enable gdm  
 
 # browsers
@@ -82,7 +82,7 @@ then
 fi
 
 # games
-$install_command kigo bovo gnuchess
+$install_command kigo bovo gnuchess gnome-chess quadrapassel
 
 # enable bluetooth service
 ${prefix}systemctl enable bluetooth

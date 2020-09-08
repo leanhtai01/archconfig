@@ -15,7 +15,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 $install_command gvim
 
 # programming packages
-$install_command jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples jdk-openjdk dotnet-sdk intellij-idea-community-edition pycharm-community-edition
+$install_command jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples jdk-openjdk dotnet-sdk intellij-idea-community-edition pycharm-community-edition glade gnome-builder gnome-code-assistance devhelp
 
 # tools
 $install_command cdrtools fuseiso efitools sbsigntools gprename pdftk
@@ -27,7 +27,7 @@ $install_command remmina libvncserver freerdp
 $install_command librecad octave gimp inkscape geogebra sweethome3d
 
 # multimedia
-$install_command aegisub kid3 kodi digikam rhythmbox gst-libav blender handbrake handbrake-cli mkvtoolnix-gui pencil2d
+$install_command aegisub kid3 kodi digikam rhythmbox gst-libav blender handbrake handbrake-cli mkvtoolnix-gui pencil2d gnome-sound-recorder
 
 # games
 $install_command wesnoth steam steam-native-runtime discord
