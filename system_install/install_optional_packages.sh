@@ -15,7 +15,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 $install_command gvim
 
 # programming packages
-$install_command jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples jdk-openjdk dotnet-sdk intellij-idea-community-edition pycharm-community-edition valgrind tk dia
+$install_command jdk8-openjdk r swi-prolog qtcreator qt5-doc qt5-examples opencv opencv-samples jdk-openjdk dotnet-sdk intellij-idea-community-edition pycharm-community-edition
 
 # tools
 $install_command cdrtools fuseiso efitools sbsigntools gprename pdftk

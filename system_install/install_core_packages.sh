@@ -53,7 +53,7 @@ $install_command chromium
 $install_command emacs
 
 # programming packages
-$install_command gdb cmake git go
+$install_command gdb cmake git go valgrind tk dia
 
 # tools
 $install_command reflector wimlib transmission-gtk gnome-clocks alacarte file-roller hdparm keepassxc expect pacman-contrib
