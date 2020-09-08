@@ -16,7 +16,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 $install_command lm_sensors gparted dosfstools ntfs-3g p7zip unrar
 
 # fonts
-$install_command ttf-dejavu ttf-liberation adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts noto-fonts-emoji ttf-hack
+$install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack
 
 # audio
 $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
