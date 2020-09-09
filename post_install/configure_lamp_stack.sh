@@ -5,7 +5,6 @@ set -e
 mysqlroot_pass1=
 mysqlroot_pass2=
 parent_dir=$(cd $(dirname $0)/..; pwd)
-grandpa_dir=$(cd $parent_dir/..; pwd)
 
 # make place to save original config files (if not exist)
 original_config_files_path=$(dirname $0)/original_config_files
@@ -134,7 +133,7 @@ sudo sed -i "/^;extension=bz2$/s/^;//" /etc/php/php.ini
 sudo sed -i "/^;extension=zip$/s/^;//" /etc/php/php.ini
 
 # create the Apache configuration file
-sudo cp $grandpa_dir/data/phpmyadmin.conf /etc/httpd/conf/extra/phpmyadmin.conf
+sudo cp $parent_dir/data/phpmyadmin.conf /etc/httpd/conf/extra/phpmyadmin.conf
 
 # include the Apache configuration file in /etc/httpd/conf/httpd.conf
 linum=$(sed -n $= /etc/httpd/conf/httpd.conf)
@@ -182,11 +181,11 @@ sudo sed -i "/\/\/ \$cfg\['Servers'\]\[\$i\]\['export_templates'\] = 'pma__expor
 mysql -u root --password=${mysqlroot_pass1} < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql
 
 # setup database user
-cp $grandpa_dir/data/setup_database_user.sql $grandpa_dir/data/setup_database_user.sql.bak
-sed -i "s/pmapass/${pmapass}/" $grandpa_dir/data/setup_database_user.sql
-mysql -u root --password=${mysqlroot_pass1} < $grandpa_dir/data/setup_database_user.sql
-cp $grandpa_dir/data/setup_database_user.sql.bak $grandpa_dir/data/setup_database_user.sql
-rm $grandpa_dir/data/setup_database_user.sql.bak
+cp $parent_dir/data/setup_database_user.sql $parent_dir/data/setup_database_user.sql.bak
+sed -i "s/pmapass/${pmapass}/" $parent_dir/data/setup_database_user.sql
+mysql -u root --password=${mysqlroot_pass1} < $parent_dir/data/setup_database_user.sql
+cp $parent_dir/data/setup_database_user.sql.bak $parent_dir/data/setup_database_user.sql
+rm $parent_dir/data/setup_database_user.sql.bak
 
 # enabling template caching
 linum=$(sed -n "/\$cfg\['SaveDir'\] = '';/=" /usr/share/webapps/phpMyAdmin/config.inc.php)
