@@ -2,7 +2,7 @@
 
 set -e
 
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 curl -LJo yay.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
 tar -xvf yay.tar.gz
 cd yay/
