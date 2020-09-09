@@ -30,3 +30,6 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type "'n
 # enable Night Light
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 18.0
+
+# set cursor theme
+gsettings set org.gnome.desktop.interface cursor-theme "'ArchCursorTheme'"
