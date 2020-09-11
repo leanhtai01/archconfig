@@ -27,7 +27,4 @@ $install_command remmina libvncserver freerdp
 $install_command librecad octave gimp inkscape geogebra sweethome3d
 
 # multimedia
-$install_command aegisub kid3 rhythmbox gst-libav blender handbrake handbrake-cli mkvtoolnix-gui pencil2d gnome-sound-recorder
-
-# games
-$install_command wesnoth
+$install_command aegisub kid3 rhythmbox blender handbrake handbrake-cli mkvtoolnix-gui pencil2d gnome-sound-recorder

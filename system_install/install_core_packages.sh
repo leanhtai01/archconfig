@@ -81,8 +81,5 @@ then
     ${prefix}gpasswd -a $2 docker
 fi
 
-# games
-$install_command kigo bovo gnuchess gnome-chess quadrapassel
-
 # enable bluetooth service
 ${prefix}systemctl enable bluetooth
