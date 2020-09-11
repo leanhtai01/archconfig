@@ -30,4 +30,4 @@ $install_command librecad octave gimp inkscape geogebra sweethome3d
 $install_command aegisub kid3 rhythmbox gst-libav blender handbrake handbrake-cli mkvtoolnix-gui pencil2d gnome-sound-recorder
 
 # games
-$install_command wesnoth steam steam-native-runtime
+$install_command wesnoth
