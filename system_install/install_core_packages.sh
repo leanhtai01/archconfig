@@ -22,12 +22,12 @@ $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack ttf-anonymo
 $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
 
 # desktop environment
-$install_command xorg
+$install_command xorg-server
 
 # driver installation
 case $1 in
     intel)
-	$install_command lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel lib32-vulkan-intel lib32-vkd3d vkd3d xf86-video-intel lib32-mesa mesa mesa-demos
+	$install_command lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel intel-media-driver lib32-vulkan-intel lib32-mesa mesa
 	;;
     amd)
 	;;
