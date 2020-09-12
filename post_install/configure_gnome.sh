@@ -39,3 +39,6 @@ gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
 
 # sort directories first on nautilus
 gsettings set org.gtk.settings.file-chooser sort-directories-first true
+
+# empty favorite-apps
+gsettings set org.gnome.shell favorite-apps "[]"
