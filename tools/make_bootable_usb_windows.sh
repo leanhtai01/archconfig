@@ -3,14 +3,11 @@
 set -e
 
 path_to_iso=
-path_to_hash=
 device=
 
 lsblk
 read -e -p "Enter USB device (sda, sdb, sdX,...): " device
 read -e -p "Enter path to the iso: " path_to_iso
-read -e -p "Enter path to hash file: " path_to_hash
-sha1sum -c $path_to_hash
 
 # format device
 sudo dd if=/dev/zero of=/dev/$device bs=4M count=1
