@@ -33,3 +33,9 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 
 
 # set cursor theme
 gsettings set org.gnome.desktop.interface cursor-theme "'ArchCursorTheme'"
+
+# set default folder viewer nautilus
+gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
+
+# sort directories first on nautilus
+gsettings set org.gtk.settings.file-chooser sort-directories-first true
