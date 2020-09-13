@@ -6,13 +6,6 @@ mysqlroot_pass1=
 mysqlroot_pass2=
 parent_dir=$(cd $(dirname $0)/..; pwd)
 
-# make place to save original config files (if not exist)
-original_config_files_path=$(dirname $0)/original_config_files
-if [ ! -d "$original_config_files_path" ]
-then
-    mkdir $original_config_files_path
-fi
-
 # set MySQL root's password
 printf "\nSET MYSQL ROOT'S PASSWORD\n"
 if [ -z $mysqlroot_pass1 ] || [ -z $mysqlroot_pass2 ] || [ $mysqlroot_pass1 != $mysqlroot_pass2 ]
@@ -88,8 +81,6 @@ echo "${SECURE_MYSQL}"
 sudo pacman -Syu --needed --noconfirm php php-apache
 
 # set timezone
-cp /etc/php/php.ini $original_config_files_path
-printf "php.ini: /etc/php/php.ini\n" >> $original_config_files_path/original_path.txt
 linum=$(sed -n '/^;date.timezone =$/=' /etc/php/php.ini)
 sudo sed -i "${linum}s/^;//" /etc/php/php.ini
 sudo sed -i "${linum}s/=/& Asia\/Ho_Chi_Minh/" /etc/php/php.ini
@@ -98,8 +89,6 @@ sudo sed -i "${linum}s/=/& Asia\/Ho_Chi_Minh/" /etc/php/php.ini
 sudo sed -i "/^display_errors = Off$/s/Off/On/" /etc/php/php.ini
 
 # comment line LoadModule mpm_event_module modules/mod_mpm_event.so
-cp /etc/httpd/conf/httpd.conf $original_config_files_path
-printf "httpd.conf: /etc/httpd/conf/httpd.conf\n" >> $original_config_files_path/original_path.txt
 linum=$(sed -n '/^LoadModule mpm_event_module modules\/mod_mpm_event.so$/=' /etc/httpd/conf/httpd.conf)
 sudo sed -i "${linum}s/^/#&/" /etc/httpd/conf/httpd.conf
 
@@ -108,8 +97,6 @@ sudo sed -i "/^#LoadModule mpm_prefork_module modules\/mod_mpm_prefork.so$/s/^#/
 
 # place some line at the end of the LoadModule list:
 linum=$(sed -n '/^#\?LoadModule /=' /etc/httpd/conf/httpd.conf | tail -1)
-# sed -i "${linum}G" /etc/httpd/conf/httpd.conf
-# ((linum++))
 sudo sed -i "${linum} a LoadModule php7_module modules\/libphp7.so" /etc/httpd/conf/httpd.conf
 ((linum++))
 sudo sed -i "${linum} a AddHandler php7-script .php" /etc/httpd/conf/httpd.conf
@@ -147,8 +134,6 @@ sudo chown http:http /usr/share/webapps/phpMyAdmin/config
 sudo chmod 750 /usr/share/webapps/phpMyAdmin/config
 
 # add blowfish_secret passphrase
-cp /usr/share/webapps/phpMyAdmin/config.inc.php $original_config_files_path
-printf "config.inc.php: /usr/share/webapps/phpMyAdmin/config.inc.php\n" >> $original_config_files_path/original_path.txt
 sudo sed -i "/^\$cfg\['blowfish_secret'\] = '';/s/''/'$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32)'/" /usr/share/webapps/phpMyAdmin/config.inc.php
 
 # enabling configuration storage
