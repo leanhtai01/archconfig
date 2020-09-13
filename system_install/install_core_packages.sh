@@ -53,16 +53,16 @@ $install_command chromium
 $install_command emacs gvim
 
 # programming packages
-$install_command gdb cmake git go valgrind tk dia clang gcc python python2
+$install_command gdb cmake git go valgrind tk dia clang gcc python
 
 # tools
-$install_command reflector wimlib transmission-gtk alacarte hdparm keepassxc expect pacman-contrib cdrtools fuseiso efitools sbsigntools gprename pdftk
+$install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk
 
 # office and learning
-$install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird librecad octave gimp inkscape geogebra sweethome3d
+$install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird librecad gimp inkscape geogebra sweethome3d
 
 # multimedia
-$install_command obs-studio vlc kdenlive frei0r-plugins aegisub kid3 rhythmbox blender handbrake handbrake-cli mkvtoolnix-gui pencil2d gnome-sound-recorder
+$install_command obs-studio vlc kdenlive frei0r-plugins blender handbrake handbrake-cli
 
 # virtualbox
 $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
