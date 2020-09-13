@@ -13,7 +13,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 
 # install and configure some packages, services
 # system packages
-$install_command lm_sensors gparted dosfstools ntfs-3g p7zip unrar
+$install_command lm_sensors dosfstools ntfs-3g p7zip unrar
 
 # fonts
 $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack ttf-anonymous-pro
