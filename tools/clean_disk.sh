@@ -14,5 +14,5 @@ then
 fi
 
 sudo dd if=/dev/zero of=/dev/$device bs=4M count=1
-sudo parted /dev/$device mklabel gpt
+sudo wipefs -a /dev/$device
 sudo sgdisk -Z /dev/$device

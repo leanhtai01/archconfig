@@ -4,7 +4,7 @@ set -e
 
 # partition the disks
 dd if=/dev/zero of=/dev/$install_dev bs=4M count=1
-parted /dev/$install_dev mklabel gpt
+wipefs -a /dev/$install_dev
 sgdisk -Z /dev/$install_dev
 sgdisk -n 0:0:+1G -t 0:ef00 -c 0:"efi" /dev/$install_dev
 sgdisk -n 0:0:+`expr 2 \* $size_of_ram`G -t 0:8200 -c 0:"swap" /dev/$install_dev
