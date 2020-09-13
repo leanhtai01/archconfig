@@ -27,7 +27,7 @@ $install_command xorg-server
 # driver installation
 case $1 in
     intel)
-	$install_command lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel intel-media-driver lib32-vulkan-intel lib32-mesa mesa
+	$install_command lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel intel-media-driver lib32-vulkan-intel lib32-mesa mesa ocl-icd lib32-ocl-icd intel-compute-runtime
 	;;
     amd)
 	;;
