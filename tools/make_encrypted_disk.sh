@@ -73,5 +73,5 @@ mkdir ~/mount_point
 sudo mount /dev/mapper/$encrypted_name ~/mount_point
 sudo chown $(whoami):$(whoami) ~/mount_point
 sudo umount ~/mount_point
-rm ~/mount_point
+rm -r ~/mount_point
 sudo cryptsetup close $encrypted_name
