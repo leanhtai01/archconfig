@@ -10,11 +10,11 @@ storagepass1=
 storagepass2=
 encrypted_name=
 
-# let user choose device to install
+# let user choose device
 if [ -z $install_dev ]
 then
     lsblk
-    echo -n "Enter device to install: "
+    echo -n "Enter device: "
     read install_dev
 fi
 
