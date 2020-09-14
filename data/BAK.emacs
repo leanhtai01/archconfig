@@ -13,6 +13,9 @@
  '(global-linum-mode t)
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
+ '(package-archives
+   '(("melpa-stable" . "https://stable.melpa.org/packages/")
+     ("gnu" . "https://elpa.gnu.org/packages/")))
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
