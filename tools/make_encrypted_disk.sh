@@ -67,3 +67,11 @@ printf "$storagepass1" | sudo cryptsetup open /dev/${install_dev}${part}1 $encry
 
 # format the partition
 sudo mkfs.ext4 /dev/mapper/$encrypted_name -L "$encrypted_name"
+
+# make partition accessable by normal user
+mkdir ~/mount_point
+sudo mount /dev/mapper/$encrypted_name ~/mount_point
+sudo chown $(whoami):$(whoami) ~/mount_point
+sudo umount ~/mount_point
+rm ~/mount_point
+sudo cryptsetup close $encrypted_name
