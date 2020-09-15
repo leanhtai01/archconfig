@@ -66,18 +66,23 @@ $install_command obs-studio vlc kdenlive frei0r-plugins blender handbrake handbr
 
 # virtualbox
 $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
+if [ ! -z $2 ]
+then
+    ${prefix}gpasswd -a $2 vboxusers
+fi
 
 # wireshark
 $install_command wireshark-qt
+if [ ! -z $2 ]
+then
+    ${prefix}gpasswd -a $2 wireshark
+fi
 
 # docker
 $install_command docker
 ${prefix}systemctl enable docker
-
-# add user to group wireshark, docker
 if [ ! -z $2 ]
 then
-    ${prefix}gpasswd -a $2 wireshark
     ${prefix}gpasswd -a $2 docker
 fi
 
