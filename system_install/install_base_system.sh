@@ -5,9 +5,9 @@ set -e
 
 # global variables
 current_dir=$(dirname $0)
-install_dev=
+install_dev=nvme0n1
 part=
-size_of_ram=
+size_of_ram=16
 rootpass1=
 rootpass2=
 userpass1=
