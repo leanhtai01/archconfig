@@ -12,9 +12,6 @@ fi
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
 # install and configure some packages, services
-# system packages
-$install_command lm_sensors dosfstools ntfs-3g p7zip unrar
-
 # fonts
 $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack
 
@@ -56,7 +53,7 @@ $install_command emacs gvim
 $install_command gdb cmake git go valgrind tk dia clang gcc python
 
 # tools
-$install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl kdiff3
+$install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted
 
 # office and learning
 $install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird librecad gimp inkscape geogebra sweethome3d
