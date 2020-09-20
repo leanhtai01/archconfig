@@ -56,7 +56,7 @@ $install_command emacs gvim
 $install_command gdb cmake git go valgrind tk dia clang gcc python
 
 # tools
-$install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl
+$install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl kdiff3
 
 # office and learning
 $install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird librecad gimp inkscape geogebra sweethome3d
