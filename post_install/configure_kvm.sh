@@ -2,7 +2,7 @@
 
 set -e
 
-sudo pacman -Syu --needed --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils virt-viewer dmidecode
+sudo pacman -Syu --needed --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils virt-viewer dmidecode edk2-ovmf
 sudo systemctl enable libvirtd
 sudo systemctl start libvirtd
 
