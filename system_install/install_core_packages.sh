@@ -63,7 +63,7 @@ $install_command reflector wimlib transmission-gtk keepassxc expect pacman-contr
 $install_command remmina libvncserver freerdp
 
 # office and learning
-$install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird librecad gimp inkscape geogebra sweethome3d hexchat gnucash texstudio
+$install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird librecad gimp inkscape geogebra sweethome3d hexchat gnucash
 
 # multimedia
 $install_command obs-studio vlc kdenlive frei0r-plugins blender handbrake handbrake-cli audacity aegisub kid3 rhythmbox mkvtoolnix-gui pencil2d
