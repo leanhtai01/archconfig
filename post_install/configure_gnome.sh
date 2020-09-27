@@ -39,3 +39,9 @@ gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
 
 # empty favorite-apps
 gsettings set org.gnome.shell favorite-apps "[]"
+
+# switch windows
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
