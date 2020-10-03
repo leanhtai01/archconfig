@@ -12,7 +12,7 @@ read -e -p "Enter xml file name: " xml_name
 if [ ! -f "$disk_name" ]
 then
     read -e -p "Enter disk's size: " disk_size
-    sudo qemu-img create -f qcow2 /var/lib/libvirt/images/${disk_name}.qcow2 ${disk_size}G
+    sudo qemu-img create -f qcow2 /var/lib/libvirt/images/${disk_name} ${disk_size}G
 else
     sudo cp $disk_name /var/lib/libvirt/images/
 fi
