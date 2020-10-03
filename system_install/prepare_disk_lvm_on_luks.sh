@@ -30,6 +30,7 @@ case $bootloader in
         wipefs -a /dev/${install_dev}${part}2
 	printf "$bootpass1" | cryptsetup luksFormat --type luks1 /dev/${install_dev}${part}2 -
 	printf "$bootpass1" | cryptsetup open /dev/${install_dev}${part}2 cryptboot -
+	wipefs -a /dev/mapper/cryptboot
 	
 	# create the LUKS encrypted container
 	wipefs -a /dev/${install_dev}${part}3
