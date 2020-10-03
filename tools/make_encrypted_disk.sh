@@ -54,16 +54,17 @@ fi
 printf "\nStorage's password set successfully!\n"
 
 # partition the disk
-sudo dd if=/dev/zero of=/dev/$install_dev bs=4M count=1
+wipefs -a /dev/$install_dev
 sudo sgdisk -Z /dev/$install_dev
 sudo sgdisk -n 0:0:0 -t 0:8309 -c 0:"$encrypted_name" /dev/$install_dev
 
 # create the LUKS encrypted container
-sudo dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=4M count=1
+wipefs -a /dev/${install_dev}${part}1
 printf "$storagepass1" | sudo cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}1 -
 
 # open the container
 printf "$storagepass1" | sudo cryptsetup open /dev/${install_dev}${part}1 $encrypted_name -
+wipefs -a /dev/mapper/$encrypted_name
 
 # format the partition
 sudo mkfs.ext4 /dev/mapper/$encrypted_name -L "$encrypted_name"
