@@ -13,6 +13,5 @@ then
     read device
 fi
 
-sudo dd if=/dev/zero of=/dev/$device bs=4M count=1
 sudo wipefs -a /dev/$device
 sudo sgdisk -Z /dev/$device
