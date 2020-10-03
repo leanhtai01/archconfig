@@ -12,8 +12,8 @@ sgdisk -n 0:0:+`expr 2 \* $size_of_ram`G -t 0:8200 -c 0:"swap" /dev/$install_dev
 sgdisk -n 0:0:0 -t 0:8304 -c 0:"root" /dev/$install_dev
 
 # format the partition
-dd if=/dev/zero of=/dev/${install_dev}${part}${swap_partnum} bs=4M count=1
-dd if=/dev/zero of=/dev/${install_dev}${part}${root_partnum} bs=4M count=1
+wipefs -a /dev/${install_dev}${part}${swap_partnum}
+wipefs -a /dev/${install_dev}${part}${root_partnum}
 mkswap /dev/${install_dev}${part}${swap_partnum}
 swapon /dev/${install_dev}${part}${swap_partnum}
 mkfs.ext4 /dev/${install_dev}${part}${root_partnum}
