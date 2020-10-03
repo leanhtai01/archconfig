@@ -3,7 +3,6 @@
 set -e
 
 # partition the disk
-dd if=/dev/zero of=/dev/$install_dev bs=4M count=1
 wipefs -a /dev/$install_dev
 sgdisk -Z /dev/$install_dev
 sgdisk -n 0:0:+1G -t 0:ef00 -c 0:"efi" /dev/$install_dev
@@ -20,31 +19,34 @@ sgdisk -n 0:0:0 -t 0:8309 -c 0:"cryptlvm" /dev/$install_dev
 case $bootloader in
     1) # systemd-boot
 	# create the LUKS encrypted container
-	dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=4M count=1
+	wipefs -a /dev/${install_dev}${part}2
 	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}2 -
 
 	# open the container
 	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}2 cryptlvm -
+	wipefs -a /dev/mapper/cryptlvm
 	;;
     2) # GRUB (encrypted boot)
-        dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=4M count=1
+        wipefs -a /dev/${install_dev}${part}2
 	printf "$bootpass1" | cryptsetup luksFormat --type luks1 /dev/${install_dev}${part}2 -
 	printf "$bootpass1" | cryptsetup open /dev/${install_dev}${part}2 cryptboot -
 	
 	# create the LUKS encrypted container
-	dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=4M count=1
+	wipefs -a /dev/${install_dev}${part}3
 	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}3 -
 
 	# open the container
 	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}3 cryptlvm -
+	wipefs -a /dev/mapper/cryptlvm
 	;;
     3) # GRUB (non-encrypted boot)
 	# create the LUKS encrypted container
-	dd if=/dev/zero of=/dev/${install_dev}${part}3 bs=4M count=1
+	wipefs -a /dev/${install_dev}${part}3
 	printf "$storagepass1" | cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}3 -
 
 	# open the container
 	printf "$storagepass1" | cryptsetup open /dev/${install_dev}${part}3 cryptlvm -
+	wipefs -a /dev/mapper/cryptlvm
 	;;
 esac
 
@@ -59,14 +61,14 @@ lvcreate -L `expr 2 \* $size_of_ram`G sys_vol_group -n swap
 lvcreate -l +100%FREE sys_vol_group -n root
 
 # format the partitions
-dd if=/dev/zero of=/dev/${install_dev}${part}1 bs=4M count=1
+wipefs -a /dev/${install_dev}${part}1
 mkfs.fat -F32 /dev/${install_dev}${part}1
 case $bootloader in
     2) # GRUB (encrypted boot)
 	mkfs.ext4 /dev/mapper/cryptboot
 	;;
     3) # GRUB (non-encrypted boot)
-	dd if=/dev/zero of=/dev/${install_dev}${part}2 bs=4M count=1
+	wipefs -a /dev/${install_dev}${part}2
 	mkfs.ext4 /dev/${install_dev}${part}2
 	;;
 esac
