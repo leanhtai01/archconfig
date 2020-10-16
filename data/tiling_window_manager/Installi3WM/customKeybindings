@@ -1,0 +1,31 @@
+# CUSTOM KEYBINDINGS
+# Lock screen
+bindsym Ctrl+Mod1+l exec xscreensaver-command -lock
+
+# Brightness control
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+# Volume control
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- unmute
+bindsym XF86AudioMute exec amixer -D pulse set Master +1 toggle
+
+# Touchpad toggle
+bindsym XF86TouchpadToggle exec /path/to/.touchpad_toggle.sh
+
+# Media control
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Open program
+bindsym Ctrl+Mod1+i exec chromium
+bindsym Ctrl+Mod1+e exec emacs
+bindsym Ctrl+Mod1+f exec nautilus
+
+# Set wallpaper
+exec --no-startup-id feh --bg-scale /path/to/wallpaper
+
+# Startup program
+exec /path/to/.autorun.sh

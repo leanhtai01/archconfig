@@ -1,0 +1,33 @@
+    -- CUSTOM KEY BINDINGS
+    -- Lock screen
+    awful.key({ "Control", "Mod1" }, "l", function () awful.spawn("xscreensaver-command -lock") end,
+              {description = "lock screen", group = "custom"}),
+    -- Brightness control
+    awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end,
+              {description = "increase brightness", group = "custom"}),
+    awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end,
+              {description = "decrease brightness", group = "custom"}),
+    -- Volume control
+    awful.key({}, "XF86AudioRaiseVolume", function () awful.spawn("amixer -D pulse sset Master 5%+") end,
+              {description = "increase volume", group = "custom"}),
+    awful.key({}, "XF86AudioLowerVolume", function () awful.spawn("amixer -D pulse sset Master 5%-") end,
+              {description = "decrease volume", group = "custom"}),
+    awful.key({}, "XF86AudioMute", function () awful.spawn("amixer -D pulse set Master +1 toggle") end,
+              {description = "mute volume", group = "custom"}),
+    -- Touchpad toggle
+    awful.key({}, "XF86TouchpadToggle", function () awful.spawn("/usr/local/bin/touchpad_toggle.sh") end,
+              {description = "touchpad toggle", group = "custom"}),
+    -- Media control
+    awful.key({}, "XF86AudioPlay", function () awful.spawn("playerctl play-pause") end,
+              {description = "play-pause media", group = "custom"}),
+    awful.key({}, "XF86AudioNext", function () awful.spawn("playerctl next") end,
+              {description = "next media", group = "custom"}),
+    awful.key({}, "XF86AudioPrev", function () awful.spawn("playerctl previous") end,
+              {description = "previous media", group = "custom"}),
+    -- Open applications
+    awful.key({ "Control", "Mod1" }, "i", function () awful.spawn("chromium") end,
+              {description = "open chromium", group = "custom"}),
+    awful.key({ "Control", "Mod1" }, "e", function () awful.spawn("emacs") end,
+              {description = "open emacs", group = "custom"}),
+    awful.key({ "Control", "Mod1" }, "f", function () awful.spawn("nautilus") end,
+              {description = "open nautilus file manager", group = "custom"})
