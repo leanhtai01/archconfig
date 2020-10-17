@@ -231,3 +231,62 @@ else
     setupsecureboot="y"
     printf "Ok! Secure boot will be setup!\n\n"
 fi
+
+# ask user for setup desktop environment
+display_menu_desktop_environment()
+{
+    printf "Choose desktop environment:\n"
+    printf "1. GNOME\n"
+    printf "2. KDE Plasma\n"
+    printf "3. i3 (tiling window manager)\n"
+    printf "4. None\n"
+    printf "Enter your choice: "
+}
+
+if [ -z $desktop_environment ]
+then
+    re="[1-4]"
+
+    display_menu_desktop_environment
+    read DE_choice
+
+    while [[ ! "$DE_choice" =~ $re ]]
+    do
+	printf "\nInvalid choice! Please try again!\n"
+	display_menu_desktop_environment
+	read DE_choice
+    done
+
+    # set desktop enviroment will be installed
+    case $DE_choice in
+	1)
+	    desktop_environment=GNOME
+	    ;;
+	2)
+	    desktop_environment=KDEPlasma
+	    ;;
+	3)
+	    desktop_environment=i3
+	    ;;
+	4)
+	    desktop_environment=none
+	    ;;
+    esac
+fi
+
+case $desktop_environment in
+    GNOME)
+	printf "GNOME"
+	;;
+    KDEPlasma)
+	printf "KDE Plasma"
+	;;
+    i3)
+	printf "i3"
+	;;
+    none)
+	printf "No desktop environment"
+	;;
+esac
+
+printf " will be installed!\n"
