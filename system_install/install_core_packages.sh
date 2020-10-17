@@ -4,7 +4,7 @@ set -e
 
 prefix=
 
-if [ ! -z $3 ] && [ $3 = "in_chroot" ]
+if [ ! -z $2 ] && [ $2 = "in_chroot" ]
 then
     prefix="arch-chroot /mnt "
 fi
@@ -20,24 +20,6 @@ $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
 
 # desktop environment
 $install_command xorg-server
-
-# driver installation
-case $1 in
-    intel)
-	$install_command lib32-vulkan-icd-loader vulkan-icd-loader vulkan-intel intel-media-driver lib32-vulkan-intel lib32-mesa mesa ocl-icd lib32-ocl-icd intel-compute-runtime
-	;;
-    amd)
-	;;
-    nvidia)
-	;;
-    virtualbox)
-	$install_command virtualbox-guest-utils virtualbox-guest-dkms
-	${prefix}systemctl enable vboxservice
-	${prefix}gpasswd -a $2 vboxsf
-	;;
-    vmware)
-	;;
-esac
 
 # usb 3g modem
 $install_command modemmanager usb_modeswitch wvdial
@@ -66,24 +48,24 @@ $install_command obs-studio vlc kdenlive frei0r-plugins blender handbrake handbr
 
 # virtualbox
 $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
-if [ ! -z $2 ]
+if [ ! -z $1 ]
 then
-    ${prefix}gpasswd -a $2 vboxusers
+    ${prefix}gpasswd -a $1 vboxusers
 fi
 
 # wireshark
 $install_command wireshark-qt
-if [ ! -z $2 ]
+if [ ! -z $1 ]
 then
-    ${prefix}gpasswd -a $2 wireshark
+    ${prefix}gpasswd -a $1 wireshark
 fi
 
 # docker
 $install_command docker
 ${prefix}systemctl enable docker
-if [ ! -z $2 ]
+if [ ! -z $1 ]
 then
-    ${prefix}gpasswd -a $2 docker
+    ${prefix}gpasswd -a $1 docker
 fi
 
 # games
