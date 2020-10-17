@@ -31,6 +31,10 @@ sudo printf "[Channel]\r\nRetail\r\n" > tmp/sources/ei.cfg
 # copy install files to usb
 sudo mount /dev/${device}1 bootable_usb
 sudo cp -r tmp/* bootable_usb/
+sleep 30
 sudo umount bootable_usb/ win_img/
 sudo rm -r tmp/ win_img/ bootable_usb/
+lsblk
 udisksctl power-off -b /dev/$device
+lsblk
+printf "Success!\n"

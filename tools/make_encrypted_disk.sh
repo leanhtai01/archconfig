@@ -76,3 +76,4 @@ sudo chown $(whoami):$(whoami) ~/mount_point
 sudo umount ~/mount_point
 rm -r ~/mount_point
 sudo cryptsetup close $encrypted_name
+printf "Success!"
