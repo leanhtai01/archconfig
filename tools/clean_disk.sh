@@ -17,6 +17,4 @@ sudo wipefs -a /dev/$device
 sudo sgdisk -Z /dev/$device
 sleep 2
 lsblk
-udisksctl power-off -b /dev/$device
-lsblk
 printf "Success!\n"
