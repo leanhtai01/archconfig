@@ -22,7 +22,7 @@ bootpass2=
 bootloader= # 1 - systemd-boot, 2 - GRUB
 swapuuidvalue=
 setupsecureboot=n
-desktop_environment=
+desktop_environment=GNOME
 
 # get user info
 . $current_dir/get_user_info.sh
