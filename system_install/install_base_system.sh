@@ -22,8 +22,8 @@ bootpass2=
 bootloader= # 1 - systemd-boot, 2 - GRUB
 swapuuidvalue=
 setupsecureboot=n
-desktop_environment=GNOME
-gpu=intel
+desktop_environment=GNOME # {GNOME, KDEPlasma, i3, none}
+gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
 
 # get user info
 . $current_dir/get_user_info.sh
