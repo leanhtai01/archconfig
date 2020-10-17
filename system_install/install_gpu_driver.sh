@@ -2,6 +2,15 @@
 
 set -e
 
+prefix=
+
+if [ ! -z $2 ] && [ $2 = "in_chroot" ]
+then
+    prefix="arch-chroot /mnt "
+fi
+
+install_command="${prefix}pacman -Syu --needed --noconfirm"
+
 # driver installation
 case $1 in
     intel)
