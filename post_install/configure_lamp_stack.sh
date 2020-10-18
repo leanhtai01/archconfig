@@ -26,20 +26,9 @@ then
 fi
 echo -e "\nMySQL root's password set successfully!"
 
-##################
-# install Apache #
-##################
-sudo pacman -Syu --needed --noconfirm apache
-sudo systemctl enable httpd
-sudo systemctl start httpd
-
-###################
-# install MariaDB #
-###################
-sudo pacman -Syu --needed --noconfirm mariadb expect
-sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
-sudo systemctl enable mariadb
-sudo systemctl start mariadb
+#####################
+# configure MariaDB #
+#####################
 SECURE_MYSQL=$(sudo expect -c "
 spawn mysql_secure_installation
 
@@ -75,11 +64,9 @@ expect eof
 
 echo "${SECURE_MYSQL}"
 
-###############
-# install PHP #
-###############
-sudo pacman -Syu --needed --noconfirm php php-apache
-
+#################
+# configure PHP #
+#################
 # set timezone
 linum=$(sed -n '/^;date.timezone =$/=' /etc/php/php.ini)
 sudo sed -i "${linum}s/^;//" /etc/php/php.ini
@@ -108,11 +95,9 @@ sudo sed -i "${linum} a Include conf\/extra\/php7_module.conf" /etc/httpd/conf/h
 # restart httpd.service
 sudo systemctl restart httpd
 
-######################
-# install phpMyAdmin #
-######################
-sudo pacman -Syu --needed --noconfirm phpmyadmin
-
+########################
+# configure phpMyAdmin #
+########################
 # enable some PHP extensions
 sudo sed -i "/^;extension=pdo_mysql$/s/^;//" /etc/php/php.ini
 sudo sed -i "/^;extension=mysqli$/s/^;//" /etc/php/php.ini
