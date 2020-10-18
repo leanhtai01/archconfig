@@ -8,4 +8,6 @@ case $1 in
     GNOME)
 	. $current_dir/install_GNOME.sh $2
 	;;
+    i3)
+	. $current_dir/install_i3wm.sh $2
 esac
