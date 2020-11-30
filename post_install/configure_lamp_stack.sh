@@ -166,3 +166,8 @@ sudo rm -r /usr/share/webapps/phpMyAdmin/config
 
 # restart httpd.service
 sudo systemctl restart httpd
+
+# setup User Directories
+mkdir -p $HOME/public_html
+chmod 750 $HOME $HOME/public_html
+sudo chown $USER:http $HOME $HOME/public_html
