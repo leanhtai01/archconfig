@@ -2,8 +2,8 @@
 
 set -e
 
-mysqlroot_pass1=
-mysqlroot_pass2=
+mysqlroot_pass1=123
+mysqlroot_pass2=123
 parent_dir=$(cd $(dirname $0)/..; pwd)
 
 # set MySQL root's password
