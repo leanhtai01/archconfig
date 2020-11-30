@@ -61,7 +61,7 @@ then
 fi
 
 # docker
-$install_command docker
+$install_command docker docker-compose
 ${prefix}systemctl enable docker
 if [ ! -z $1 ]
 then
