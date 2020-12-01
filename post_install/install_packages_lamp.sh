@@ -18,3 +18,6 @@ sudo pacman -Syu --needed --noconfirm php php-apache
 
 # install phpMyAdmin
 sudo pacman -Syu --needed --noconfirm phpmyadmin
+
+# install MySQL Workbench
+sudo pacman -Syu --needed --noconfirm mysql-workbench
