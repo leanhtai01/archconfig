@@ -10,3 +10,4 @@ current_dir=$(dirname $0)
 $current_dir/configure_emacs.sh
 # $current_dir/swap_caps_left_ctrl_console.sh
 $current_dir/configure_git.sh
+$current_dir/configure_netbeans.sh
