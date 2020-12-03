@@ -20,4 +20,7 @@ sudo pacman -Syu --needed --noconfirm php php-apache
 sudo pacman -Syu --needed --noconfirm phpmyadmin
 
 # install MySQL Workbench
-sudo pacman -Syu --needed --noconfirm mysql-workbench
+# sudo pacman -Syu --needed --noconfirm mysql-workbench
+
+# install dbeaver
+sudo pacman -Syu --needed --noconfirm dbeaver
