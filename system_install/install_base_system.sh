@@ -5,6 +5,7 @@ set -e
 
 # global variables
 current_dir=$(dirname $0)
+parent_dir=$(cd $(dirname $0)/..; pwd)
 install_dev=nvme0n1
 part=
 size_of_ram=16
@@ -31,6 +32,9 @@ gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
 
 # update the system clock
 timedatectl set-ntp true
+
+# clean install device
+$parent_dir/tools/clean_disk.sh $install_dev
 
 # preparing disk for install
 case $user_choice in
