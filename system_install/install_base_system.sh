@@ -22,6 +22,7 @@ bootpass2=
 bootloader=1 # 1 - systemd-boot, 2 - GRUB
 swapuuidvalue=
 setupsecureboot=n
+setupkeytool=y
 desktop_environment=KDEPlasma # {GNOME, KDEPlasma, i3, none}
 gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
 
@@ -163,5 +164,10 @@ fi
 if [ $setupsecureboot = "y" ]
 then    
     . $current_dir/setup_secure_boot.sh
+fi
+
+if [ $setupkeytool = "y" ]
+then    
+    . $current_dir/setup_KeyTool.sh
 fi
 
