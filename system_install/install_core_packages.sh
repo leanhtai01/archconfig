@@ -35,13 +35,13 @@ $install_command emacs gvim
 $install_command gdb cmake git go valgrind tk dia clang gcc python jdk-openjdk dotnet-sdk intellij-idea-community-edition pycharm-community-edition netbeans nodejs eslint npm
 
 # tools
-$install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget youtube-dl cdrtools fuseiso efitools sbsigntools bash-completion aircrack-ng
+$install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget youtube-dl cdrtools fuseiso efitools sbsigntools bash-completion aircrack-ng nautilus
 
 # remote desktop
 $install_command remmina libvncserver freerdp
 
 # office and learning
-$install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird librecad gimp inkscape geogebra sweethome3d hexchat gnucash
+$install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint thunderbird librecad gimp inkscape geogebra sweethome3d hexchat gnucash evince
 
 # multimedia
 $install_command obs-studio vlc kdenlive frei0r-plugins blender handbrake handbrake-cli audacity aegisub kid3 rhythmbox mkvtoolnix-gui pencil2d
