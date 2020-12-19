@@ -3,7 +3,7 @@
 set -e
 
 # swap Ctrl - CapsLock
-gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:rwin_switch', 'ctrl:swapcaps']"
+# gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:rwin_switch', 'ctrl:swapcaps']"
 
 # set applications theme to dark
 gsettings set org.gnome.desktop.interface gtk-theme "'Adwaita-dark'"
@@ -32,7 +32,7 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 18.0
 
 # set cursor theme
-gsettings set org.gnome.desktop.interface cursor-theme "'ArchCursorTheme'"
+# gsettings set org.gnome.desktop.interface cursor-theme "'ArchCursorTheme'"
 
 # set default folder viewer nautilus
 gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
