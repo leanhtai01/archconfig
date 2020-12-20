@@ -49,6 +49,9 @@ gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
 # empty favorite-apps
 gsettings set org.gnome.shell favorite-apps "[]"
 
+# switch applications only in current workspace
+gsettings set org.gnome.shell.app-switcher current-workspace-only true
+
 # switch windows
 # gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
 # gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
