@@ -26,4 +26,4 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ command "'chromium'"
 # open GNOME Terminal
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ name "'GNOME Terminal'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ binding "'<Primary><Alt>t'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ command "'gnome-terminal'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ command "'gnome-terminal -e fish'"
