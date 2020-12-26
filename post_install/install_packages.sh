@@ -13,5 +13,6 @@ $current_dir/configure_ufw.sh
 $current_dir/install_vmware_workstation.sh
 $current_dir/install_sublime_tools.sh
 $current_dir/install_visual_studio_code.sh
+$current_dir/install_azure_data_studio.sh
 $current_dir/install_usb_wifi_driver.sh
 $current_dir/install_virtualbox-ext-oracle.sh
