@@ -6,7 +6,7 @@ set -e
 # gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:rwin_switch', 'ctrl:swapcaps']"
 
 # swap CapsLock - Esc
-gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:rwin_switch', 'caps:swapescape']"
+# gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:rwin_switch', 'caps:swapescape']"
 
 # set applications theme to dark
 # gsettings set org.gnome.desktop.interface gtk-theme "'Adwaita-dark'"
