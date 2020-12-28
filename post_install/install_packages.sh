@@ -17,3 +17,4 @@ $current_dir/install_azure_data_studio.sh
 $current_dir/install_nautilus_dropbox.sh
 $current_dir/install_usb_wifi_driver.sh
 $current_dir/install_virtualbox-ext-oracle.sh
+$current_dir/install_zoom.sh
