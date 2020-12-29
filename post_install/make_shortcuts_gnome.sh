@@ -13,10 +13,10 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ binding "'<Primary><Alt>e'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ command "'emacs'"
 
-# open Nautilus
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Nautilus'"
+# open Krusader
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Krusader'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>f'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'nautilus'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'krusader'"
 
 # open Chromium
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ name "'Chromium'"
