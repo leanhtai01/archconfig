@@ -11,4 +11,4 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
-$install_command i3-wm i3blocks i3lock i3status dmenu rxvt-unicode xorg-xinit
+$install_command i3-wm i3blocks i3lock i3status dmenu rxvt-unicode xorg-xinit feh
