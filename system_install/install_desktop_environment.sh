@@ -3,6 +3,17 @@
 set -e
 
 current_dir=$(dirname $0)
+prefix=
+
+if [ ! -z $2 ] && [ $2 = "in_chroot" ]
+then
+    prefix="arch-chroot /mnt "
+fi
+
+install_command="${prefix}pacman -Syu --needed --noconfirm"
+
+# install xorg-server
+$install_command xorg-server
 
 case $1 in
     GNOME)

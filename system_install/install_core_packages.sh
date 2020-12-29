@@ -18,9 +18,6 @@ $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack adobe-sourc
 # audio
 $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
 
-# desktop environment
-$install_command xorg-server
-
 # usb 3g modem
 $install_command modemmanager usb_modeswitch wvdial
 ${prefix}systemctl enable ModemManager
