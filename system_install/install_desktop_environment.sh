@@ -13,7 +13,7 @@ fi
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
 # install xorg-server
-$install_command xorg-server
+$install_command xorg-server xorg-xev acpilight
 
 case $1 in
     GNOME)
