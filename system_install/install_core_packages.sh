@@ -32,7 +32,7 @@ $install_command emacs gvim
 $install_command gdb cmake git go valgrind tk dia clang gcc python jdk-openjdk dotnet-sdk intellij-idea-community-edition pycharm-community-edition netbeans nodejs eslint npm
 
 # tools
-$install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget youtube-dl cdrtools fuseiso efitools sbsigntools bash-completion aircrack-ng nautilus gnome-calculator gnome-clocks gnome-disk-utility fish
+$install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget youtube-dl cdrtools fuseiso efitools sbsigntools bash-completion aircrack-ng nautilus gnome-calculator gnome-clocks gnome-disk-utility fish cockpit cockpit-machines
 
 # install krusader and its all optional dependencies
 $install_command krusader
