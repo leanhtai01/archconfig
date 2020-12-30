@@ -15,6 +15,9 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 # install xorg-server
 $install_command xorg-server xorg-xev acpilight
 
+# allow users in the video group to change the brightness
+${prefix}printf 'ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", GROUP="video", MODE="0664"\n' >> /etc/udev/rules.d/backlight.rules
+
 case $1 in
     GNOME)
 	. $current_dir/install_GNOME.sh $2
