@@ -16,7 +16,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 $install_command xorg-server xorg-xev acpilight
 
 # allow users in the video group to change the brightness
-${prefix}printf 'ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", GROUP="video", MODE="0664"\n' >> /etc/udev/rules.d/backlight.rules
+printf 'ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", GROUP="video", MODE="0664"\n' >> /mnt/etc/udev/rules.d/backlight.rules
 
 for de in $1
 do
