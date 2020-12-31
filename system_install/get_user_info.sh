@@ -243,7 +243,7 @@ display_menu_desktop_environment()
     printf "Enter your choice: "
 }
 
-if [ -z $desktop_environment ]
+if [ -z "$desktop_environment" ]
 then
     re="[1-4]"
 
