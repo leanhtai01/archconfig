@@ -23,3 +23,5 @@ ${prefix}mkdir -p /home/${newusername}/.config
 ${prefix}cp -r /home/${newusername}/git_repos/i3config/i3 /home/${newusername}/.config
 ${prefix}cp -r /home/${newusername}/git_repos/i3config/i3status /home/${newusername}/.config
 ${prefix}cp /home/${newusername}/git_repos/archconfig/data/tiling_window_manager/.Xresources /home/${newusername}
+${prefix}chown -R ${newusername}:${newusername} /home/${newusername}/git_repos
+${prefix}chown -R ${newusername}:${newusername} /home/${newusername}/.config
