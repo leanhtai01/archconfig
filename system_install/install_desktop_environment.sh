@@ -30,7 +30,7 @@ do
 	    . $current_dir/install_KDE_Plasma.sh $2
 	    ;;
 	i3)
-	    . $current_dir/install_i3wm.sh $2
+	    . $current_dir/install_i3wm.sh $2 $3
 	    ;;
     esac
 done
