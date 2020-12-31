@@ -274,19 +274,4 @@ then
     esac
 fi
 
-case $desktop_environment in
-    GNOME)
-	printf "GNOME"
-	;;
-    KDEPlasma)
-	printf "KDE Plasma"
-	;;
-    i3)
-	printf "i3"
-	;;
-    none)
-	printf "No desktop environment"
-	;;
-esac
-
-printf " will be installed!\n"
+printf "${desktop_environment} will be installed!\n"
