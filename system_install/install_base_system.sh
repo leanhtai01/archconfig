@@ -143,6 +143,12 @@ esac
 
 # configure the bootloader
 arch-chroot /mnt pacman -Syu --needed --noconfirm efibootmgr intel-ucode
+
+if [ $setupkeytool = "y" ]
+then    
+    . $current_dir/setup_KeyTool.sh
+fi
+
 case $bootloader in
     1)
 	. $current_dir/configure_systemd-boot.sh
@@ -168,10 +174,5 @@ fi
 if [ $setupsecureboot = "y" ]
 then    
     . $current_dir/setup_secure_boot.sh
-fi
-
-if [ $setupkeytool = "y" ]
-then    
-    . $current_dir/setup_KeyTool.sh
 fi
 
