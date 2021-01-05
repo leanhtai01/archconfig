@@ -19,8 +19,8 @@ $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack adobe-sourc
 $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
 
 # usb 3g modem
-$install_command modemmanager usb_modeswitch wvdial
-${prefix}systemctl enable ModemManager
+# $install_command modemmanager usb_modeswitch wvdial
+# ${prefix}systemctl enable ModemManager
 
 # browsers
 $install_command chromium firefox-developer-edition torbrowser-launcher
@@ -29,7 +29,8 @@ $install_command chromium firefox-developer-edition torbrowser-launcher
 $install_command emacs gvim
 
 # programming packages
-$install_command gdb cmake git go valgrind tk dia clang gcc python jdk-openjdk dotnet-sdk intellij-idea-community-edition pycharm-community-edition netbeans nodejs eslint npm
+$install_command gdb cmake git go valgrind tk dia clang gcc python dotnet-sdk nodejs eslint npm
+# $install_command intellij-idea-community-edition pycharm-community-edition netbeans jdk-openjdk # optional
 
 # tools
 $install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget youtube-dl cdrtools fuseiso efitools sbsigntools bash-completion aircrack-ng nautilus gnome-calculator gnome-clocks gnome-disk-utility fish
@@ -42,10 +43,12 @@ $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional
 $install_command remmina libvncserver freerdp
 
 # office and learning
-$install_command libreoffice-fresh calibre kchmviewer goldendict kolourpaint librecad gimp inkscape geogebra sweethome3d hexchat gnucash evince
+$install_command calibre kchmviewer goldendict kolourpaint evince
+# $install_command libreoffice-fresh librecad gimp inkscape geogebra sweethome3d hexchat gnucash # optional
 
 # multimedia
-$install_command obs-studio vlc kdenlive frei0r-plugins blender handbrake handbrake-cli audacity aegisub kid3 rhythmbox mkvtoolnix-gui pencil2d
+$install_command obs-studio vlc kdenlive frei0r-plugins
+# $install_command blender handbrake handbrake-cli audacity aegisub kid3 rhythmbox mkvtoolnix-gui pencil2d # optional
 
 # virtualbox
 $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
@@ -62,15 +65,16 @@ then
 fi
 
 # docker
-$install_command docker docker-compose
-${prefix}systemctl enable docker
-if [ ! -z $1 ]
-then
-    ${prefix}gpasswd -a $1 docker
-fi
+# $install_command docker docker-compose
+# ${prefix}systemctl enable docker
+# if [ ! -z $1 ]
+# then
+#     ${prefix}gpasswd -a $1 docker
+# fi
 
 # games
-$install_command kigo bovo gnuchess wesnoth steam steam-native-runtime discord
+$install_command steam steam-native-runtime 
+# $install_command discord kigo bovo gnuchess wesnoth # optional
 
 # enable bluetooth service
 ${prefix}systemctl enable bluetooth
