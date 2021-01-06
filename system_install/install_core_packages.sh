@@ -36,7 +36,7 @@ $install_command gdb cmake git go valgrind tk dia clang gcc python dotnet-sdk no
 $install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget youtube-dl cdrtools fuseiso efitools sbsigntools bash-completion aircrack-ng nautilus gnome-calculator gnome-clocks gnome-disk-utility fish
 
 # install krusader and its all optional dependencies
-$install_command krusader
+$install_command krusader breeze-icons
 $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d: -f1)
 
 # remote desktop
