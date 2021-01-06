@@ -12,7 +12,7 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
-$install_command i3-wm i3blocks i3lock i3status dmenu rxvt-unicode xorg-xinit feh xss-lock xorg-xinput network-manager-applet
+$install_command i3-wm i3lock i3status dmenu rxvt-unicode xorg-xinit feh xss-lock xorg-xinput network-manager-applet
 
 # configure i3
 ${prefix}mkdir -p /home/${newusername}/git_repos/archconfig
