@@ -34,7 +34,8 @@ $install_command gdb cmake git go valgrind tk dia clang gcc python dotnet-sdk no
 # $install_command intellij-idea-community-edition pycharm-community-edition netbeans jdk-openjdk # optional
 
 # tools
-$install_command reflector wimlib transmission-gtk keepassxc expect pacman-contrib gprename pdftk deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget youtube-dl cdrtools fuseiso efitools sbsigntools bash-completion aircrack-ng nautilus gnome-calculator gnome-clocks gnome-disk-utility fish
+$install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget bash-completion aircrack-ng nautilus gnome-calculator gnome-disk-utility
+# $install_command reflector cdrtools fuseiso gprename pdftk fish youtube-dl efitools sbsigntools gnome-clocks # optional
 
 # install documentation for KDE Applications
 $install_command khelpcenter
