@@ -23,7 +23,8 @@ $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
 # ${prefix}systemctl enable ModemManager
 
 # browsers
-$install_command chromium firefox-developer-edition torbrowser-launcher
+$install_command chromium torbrowser-launcher
+# $install_command firefox-developer-edition
 
 # editors
 $install_command emacs gvim
