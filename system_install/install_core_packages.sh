@@ -48,7 +48,7 @@ $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional
 $install_command remmina libvncserver freerdp
 
 # office and learning
-$install_command calibre kchmviewer goldendict kolourpaint evince
+$install_command calibre kchmviewer goldendict kolourpaint evince thunderbird
 # $install_command libreoffice-fresh librecad gimp inkscape geogebra sweethome3d hexchat gnucash # optional
 
 # multimedia
