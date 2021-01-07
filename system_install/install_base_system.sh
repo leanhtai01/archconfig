@@ -7,6 +7,7 @@ set -e
 current_dir=$(dirname $0)
 parent_dir=$(cd $(dirname $0)/..; pwd)
 install_dev=nvme0n1
+other_storage_dev="sda mmcblk0"
 part=
 size_of_ram=16
 rootpass1=
@@ -35,6 +36,15 @@ timedatectl set-ntp true
 
 # clean install device
 $parent_dir/tools/clean_disk.sh $install_dev
+
+# clean other storage device in system (if exists)
+for dev in $other_storage_dev
+do
+    if [ -b /dev/$dev ]
+    then
+	$parent_dir/tools/clean_disk.sh $dev
+    fi
+done
 
 # preparing disk for install
 case $user_choice in
