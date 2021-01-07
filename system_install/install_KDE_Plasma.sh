@@ -12,4 +12,4 @@ fi
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
 $install_command plasma ark dolphin dolphin-plugins kate kleopatra konsole okular kdegraphics-thumbnailers digikam ffmpegthumbs spectacle gwenview gnome-keyring packagekit-qt5
-${prefix}systemctl enable sddm
+# ${prefix}systemctl enable sddm
