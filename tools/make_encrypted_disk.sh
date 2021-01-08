@@ -20,7 +20,8 @@ fi
 
 $current_dir/clean_disk.sh $install_dev
 
-if [ $install_dev = nvme0n1 ]
+re="nvme0n1|mmcblk0"
+if [[ $install_dev =~ $re ]]
 then
     part=p
 fi
