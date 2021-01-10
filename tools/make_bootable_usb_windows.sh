@@ -29,4 +29,8 @@ sudo mount /dev/${dev}1 bootable_usb
 # extract iso file to device
 . $current_dir/extract_win10_bootable_iso.sh $path_to_iso bootable_usb
 
+# remove temporary dirs
+sudo umount bootable_usb
+rm -r bootable_usb
+
 printf "Successfully making bootable usb Windows 10 on ${dev}!\n"
