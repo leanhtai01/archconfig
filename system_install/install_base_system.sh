@@ -35,7 +35,11 @@ gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
 timedatectl set-ntp true
 
 # clean install device
-$parent_dir/tools/clean_disk.sh $install_dev
+re="123"
+if [[ $user_choice =~ $re ]]
+then
+    $parent_dir/tools/clean_disk.sh $install_dev
+fi
 
 # clean other storage device in system (if exists)
 for dev in $other_storage_dev
