@@ -18,8 +18,7 @@ then
     read install_dev
 fi
 
-$current_dir/clean_disk.sh $install_dev
-
+# determine suffix based on install_dev's name
 re="nvme0n1|mmcblk0"
 if [[ $install_dev =~ $re ]]
 then
@@ -32,6 +31,8 @@ then
     printf "Enter a name for encrypted device: "
     read encrypted_name
 fi
+
+$current_dir/clean_disk.sh $install_dev
 
 # set storage's password
 printf "\nSET STORAGE'S PASSWORD:\n"
