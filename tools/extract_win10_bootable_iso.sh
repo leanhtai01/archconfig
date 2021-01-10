@@ -23,8 +23,8 @@ sudo mount $path_to_iso win_img -o loop
 cp -r win_img/* tmp/
 
 # split install.wim to fit fat32 filesystem
-wimsplit tmp/sources/install.wim tmp/sources/install.swm 2500
-rm tmp/sources/install.wim
+sudo wimsplit tmp/sources/install.wim tmp/sources/install.swm 2500
+sudo rm tmp/sources/install.wim
 
 # let user choose version of Windows 10 on install
 printf "[Channel]\r\nRetail\r\n" | sudo tee tmp/sources/ei.cfg
@@ -35,7 +35,7 @@ sleep 10
 
 # remove temporary files, dirs
 sudo umount win_img/
-rm -r tmp/ win_img/
+sudo rm -r tmp/ win_img/
 
 printf "Success extracted Windows 10 iso to ${dest}!\n"
 
