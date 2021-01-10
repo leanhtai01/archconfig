@@ -20,7 +20,7 @@ fi
 # mount the iso
 mkdir win_img tmp
 sudo mount $path_to_iso win_img -o loop
-cp -r win_img/* tmp/
+sudo cp -r win_img/* tmp/
 
 # split install.wim to fit fat32 filesystem
 sudo wimsplit tmp/sources/install.wim tmp/sources/install.swm 2500
@@ -30,7 +30,7 @@ sudo rm tmp/sources/install.wim
 printf "[Channel]\r\nRetail\r\n" | sudo tee tmp/sources/ei.cfg
 
 # copy install file to destination
-cp -r tmp/* $dest
+sudo cp -r tmp/* $dest
 sleep 10
 
 # remove temporary files, dirs
@@ -38,5 +38,3 @@ sudo umount win_img/
 sudo rm -r tmp/ win_img/
 
 printf "Success extracted Windows 10 iso to ${dest}!\n"
-
-
