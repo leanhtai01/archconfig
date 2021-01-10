@@ -23,3 +23,5 @@ fi
 $current_dir/clean_disk.sh $dev
 sudo sgdisk -n 0:0:0 /dev/$dev
 sudo mkfs.fat -F32 /dev/${dev}1 -n "$label"
+
+printf "Success!\n"
