@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -i
+set -e
 
 path_to_iso=$1
 dest=$2
