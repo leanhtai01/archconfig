@@ -2,39 +2,31 @@
 
 set -e
 
-path_to_iso=
-device=
+dev=$1
+path_to_iso=$2
 current_dir=$(dirname $0)
 
-lsblk
-read -e -p "Enter USB device (sda, sdb, sdX,...): " device
-read -e -p "Enter path to the iso: " path_to_iso
+# let user choose device
+if [ -z $dev ]
+then
+    lsblk
+    read -e -p "Enter USB device (sda, sdb, sdX,...): " dev
+fi
+
+# let user choose iso file
+if [ -z $path_to_iso ]
+then
+    read -e -p "Enter path to the iso: " path_to_iso
+fi
 
 # format device
-$current_dir/clean_disk.sh $device
-sudo sgdisk -n 0:0:0 /dev/$device
-sudo mkfs.fat -F32 /dev/${device}1 -n "WINDOWS10"
+. $current_dir/make_fat32_usb.sh $dev "WIN10X64"
 
-# mount the iso
-sudo mkdir win_img tmp bootable_usb
-sudo mount $path_to_iso win_img -o loop
-sudo cp -r win_img/* tmp/
-sudo chmod -R ugo+xrw tmp/*
+# mount device
+mkdir bootable_usb
+sudo mount /dev/${dev}1 bootable_usb
 
-# split install.wim to fit fat32 filesystem
-sudo wimsplit tmp/sources/install.wim tmp/sources/install.swm 2500
-sudo rm tmp/sources/install.wim
+# extract iso file to device
+. $current_dir/extract_win10_bootable_iso.sh $path_to_iso bootable_usb
 
-# let user choose version of Windows 10 on install
-sudo printf "[Channel]\r\nRetail\r\n" > tmp/sources/ei.cfg
-
-# copy install files to usb
-sudo mount /dev/${device}1 bootable_usb
-sudo cp -r tmp/* bootable_usb/
-sleep 30
-sudo umount bootable_usb/ win_img/
-sudo rm -r tmp/ win_img/ bootable_usb/
-lsblk
-udisksctl power-off -b /dev/$device
-lsblk
-printf "Success!\n"
+printf "Successfully making bootable usb Windows 10 on ${dev}!\n"
