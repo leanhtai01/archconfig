@@ -17,4 +17,4 @@ sudo wipefs -a /dev/$device
 sudo sgdisk -Z /dev/$device
 sleep 2
 lsblk
-printf "Success!\n"
+printf "Success clean device /dev/${device}!\n"

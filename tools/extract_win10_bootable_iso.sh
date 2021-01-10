@@ -37,6 +37,6 @@ sleep 10
 sudo umount win_img/
 rm -r tmp/ win_img/
 
-printf "Success!\n"
+printf "Success extracted Windows 10 iso to ${dest}!\n"
 
 
