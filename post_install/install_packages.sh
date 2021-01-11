@@ -20,4 +20,5 @@ $current_dir/install_usb_wifi_driver.sh
 $current_dir/install_virtualbox-ext-oracle.sh
 $current_dir/install_zoom.sh
 $current_dir/install_roslynpad.sh
+$current_dir/install_dislocker.sh
 $current_dir/install_minecraft.sh
