@@ -60,5 +60,5 @@ sudo sgdisk -n 0:0:0 -t 0:8309 -c 0:"$encrypted_name" /dev/$dev
 # encrypted the new partition
 $current_dir/make_encrypted_partition.sh "${dev}${suffix}${partnum}" "$encrypted_name" "$storagepass1"
 
-printf "Device /dev/${dev} encrypted successfully!"
+printf "Device /dev/${dev} encrypted successfully!\n"
 
