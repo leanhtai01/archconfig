@@ -72,10 +72,10 @@ sudo wipefs -a /dev/mapper/$encrypted_name
 sudo mkfs.ext4 /dev/mapper/$encrypted_name -L "$encrypted_name"
 
 # make partition accessable by normal user
-mkdir ~/mount_point
-sudo mount /dev/mapper/$encrypted_name ~/mount_point
-sudo chown $(whoami):$(whoami) ~/mount_point
-sudo umount ~/mount_point
-rm -r ~/mount_point
+mkdir mount_point
+sudo mount /dev/mapper/$encrypted_name mount_point
+sudo chown $(whoami):$(whoami) mount_point
+sudo umount mount_point
+rm -r mount_point
 sudo cryptsetup close $encrypted_name
 printf "Success! /dev/${part} is encrypted!\n"
