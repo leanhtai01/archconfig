@@ -2,27 +2,26 @@
 
 set -e
 
-# variables
 current_dir=$(dirname $0)
-install_dev=
-part=
-storagepass1=
+encrypted_name=$2
+storagepass1=$3
 storagepass2=
-encrypted_name=
+suffix=
+partnum=1
+dev=$1
 
 # let user choose device
-if [ -z $install_dev ]
+if [ -z $dev ]
 then
     lsblk
-    echo -n "Enter device: "
-    read install_dev
+    echo -n "Enter device's name (sda, nvme0n1, mmcblk0,...): "
+    read dev
 fi
 
-# determine suffix based on install_dev's name
-re="nvme0n1|mmcblk0"
-if [[ $install_dev =~ $re ]]
+# determine suffix based on dev's name
+if [ "${dev:0:2}" != "sd" ]
 then
-    part=p
+    suffix=p
 fi
 
 # let user choose name for encrypted device
@@ -32,7 +31,7 @@ then
     read encrypted_name
 fi
 
-$current_dir/clean_disk.sh $install_dev
+$current_dir/clean_disk.sh $dev
 
 # set storage's password
 printf "\nSET STORAGE'S PASSWORD:\n"
@@ -53,29 +52,13 @@ then
     done
 fi
 
-printf "\nStorage's password set successfully!\n"
+# make a new partition on disk
+sudo wipefs -a /dev/$dev
+sudo sgdisk -Z /dev/$dev
+sudo sgdisk -n 0:0:0 -t 0:8309 -c 0:"$encrypted_name" /dev/$dev
 
-# partition the disk
-sudo wipefs -a /dev/$install_dev
-sudo sgdisk -Z /dev/$install_dev
-sudo sgdisk -n 0:0:0 -t 0:8309 -c 0:"$encrypted_name" /dev/$install_dev
+# encrypted the new partition
+$current_dir/make_encrypted_partition.sh "${dev}${suffix}${partnum}" "$encrypted_name" "$storagepass1"
 
-# create the LUKS encrypted container
-sudo wipefs -a /dev/${install_dev}${part}1
-printf "$storagepass1" | sudo cryptsetup luksFormat --type luks2 /dev/${install_dev}${part}1 -
+printf "Device /dev/${dev} encrypted successfully!"
 
-# open the container
-printf "$storagepass1" | sudo cryptsetup open /dev/${install_dev}${part}1 $encrypted_name -
-sudo wipefs -a /dev/mapper/$encrypted_name
-
-# format the partition
-sudo mkfs.ext4 /dev/mapper/$encrypted_name -L "$encrypted_name"
-
-# make partition accessable by normal user
-mkdir ~/mount_point
-sudo mount /dev/mapper/$encrypted_name ~/mount_point
-sudo chown $(whoami):$(whoami) ~/mount_point
-sudo umount ~/mount_point
-rm -r ~/mount_point
-sudo cryptsetup close $encrypted_name
-printf "Success! /dev/${install_dev} is encrypted!\n"
