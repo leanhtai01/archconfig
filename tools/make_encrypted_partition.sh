@@ -39,7 +39,6 @@ then
 fi
 
 # set storage's password
-printf "\nSET STORAGE'S PASSWORD:\n"
 if [ -z $storagepass1 ]
 then
     printf "Enter storage's password: "

@@ -34,8 +34,7 @@ fi
 $current_dir/clean_disk.sh $dev
 
 # set storage's password
-printf "\nSET STORAGE'S PASSWORD:\n"
-if [ -z $storagepass1 ] || [ -z $storagepass2 ] || [ $storagepass1 != $storagepass2 ]
+if [ -z $storagepass1 ]
 then
     printf "Enter storage's password: "
     read -s storagepass1
