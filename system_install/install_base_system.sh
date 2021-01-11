@@ -7,7 +7,7 @@ set -e
 current_dir=$(dirname $0)
 parent_dir=$(cd $(dirname $0)/..; pwd)
 install_dev=nvme0n1
-other_storage_dev="sda" # (sda, sdb, sdc, mmcblk0,...)
+other_storage_dev= # (sda, sdb, sdc, mmcblk0,...)
 part=
 size_of_ram=16
 rootpass1=
