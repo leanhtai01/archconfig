@@ -30,7 +30,7 @@ $install_command firefox-developer-edition
 $install_command emacs gvim
 
 # programming packages
-$install_command gdb cmake git go valgrind tk dia clang gcc python dotnet-sdk nodejs eslint npm
+$install_command gdb cmake git go valgrind tk dia clang gcc python dotnet-sdk nodejs eslint npm github-cli
 $install_command intellij-idea-community-edition pycharm-community-edition netbeans jdk-openjdk # optional
 
 # install kdevelop and its all optional dependencies
