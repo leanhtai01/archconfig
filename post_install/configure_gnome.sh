@@ -11,6 +11,9 @@ set -e
 # set applications theme to dark
 # gsettings set org.gnome.desktop.interface gtk-theme "'Adwaita-dark'"
 
+# set alternate characters key
+gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:rwin_switch']"
+
 # show battery percentage
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 
