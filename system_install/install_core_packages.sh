@@ -49,7 +49,7 @@ $install_command reflector cdrtools fuseiso gprename pdftk fish youtube-dl efito
 $install_command khelpcenter
 
 # install krusader and its all optional dependencies
-$install_command krusader breeze-icons
+$install_command krusader # breeze-icons
 $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d: -f1)
 
 # remote desktop
