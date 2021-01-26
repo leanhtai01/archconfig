@@ -15,8 +15,8 @@ $current_dir/install_sublime_tools.sh
 $current_dir/install_mssql.sh
 $current_dir/install_visual_studio_code.sh
 $current_dir/install_azure_data_studio.sh
-$current_dir/install_dropbox.sh
-# $current_dir/install_nautilus_dropbox.sh
+# $current_dir/install_dropbox.sh
+$current_dir/install_nautilus_dropbox.sh
 $current_dir/install_usb_wifi_driver.sh
 $current_dir/install_virtualbox-ext-oracle.sh
 $current_dir/install_zoom.sh
