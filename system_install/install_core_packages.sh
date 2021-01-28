@@ -85,9 +85,5 @@ then
     ${prefix}gpasswd -a $1 docker
 fi
 
-# games
-$install_command steam steam-native-runtime 
-$install_command discord kigo bovo gnuchess wesnoth # optional
-
 # enable bluetooth service
 ${prefix}systemctl enable bluetooth
