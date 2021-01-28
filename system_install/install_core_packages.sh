@@ -25,19 +25,11 @@ $install_command firefox-developer-edition torbrowser-launcher
 $install_command emacs gvim
 
 # programming packages
-$install_command gdb cmake git go valgrind tk dia clang gcc python dotnet-sdk nodejs eslint npm github-cli
-
-# install kdevelop and its all optional dependencies
-$install_command kdevelop
-$install_command $(printf "$(${prefix}pacman -Qi kdevelop)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d: -f1)
-
-# install qtcreator and its all optional dependencies
-$install_command qtcreator
-$install_command $(printf "$(${prefix}pacman -Qi qtcreator)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d: -f1)
+$install_command gdb cmake git go valgrind tk dia clang gcc python nodejs eslint npm github-cli
 
 # tools
-$install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget bash-completion aircrack-ng nautilus gnome-calculator gnome-disk-utility bchunk
-$install_command reflector cdrtools fuseiso pdftk youtube-dl efitools sbsigntools gnome-clocks # optional
+$install_command wimlib transmission-gtk keepassxc expect pacman-contrib curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget bash-completion aircrack-ng gnome-calculator gnome-disk-utility
+$install_command reflector pdftk youtube-dl efitools sbsigntools gnome-clocks # optional
 
 # install documentation for KDE Applications
 $install_command khelpcenter
