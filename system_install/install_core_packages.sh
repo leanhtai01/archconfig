@@ -18,10 +18,6 @@ $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack adobe-sourc
 # audio
 $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
 
-# usb 3g modem
-$install_command modemmanager usb_modeswitch wvdial
-${prefix}systemctl enable ModemManager
-
 # browsers
 $install_command firefox-developer-edition torbrowser-launcher
 
@@ -30,7 +26,6 @@ $install_command emacs gvim
 
 # programming packages
 $install_command gdb cmake git go valgrind tk dia clang gcc python dotnet-sdk nodejs eslint npm github-cli
-$install_command intellij-idea-community-edition pycharm-community-edition netbeans jdk-openjdk # optional
 
 # install kdevelop and its all optional dependencies
 $install_command kdevelop
@@ -42,7 +37,7 @@ $install_command $(printf "$(${prefix}pacman -Qi qtcreator)" | sed -n '/^Optiona
 
 # tools
 $install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget bash-completion aircrack-ng nautilus gnome-calculator gnome-disk-utility bchunk
-$install_command reflector cdrtools fuseiso gprename pdftk fish youtube-dl efitools sbsigntools gnome-clocks # optional
+$install_command reflector cdrtools fuseiso pdftk youtube-dl efitools sbsigntools gnome-clocks # optional
 
 # install documentation for KDE Applications
 $install_command khelpcenter
@@ -56,11 +51,10 @@ $install_command remmina libvncserver freerdp
 
 # office and learning
 $install_command calibre kchmviewer goldendict kolourpaint evince thunderbird
-$install_command libreoffice-fresh librecad gimp inkscape geogebra sweethome3d hexchat gnucash # optional
+$install_command libreoffice-fresh gimp inkscape geogebra
 
 # multimedia
 $install_command obs-studio vlc kdenlive frei0r-plugins
-$install_command blender handbrake handbrake-cli audacity aegisub kid3 rhythmbox mkvtoolnix-gui pencil2d # optional
 
 # virtualbox
 $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
