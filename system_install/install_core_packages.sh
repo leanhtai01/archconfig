@@ -23,8 +23,7 @@ $install_command modemmanager usb_modeswitch wvdial
 ${prefix}systemctl enable ModemManager
 
 # browsers
-$install_command chromium torbrowser-launcher
-$install_command firefox-developer-edition
+$install_command firefox-developer-edition torbrowser-launcher
 
 # editors
 $install_command emacs gvim
