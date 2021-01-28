@@ -6,7 +6,7 @@ SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/']"
+gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/']"
 
 # open Emacs
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
@@ -32,3 +32,8 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ command "'gnome-terminal'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ name "'Nautilus'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ binding "'<Super>e'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ command "'nautilus'"
+
+# open GVim
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ name "'GVim'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ binding "'<Primary><Alt>v'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ command "'gvim'"
