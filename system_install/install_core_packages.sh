@@ -56,13 +56,6 @@ $install_command libreoffice-fresh gimp inkscape geogebra
 # multimedia
 $install_command obs-studio vlc kdenlive frei0r-plugins
 
-# virtualbox
-$install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
-if [ ! -z $1 ]
-then
-    ${prefix}gpasswd -a $1 vboxusers
-fi
-
 # wireshark
 $install_command wireshark-qt
 if [ ! -z $1 ]
