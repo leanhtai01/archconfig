@@ -18,6 +18,10 @@ $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack adobe-sourc
 # audio
 $install_command pulseaudio-alsa alsa-utils pulseaudio-bluetooth
 
+# usb 3g modem
+$install_command modemmanager usb_modeswitch wvdial
+${prefix}systemctl enable ModemManager
+
 # browsers
 $install_command firefox-developer-edition torbrowser-launcher
 
