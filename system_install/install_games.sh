@@ -11,4 +11,4 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
-$install_command steam steam-native-runtime discord kigo bovo gnuchess wesnoth
+$install_command steam steam-native-runtime
