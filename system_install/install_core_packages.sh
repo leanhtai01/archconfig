@@ -31,6 +31,7 @@ $install_command emacs gvim
 # programming packages
 $install_command gdb cmake git go valgrind tk dia clang gcc python dotnet-sdk nodejs eslint npm github-cli
 $install_command intellij-idea-community-edition pycharm-community-edition netbeans jdk-openjdk # optional
+$install_command devhelp glade gnome-builder gnome-devel-docs gnome-code-assistance gtk4 gtk-doc
 
 # install kdevelop and its all optional dependencies
 $install_command kdevelop
