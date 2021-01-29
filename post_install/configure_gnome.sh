@@ -58,6 +58,9 @@ gsettings set org.gnome.shell favorite-apps "['torbrowser.desktop', 'thunderbird
 # switch applications only in current workspace
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
 
+# set nautilus initial-size
+gsettings set org.gnome.nautilus.window-state initial-size "(1169, 785)"
+
 # switch windows
 # gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
 # gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
