@@ -56,7 +56,7 @@ $install_command remmina libvncserver freerdp
 
 # office and learning
 $install_command calibre kchmviewer goldendict kolourpaint evince thunderbird
-$install_command libreoffice-fresh gimp inkscape geogebra
+$install_command libreoffice-fresh librecad gimp inkscape geogebra sweethome3d hexchat gnucash # optional
 
 # multimedia
 $install_command obs-studio vlc kdenlive frei0r-plugins
