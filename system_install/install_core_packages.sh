@@ -60,6 +60,7 @@ $install_command libreoffice-fresh librecad gimp inkscape geogebra sweethome3d h
 
 # multimedia
 $install_command obs-studio vlc kdenlive frei0r-plugins
+$install_command blender handbrake handbrake-cli audacity aegisub kid3 rhythmbox mkvtoolnix-gui pencil2d # optional
 
 # docker
 $install_command docker docker-compose
