@@ -28,7 +28,7 @@ $install_command emacs gvim
 $install_command gdb cmake git go valgrind tk dia clang gcc python nodejs eslint npm github-cli
 
 # tools
-$install_command wimlib transmission-gtk keepassxc expect pacman-contrib curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget bash-completion aircrack-ng gnome-calculator gnome-disk-utility
+$install_command wimlib transmission-gtk keepassxc expect pacman-contrib curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget bash-completion aircrack-ng gnome-calculator gnome-disk-utility ibus
 $install_command reflector pdftk efitools sbsigntools gnome-clocks # optional
 
 # install documentation for KDE Applications
