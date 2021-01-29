@@ -21,3 +21,6 @@ $install_command $(printf "$(${prefix}pacman -Qi wine)" | sed -n '/^Optional Dep
 
 # install steam
 $install_command steam steam-native-runtime
+
+# install playonlinux
+$install_command playonlinux
