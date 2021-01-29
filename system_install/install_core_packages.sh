@@ -29,7 +29,8 @@ $install_command firefox-developer-edition torbrowser-launcher chromium
 $install_command emacs gvim
 
 # programming packages
-$install_command gdb cmake git go valgrind tk dia clang gcc python nodejs eslint npm github-cli
+$install_command gdb cmake git go valgrind tk dia clang gcc python dotnet-sdk nodejs eslint npm github-cli
+$install_command intellij-idea-community-edition pycharm-community-edition netbeans jdk-openjdk # optional
 
 # tools
 $install_command wimlib transmission-gtk keepassxc expect pacman-contrib curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget bash-completion aircrack-ng gnome-calculator gnome-disk-utility ibus
