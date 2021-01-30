@@ -61,6 +61,9 @@ gsettings set org.gnome.shell.app-switcher current-workspace-only true
 # set nautilus initial-size
 gsettings set org.gnome.nautilus.window-state initial-size "(1169, 785)"
 
+# sort directories first
+gsettings set org.gtk.settings.file-chooser sort-directories-first true
+
 # switch windows
 # gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
 # gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
