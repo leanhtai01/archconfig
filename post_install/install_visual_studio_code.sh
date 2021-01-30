@@ -2,6 +2,6 @@
 
 set -e
 
-sudo pacman -Syu --noconfirm gnome-keyring
+sudo pacman -Syu --needed --noconfirm gnome-keyring
 yay -Syu --noconfirm visual-studio-code-bin
-sudo pacman -Syu --noconfirm mono-msbuild
+sudo pacman -Syu --needed --noconfirm mono-msbuild
