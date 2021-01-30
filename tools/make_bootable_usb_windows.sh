@@ -33,4 +33,9 @@ sudo mount /dev/${dev}1 bootable_usb
 sudo umount bootable_usb
 sudo rm -r bootable_usb
 
+sleep 30
+lsblk
+udisksctl power-off -b /dev/$dev
+lsblk
+
 printf "Successfully making bootable usb Windows 10 on ${dev}!\n"
