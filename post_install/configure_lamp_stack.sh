@@ -84,13 +84,13 @@ sudo sed -i "/^#LoadModule mpm_prefork_module modules\/mod_mpm_prefork.so$/s/^#/
 
 # place some line at the end of the LoadModule list:
 linum=$(sed -n '/^#\?LoadModule /=' /etc/httpd/conf/httpd.conf | tail -1)
-sudo sed -i "${linum} a LoadModule php7_module modules\/libphp7.so" /etc/httpd/conf/httpd.conf
+sudo sed -i "${linum} a LoadModule php_module modules\/libphp.so" /etc/httpd/conf/httpd.conf
 ((linum++))
-sudo sed -i "${linum} a AddHandler php7-script .php" /etc/httpd/conf/httpd.conf
+sudo sed -i "${linum} a AddHandler php-script .php" /etc/httpd/conf/httpd.conf
 
 # place some line at the end of the Include list
 linum=$(sed -n $= /etc/httpd/conf/httpd.conf) # get the last line number
-sudo sed -i "${linum} a Include conf\/extra\/php7_module.conf" /etc/httpd/conf/httpd.conf
+sudo sed -i "${linum} a Include conf\/extra\/php_module.conf" /etc/httpd/conf/httpd.conf
 
 # restart httpd.service
 sudo systemctl restart httpd
