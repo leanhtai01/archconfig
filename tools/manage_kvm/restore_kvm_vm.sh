@@ -14,25 +14,25 @@ xml_name=${vm_name}.xml
 nvram_name=${vm_name}_VARS.fd
 
 # copy disk file
-if [ ! -f "$disk_name" ]
+if [ ! -f ${vm_name}/${disk_name} ]
 then
     read -e -p "Enter disk's size: " disk_size
     sudo qemu-img create -f qcow2 /var/lib/libvirt/images/${disk_name} ${disk_size}G
 else
-    sudo cp $disk_name /var/lib/libvirt/images/
+    sudo cp ${vm_name}/$disk_name /var/lib/libvirt/images/
 fi
 
-sudo virsh define $xml_name
+sudo virsh define ${vm_name}/$xml_name
 
 # redefine snapshots
-snapshots_xml=$(ls snapshots)
+snapshots_xml=$(ls ${vm_name}/snapshots)
 for xml in $snapshots_xml
 do
-    (cd snapshots && sudo virsh snapshot-create --redefine "$vm_name" "$xml")
+    (cd ${vm_name}/snapshots && sudo virsh snapshot-create --redefine "$vm_name" "$xml")
 done
 
 # copy nvram file
-sudo cp $nvram_name /var/lib/libvirt/qemu/nvram/
+sudo cp ${vm_name}/$nvram_name /var/lib/libvirt/qemu/nvram/
 
 printf "Restore complete!\n"
 
