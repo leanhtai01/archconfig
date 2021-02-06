@@ -42,7 +42,7 @@ $install_command qtcreator
 $install_command $(printf "$(${prefix}pacman -Qi qtcreator)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
 
 # tools
-$install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget bash-completion aircrack-ng nautilus gnome-calculator gnome-disk-utility bchunk ibus nfs-utils samba
+$install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget bash-completion aircrack-ng nautilus gnome-calculator gnome-disk-utility bchunk ibus nfs-utils samba filezilla
 $install_command reflector cdrtools fuseiso gprename pdftk fish youtube-dl efitools sbsigntools gnome-clocks # optional
 
 # install documentation for KDE Applications
