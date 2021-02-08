@@ -6,6 +6,7 @@ path_to_iso=$1
 current_dir=$(dirname $0)
 
 # get path to iso
+ls -l
 if [ -z "$path_to_iso" ]
 then
     read -e -p "Enter path to original iso: " path_to_iso
