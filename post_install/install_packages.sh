@@ -24,4 +24,5 @@ $current_dir/install_zoom.sh
 $current_dir/install_roslynpad.sh
 $current_dir/install_dislocker.sh
 $current_dir/install_minecraft.sh
+$current_dir/install_gcdemu.sh
 # $current_dir/install_poweriso.sh
