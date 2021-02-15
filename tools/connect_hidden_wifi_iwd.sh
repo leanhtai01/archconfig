@@ -26,6 +26,7 @@ fi
 
 iwctl device list
 iwctl --passphrase="$PASSPHRASE" station "$DEVICE" connect-hidden "$SSID"
+sleep 10
 
 # test internet
 ping -c 3 www.google.com
