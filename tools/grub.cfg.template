@@ -1,0 +1,12 @@
+insmod search_fs_uuid
+
+menuentry "win10_x64_img" {
+	  insmod part_gpt
+	  insmod ntfs
+	  insmod chain
+
+	  set uuid=""
+	  search --no-floppy --set=root --fs-uuid $uuid
+
+	  chainloader /efi/boot/bootx64.efi
+}
