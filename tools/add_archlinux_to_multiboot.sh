@@ -26,14 +26,15 @@ sudo mkfs.ext4 -L "$archlinux_label" /dev/disk/by-partlabel/${archlinux_label}
 sudo mount /dev/disk/by-partlabel/${multiboot_efi_label} /mnt
 part_uuid=$(blkid -s UUID -o value /dev/disk/by-partlabel/${archlinux_label})
 sudo sed -i "/^[ \t]*set uuid=\"\"/s/\"\"/\"$part_uuid\"/" /mnt/boot/grub/grub.cfg
+sudo sed -i "/^[ \t]*set isofile=\"\"/s/\"\"/\/$archlinux_iso_name/" /mnt/boot/grub/grub.cfg
 sudo umount /mnt
 
 # mount device
 mkdir -p archlinux_part
 sudo mount /dev/disk/by-partlabel/${archlinux_label} archlinux_part
 
-# extract iso
-sudo 7z x "$archlinux_iso_name" -o"archlinux_part"
+# copy iso to partition
+sudo cp $archlinux_iso_name archlinux_part
 
 # remove temporary dirs
 sudo umount archlinux_part

@@ -12,12 +12,12 @@ menuentry "win10_x64_installer" {
 }
 
 menuentry "arch_installer" {
-	  insmod part_gpt
-	  insmod ext2
-	  insmod chain
-
 	  set uuid=""
 	  search --no-floppy --set=root --fs-uuid $uuid
 
-	  chainloader /EFI/BOOT/BOOTx64.EFI
+	  set isofile=""
+	  loopback loop ($root)$isofile
+
+	  linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=$root img_loop=$isofile earlymodules=loop
+	  initrd (loop)/arch/boot/intel-ucode.img (loop)/arch/boot/x86_64/initramfs-linux.img
 }
