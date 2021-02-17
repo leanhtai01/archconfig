@@ -4,7 +4,7 @@ set -e
 
 install_dev=$1
 multiboot_efi_label="multiboot_efi"
-archlinux_label="archlinux_installer"
+archlinux_label="arch_installer"
 archlinux_iso_name="archlinux-2021.01.01-x86_64.iso"
 current_dir=$(dirname $0)
 
