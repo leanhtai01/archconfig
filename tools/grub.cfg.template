@@ -1,6 +1,6 @@
 insmod search_fs_uuid
 
-menuentry "win10_x64_img" {
+menuentry "win10_x64_installer" {
 	  insmod part_gpt
 	  insmod ntfs
 	  insmod chain
@@ -9,4 +9,15 @@ menuentry "win10_x64_img" {
 	  search --no-floppy --set=root --fs-uuid $uuid
 
 	  chainloader /efi/boot/bootx64.efi
+}
+
+menuentry "archlinux-x86_64_installer" {
+	  insmod part_gpt
+	  insmod ext2
+	  insmod chain
+
+	  set uuid=""
+	  search --no-floppy --set=root --fs-uuid $uuid
+
+	  chainloader /EFI/BOOT/BOOTx64.EFI
 }
