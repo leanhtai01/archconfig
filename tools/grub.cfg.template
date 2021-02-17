@@ -11,7 +11,7 @@ menuentry "win10_x64_installer" {
 	  chainloader /efi/boot/bootx64.efi
 }
 
-menuentry "archlinux-x86_64_installer" {
+menuentry "archlinux_installer" {
 	  insmod part_gpt
 	  insmod ext2
 	  insmod chain
