@@ -30,13 +30,13 @@ sudo sed -i "/^[ \t]*set uuid=\"\"/s/\"\"/\"$part_uuid\"/" /mnt/boot/grub/grub.c
 sudo umount /mnt
 
 # mount device
-mkdir win10_x64_part
+mkdir -p win10_x64_part
 sudo mount /dev/disk/by-partlabel/${win10_x64_label} win10_x64_part
 
 # extract iso
 $current_dir/extract_win10_bootable_iso.sh $win10_iso_name win10_x64_part
 
-# remove temparary dirs
+# remove temporary dirs
 sudo umount win10_x64_part
 sudo rm -r win10_x64_part
 
