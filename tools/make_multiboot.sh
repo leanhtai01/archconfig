@@ -27,7 +27,7 @@ sudo mkfs.fat -F32 /dev/${install_dev}${part}1
 # installing GRUB
 sudo mount /dev/${install_dev}${part}1 /mnt
 sudo mkdir -p /mnt/boot
-sudo grub-install --target=x86_64-efi --boot-directory=/mnt/boot --efi-directory=/mnt --bootloader-id="multiboot-os-installer"
+sudo grub-install --target=x86_64-efi --removable --boot-directory=/mnt/boot --efi-directory=/mnt #--bootloader-id="multiboot-os-installer"
 
 # configurating GRUB
 sudo mkdir -p /mnt/boot/grub
