@@ -1,23 +1,25 @@
 insmod search_fs_uuid
+insmod efi_gop
 
 menuentry "win10_x64_installer" {
 	  insmod part_gpt
 	  insmod ntfs
 	  insmod chain
 
-	  set uuid=""
-	  search --no-floppy --set=root --fs-uuid $uuid
+	  set win10_part_uuid=""
+	  search --no-floppy --set=root --fs-uuid $win10_part_uuid
 
 	  chainloader /efi/boot/bootx64.efi
 }
 
 menuentry "arch_installer" {
-	  set uuid=""
-	  search --no-floppy --set=root --fs-uuid $uuid
+	  set arch_part_uuid=""
+	  set arch_iso_file=""
+	  
+	  search --no-floppy --set=arch_iso_part --fs-uuid $arch_part_uuid
+	  loopback loop ($arch_iso_part)$arch_iso_file
 
-	  set isofile=""
-	  loopback loop ($root)$isofile
-
-	  linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=$root img_loop=$isofile earlymodules=loop
+	  set arch_dev_path="/dev/disk/by-uuid/$arch_part_uuid"
+	  linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=$arch_dev_path img_loop=$arch_iso_file earlymodules=loop
 	  initrd (loop)/arch/boot/intel-ucode.img (loop)/arch/boot/x86_64/initramfs-linux.img
 }

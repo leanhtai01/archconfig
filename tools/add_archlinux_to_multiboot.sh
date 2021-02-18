@@ -25,8 +25,8 @@ sudo mkfs.ext4 -L "$archlinux_label" /dev/disk/by-partlabel/${archlinux_label}
 # configurating GRUB
 sudo mount /dev/disk/by-partlabel/${multiboot_efi_label} /mnt
 part_uuid=$(blkid -s UUID -o value /dev/disk/by-partlabel/${archlinux_label})
-sudo sed -i "/^[ \t]*set uuid=\"\"/s/\"\"/\"$part_uuid\"/" /mnt/boot/grub/grub.cfg
-sudo sed -i "/^[ \t]*set isofile=\"\"/s/\"\"/\/$archlinux_iso_name/" /mnt/boot/grub/grub.cfg
+sudo sed -i "/^[ \t]*set arch_part_uuid=\"\"/s/\"\"/\"$part_uuid\"/" /mnt/boot/grub/grub.cfg
+sudo sed -i "/^[ \t]*set arch_iso_file=\"\"/s/\"\"/\/$archlinux_iso_name/" /mnt/boot/grub/grub.cfg
 sudo umount /mnt
 
 # mount device

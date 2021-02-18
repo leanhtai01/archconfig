@@ -16,7 +16,6 @@ then
 fi
 
 # create partition for Windows 10
-# size_of_part=$(du --block-size=1G "$win10_iso_name" | cut -f1)
 sudo sgdisk -n 0:0:+10G -t 0:0700 -c 0:"$win10_x64_label" /dev/$install_dev
 
 # format the partitions
@@ -26,7 +25,7 @@ sudo mkfs.ntfs -Q -L "$win10_x64_label" /dev/disk/by-partlabel/${win10_x64_label
 # configurating GRUB
 sudo mount /dev/disk/by-partlabel/${multiboot_efi_label} /mnt
 part_uuid=$(blkid -s UUID -o value /dev/disk/by-partlabel/${win10_x64_label})
-sudo sed -i "/^[ \t]*set uuid=\"\"/s/\"\"/\"$part_uuid\"/" /mnt/boot/grub/grub.cfg
+sudo sed -i "/^[ \t]*set win10_part_uuid=\"\"/s/\"\"/\"$part_uuid\"/" /mnt/boot/grub/grub.cfg
 sudo umount /mnt
 
 # mount device
