@@ -27,7 +27,7 @@ mkdir bootable_usb
 sudo mount /dev/${dev}1 bootable_usb
 
 # extract iso file to device
-. $current_dir/extract_win10_bootable_iso.sh $path_to_iso bootable_usb
+. $current_dir/extract_win10_bootable_iso.sh $path_to_iso bootable_usb "y"
 
 # remove temporary dirs
 sudo umount bootable_usb
