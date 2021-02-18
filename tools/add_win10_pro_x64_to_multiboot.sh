@@ -20,6 +20,7 @@ sudo sgdisk -n 0:0:+10G -t 0:0700 -c 0:"$win10_x64_label" /dev/$install_dev
 
 # format the partitions
 sleep 10
+sudo wipefs -a /dev/disk/by-partlabel/${win10_x64_label}
 sudo mkfs.ntfs -Q -L "$win10_x64_label" /dev/disk/by-partlabel/${win10_x64_label}
 
 # configurating GRUB

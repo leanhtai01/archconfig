@@ -20,6 +20,7 @@ sudo sgdisk -n 0:0:+1G -t 0:8300 -c 0:"$archlinux_label" /dev/$install_dev
 
 # format the partitions
 sleep 10
+sudo wipefs -a /dev/disk/by-partlabel/${archlinux_label}
 sudo mkfs.ext4 -L "$archlinux_label" /dev/disk/by-partlabel/${archlinux_label}
 
 # configurating GRUB
