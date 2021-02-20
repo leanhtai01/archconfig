@@ -27,4 +27,5 @@ $current_dir/install_minecraft.sh
 $current_dir/install_gcdemu.sh
 $current_dir/install_flatpak_apps.sh
 $current_dir/install_dnscrypt-proxy.sh
+$current_dir/install_teamviewer.sh
 # $current_dir/install_poweriso.sh
