@@ -18,7 +18,7 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Krusader'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>f'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'krusader'"
 
-# open Google Chrome
+# open Firefox Developer Edition
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ name "'Firefox Developer Edition'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ binding "'<Primary><Alt>i'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ command "'firefox-developer-edition'"
