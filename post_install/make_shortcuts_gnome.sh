@@ -19,9 +19,9 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>f'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'krusader'"
 
 # open Chromium
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ name "'Google Chrome'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ name "'Firefox Developer Edition'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ binding "'<Primary><Alt>i'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ command "'google-chrome-stable'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ command "'firefox-developer-edition'"
 
 # open GNOME Terminal
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ name "'GNOME Terminal'"
