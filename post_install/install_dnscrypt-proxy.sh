@@ -19,3 +19,4 @@ sudo systemctl start dnscrypt-proxy.service
 
 # restart Network Manager
 sudo systemctl restart NetworkManager
+sleep 40
