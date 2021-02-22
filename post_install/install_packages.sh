@@ -30,4 +30,5 @@ $current_dir/install_dnscrypt-proxy.sh
 $current_dir/install_teamviewer.sh
 $current_dir/install_skype.sh
 $current_dir/install_google-chrome.sh
+$current_dir/install_logisim-evolution.sh
 # $current_dir/install_poweriso.sh
