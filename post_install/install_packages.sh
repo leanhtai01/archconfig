@@ -33,4 +33,5 @@ $current_dir/install_google-chrome.sh
 $current_dir/install_logisim-evolution.sh
 $current_dir/install_gdown.sh
 $current_dir/install_packettracer.sh
+$current_dir/install_qtspim.sh
 # $current_dir/install_poweriso.sh
