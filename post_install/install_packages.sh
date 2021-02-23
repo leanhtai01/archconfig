@@ -6,7 +6,7 @@ current_dir=$(dirname $0)
 
 $current_dir/install_yay.sh
 # $current_dir/configure_ibus.sh
-# $current_dir/install_ibus-bamboo.sh
+$current_dir/install_ibus-bamboo.sh
 $current_dir/configure_kvm.sh
 $current_dir/install_lamp_stack.sh
 $current_dir/configure_tlp.sh
