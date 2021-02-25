@@ -27,6 +27,7 @@ setupsecureboot=n
 setupkeytool=y
 desktop_environment="GNOME i3" # {GNOME, KDEPlasma, i3, none}
 gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
+hostname="archlinux"
 
 # get user info
 . $current_dir/get_user_info.sh
@@ -99,10 +100,10 @@ arch-chroot /mnt sed -i "${linum}s/^#//" /etc/pacman.conf
 arch-chroot /mnt sed -i "${linum}s/^#//" /etc/pacman.conf
 
 # network configuration
-echo archlinux > /mnt/etc/hostname
+echo "$hostname" > /mnt/etc/hostname
 echo "127.0.0.1    localhost" >> /mnt/etc/hosts
 echo "::1          localhost" >> /mnt/etc/hosts
-echo "127.0.1.1    archlinux.localdomain    archlinux" >> /mnt/etc/hosts
+echo "127.0.1.1    $hostname.localdomain    $hostname" >> /mnt/etc/hosts
 arch-chroot /mnt pacman -Syu --needed --noconfirm networkmanager dhcpcd iwd
 arch-chroot /mnt systemctl enable NetworkManager
 
