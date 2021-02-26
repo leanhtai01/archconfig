@@ -29,7 +29,7 @@ $current_dir/install_gcdemu.sh
 $current_dir/install_flatpak_apps.sh
 $current_dir/install_teamviewer.sh
 $current_dir/install_skype.sh
-$current_dir/install_google-chrome.sh
+# $current_dir/install_google-chrome.sh
 $current_dir/install_logisim-evolution.sh
 $current_dir/install_gdown.sh
 $current_dir/install_packettracer.sh
