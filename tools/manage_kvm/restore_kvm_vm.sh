@@ -25,11 +25,10 @@ fi
 sudo virsh define ${vm_name}/$xml_name
 
 # redefine snapshots
-snapshots_xml=$(ls ${vm_name}/snapshots)
-for xml in $snapshots_xml
+while read snap_xml
 do
-    (cd ${vm_name}/snapshots && sudo virsh snapshot-create --redefine "$vm_name" "$xml")
-done
+    (cd ${vm_name}/snapshots && sudo virsh snapshot-create --redefine "$vm_name" "$snap_xml")
+done < ${vm_name}/snapshots_structure
 
 # copy nvram file
 sudo cp ${vm_name}/$nvram_name /var/lib/libvirt/qemu/nvram/
