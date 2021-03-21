@@ -235,7 +235,7 @@ fi
 # ask user for setup KeyTool
 if [ -z $setupkeytool ]
 then
-    printf "\nDo you want setup KeyTool? [y/N] "
+    printf "Do you want setup KeyTool? [y/N] "
     read setupkeytool
 fi
 
