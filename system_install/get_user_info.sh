@@ -274,7 +274,7 @@ then
     esac
 fi
 
-printf "${desktop_environment} will be installed!\n"
+printf "${desktop_environment} will be installed!\n\n"
 
 # ask user for gpu driver
 display_menu_gpu_driver()
