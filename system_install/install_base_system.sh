@@ -6,28 +6,28 @@ set -e
 # global variables
 current_dir=$(dirname $0)
 parent_dir=$(cd $(dirname $0)/..; pwd)
-install_dev=nvme0n1
+install_dev=
 other_storage_dev= # (sda, sdb, sdc, mmcblk0,...)
 part=
-size_of_ram=16
+size_of_ram=
 rootpass1=
 rootpass2=
 userpass1=
 userpass2=
-newusername=leanhtai01
-realname="Lê Anh Tài"
+newusername=
+realname=
 user_choice=2
 storagepass1=
 storagepass2=
 bootpass1=
 bootpass2=
-bootloader=1 # 1 - systemd-boot, 2 - GRUB
+bootloader= # 1 - systemd-boot, 2 - GRUB
 swapuuidvalue=
-setupsecureboot=n
-setupkeytool=y
-desktop_environment="GNOME" # {GNOME, KDEPlasma, i3, none}
-gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
-hostname="archlinux"
+setupsecureboot=
+setupkeytool=
+desktop_environment= # {GNOME, KDEPlasma, i3, none}
+gpu= # {intel, amd, nvidia, virtualbox, vmware}
+hostname=
 
 # get user info
 . $current_dir/get_user_info.sh

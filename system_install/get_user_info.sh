@@ -275,3 +275,47 @@ then
 fi
 
 printf "${desktop_environment} will be installed!\n"
+
+# ask user for gpu driver
+display_menu_gpu_driver()
+{
+    printf "Choose your gpu driver:\n"
+    printf "1. Intel\n"
+    printf "2. VirtualBox\n"
+    printf "3. None\n"
+    printf "Enter your choice: "
+}
+
+if [ -z "$gpu" ]
+then
+    re="[1-3]"
+
+    display_menu_gpu_driver
+    read gpu_driver_choice
+
+    while [[ ! "$gpu_driver_choice" =~ $re ]]
+    do
+	printf "\nInvalid choice! Please try again!\n"
+	display_menu_gpu_driver
+	read gpu_driver_choice
+    done
+
+    # set gpu driver will be installed
+    case $gpu_driver_choice in
+	1)
+	    gpu=intel
+	    ;;
+	2)
+	    gpu=virtualbox
+	    ;;
+    esac
+fi
+
+printf "${gpu} driver will be installed!\n"
+
+# ask for hostname
+if [ -z $hostname ]
+then
+    printf "Enter hostname: "
+    read hostname
+fi
