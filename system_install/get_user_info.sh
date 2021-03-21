@@ -328,7 +328,7 @@ then
     esac
 fi
 
-printf "${gpu} driver will be installed!\n"
+printf "${gpu} driver will be installed!\n\n"
 
 # ask for hostname
 if [ -z $hostname ]
