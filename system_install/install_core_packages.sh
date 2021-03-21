@@ -51,4 +51,4 @@ then
 fi
 
 # enable bluetooth service
-${prefix}systemctl enable bluetooth
+# ${prefix}systemctl enable bluetooth
