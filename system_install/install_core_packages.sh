@@ -49,6 +49,3 @@ if [ ! -z $1 ]
 then
     ${prefix}gpasswd -a $1 vboxusers
 fi
-
-# enable bluetooth service
-# ${prefix}systemctl enable bluetooth
