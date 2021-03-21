@@ -5,6 +5,7 @@ set -e
 PASSPHRASE=
 DEVICE=
 SSID=
+is_hidden="y"
 
 if [ -z $PASSPHRASE ]
 then
@@ -25,7 +26,12 @@ then
 fi
 
 iwctl device list
-iwctl --passphrase="$PASSPHRASE" station "$DEVICE" connect-hidden "$SSID"
+if [ $is_hidden = "y" ]
+then
+    iwctl --passphrase="$PASSPHRASE" station "$DEVICE" connect-hidden "$SSID"
+else
+    iwctl --passphrase="$PASSPHRASE" station "$DEVICE" connect "$SSID"
+fi
 sleep 10
 
 # test internet
