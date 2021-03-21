@@ -232,6 +232,23 @@ else
     printf "Ok! Secure boot will be setup!\n\n"
 fi
 
+# ask user for setup KeyTool
+if [ -z $setupkeytool ]
+then
+    printf "\nDo you want setup KeyTool? [y/N] "
+    read setupkeytool
+fi
+
+re="[yY]"
+if ! [[ "$setupkeytool" =~ $re ]]
+then
+    setupkeytool="n"
+    printf "KeyTool won't be setup!\n\n"
+else
+    setupkeytool="y"
+    printf "Ok! KeyTool will be setup!\n\n"
+fi
+
 # ask user for setup desktop environment
 display_menu_desktop_environment()
 {
