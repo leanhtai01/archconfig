@@ -12,5 +12,4 @@ $current_dir/configure_tlp.sh
 $current_dir/configure_ufw.sh
 $current_dir/install_sublime_tools.sh
 $current_dir/install_virtualbox-ext-oracle.sh
-$current_dir/install_minecraft.sh
 $current_dir/install_gcdemu.sh
