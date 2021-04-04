@@ -31,7 +31,10 @@ do
 done < ${vm_name}/snapshots_structure
 
 # copy nvram file
-sudo cp ${vm_name}/$nvram_name /var/lib/libvirt/qemu/nvram/
+if [[ -f "${vm_name}/${nvram_name}" ]]
+then
+    sudo cp ${vm_name}/${nvram_name} /var/lib/libvirt/qemu/nvram/
+fi
 
 printf "Restore complete!\n"
 

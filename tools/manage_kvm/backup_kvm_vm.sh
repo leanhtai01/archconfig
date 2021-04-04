@@ -31,6 +31,9 @@ do
 done
 
 # copy nvram file
-sudo cp /var/lib/libvirt/qemu/nvram/${nvram_name} ${vm_name}
+if [[ -f "/var/lib/libvirt/qemu/nvram/${nvram_name}" ]]
+then
+    sudo cp /var/lib/libvirt/qemu/nvram/${nvram_name} ${vm_name}
+fi
 
 printf "Backup complete!\n"
