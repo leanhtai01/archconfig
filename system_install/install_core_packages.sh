@@ -25,7 +25,7 @@ $install_command chromium torbrowser-launcher
 $install_command emacs gvim
 
 # programming packages
-$install_command gdb cmake git go valgrind dia clang gcc python github-cli intellij-idea-community-edition jdk-openjdk java-openjfx jdk8-openjdk java8-openjfx jupyterlab netbeans
+$install_command gdb cmake git go valgrind dia clang gcc python github-cli intellij-idea-community-edition jdk-openjdk java-openjfx jdk8-openjdk java8-openjfx jupyterlab netbeans julia
 
 # tools
 $install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unrar gparted wget bash-completion bchunk ibus nfs-utils samba filezilla flatpak cdemu-client vhba-module-dkms cdrtools fuseiso gprename pdftk efitools sbsigntools bleachbit
