@@ -3,9 +3,16 @@
 set -e
 
 current_dir=$(dirname $0)
+parent_dir=$(cd $(dirname $0)/..; pwd)
 newusername=
 desktop_environment=
 gpu=
+connect_to_wifi="n"
+
+if [ $connect_to_wifi = "y" ]
+then
+    $parent_dir/tools/connect_wifi_iwd.sh
+fi
 
 . $current_dir/install_base_system.sh
 . $current_dir/install_gpu_driver.sh $gpu $newusername in_chroot
