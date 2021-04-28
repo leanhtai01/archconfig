@@ -50,7 +50,7 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 
 gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
 
 # empty favorite-apps
-# gsettings set org.gnome.shell favorite-apps "[]"
+gsettings set org.gnome.shell favorite-apps "[]"
 
 # setup favorite-apps
 # gsettings set org.gnome.shell favorite-apps "['torbrowser.desktop', 'thunderbird.desktop', 'org.keepassxc.KeePassXC.desktop', 'virt-manager.desktop', 'org.gnome.gedit.desktop']"
