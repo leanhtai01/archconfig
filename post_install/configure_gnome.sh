@@ -47,7 +47,7 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 
 # gsettings set org.gnome.desktop.interface cursor-theme "'ArchCursorTheme'"
 
 # set default folder viewer nautilus
-gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
+# gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
 
 # empty favorite-apps
 gsettings set org.gnome.shell favorite-apps "[]"
