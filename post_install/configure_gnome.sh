@@ -49,6 +49,9 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 
 # set default folder viewer nautilus
 gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
 
+# set default-zoom-level
+gsettings set org.gnome.nautilus.list-view default-zoom-level "'large'"
+
 # empty favorite-apps
 gsettings set org.gnome.shell favorite-apps "[]"
 
