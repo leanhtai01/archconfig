@@ -3,7 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(backup-directory-alist '(("" . "/home/leanhtai01/emacs_backup_files")))
+ '(backup-directory-alist '(("" . "/home/leanhtai01/backup_files_emacs")))
  '(c-basic-offset 'set-from-style)
  '(custom-enabled-themes '(tango-dark))
  '(display-battery-mode t)
