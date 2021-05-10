@@ -38,7 +38,7 @@ $install_command krusader
 $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
 
 # office and learning
-$install_command calibre kchmviewer goldendict kolourpaint thunderbird libreoffice-fresh gimp
+$install_command calibre kchmviewer goldendict kolourpaint thunderbird libreoffice-fresh gimp pencil2d
 
 # multimedia
 $install_command obs-studio vlc kdenlive frei0r-plugins handbrake handbrake-cli mkvtoolnix-gui
