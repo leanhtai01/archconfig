@@ -27,6 +27,14 @@ $install_command emacs gvim
 # programming packages
 $install_command gdb cmake git go valgrind dia clang gcc python github-cli intellij-idea-community-edition jdk-openjdk java-openjfx jdk8-openjdk java8-openjfx jupyterlab netbeans julia python-nltk python-pandas python-pip python-numpy
 
+# install kdevelop and its all optional dependencies
+$install_command kdevelop
+$install_command $(printf "$(${prefix}pacman -Qi kdevelop)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
+
+# install qtcreator and its all optional dependencies
+$install_command qtcreator
+$install_command $(printf "$(${prefix}pacman -Qi qtcreator)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
+
 # tools
 $install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unarchiver gparted wget bash-completion bchunk ibus nfs-utils samba filezilla flatpak cdemu-client vhba-module-dkms cdrtools fuseiso gprename pdftk efitools sbsigntools bleachbit clamav
 
