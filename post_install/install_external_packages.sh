@@ -27,3 +27,4 @@ $current_dir/install_teamviewer.sh
 $current_dir/install_visual_studio_code.sh
 $current_dir/install_zoom.sh
 $current_dir/install_vmware_workstation.sh
+$current_dir/install_chrome-gnome-shell.sh
