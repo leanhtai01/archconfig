@@ -52,8 +52,8 @@ gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
 # set default-zoom-level
 gsettings set org.gnome.nautilus.list-view default-zoom-level "'large'"
 
-# empty favorite-apps
-gsettings set org.gnome.shell favorite-apps "[]"
+# # empty favorite-apps
+# gsettings set org.gnome.shell favorite-apps "[]"
 
 # setup favorite-apps
 # gsettings set org.gnome.shell favorite-apps "['torbrowser.desktop', 'thunderbird.desktop', 'org.keepassxc.KeePassXC.desktop', 'virt-manager.desktop', 'org.gnome.gedit.desktop']"
