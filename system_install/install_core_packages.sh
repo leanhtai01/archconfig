@@ -28,7 +28,7 @@ $install_command emacs gvim
 $install_command gdb cmake git go valgrind dia clang gcc python github-cli intellij-idea-community-edition jdk-openjdk java-openjfx jdk8-openjdk java8-openjfx jupyterlab netbeans julia python-nltk python-pandas python-pip python-numpy
 
 # tools
-$install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unarchiver gparted wget bash-completion bchunk ibus nfs-utils samba filezilla flatpak cdemu-client vhba-module-dkms cdrtools fuseiso gprename pdftk efitools sbsigntools bleachbit
+$install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl kdiff3 lm_sensors dosfstools ntfs-3g p7zip unarchiver gparted wget bash-completion bchunk ibus nfs-utils samba filezilla flatpak cdemu-client vhba-module-dkms cdrtools fuseiso gprename pdftk efitools sbsigntools bleachbit clamav
 
 # install documentation for KDE Applications
 $install_command khelpcenter
