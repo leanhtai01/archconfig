@@ -11,11 +11,11 @@ sudo systemctl enable tomcat${version}
 sudo systemctl start tomcat${version}
 
 # for use tomcat in netbeans
-[[ -d ~/.tomcat${version} ]] && rm -r ~/.tomcat${version}
-mkdir ~/.tomcat${version}
-sudo cp -r /etc/tomcat${version} ~/.tomcat${version}/conf
-sudo chown -R $(id -un):$(id -gn) ~/.tomcat${version}
-cp $parent_dir/data/tomcat-users.xml ~/.tomcat${version}/conf/tomcat-users.xml
-mkdir ~/.tomcat${version}/webapps
-ln -s /var/lib/tomcat${version}/webapps/manager ~/.tomcat${version}/webapps/manager
-mkdir ~/.tomcat${version}/temp
+[[ -d /home/$(whoami)/.tomcat${version} ]] && rm -r /home/$(whoami)/.tomcat${version}
+mkdir /home/$(whoami)/.tomcat${version}
+sudo cp -r /etc/tomcat${version} /home/$(whoami)/.tomcat${version}/conf
+sudo chown -R $(id -un):$(id -gn) /home/$(whoami)/.tomcat${version}
+cp $parent_dir/data/tomcat-users.xml /home/$(whoami)/.tomcat${version}/conf/tomcat-users.xml
+mkdir /home/$(whoami)/.tomcat${version}/webapps
+ln -s /var/lib/tomcat${version}/webapps/manager /home/$(whoami)/.tomcat${version}/webapps/manager
+mkdir /home/$(whoami)/.tomcat${version}/temp
