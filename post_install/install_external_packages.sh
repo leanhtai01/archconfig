@@ -11,7 +11,6 @@ $current_dir/install_gcdemu.sh
 $current_dir/install_flatpak_apps.sh
 $current_dir/install_sublime_tools.sh
 $current_dir/install_minecraft.sh
-$current_dir/configure_jdbc.sh
 $current_dir/install_azure_data_studio.sh
 $current_dir/install_dislocker.sh
 $current_dir/install_gdown.sh
