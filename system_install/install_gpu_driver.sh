@@ -21,7 +21,7 @@ case $1 in
     nvidia)
 	;;
     virtualbox)
-	$install_command virtualbox-guest-utils virtualbox-guest-dkms
+	$install_command virtualbox-guest-utils
 	${prefix}systemctl enable vboxservice
 	${prefix}gpasswd -a $2 vboxsf
 	;;
