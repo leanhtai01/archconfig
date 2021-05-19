@@ -7,11 +7,6 @@ DEVICE=
 SSID=
 is_hidden="y"
 
-if [ -z $PASSPHRASE ]
-then
-    read -e -p "Enter passphrase: " PASSPHRASE
-fi
-
 if [ -z $DEVICE ]
 then
     iwctl device list
@@ -23,6 +18,11 @@ then
     iwctl station "$DEVICE" scan
     iwctl station "$DEVICE" get-hidden-access-points
     iwctl station "$DEVICE" get-networks
+fi
+
+if [ -z $PASSPHRASE ]
+then
+    read -e -p "Enter passphrase: " PASSPHRASE
 fi
 
 iwctl device list
