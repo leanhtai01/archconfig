@@ -18,6 +18,7 @@ then
     iwctl station "$DEVICE" scan
     iwctl station "$DEVICE" get-hidden-access-points
     iwctl station "$DEVICE" get-networks
+    read -e -p "Enter ssid: " SSID
 fi
 
 if [ -z $PASSPHRASE ]
