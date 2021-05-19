@@ -25,7 +25,7 @@ bootloader=1 # 1 - systemd-boot, 2 - GRUB
 swapuuidvalue=
 setupsecureboot=n
 setupkeytool=y
-desktop_environment="GNOME" # {GNOME, KDEPlasma, i3, none}
+desktop_environment="GNOME i3" # {GNOME, KDEPlasma, i3, none}
 gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
 hostname="archlinux"
 
