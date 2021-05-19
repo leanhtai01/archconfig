@@ -7,7 +7,12 @@ parent_dir=$(cd $(dirname $0)/..; pwd)
 newusername=
 desktop_environment=
 gpu=
-connect_to_wifi="y"
+connect_to_wifi=
+
+if [ -z $connect_to_wifi ]
+then
+    read -e -p "Do you want connect to wifi? [y/N] " connect_to_wifi
+fi
 
 if [ $connect_to_wifi = "y" ]
 then
