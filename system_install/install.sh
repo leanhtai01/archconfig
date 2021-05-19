@@ -7,7 +7,7 @@ parent_dir=$(cd $(dirname $0)/..; pwd)
 newusername=
 desktop_environment=
 gpu=
-connect_to_wifi="n"
+connect_to_wifi="y"
 
 if [ $connect_to_wifi = "y" ]
 then
