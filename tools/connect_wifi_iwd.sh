@@ -33,7 +33,8 @@ then
 fi
 
 iwctl device list
-if [ $is_hidden = "y" ]
+re="[yY]"
+if [[ $is_hidden =~ $re ]]
 then
     iwctl --passphrase="$PASSPHRASE" station "$DEVICE" connect-hidden "$SSID"
 else

@@ -14,7 +14,8 @@ then
     read -e -p "Do you want connect to wifi? [y/N] " connect_to_wifi
 fi
 
-if [ $connect_to_wifi = "y" ]
+re="[yY]"
+if [[ $connect_to_wifi =~ $re ]]
 then
     $parent_dir/tools/connect_wifi_iwd.sh
 fi
