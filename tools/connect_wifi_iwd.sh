@@ -5,7 +5,7 @@ set -e
 PASSPHRASE=
 DEVICE=
 SSID=
-is_hidden="y"
+is_hidden=
 
 if [ -z $DEVICE ]
 then
@@ -24,6 +24,11 @@ fi
 if [ -z $PASSPHRASE ]
 then
     read -e -p "Enter passphrase: " PASSPHRASE
+fi
+
+if [ -z $is_hidden ]
+then
+    read -e -p "Is a hidden wifi? [y/N] " is_hidden
 fi
 
 iwctl device list
