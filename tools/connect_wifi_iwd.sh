@@ -28,7 +28,7 @@ fi
 
 if [ -z $is_hidden ]
 then
-    read -e -p "Is a hidden wifi? [y/N] " is_hidden
+    read -e -p "Is the wifi hidden? [y/N] " is_hidden
 fi
 
 iwctl device list
