@@ -18,17 +18,18 @@ then
     iwctl station "$DEVICE" scan
     iwctl station "$DEVICE" get-hidden-access-points
     iwctl station "$DEVICE" get-networks
+
+    if [ -z $is_hidden ]
+    then
+	read -e -p "Is the wifi hidden? [y/N] " is_hidden
+    fi
+    
     read -e -p "Enter ssid: " SSID
 fi
 
 if [ -z $PASSPHRASE ]
 then
     read -e -p "Enter passphrase: " PASSPHRASE
-fi
-
-if [ -z $is_hidden ]
-then
-    read -e -p "Is the wifi hidden? [y/N] " is_hidden
 fi
 
 iwctl device list
