@@ -27,7 +27,7 @@ setupsecureboot=n
 setupkeytool=y
 desktop_environment="GNOME" # {GNOME, KDEPlasma, i3, none}
 gpu= # {intel, amd, nvidia, virtualbox, vmware}
-hostname=
+hostname="archlinux"
 
 # get user info
 . $current_dir/get_user_info.sh
