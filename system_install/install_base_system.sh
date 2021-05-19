@@ -25,7 +25,7 @@ bootloader= # 1 - systemd-boot, 2 - GRUB
 swapuuidvalue=
 setupsecureboot=
 setupkeytool=
-desktop_environment="GNOME KDEPlasma i3" # {GNOME, KDEPlasma, i3, none}
+desktop_environment="GNOME" # {GNOME, KDEPlasma, i3, none}
 gpu= # {intel, amd, nvidia, virtualbox, vmware}
 hostname=
 
