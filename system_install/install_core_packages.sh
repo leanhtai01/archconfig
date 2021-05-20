@@ -29,7 +29,7 @@ $install_command chromium torbrowser-launcher firefox-developer-edition opera
 $install_command emacs gvim
 
 # programming packages
-$install_command gdb cmake git go valgrind dia clang gcc python github-cli jdk-openjdk java-openjfx jdk8-openjdk java8-openjfx jupyterlab netbeans julia python-nltk python-pandas python-pip python-numpy tk dotnet-sdk nodejs eslint npm
+$install_command gdb cmake git go valgrind dia clang gcc python github-cli jdk-openjdk java-openjfx jdk8-openjdk java8-openjfx jupyterlab netbeans julia python-nltk python-pandas python-pip python-numpy python-scikit-learn tk dotnet-sdk nodejs eslint npm
 
 # install kdevelop and its all optional dependencies
 $install_command kdevelop
