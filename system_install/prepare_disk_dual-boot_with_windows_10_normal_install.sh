@@ -26,6 +26,8 @@ case $bootloader in
 	mount /dev/${install_dev}${part}${efi_partnum} /mnt/boot
 	;;
     2)
+	;&
+    3)
 	mkdir -p /mnt/boot/efi
 	mount /dev/${install_dev}${part}${efi_partnum} /mnt/boot/efi
 	;;
