@@ -57,10 +57,10 @@ then
 fi
 
 # configure hibernate
-if [[ "$user_choice" =~ "[25]" ]]
+if [[ "$user_choice" =~ [25] ]]
 then
     sed -i "/^GRUB_CMDLINE_LINUX=/s/rw/resume=UUID=${swapuuidvalue} &/" /mnt/etc/default/grub
-elif [[ "$user_choice" =~ "[4]" ]]
+elif [[ "$user_choice" =~ [4] ]]
 then
     sed -i "/^GRUB_CMDLINE_LINUX=\"\"/s/\"\"/\"resume=UUID=${swapuuidvalue}\"/" /mnt/etc/default/grub
 fi
