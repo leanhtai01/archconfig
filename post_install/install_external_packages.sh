@@ -28,3 +28,4 @@ $current_dir/install_zoom.sh
 $current_dir/install_vmware_workstation.sh
 $current_dir/install_chrome-gnome-shell.sh
 $current_dir/install_jetbrains-toolbox.sh
+$current_dir/install_ventoy-bin.sh
