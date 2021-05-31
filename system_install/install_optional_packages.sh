@@ -23,3 +23,6 @@ $install_command chromium torbrowser-launcher opera
 
 # editors
 $install_command gvim
+
+# make some tools as optional
+$install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl ddclient dnscrypt-proxy
