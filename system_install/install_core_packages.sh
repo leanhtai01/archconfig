@@ -25,7 +25,7 @@ $install_command firefox-developer-edition
 $install_command emacs
 
 # programming packages
-$install_command gdb cmake git go valgrind dia clang gcc python github-cli julia dotnet-sdk nodejs eslint npm rclone
+$install_command gdb cmake git go valgrind dia clang gcc github-cli julia dotnet-sdk nodejs eslint npm rclone
 
 # install kdevelop and its all optional dependencies
 $install_command kdevelop

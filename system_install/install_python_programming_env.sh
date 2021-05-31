@@ -11,4 +11,4 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
-$install_command jupyterlab python-nltk python-pandas python-pip python-numpy python-scikit-learn tk python-matplotlib
+$install_command python jupyterlab python-nltk python-pandas python-pip python-numpy python-scikit-learn tk python-matplotlib
