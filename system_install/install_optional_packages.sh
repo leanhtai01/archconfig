@@ -17,3 +17,6 @@ $install_command adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts a
 # mobile broadband modem management service
 $install_command modemmanager usb_modeswitch wvdial
 ${prefix}systemctl enable ModemManager
+
+# browsers
+$install_command chromium torbrowser-launcher opera
