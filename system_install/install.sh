@@ -25,5 +25,6 @@ fi
 . $current_dir/install_core_packages.sh $newusername in_chroot
 . $current_dir/install_optional_packages.sh $newusername in_chroot
 . $current_dir/install_python_programming_env.sh in_chroot
+. $current_dir/install_java_programming_env.sh in_chroot
 . $current_dir/install_desktop_environment.sh "$desktop_environment" in_chroot $newusername
 . $current_dir/install_games.sh in_chroot
