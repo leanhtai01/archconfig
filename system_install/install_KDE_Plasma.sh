@@ -13,3 +13,4 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 
 $install_command plasma-meta plasma-wayland-session ark dolphin dolphin-plugins kate kleopatra konsole okular kdegraphics-thumbnailers ffmpegthumbs spectacle gwenview gnome-keyring
 # ${prefix}systemctl enable sddm
+# ${prefix}systemctl enable bluetooth
