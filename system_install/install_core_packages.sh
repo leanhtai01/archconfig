@@ -15,10 +15,6 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 # fonts
 $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack
 
-# mobile broadband modem management service
-$install_command modemmanager usb_modeswitch wvdial
-${prefix}systemctl enable ModemManager
-
 # audio
 $install_command pulseaudio-alsa alsa-utils
 
