@@ -25,7 +25,7 @@ $install_command firefox-developer-edition
 $install_command emacs
 
 # programming packages
-$install_command gdb cmake git go valgrind dia clang gcc github-cli julia dotnet-sdk kdiff3
+$install_command git dia github-cli dotnet-sdk kdiff3
 
 # install kdevelop and its all optional dependencies
 $install_command kdevelop

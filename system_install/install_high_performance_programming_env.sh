@@ -11,4 +11,4 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
-$install_command nodejs eslint npm
+$install_command gdb cmake go valgrind clang gcc julia
