@@ -29,3 +29,6 @@ $install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl ddcli
 
 # remote desktop
 $install_command remmina libvncserver freerdp
+
+# office and learning
+$install_command sweethome3d hexchat gnucash step librecad foliate geogebra
