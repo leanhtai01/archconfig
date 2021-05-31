@@ -26,3 +26,6 @@ $install_command gvim
 
 # make some tools as optional
 $install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl ddclient dnscrypt-proxy
+
+# remote desktop
+$install_command remmina libvncserver freerdp
