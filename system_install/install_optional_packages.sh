@@ -4,7 +4,7 @@ set -e
 
 prefix=
 
-if [ ! -z $1 ] && [ $1 = "in_chroot" ]
+if [ ! -z $2 ] && [ $2 = "in_chroot" ]
 then
     prefix="arch-chroot /mnt "
 fi
@@ -32,6 +32,9 @@ $install_command remmina libvncserver freerdp
 
 # office and learning
 $install_command sweethome3d hexchat gnucash step librecad foliate geogebra
+
+# multimedia
+$install_command blender audacity aegisub kid3
 
 # wireshark
 $install_command wireshark-qt
