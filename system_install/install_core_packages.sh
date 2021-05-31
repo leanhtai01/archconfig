@@ -25,7 +25,7 @@ $install_command firefox-developer-edition
 $install_command emacs
 
 # programming packages
-$install_command gdb cmake git go valgrind dia clang gcc python github-cli jdk-openjdk openjdk-doc java-openjfx jdk8-openjdk openjdk8-doc java8-openjfx jupyterlab netbeans julia python-nltk python-pandas python-pip python-numpy python-scikit-learn tk dotnet-sdk nodejs eslint npm python-matplotlib rclone
+$install_command gdb cmake git go valgrind dia clang gcc python github-cli jdk-openjdk openjdk-doc java-openjfx jdk8-openjdk openjdk8-doc java8-openjfx netbeans julia dotnet-sdk nodejs eslint npm rclone
 
 # install kdevelop and its all optional dependencies
 $install_command kdevelop
