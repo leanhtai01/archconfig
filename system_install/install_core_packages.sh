@@ -22,7 +22,7 @@ $install_command pulseaudio-alsa alsa-utils
 $install_command firefox-developer-edition
 
 # editors
-$install_command emacs gvim
+$install_command emacs
 
 # programming packages
 $install_command gdb cmake git go valgrind dia clang gcc python github-cli jdk-openjdk openjdk-doc java-openjfx jdk8-openjdk openjdk8-doc java8-openjfx jupyterlab netbeans julia python-nltk python-pandas python-pip python-numpy python-scikit-learn tk dotnet-sdk nodejs eslint npm python-matplotlib rclone

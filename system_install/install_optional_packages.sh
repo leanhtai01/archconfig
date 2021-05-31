@@ -20,3 +20,6 @@ ${prefix}systemctl enable ModemManager
 
 # browsers
 $install_command chromium torbrowser-launcher opera
+
+# editors
+$install_command gvim
