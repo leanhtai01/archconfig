@@ -28,7 +28,7 @@ $install_command emacs
 $install_command git dia github-cli kdiff3
 
 # tools
-$install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl lm_sensors dosfstools ntfs-3g p7zip unarchiver gparted wget bash-completion bchunk ibus nfs-utils samba filezilla flatpak cdemu-client vhba-module-dkms cdrtools fuseiso efitools sbsigntools clamav fish rclone
+$install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl lm_sensors dosfstools ntfs-3g p7zip unarchiver gparted wget bash-completion bchunk ibus filezilla flatpak cdemu-client vhba-module-dkms cdrtools fuseiso efitools sbsigntools clamav fish rclone
 
 # install documentation for KDE Applications
 $install_command khelpcenter

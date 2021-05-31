@@ -24,8 +24,8 @@ $install_command chromium torbrowser-launcher opera
 # editors
 $install_command gvim
 
-# make some tools as optional
-$install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl ddclient dnscrypt-proxy
+# tools
+$install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl ddclient dnscrypt-proxy nfs-utils samba
 
 # remote desktop
 $install_command remmina libvncserver freerdp
