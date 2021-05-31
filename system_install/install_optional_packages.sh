@@ -32,3 +32,10 @@ $install_command remmina libvncserver freerdp
 
 # office and learning
 $install_command sweethome3d hexchat gnucash step librecad foliate geogebra
+
+# wireshark
+$install_command wireshark-qt
+if [ ! -z $1 ]
+then
+    ${prefix}gpasswd -a $1 wireshark
+fi

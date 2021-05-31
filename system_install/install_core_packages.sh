@@ -58,13 +58,6 @@ then
     ${prefix}gpasswd -a $1 vboxusers
 fi
 
-# wireshark
-$install_command wireshark-qt
-if [ ! -z $1 ]
-then
-    ${prefix}gpasswd -a $1 wireshark
-fi
-
 # docker
 $install_command docker docker-compose
 ${prefix}systemctl enable docker
