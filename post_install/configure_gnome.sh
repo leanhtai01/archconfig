@@ -52,11 +52,11 @@ gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
 # set default-zoom-level
 gsettings set org.gnome.nautilus.list-view default-zoom-level "'large'"
 
-# # empty favorite-apps
-# gsettings set org.gnome.shell favorite-apps "[]"
+# empty favorite-apps
+gsettings set org.gnome.shell favorite-apps "[]"
 
-# setup favorite-apps
-gsettings set org.gnome.shell favorite-apps "['torbrowser.desktop', 'thunderbird.desktop', 'org.gnome.Evince.desktop', 'calibre-gui.desktop', 'com.github.johnfactotum.Foliate.desktop', 'org.keepassxc.KeePassXC.desktop', 'virt-manager.desktop', 'virtualbox.desktop', 'sublime_merge.desktop', 'org.gnome.gedit.desktop']"
+# # setup favorite-apps
+# gsettings set org.gnome.shell favorite-apps "['torbrowser.desktop', 'thunderbird.desktop', 'org.gnome.Evince.desktop', 'calibre-gui.desktop', 'com.github.johnfactotum.Foliate.desktop', 'org.keepassxc.KeePassXC.desktop', 'virt-manager.desktop', 'virtualbox.desktop', 'sublime_merge.desktop', 'org.gnome.gedit.desktop']"
 
 # switch applications only in current workspace
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
