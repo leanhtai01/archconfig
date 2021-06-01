@@ -28,6 +28,7 @@ setupkeytool=
 desktop_environment="GNOME" # {GNOME, KDEPlasma, i3, none}
 gpu= # {intel, amd, nvidia, virtualbox, vmware}
 hostname=
+install_type=base # {base, core, optional, python, java, javascript, high_performance, dotnet, desktop, games}
 
 # get user info
 . $current_dir/get_user_info.sh
