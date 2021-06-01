@@ -41,7 +41,7 @@ $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional
 $install_command calibre kchmviewer kolourpaint thunderbird libreoffice-fresh okular gimp inkscape
 
 # multimedia
-$install_command obs-studio vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad kdenlive frei0r-plugins handbrake handbrake-cli mkvtoolnix-gui pencil2d
+$install_command obs-studio vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad kdenlive frei0r-plugins handbrake handbrake-cli
 
 # virtualbox
 $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
