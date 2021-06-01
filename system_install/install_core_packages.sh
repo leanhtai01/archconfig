@@ -32,10 +32,6 @@ $install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-du
 
 # install documentation for KDE Applications
 $install_command khelpcenter
-
-# install krusader and its all optional dependencies
-$install_command krusader
-$install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
 		   
 # office and learning
 $install_command calibre kchmviewer kolourpaint thunderbird libreoffice-fresh gimp inkscape

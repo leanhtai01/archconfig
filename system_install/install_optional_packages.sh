@@ -27,6 +27,10 @@ $install_command gvim
 # tools
 $install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl nfs-utils samba clamav fish wget rclone
 
+# install krusader and its all optional dependencies
+$install_command krusader
+$install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
+
 # remote desktop
 $install_command remmina libvncserver freerdp
 
