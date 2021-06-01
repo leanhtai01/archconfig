@@ -8,7 +8,7 @@ newusername=
 desktop_environment=
 gpu=
 connect_to_wifi=
-install_type=
+system_install_type=
 
 if [ -z $connect_to_wifi ]
 then
@@ -21,7 +21,7 @@ then
     $parent_dir/tools/connect_wifi_iwd.sh
 fi
 
-for type in $install_type
+for type in $system_install_type
 do
     case $type in
 	base)
