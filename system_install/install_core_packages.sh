@@ -32,7 +32,7 @@ $install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-du
 
 # install documentation for KDE Applications
 $install_command khelpcenter
-		   
+
 # office and learning
 $install_command calibre kchmviewer kolourpaint thunderbird libreoffice-fresh gimp inkscape
 
