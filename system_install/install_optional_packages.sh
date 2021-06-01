@@ -31,7 +31,7 @@ $install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl nfs-u
 $install_command remmina libvncserver freerdp
 
 # office and learning
-$install_command sweethome3d hexchat gnucash step librecad foliate geogebra goldendict
+$install_command sweethome3d hexchat gnucash step librecad foliate geogebra goldendict okular
 
 # multimedia
 $install_command blender audacity aegisub kid3 pencil2d mkvtoolnix-gui
