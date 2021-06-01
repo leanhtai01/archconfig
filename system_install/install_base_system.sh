@@ -25,10 +25,10 @@ bootloader= # 1 - systemd-boot, 2 - GRUB (encrypted boot), 3 - GRUB (non-encrypt
 swapuuidvalue=
 setupsecureboot=
 setupkeytool=
-desktop_environment="GNOME" # {GNOME, KDEPlasma, i3, none}
+desktop_environment="GNOME" # {GNOME KDEPlasma i3 none}
 gpu= # {intel, amd, nvidia, virtualbox, vmware}
 hostname=
-install_type=base # {base, core, optional, python, java, javascript, high_performance, dotnet, desktop, games}
+install_type= # {base core optional python java javascript high_performance dotnet desktop games}
 
 # get user info
 . $current_dir/get_user_info.sh
