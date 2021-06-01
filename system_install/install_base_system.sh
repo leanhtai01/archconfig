@@ -26,6 +26,7 @@ swapuuidvalue=
 setupsecureboot=
 setupkeytool=
 desktop_environment="GNOME" # {GNOME KDEPlasma i3 none}
+desktop_install_type=core # {core full}
 gpu= # {intel, amd, nvidia, virtualbox, vmware}
 hostname=
 system_install_type="base core desktop" # {base core optional python java javascript high_performance dotnet desktop games}

@@ -9,6 +9,7 @@ desktop_environment=
 gpu=
 connect_to_wifi=
 system_install_type=
+desktop_install_type=
 
 if [ -z $connect_to_wifi ]
 then
@@ -50,7 +51,7 @@ do
 	    . $current_dir/install_dotnet_programming_env.sh in_chroot
 	    ;;
 	desktop)
-	    . $current_dir/install_desktop_environment.sh "$desktop_environment" in_chroot $newusername
+	    . $current_dir/install_desktop_environment.sh "$desktop_environment" in_chroot $newusername "$desktop_install_type"
 	    ;;
 	games)
 	    . $current_dir/install_games.sh in_chroot

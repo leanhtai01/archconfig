@@ -3,6 +3,7 @@
 set -e
 
 prefix=
+desktop_install_type=$2
 
 if [ ! -z $1 ] && [ $1 = "in_chroot" ]
 then
@@ -11,7 +12,14 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
-$install_command plasma-desktop plasma-wayland-session ark dolphin dolphin-plugins kate konsole kdegraphics-thumbnailers ffmpegthumbs spectacle gwenview
-# $install_command plasma-meta kde-applications-meta plasma-wayland-session ark dolphin dolphin-plugins kate kleopatra konsole okular kdegraphics-thumbnailers ffmpegthumbs spectacle gwenview gnome-keyring
+if [ $desktop_install_type = "core" ]
+then
+    # core
+    $install_command plasma-desktop plasma-wayland-session ark dolphin dolphin-plugins kate konsole kdegraphics-thumbnailers ffmpegthumbs spectacle gwenview
+else
+    # full
+    $install_command plasma-meta kde-applications-meta plasma-wayland-session ark dolphin dolphin-plugins kate kleopatra konsole okular kdegraphics-thumbnailers ffmpegthumbs spectacle gwenview gnome-keyring
+fi
+
 # ${prefix}systemctl enable sddm
 # ${prefix}systemctl enable bluetooth
