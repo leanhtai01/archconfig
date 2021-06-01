@@ -15,5 +15,4 @@ $current_dir/install_packettracer.sh
 $current_dir/install_qtspim.sh
 $current_dir/install_skype.sh
 $current_dir/install_teamviewer.sh
-$current_dir/install_chrome-gnome-shell.sh
 $current_dir/install_jetbrains-toolbox.sh
