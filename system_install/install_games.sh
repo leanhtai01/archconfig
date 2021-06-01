@@ -22,8 +22,8 @@ $install_command $(printf "$(${prefix}pacman -Qi wine)" | sed -n '/^Optional Dep
 # install steam
 $install_command steam steam-native-runtime
 
-# install playonlinux
-$install_command playonlinux
+# # install playonlinux
+# $install_command playonlinux
 
-# install some games and game's services
-$install_command kigo bovo gnome-chess gnuchess gnome-2048 discord wesnoth
+# # install some games and game's services
+# $install_command kigo bovo gnome-chess gnuchess gnome-2048 discord wesnoth
