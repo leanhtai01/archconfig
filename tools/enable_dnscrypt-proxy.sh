@@ -2,6 +2,10 @@
 
 set -e
 
+install_command="pacman -Syu --needed --noconfirm"
+
+$install_command ddclient dnscrypt-proxy
+
 # back up /etc/resolv.conf file
 sudo cp /etc/resolv.conf /etc/resolv.conf.bak
 
