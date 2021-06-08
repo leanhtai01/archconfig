@@ -28,7 +28,7 @@ $install_command emacs
 $install_command git dia github-cli kdiff3
 
 # tools
-$install_command wimlib transmission-gtk keepassxc expect pacman-contrib deja-dup curl lm_sensors dosfstools ntfs-3g p7zip unarchiver gparted bash-completion bchunk ibus filezilla flatpak cdemu-client vhba-module-dkms cdrtools fuseiso efitools sbsigntools clamav
+$install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion ibus filezilla flatpak
 
 # install documentation for KDE Applications
 $install_command khelpcenter
@@ -37,10 +37,16 @@ $install_command khelpcenter
 $install_command calibre kchmviewer kolourpaint thunderbird libreoffice-fresh gimp inkscape
 
 # multimedia
-$install_command obs-studio vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad kdenlive frei0r-plugins handbrake handbrake-cli
+$install_command obs-studio vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad
 
 if [ $3 != "virtualbox" ]
 then
+    # tools
+    $install_command wimlib transmission-gtk deja-dup lm_sensors ntfs-3g gparted bchunk cdemu-client vhba-module-dkms cdrtools fuseiso efitools sbsigntools clamav
+
+    # multimedia
+    $install_command kdenlive frei0r-plugins handbrake handbrake-cli
+    
     # virtualbox
     $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
     if [ ! -z $1 ]
