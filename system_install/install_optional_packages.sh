@@ -35,7 +35,7 @@ $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional
 $install_command remmina libvncserver freerdp
 
 # office and learning
-$install_command sweethome3d hexchat gnucash step librecad foliate geogebra goldendict okular inkscape
+$install_command sweethome3d hexchat gnucash step librecad foliate geogebra goldendict okular inkscape gimp
 
 # multimedia
 $install_command blender audacity aegisub kid3 pencil2d mkvtoolnix-gui

@@ -34,7 +34,7 @@ $install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchive
 $install_command khelpcenter
 
 # office and learning
-$install_command calibre kchmviewer kolourpaint thunderbird libreoffice-fresh gimp
+$install_command calibre kchmviewer kolourpaint thunderbird libreoffice-fresh
 
 # multimedia
 $install_command obs-studio vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad
