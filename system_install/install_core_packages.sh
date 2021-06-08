@@ -28,7 +28,7 @@ $install_command emacs
 $install_command git dia github-cli kdiff3
 
 # tools
-$install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion ibus filezilla flatpak
+$install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion ibus flatpak
 
 # install documentation for KDE Applications
 $install_command khelpcenter
@@ -42,7 +42,7 @@ $install_command obs-studio vlc gst-libav gst-plugins-good gst-plugins-ugly gst-
 if [ $3 != "virtualbox" ]
 then
     # tools
-    $install_command wimlib transmission-gtk deja-dup lm_sensors ntfs-3g gparted bchunk cdemu-client vhba-module-dkms cdrtools fuseiso efitools sbsigntools clamav
+    $install_command wimlib transmission-gtk deja-dup lm_sensors ntfs-3g gparted bchunk cdemu-client vhba-module-dkms cdrtools fuseiso efitools sbsigntools clamav filezilla
 
     # multimedia
     $install_command kdenlive frei0r-plugins handbrake handbrake-cli
