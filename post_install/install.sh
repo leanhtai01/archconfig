@@ -13,4 +13,3 @@ if [ $install_type = "full" ]
 then
     $current_dir/install_optional_external_packages.sh
 fi
-
