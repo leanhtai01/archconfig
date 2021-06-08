@@ -39,11 +39,14 @@ $install_command calibre kchmviewer kolourpaint thunderbird libreoffice-fresh gi
 # multimedia
 $install_command obs-studio vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad kdenlive frei0r-plugins handbrake handbrake-cli
 
-# virtualbox
-$install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
-if [ ! -z $1 ]
+if [ $3 != "virtualbox" ]
 then
-    ${prefix}gpasswd -a $1 vboxusers
+    # virtualbox
+    $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
+    if [ ! -z $1 ]
+    then
+	${prefix}gpasswd -a $1 vboxusers
+    fi
 fi
 
 # docker

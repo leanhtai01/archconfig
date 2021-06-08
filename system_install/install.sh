@@ -29,7 +29,7 @@ for type in $system_install_type
 do
     case $type in
 	core)
-	    . $current_dir/install_core_packages.sh $newusername in_chroot
+	    . $current_dir/install_core_packages.sh $newusername in_chroot $gpu
 	    ;;
 	optional)
 	    . $current_dir/install_optional_packages.sh $newusername in_chroot
