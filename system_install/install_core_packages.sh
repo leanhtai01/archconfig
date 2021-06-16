@@ -28,7 +28,7 @@ $install_command emacs
 $install_command git dia github-cli kdiff3
 
 # tools
-$install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion ibus flatpak
+$install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion ibus flatpak tree
 
 # install documentation for KDE Applications
 $install_command khelpcenter
