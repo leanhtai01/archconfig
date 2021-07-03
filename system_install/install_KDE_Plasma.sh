@@ -21,5 +21,5 @@ else
     $install_command plasma-meta kde-applications-meta plasma-wayland-session ark dolphin dolphin-plugins kate kleopatra konsole okular kdegraphics-thumbnailers ffmpegthumbs spectacle gwenview gnome-keyring
 fi
 
-# ${prefix}systemctl enable sddm
-# ${prefix}systemctl enable bluetooth
+${prefix}systemctl enable sddm
+${prefix}systemctl enable bluetooth
