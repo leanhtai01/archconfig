@@ -15,7 +15,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 if [ $desktop_install_type = "core" ]
 then
     # core
-    $install_command plasma-desktop plasma-wayland-session ark dolphin dolphin-plugins kate konsole kdegraphics-thumbnailers ffmpegthumbs spectacle gwenview bluedevil khotkeys kinfocenter kscreen plasma-firewall plasma-nm
+    $install_command plasma-desktop plasma-wayland-session ark dolphin dolphin-plugins kate konsole kdegraphics-thumbnailers ffmpegthumbs spectacle gwenview bluedevil khotkeys kinfocenter kscreen plasma-firewall plasma-nm plasma-pa
 else
     # full
     $install_command plasma-meta kde-applications-meta plasma-wayland-session ark dolphin dolphin-plugins kate kleopatra konsole okular kdegraphics-thumbnailers ffmpegthumbs spectacle gwenview gnome-keyring
