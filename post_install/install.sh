@@ -7,7 +7,7 @@ install_type=core # {core full virtualbox}
 desktop_environment=
 
 # ask user whether the system is in VirtualBox
-printf "\nIs the system in VirtualBox? [y/N] "
+printf "Is the system in VirtualBox? [y/N] "
 read install_type
 
 re="[yY]"
@@ -21,7 +21,7 @@ fi
 # ask user for setup desktop environment
 display_menu_desktop_environment()
 {
-    printf "Choose desktop environment:\n"
+    printf "\nChoose desktop environment:\n"
     printf "1. GNOME\n"
     printf "2. KDE Plasma\n"
     printf "3. i3 (tiling window manager)\n"
