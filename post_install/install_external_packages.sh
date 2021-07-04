@@ -22,7 +22,11 @@ then
     $current_dir/install_minecraft.sh
     $current_dir/install_vmware_workstation.sh
     $current_dir/install_ventoy-bin.sh
-    $current_dir/install_vdhcoapp.sh
     $current_dir/install_gcdemu.sh
+fi
+
+if [ $1 != "full" ]
+then
+    $current_dir/install_vdhcoapp.sh
     $current_dir/install_zoom.sh
 fi
