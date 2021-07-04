@@ -6,6 +6,18 @@ current_dir=$(dirname $0)
 install_type=core # {core full virtualbox}
 desktop_environment=
 
+# ask user whether the system is in VirtualBox
+printf "\nIs the system in VirtualBox? [y/N] "
+read install_type
+
+re="[yY]"
+if ! [[ "$install_type" =~ $re ]]
+then
+    install_type="core"
+else
+    install_type="virtualbox"
+fi
+
 # ask user for setup desktop environment
 display_menu_desktop_environment()
 {
