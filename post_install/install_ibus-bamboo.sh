@@ -8,5 +8,8 @@ set -e
 yay -Syu --noconfirm ibus-bamboo
 ibus restart
 
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo')]"
-gsettings set org.gnome.desktop.interface gtk-im-module "'ibus'"
+if [ $1 = "GNOME" ]
+then
+    gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo')]"
+    gsettings set org.gnome.desktop.interface gtk-im-module "'ibus'"
+fi

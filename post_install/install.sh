@@ -8,7 +8,7 @@ de=GNOME
 
 $current_dir/configure.sh $install_type $de
 $current_dir/install_packages.sh $install_type $de
-$current_dir/install_external_packages.sh $install_type
+$current_dir/install_external_packages.sh $install_type $de
 
 if [ $install_type = "full" ]
 then
