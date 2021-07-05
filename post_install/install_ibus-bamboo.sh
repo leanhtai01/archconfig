@@ -11,7 +11,8 @@ yay -Syu --noconfirm ibus-bamboo
 
 if [ $1 = "KDEPlasma" ]
 then
-    cp $parent_dir/data/ibus_config_data /home/$(whoami)/.xprofile
+    mkdir -p /home/$(whoami)/.config/environment.d
+    cp $parent_dir/data/ibus_config_data /home/$(whoami)/.config/environment.d/ibus.conf
 fi
 
 if [ $1 = "GNOME" ]
