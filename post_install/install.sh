@@ -5,6 +5,7 @@ set -e
 current_dir=$(dirname $0)
 install_type=core # {core full virtualbox}
 desktop_environment=
+configure_java=
 
 # ask user whether the system is in VirtualBox
 printf "Is the system in VirtualBox? [y/N] "
@@ -16,6 +17,18 @@ then
     install_type="core"
 else
     install_type="virtualbox"
+fi
+
+# ask user whether configure java
+printf "Is configure Java development environment? [y/N] "
+read configure_java
+
+re="[yY]"
+if ! [[ "$configure_java" =~ $re ]]
+then
+    configure_java=n
+else
+    configure_java=y
 fi
 
 # ask user for setup desktop environment
@@ -62,7 +75,7 @@ fi
 
 $current_dir/configure.sh $install_type $desktop_environment
 $current_dir/install_packages.sh $install_type $desktop_environment
-$current_dir/install_external_packages.sh $install_type $desktop_environment
+$current_dir/install_external_packages.sh $install_type $desktop_environment $configure_java
 
 if [ $install_type = "full" ]
 then

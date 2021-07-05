@@ -5,7 +5,12 @@ set -e
 current_dir=$(dirname $0)
 
 $current_dir/install_yay.sh
-$current_dir/configure_java_environment.sh
+
+if [ $3 = "y" ]
+then
+    $current_dir/configure_java_environment.sh
+fi
+
 $current_dir/install_ibus-bamboo.sh $2
 $current_dir/install_flatpak_apps.sh
 $current_dir/install_sublime_tools.sh
