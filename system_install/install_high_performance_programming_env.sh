@@ -11,7 +11,7 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
-$install_command gdb cmake go valgrind clang gcc julia
+$install_command gdb cmake go valgrind clang gcc
 
 # install kdevelop and its all optional dependencies
 $install_command kdevelop
