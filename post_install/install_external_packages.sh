@@ -29,9 +29,3 @@ then
     $current_dir/install_ventoy-bin.sh
     $current_dir/install_gcdemu.sh
 fi
-
-if [ $1 = "full" ]
-then
-    $current_dir/install_vdhcoapp.sh
-    $current_dir/install_zoom.sh
-fi
