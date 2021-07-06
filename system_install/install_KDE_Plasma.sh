@@ -25,5 +25,5 @@ fi
 $install_command krusader
 $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
 
-${prefix}systemctl enable sddm
-${prefix}systemctl enable bluetooth
+# ${prefix}systemctl enable sddm
+# ${prefix}systemctl enable bluetooth
