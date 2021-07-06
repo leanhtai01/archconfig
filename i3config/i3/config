@@ -203,7 +203,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 # Autostart programs
 exec_always --no-startup-id ibus-daemon -drx
-# exec --no-startup-id goldendict
+exec --no-startup-id goldendict
 exec --no-startup-id redshift-gtk
 
 # Configure for i3-gaps
