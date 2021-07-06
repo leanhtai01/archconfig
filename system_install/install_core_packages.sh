@@ -19,7 +19,7 @@ $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack
 $install_command pulseaudio-alsa alsa-utils
 
 # browsers
-$install_command firefox-developer-edition
+$install_command chromium
 
 # editors
 $install_command emacs
