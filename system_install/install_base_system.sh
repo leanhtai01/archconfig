@@ -27,7 +27,7 @@ setupsecureboot=
 setupkeytool=
 desktop_environment="GNOME KDEPlasma i3" # {GNOME KDEPlasma i3 none}
 desktop_install_type=core # {core full}
-gpu= # {intel, amd, nvidia, virtualbox, vmware}
+gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
 hostname=
 system_install_type="core optional python java javascript high_performance dotnet desktop games" # {core optional python java javascript high_performance dotnet desktop games}
 
