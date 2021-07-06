@@ -15,10 +15,10 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 if [ $desktop_install_type = "core" ]
 then
     # core
-    $install_command eog evince file-roller gdm gnome-calculator gnome-control-center gnome-keyring gnome-screenshot gnome-system-monitor gnome-terminal gnome-themes-extra nautilus sushi gnome-tweaks gedit gedit-plugins totem xdg-user-dirs-gtk
+    $install_command eog evince file-roller gdm gnome-calculator gnome-control-center gnome-keyring gnome-screenshot gnome-system-monitor gnome-terminal gnome-themes-extra nautilus sushi gnome-tweaks gedit gedit-plugins totem xdg-user-dirs-gtk seahorse seahorse-nautilus
 else
     # full
-    $install_command gnome gnome-extra seahorse seahorse-nautilus gedit-plugins
+    $install_command gnome gnome-extra gedit-plugins
 fi
 
 ${prefix}systemctl enable gdm
