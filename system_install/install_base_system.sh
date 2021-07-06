@@ -28,7 +28,7 @@ setupkeytool=
 desktop_environment="GNOME KDEPlasma i3" # {GNOME KDEPlasma i3 none}
 desktop_install_type=core # {core full}
 gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
-hostname=
+hostname="archlinux"
 system_install_type="core optional python java javascript high_performance dotnet desktop games" # {core optional python java javascript high_performance dotnet desktop games}
 
 # get user info
