@@ -15,7 +15,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 if [ $desktop_install_type = "core" ]
 then
     # core
-    $install_command baobab eog evince file-roller gdm gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-contacts gnome-control-center gnome-font-viewer gnome-keyring gnome-logs gnome-screenshot gnome-shell-extensions gnome-system-monitor gnome-terminal gnome-themes-extra gnome-user-docs gnome-user-share gnome-video-effects nautilus sushi gnome-tweaks gedit gedit-plugins totem xdg-user-dirs-gtk seahorse seahorse-nautilus devhelp ghex glade
+    $install_command baobab eog evince file-roller gdm gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-contacts gnome-control-center gnome-font-viewer gnome-keyring gnome-logs gnome-screenshot gnome-shell-extensions gnome-system-monitor gnome-terminal gnome-themes-extra gnome-user-docs gnome-user-share gnome-video-effects nautilus sushi gnome-tweaks gedit gedit-plugins totem xdg-user-dirs-gtk seahorse seahorse-nautilus devhelp ghex glade gnome-builder
 else
     # full
     $install_command gnome gnome-extra gedit-plugins
