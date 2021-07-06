@@ -45,7 +45,7 @@ then
     $install_command wimlib transmission-gtk deja-dup lm_sensors ntfs-3g gparted bchunk cdemu-client vhba-module-dkms cdrtools fuseiso efitools sbsigntools clamav filezilla
 
     # office and learning
-    $install_command calibre kchmviewer kolourpaint goldendict
+    $install_command calibre kchmviewer kolourpaint goldendict okular
 
     # multimedia
     $install_command kdenlive frei0r-plugins handbrake handbrake-cli
