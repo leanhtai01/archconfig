@@ -4,8 +4,8 @@ set -e
 
 current_dir=$(dirname $0)
 install_type=core # {core full virtualbox}
-desktop_environment=
-configure_java=
+desktop_environment="GNOME"
+configure_java="y"
 
 # ask user whether the system is in VirtualBox
 printf "Is the system in VirtualBox? [y/N] "
