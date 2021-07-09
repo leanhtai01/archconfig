@@ -7,8 +7,8 @@ parent_dir=$(cd $(dirname $0)/..; pwd)
 
 sudo pacman -Syu --needed --noconfirm tomcat${version}
 sudo gpasswd -a leanhtai01 tomcat${version}
-sudo systemctl enable tomcat${version}
-sudo systemctl start tomcat${version}
+# sudo systemctl enable tomcat${version}
+# sudo systemctl start tomcat${version}
 sudo cp $parent_dir/data/tomcat-users.xml /usr/share/tomcat${version}/conf/tomcat-users.xml
 sudo chown root:tomcat${version} /usr/share/tomcat${version}/conf/tomcat-users.xml
 
