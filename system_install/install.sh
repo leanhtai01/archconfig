@@ -7,7 +7,7 @@ parent_dir=$(cd $(dirname $0)/..; pwd)
 newusername=
 desktop_environment=
 gpu=
-connect_to_wifi=
+connect_to_wifi="y"
 system_install_type=
 desktop_install_type=
 
