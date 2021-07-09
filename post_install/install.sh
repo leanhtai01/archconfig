@@ -8,27 +8,33 @@ desktop_environment="GNOME"
 configure_java="y"
 
 # ask user whether the system is in VirtualBox
-printf "Is the system in VirtualBox? [y/N] "
-read install_type
-
-re="[yY]"
-if ! [[ "$install_type" =~ $re ]]
+if [ -z $install_type ]
 then
-    install_type="core"
-else
-    install_type="virtualbox"
+    printf "Is the system in VirtualBox? [y/N] "
+    read install_type
+
+    re="[yY]"
+    if ! [[ "$install_type" =~ $re ]]
+    then
+	install_type="core"
+    else
+	install_type="virtualbox"
+    fi
 fi
 
 # ask user whether configure java
-printf "Is configure Java development environment? [y/N] "
-read configure_java
-
-re="[yY]"
-if ! [[ "$configure_java" =~ $re ]]
+if [ -z $configure_java ]
 then
-    configure_java=n
-else
-    configure_java=y
+    printf "Is configure Java development environment? [y/N] "
+    read configure_java
+
+    re="[yY]"
+    if ! [[ "$configure_java" =~ $re ]]
+    then
+	configure_java=n
+    else
+	configure_java=y
+    fi
 fi
 
 # ask user for setup desktop environment
