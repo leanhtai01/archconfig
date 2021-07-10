@@ -30,6 +30,10 @@ $install_command git dia github-cli kdiff3
 # tools
 $install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion ibus flatpak tree
 
+# install krusader and its all optional dependencies
+$install_command krusader
+$install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
+
 # install documentation for KDE Applications
 $install_command khelpcenter
 
