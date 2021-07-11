@@ -46,7 +46,7 @@ $install_command obs-studio vlc gst-libav gst-plugins-good gst-plugins-ugly gst-
 if [ $3 != "virtualbox" ]
 then
     # tools
-    $install_command wimlib transmission-gtk deja-dup lm_sensors ntfs-3g gparted bchunk cdemu-client vhba-module-dkms cdrtools fuseiso efitools sbsigntools clamav filezilla
+    $install_command wimlib transmission-gtk deja-dup lm_sensors ntfs-3g gparted bchunk cdemu-client vhba-module-dkms cdrtools fuseiso efitools sbsigntools filezilla
 
     # office and learning
     $install_command calibre kchmviewer kolourpaint goldendict okular
