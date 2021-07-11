@@ -18,8 +18,3 @@ fi
 
 $current_dir/configure_emacs.sh
 $current_dir/configure_git.sh
-
-if [ $1 != "virtualbox" ]
-then
-    $current_dir/configure_clamav.sh
-fi
