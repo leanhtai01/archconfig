@@ -14,9 +14,9 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ binding "'<Primary><Alt>e'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ command "'emacs'"
 
 # open Chromium
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Firefox Developer Edition'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Chromium'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>i'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'firefox-developer-edition'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'chromium'"
 
 # open GNOME Terminal
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ name "'GNOME Terminal'"
