@@ -29,6 +29,6 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ binding "'<Super>e'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ command "'nautilus'"
 
 # open Nautilus
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ name "'Krusader'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ binding "'<Primary><Alt>f'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ command "'krusader'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ name "'Krusader'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ binding "'<Primary><Alt>f'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ command "'krusader'"
