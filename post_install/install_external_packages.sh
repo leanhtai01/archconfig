@@ -22,7 +22,6 @@ fi
 if [ $1 != "virtualbox" ]
 then
     $current_dir/install_virtualbox-ext-oracle.sh
-    $current_dir/install_minecraft.sh
     $current_dir/install_vmware_workstation.sh
     $current_dir/install_ventoy-bin.sh
     $current_dir/install_gcdemu.sh
