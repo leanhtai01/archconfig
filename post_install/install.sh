@@ -3,9 +3,9 @@
 set -e
 
 current_dir=$(dirname $0)
-install_type=core # {core full virtualbox}
-desktop_environment="GNOME"
-configure_java="y"
+install_type= # {core full virtualbox}
+desktop_environment=
+configure_java=
 
 # ask user whether the system is in VirtualBox
 if [ -z $install_type ]
