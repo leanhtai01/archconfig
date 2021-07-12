@@ -31,6 +31,9 @@ gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
 hostname="archlinux"
 system_install_type="core optional python java javascript high_performance dotnet desktop games" # {core optional python java javascript high_performance dotnet desktop games}
 
+# set password
+. $current_dir/set_passwords.sh
+
 # get user info
 . $current_dir/get_user_info.sh
 
