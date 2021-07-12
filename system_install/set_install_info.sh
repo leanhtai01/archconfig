@@ -3,6 +3,7 @@
 set -e
 
 install_dev= # nvme0n1
+other_storage_dev= # (sda, sdb, sdc, mmcblk0,...)
 size_of_ram=
 newusername="leanhtai01"
 realname="Lê Anh Tài"

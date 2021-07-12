@@ -6,30 +6,32 @@ set -e
 # global variables
 current_dir=$(dirname $0)
 parent_dir=$(cd $(dirname $0)/..; pwd)
-install_dev="nvme0n1" # nvme0n1
-other_storage_dev= # (sda, sdb, sdc, mmcblk0,...)
+install_dev=
 part=
-size_of_ram=16
+size_of_ram=
 rootpass1=
 rootpass2=
 userpass1=
 userpass2=
-newusername="leanhtai01"
-realname="Lê Anh Tài"
-user_choice=2 # 1 - normal install, 2 - LVM on LUKS, 4 - dual-boot with Windows 10 (normal install), 5- dual-boot with Windows 10 (LVM on LUKS)
+newusername=
+realname=
+user_choice=
 storagepass1=
 storagepass2=
 bootpass1=
 bootpass2=
-bootloader=1 # 1 - systemd-boot, 2 - GRUB (encrypted boot), 3 - GRUB (non-encrypted boot)
+bootloader=
 swapuuidvalue=
-setupsecureboot=n
-setupkeytool=n
-desktop_environment="GNOME" # {GNOME KDEPlasma i3 none}
-desktop_install_type=core # {core full}
-gpu=intel # {intel, amd, nvidia, virtualbox, vmware}
-hostname="archlinux"
-system_install_type="core optional python java javascript high_performance dotnet desktop games" # {core optional python java javascript high_performance dotnet desktop games}
+setupsecureboot=
+setupkeytool=
+desktop_environment=
+desktop_install_type=
+gpu=
+hostname=
+system_install_type=
+
+# set install info
+. $current_dir/set_install_info.sh
 
 # set password
 . $current_dir/set_passwords.sh
