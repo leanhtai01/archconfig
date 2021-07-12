@@ -3,9 +3,9 @@
 set -e
 
 PASSPHRASE=
-DEVICE="wlan0"
-SSID="leanhtai01"
-is_hidden="y"
+DEVICE=
+SSID=
+is_hidden=
 
 if [ -z $DEVICE ]
 then
