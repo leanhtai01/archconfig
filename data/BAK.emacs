@@ -1,3 +1,6 @@
+(when window-system
+  ;; (set-frame-position (selected-frame) 0 0)
+  (set-frame-size (selected-frame) 85 50))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
