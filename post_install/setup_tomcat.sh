@@ -19,7 +19,7 @@ if [ -z $version ]
 then
     re="[1-3]"
 
-    display_menu()
+    display_menu
     read choice
 
     while [[ ! "$choice" =~ $re ]]
