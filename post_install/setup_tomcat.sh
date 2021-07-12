@@ -2,8 +2,45 @@
 
 set -e
 
-version=8
+version=
 parent_dir=$(cd $(dirname $0)/..; pwd)
+
+# ask user for version of tomcat
+display_menu()
+{
+    printf "\nChoose tomcat's version:\n"
+    printf "1. Version 8\n"
+    printf "2. Version 9\n"
+    printf "3. Version 10\n"
+    printf "Enter your choice: "
+}
+
+if [ -z $version ]
+then
+    re="[1-3]"
+
+    display_menu()
+    read choice
+
+    while [[ ! "$choice" =~ $re ]]
+    do
+	printf "\nInvalid choice! Please try again!\n"
+	display_menu
+	read choice
+    done
+
+    case $choice in
+	1)
+	    version=8
+	    ;;
+	2)
+	    version=9
+	    ;;
+	3)
+	    version=10
+	    ;;
+    esac
+fi
 
 sudo pacman -Syu --needed --noconfirm tomcat${version}
 sudo gpasswd -a leanhtai01 tomcat${version}
