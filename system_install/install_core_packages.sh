@@ -26,7 +26,7 @@ $install_command emacs
 
 # programming packages
 $install_command git dia github-cli kdiff3
-$install_command gdb cmake go valgrind clang gcc
+$install_command gdb cmake go valgrind clang gcc llvm
 
 # install kdevelop and its all optional dependencies
 $install_command kdevelop
