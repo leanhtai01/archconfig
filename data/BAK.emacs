@@ -45,6 +45,7 @@
  '(global-flycheck-mode t)
  '(global-linum-mode t)
  '(inhibit-startup-screen t)
+ '(magit-diff-refine-hunk 'all)
  '(menu-bar-mode nil)
  '(package-archives
    '(("melpa" . "https://melpa.org/packages/")
