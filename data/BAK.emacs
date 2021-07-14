@@ -71,6 +71,13 @@
   (package-refresh-contents))
 (package-install-selected-packages)
 
+;; helm configuration
+(helm-mode)
+(require 'helm-xref)
+(define-key global-map [remap find-file] #'helm-find-files)
+(define-key global-map [remap execute-extended-command] #'helm-M-x)
+(define-key global-map [remap switch-to-buffer] #'helm-mini)
+
 ;; lsp-mode configuration add-hook
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
