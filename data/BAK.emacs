@@ -10,23 +10,23 @@
   ;; (set-frame-position (selected-frame) 0 0)
   (set-frame-size (selected-frame) 85 50))
 
-;; company-irony configuration
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
+;; ;; company-irony configuration
+;; (eval-after-load 'company
+;;   '(add-to-list 'company-backends 'company-irony))
 
-;; auto-load on sgml modes
-(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+;; ;; auto-load on sgml modes
+;; (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 
-;; irony-mode configuration add-hook
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+;; ;; irony-mode configuration add-hook
+;; (add-hook 'c++-mode-hook 'irony-mode)
+;; (add-hook 'c-mode-hook 'irony-mode)
+;; (add-hook 'objc-mode-hook 'irony-mode)
+;; (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
-;; configuration flycheck-irony
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+;; ;; configuration flycheck-irony
+;; (eval-after-load 'flycheck
+;;   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -51,12 +51,17 @@
    '(("melpa" . "https://melpa.org/packages/")
      ("gnu" . "https://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(magit yasnippet-snippets yasnippet flycheck-irony company-irony-c-headers company-irony emmet-mode js2-mode web-mode))
+   '(magit yasnippet-snippets yasnippet emmet-mode js2-mode web-mode lsp-mode lsp-ui flycheck company lsp-treemacs helm-lsp dap-mode which-key helm-xref))
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(yas-global-mode t))
+
+;; lsp-mode configuration add-hook
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
