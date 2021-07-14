@@ -81,6 +81,7 @@
 ;; lsp-mode configuration add-hook
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
+(add-hook 'sh-mode-hook 'lsp)
 
 (provide '.emacs)
 
