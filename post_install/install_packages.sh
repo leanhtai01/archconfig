@@ -10,6 +10,6 @@ then
     $current_dir/configure_tlp.sh
 fi
 
-$current_dir/install_fcitx5-unikey.conf
+$current_dir/install_fcitx5-unikey.sh
 $current_dir/install_lamp_stack.sh
 $current_dir/configure_ufw.sh $2
