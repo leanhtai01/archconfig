@@ -7,6 +7,7 @@ parent_dir=$(cd $(dirname $0)/..; pwd)
 # mkdir -p /home/$(whoami)/my_programs/ibus-bamboo
 # git clone https://github.com/BambooEngine/ibus-bamboo /home/$(whoami)/my_programs/ibus-bamboo
 # (cd /home/$(whoami)/my_programs/ibus-bamboo && sudo make install)
+sudo pacman -Syu --needed --noconfirm ibus
 yay -Syu --noconfirm ibus-bamboo
 
 if [ $1 = "KDEPlasma" ]
