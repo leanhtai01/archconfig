@@ -39,6 +39,7 @@
  '(display-battery-mode t)
  '(display-time-day-and-date t)
  '(display-time-mode t)
+ '(electric-pair-mode t)
  '(fill-column 80)
  '(global-company-mode t)
  '(global-display-fill-column-indicator-mode t)
