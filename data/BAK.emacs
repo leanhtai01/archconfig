@@ -72,6 +72,10 @@
   (package-refresh-contents))
 (package-install-selected-packages)
 
+;; configure which-key-mode
+(which-key-mode)
+;; (which-key-setup-side-window-right)
+
 ;; helm configuration
 (helm-mode)
 (require 'helm-xref)
