@@ -51,7 +51,7 @@
    '(("melpa" . "https://melpa.org/packages/")
      ("gnu" . "https://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(magit yasnippet-snippets yasnippet emmet-mode js2-mode web-mode lsp-mode lsp-ui flycheck company lsp-treemacs helm-lsp dap-mode which-key helm-xref))
+   '(go-mode magit yasnippet-snippets yasnippet emmet-mode js2-mode web-mode lsp-mode lsp-ui flycheck company lsp-treemacs helm-lsp dap-mode which-key helm-xref))
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
@@ -82,6 +82,17 @@
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
 (add-hook 'sh-mode-hook 'lsp)
+
+;; configuration for golang
+(require 'lsp-mode)
+(add-hook 'go-mode-hook #'lsp-deferred)
+
+;; Make sure you don't have other gofmt/goimports hooks enabled.
+(defun lsp-go-install-save-hooks ()
+  "Set up before-save hooks to format buffer and add/delete imports."
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
 (provide '.emacs)
 
