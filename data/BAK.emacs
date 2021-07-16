@@ -51,7 +51,7 @@
    '(("melpa" . "https://melpa.org/packages/")
      ("gnu" . "https://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(go-mode magit yasnippet-snippets yasnippet emmet-mode js2-mode web-mode lsp-mode lsp-ui flycheck company lsp-treemacs helm-lsp dap-mode which-key helm-xref))
+   '(lsp-java go-mode magit yasnippet-snippets yasnippet emmet-mode js2-mode web-mode lsp-mode lsp-ui flycheck company lsp-treemacs helm-lsp dap-mode which-key helm-xref))
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
@@ -78,12 +78,18 @@
 (define-key global-map [remap execute-extended-command] #'helm-M-x)
 (define-key global-map [remap switch-to-buffer] #'helm-mini)
 
-;; lsp-mode configuration add-hook
+;; configuration lsp for C/C++
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
+
+;; configuration lsp for shell script
 (add-hook 'sh-mode-hook 'lsp)
 
-;; configuration for golang
+;; configuration lsp for Java
+(require 'lsp-java)
+(add-hook 'java-mode-hook #'lsp)
+
+;; configuration lsp for golang
 (require 'lsp-mode)
 (add-hook 'go-mode-hook #'lsp-deferred)
 
