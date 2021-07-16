@@ -14,10 +14,6 @@
 ;; (eval-after-load 'company
 ;;   '(add-to-list 'company-backends 'company-irony))
 
-;; ;; auto-load on sgml modes
-;; (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-;; (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-
 ;; ;; irony-mode configuration add-hook
 ;; (add-hook 'c++-mode-hook 'irony-mode)
 ;; (add-hook 'c-mode-hook 'irony-mode)
@@ -86,6 +82,10 @@
 ;; configuration lsp for C/C++
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
+
+;; configuration emmet-mode
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 
 ;; configuration lsp for shell script
 (add-hook 'sh-mode-hook 'lsp)
