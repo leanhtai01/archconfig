@@ -11,6 +11,7 @@ then
     $current_dir/configure_java_environment.sh
 fi
 
+$current_dir/install_ibus-bamboo.sh
 $current_dir/install_flatpak_apps.sh
 
 if [ $2 = "GNOME" ]
