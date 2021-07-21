@@ -14,11 +14,6 @@ fi
 $current_dir/install_ibus-bamboo.sh $2
 $current_dir/install_flatpak_apps.sh
 
-if [ $2 = "GNOME" ]
-then
-    $current_dir/install_chrome-gnome-shell.sh
-fi
-
 if [ $1 != "virtualbox" ]
 then
     $current_dir/install_virtualbox-ext-oracle.sh
