@@ -48,7 +48,7 @@
    '(("melpa" . "https://melpa.org/packages/")
      ("gnu" . "https://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(lsp-java go-mode magit yasnippet-snippets yasnippet emmet-mode js2-mode web-mode lsp-mode lsp-ui flycheck company lsp-treemacs helm-lsp dap-mode which-key helm-xref))
+   '(nhexl-mode lsp-java go-mode magit yasnippet-snippets yasnippet emmet-mode js2-mode web-mode lsp-mode lsp-ui flycheck company lsp-treemacs helm-lsp dap-mode which-key helm-xref))
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
