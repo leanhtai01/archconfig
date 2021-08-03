@@ -15,7 +15,7 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ command "'emacs'"
 
 # open Chromium
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Chromium'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>i'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>c'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'chromium'"
 
 # open GNOME Terminal
