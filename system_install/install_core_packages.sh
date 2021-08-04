@@ -19,13 +19,13 @@ $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack adobe-sourc
 $install_command pulseaudio-alsa alsa-utils
 
 # browsers
-$install_command chromium firefox-developer-edition torbrowser-launcher npm
+$install_command chromium firefox-developer-edition torbrowser-launcher
 
 # editors
 $install_command emacs
 
 # programming packages
-$install_command git dia github-cli kdiff3
+$install_command git dia github-cli kdiff3 npm
 $install_command gdb cmake go valgrind clang gcc llvm gopls
 
 # install kdevelop and its all optional dependencies
