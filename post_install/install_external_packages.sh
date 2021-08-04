@@ -20,5 +20,4 @@ if [ $1 != "virtualbox" ]
 then
     $current_dir/install_virtualbox-ext-oracle.sh
     $current_dir/install_ventoy-bin.sh
-    $current_dir/install_gcdemu.sh
 fi
