@@ -22,7 +22,7 @@ $install_command pulseaudio-alsa alsa-utils
 $install_command chromium firefox-developer-edition torbrowser-launcher
 
 # editors
-$install_command emacs
+$install_command emacs gvim
 
 # programming packages
 $install_command git dia github-cli kdiff3 npm
