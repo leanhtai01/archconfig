@@ -14,6 +14,7 @@ fi
 $current_dir/install_ibus-bamboo.sh $2
 $current_dir/install_flatpak_apps.sh
 $current_dir/install_sublime_tools.sh
+$current_dir/install_google-chrome.sh
 $current_dir/install_chrome-gnome-shell.sh
 
 if [ $1 != "virtualbox" ]
