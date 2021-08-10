@@ -3,7 +3,7 @@
 set -e
 
 current_dir=$(dirname $0)
-install_type=core # {core full virtualbox}
+install_type= # {core full virtualbox}
 desktop_environment=GNOME
 configure_java=y
 
