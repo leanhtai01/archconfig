@@ -11,12 +11,6 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
-# browsers
-$install_command torbrowser-launcher
-
-# editors
-$install_command gvim
-
 # tools
 $install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl nfs-utils samba fish wget rclone
 
