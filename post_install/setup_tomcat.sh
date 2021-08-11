@@ -2,7 +2,7 @@
 
 set -e
 
-version=
+version=8
 parent_dir=$(cd $(dirname $0)/..; pwd)
 
 # ask user for version of tomcat
