@@ -64,9 +64,9 @@ gsettings set org.gnome.shell favorite-apps "[]"
 # switch applications only in current workspace
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
 
-# disable auto-update GNOME
-gsettings set org.gnome.software download-updates false
-gsettings set org.gnome.software download-updates-notify false
+# # disable auto-update GNOME
+# gsettings set org.gnome.software download-updates false
+# gsettings set org.gnome.software download-updates-notify false
 
 # set nautilus initial-size
 gsettings set org.gnome.nautilus.window-state initial-size "(1169, 785)"
