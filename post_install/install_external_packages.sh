@@ -18,6 +18,8 @@ $current_dir/install_flatpak_apps.sh
 $current_dir/install_google-chrome.sh
 $current_dir/install_chrome-gnome-shell.sh
 $current_dir/install_dislocker.sh
+$current_dir/install_gdown.sh
+$current_dir/install_packettracer.sh
 
 if [ $1 != "virtualbox" ]
 then
