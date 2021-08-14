@@ -18,6 +18,10 @@ $current_dir/install_google-chrome.sh
 $current_dir/install_chrome-gnome-shell.sh
 $current_dir/install_gdown.sh
 $current_dir/install_packettracer.sh
+$current_dir/install_skype.sh
+$current_dir/install_jetbrains-toolbox.sh
+$current_dir/install_nautilus_dropbox.sh
+$current_dir/install_minecraft.sh
 
 if [ $1 != "virtualbox" ]
 then
