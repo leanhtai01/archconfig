@@ -5,7 +5,6 @@ set -e
 current_dir=$(dirname $0)
 
 $current_dir/install_azure_data_studio.sh
-$current_dir/install_dislocker.sh
 $current_dir/install_gdown.sh
 $current_dir/install_logisim-evolution.sh
 $current_dir/install_mssql.sh

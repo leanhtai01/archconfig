@@ -17,6 +17,7 @@ $current_dir/install_visual_studio_code.sh
 $current_dir/install_flatpak_apps.sh
 $current_dir/install_google-chrome.sh
 $current_dir/install_chrome-gnome-shell.sh
+$current_dir/install_dislocker.sh
 
 if [ $1 != "virtualbox" ]
 then
