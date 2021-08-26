@@ -30,6 +30,9 @@ gpu=
 hostname=
 system_install_type=
 
+# disable reflector
+. $current_dir/disable_reflector.sh
+
 # set install info
 . $current_dir/set_install_info.sh
 
