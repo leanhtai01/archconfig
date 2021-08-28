@@ -9,3 +9,5 @@ $current_dir/install_vdhcoapp.sh
 $current_dir/install_zoom.sh
 $current_dir/install_skype.sh
 $current_dir/install_jetbrains-toolbox.sh
+$current_dir/install_logisim-evolution.sh
+$current_dir/install_qtspim.sh
