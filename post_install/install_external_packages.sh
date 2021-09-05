@@ -28,5 +28,5 @@ then
 fi
 
 $current_dir/install_sublime_tools.sh
-$current_dir/install_mssql.sh
-$current_dir/install_azure_data_studio.sh
+# $current_dir/install_mssql.sh
+# $current_dir/install_azure_data_studio.sh
