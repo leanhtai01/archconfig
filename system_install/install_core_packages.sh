@@ -37,7 +37,7 @@ $install_command qtcreator
 $install_command $(printf "$(${prefix}pacman -Qi qtcreator)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
 
 # tools
-$install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion flatpak tree fish ibus clamav
+$install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion flatpak tree fish ibus
 
 # setup connect android phone
 $install_command mtpfs gvfs-mtp gvfs-gphoto2
