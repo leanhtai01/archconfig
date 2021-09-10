@@ -12,7 +12,7 @@ fi
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
 # tools
-$install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl nfs-utils samba fish wget rclone clamav
+$install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl nfs-utils samba fish wget rclone
 
 # remote desktop
 $install_command remmina libvncserver freerdp
