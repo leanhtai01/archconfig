@@ -28,6 +28,9 @@ then
     # enable edge-scrolling touchpad
     gsettings set org.gnome.desktop.peripherals.touchpad edge-scrolling-enabled true
 
+    # enable touchpad tap-to-click
+    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+
     # enable Night Light
     gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
     gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 18.0
