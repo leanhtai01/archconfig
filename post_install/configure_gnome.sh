@@ -19,8 +19,8 @@ then
     # show battery percentage
     gsettings set org.gnome.desktop.interface show-battery-percentage true
 
-    # disable touchpad
-    gsettings set org.gnome.desktop.peripherals.touchpad send-events "'disabled'"
+    # # disable touchpad
+    # gsettings set org.gnome.desktop.peripherals.touchpad send-events "'disabled'"
 
     # enable Night Light
     gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
