@@ -22,6 +22,12 @@ then
     # # disable touchpad
     # gsettings set org.gnome.desktop.peripherals.touchpad send-events "'disabled'"
 
+    # disable two-finger-scrolling touchpad
+    gsettings set org.gnome.desktop.peripherals.touchpad two-finger-scrolling-enabled false
+
+    # enable edge-scrolling touchpad
+    gsettings set org.gnome.desktop.peripherals.touchpad edge-scrolling-enabled true
+
     # enable Night Light
     gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
     gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 18.0
