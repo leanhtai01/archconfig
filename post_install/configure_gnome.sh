@@ -23,10 +23,10 @@ then
     # gsettings set org.gnome.desktop.peripherals.touchpad send-events "'disabled'"
 
     # disable two-finger-scrolling touchpad
-    gsettings set org.gnome.desktop.peripherals.touchpad two-finger-scrolling-enabled false
+    gsettings set org.gnome.desktop.peripherals.touchpad two-finger-scrolling-enabled true
 
     # enable edge-scrolling touchpad
-    gsettings set org.gnome.desktop.peripherals.touchpad edge-scrolling-enabled true
+    gsettings set org.gnome.desktop.peripherals.touchpad edge-scrolling-enabled false
 
     # enable touchpad tap-to-click
     gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
