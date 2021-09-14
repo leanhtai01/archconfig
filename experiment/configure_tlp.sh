@@ -12,5 +12,5 @@ fi
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
 $install_command tlp acpi_call
-$install_command systemctl enable tlp
-$install_command systemctl start tlp
+$prefix systemctl enable tlp
+$prefix systemctl start tlp
