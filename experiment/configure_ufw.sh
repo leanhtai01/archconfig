@@ -19,4 +19,3 @@ then
 fi
 
 $prefix systemctl enable ufw
-$prefix ufw enable
