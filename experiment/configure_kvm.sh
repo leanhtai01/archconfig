@@ -11,8 +11,6 @@ else
     prefix="sudo "
 fi
 
-install_command="${prefix}pacman -Syu --needed --noconfirm"
-
 INSTALL_KVM=$($prefix expect -c "
 set pid [spawn pacman -Syu --needed virt-manager qemu vde2 dnsmasq bridge-utils virt-viewer dmidecode edk2-ovmf cockpit cockpit-machines iptables-nft]
 
