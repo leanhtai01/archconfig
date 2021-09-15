@@ -30,9 +30,7 @@ wait $pid
 echo "${INSTALL_KVM}"
 
 $prefix systemctl enable libvirtd
-$prefix systemctl start libvirtd
 $prefix systemctl enable cockpit.socket
-$prefix systemctl start cockpit.socket
 
 $prefix sed -i "/^#unix_sock_group = \"libvirt\"$/s/^#//" /etc/libvirt/libvirtd.conf
 $prefix sed -i "/^#unix_sock_rw_perms = \"0770\"$/s/^#//" /etc/libvirt/libvirtd.conf
