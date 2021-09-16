@@ -17,8 +17,6 @@ set pid [spawn pacman -Syu --needed virt-manager qemu vde2 dnsmasq bridge-utils 
 expect \":: iptables-nft and iptables are in conflict. Remove iptables? \[y/N\]\"
 send \"y\r\"
 
-expect eof
-
 expect \":: Proceed with installation? \[Y/n\]\"
 send \"y\r\"
 
