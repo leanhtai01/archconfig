@@ -15,7 +15,7 @@ fi
 $prefix pacman -Syu --needed --noconfirm
 
 INSTALL_KVM=$($prefix expect -c "
-set timeout 30
+set timeout -1
 
 spawn pacman -Syu --needed virt-manager qemu vde2 dnsmasq bridge-utils virt-viewer dmidecode edk2-ovmf cockpit cockpit-machines iptables-nft
 
@@ -26,6 +26,8 @@ expect \":: Proceed with installation? \[Y/n\]\"
 send \"y\r\"
 
 expect eof
+
+exit 0
 ")
 
 echo "${INSTALL_KVM}"
