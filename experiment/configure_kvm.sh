@@ -25,6 +25,8 @@ send \"y\r\"
 expect \":: Proceed with installation? \[Y/n\]\"
 send \"y\r\"
 
+expect -re {^Adding user.*to group kvm}
+
 expect eof
 
 exit 0
