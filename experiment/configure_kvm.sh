@@ -15,8 +15,6 @@ fi
 $prefix pacman -Syu --needed --noconfirm
 
 INSTALL_KVM=$($prefix expect -c "
-set timeout -1
-
 spawn pacman -Syu --needed virt-manager qemu vde2 dnsmasq bridge-utils virt-viewer dmidecode edk2-ovmf cockpit cockpit-machines iptables-nft
 
 expect \":: iptables-nft and iptables are in conflict. Remove iptables? \[y/N\]\"
