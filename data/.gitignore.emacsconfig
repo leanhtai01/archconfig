@@ -1,0 +1,8 @@
+# ignore everything
+*
+
+# not ignore these files and dirs
+!.gitignore
+!README.md
+!.emacs
+!.emacs.d/
