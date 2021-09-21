@@ -1,8 +1,14 @@
-# ignore everything
+## ignore everything
 *
 
-# not ignore these files and dirs
+## not ignore files
 !.gitignore
 !README.md
 !.emacs
+
+## not ignore directories
+# must have before next line
 !.emacs.d/
+
+# matches everything inside .emacs.d
+!.emacs.d/**
