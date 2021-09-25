@@ -17,6 +17,6 @@ then
     $current_dir/configure_xsettingsd.sh
 fi
 
-$current_dir/configure_emacs.sh
+$current_dir/configure_editor.sh $(whoami)
 $current_dir/configure_git.sh
 $current_dir/configure_clamav.sh
