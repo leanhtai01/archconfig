@@ -19,6 +19,7 @@ full_path=$(readlink -f "$path_to_iso")
 tmp=$(printf "$full_path" | rev | cut -d'/' -f1 | rev)
 iso_name=$(printf "${tmp:0:-4}")
 file_name="${iso_name}_modified.iso"
+volume_name=$(iso-info $path_to_iso | grep -i '^Volume[ ]*:' | cut -d':' -f2 | sed 's/^ //g')
 
 # mount the iso
 mkdir win_img
@@ -45,6 +46,7 @@ mkisofs \
     -eltorito-platform efi \
     -no-emul-boot \
     -b efi/microsoft/boot/efisys.bin \
+    -V $volume_name \
     -o $file_name \
     win_img/ modified/
 
