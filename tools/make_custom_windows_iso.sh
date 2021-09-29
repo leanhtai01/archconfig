@@ -50,7 +50,7 @@ mkisofs \
 
 # remove temporary files, dirs
 sudo umount win_img/
-sudo rm -r win_img/ modified
+sudo rm -r win_img/ modified $path_to_iso
 
 printf "Success making custom Windows iso!\n"
 
