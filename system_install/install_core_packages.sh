@@ -25,7 +25,7 @@ $install_command firefox-developer-edition torbrowser-launcher #chromium
 $install_command emacs gvim
 
 # programming packages
-$install_command git dia github-cli kdiff3 npm
+$install_command git dia github-cli kdiff3 npm php-tidy tidy
 $install_command gdb cmake go valgrind clang gcc llvm gopls
 
 # install kdevelop and its all optional dependencies
