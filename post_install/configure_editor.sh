@@ -10,7 +10,7 @@ function getconfig() {
     mkdir -p backup_files_emacs
     mkdir -p desktop_saves_emacs
     git init -b main
-    git remote add origin https://github.com/leanhtai01/editorconfig
+    git remote add origin https://github.com/leanhtai01/emacsconfig
     git pull --ff-only --set-upstream origin main
 }
 
