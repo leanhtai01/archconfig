@@ -3,6 +3,7 @@
 set -e
 
 username=$1
+current_dir=$(dirname $0)
 
 function getconfig() {
     cd /home/${username}
@@ -14,3 +15,4 @@ function getconfig() {
 }
 
 getconfig
+$current_dir/install_lsp_server.sh
