@@ -29,7 +29,7 @@ then
     gsettings set org.gnome.desktop.peripherals.touchpad edge-scrolling-enabled false
 
     # enable touchpad tap-to-click
-    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click false
 
     # set touchpad speed
     gsettings set org.gnome.desktop.peripherals.touchpad speed 0.51470588235294112
