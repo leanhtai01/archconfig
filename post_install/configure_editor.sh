@@ -14,5 +14,6 @@ function getconfig() {
     git pull --ff-only --set-upstream origin main
 }
 
-getconfig
 $current_dir/install_lsp_server.sh
+getconfig
+
