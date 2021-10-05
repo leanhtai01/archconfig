@@ -24,8 +24,10 @@ fi
 if [ $tap_to_click = "true" ]
 then
     gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click false
+    notify-send -u normal "Touchpad: tap-to-click disabled"
 else
     gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+    notify-send -u normal "Touchpad: tap-to-click enabled"
 fi
 
 
