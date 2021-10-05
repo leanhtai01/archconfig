@@ -18,3 +18,5 @@ sudo npm i intelephense -g
 sudo npm i bash-language-server -g
 sudo npm i vscode-css-languageserver-bin -g
 sudo npm i vscode-html-languageserver-bin -g
+sudo npm i typescript-language-server -g
+sudo npm i typescript -g
