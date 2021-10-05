@@ -8,6 +8,7 @@ current_dir=$(dirname $0)
 function getconfig() {
     cd /home/${username}
     mkdir -p backup_files_emacs
+    mkdir -p todo_list
     git clone https://github.com/leanhtai01/.emacs.d
 }
 
