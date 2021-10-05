@@ -9,9 +9,7 @@ function getconfig() {
     cd /home/${username}
     mkdir -p backup_files_emacs
     mkdir -p desktop_saves_emacs
-    git init -b main
-    git remote add origin https://github.com/leanhtai01/emacsconfig
-    git pull --ff-only --set-upstream origin main
+    git clone https://github.com/leanhtai01/.emacs.d
 }
 
 $current_dir/install_lsp_server.sh
