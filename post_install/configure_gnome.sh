@@ -2,6 +2,8 @@
 
 set -e
 
+current_dir=$(dirname $0)
+
 # swap Ctrl - CapsLock
 # gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:rwin_switch', 'ctrl:swapcaps']"
 
@@ -59,7 +61,8 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type "'nothing'"
 
 # set cursor theme
-# gsettings set org.gnome.desktop.interface cursor-theme "'ArchCursorTheme'"
+$current_dir/install_arch_cursor_theme.sh
+gsettings set org.gnome.desktop.interface cursor-theme "'ArchCursorTheme'"
 
 # set default folder viewer nautilus
 gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
