@@ -13,6 +13,9 @@ current_dir=$(dirname $0)
 # set applications theme to dark
 # gsettings set org.gnome.desktop.interface gtk-theme "'Adwaita-dark'"
 
+# enable user-theme
+gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com']"
+
 # install Nordic theme
 $current_dir/install_nordic_theme.sh
 
