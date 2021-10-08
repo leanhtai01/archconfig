@@ -13,15 +13,6 @@ current_dir=$(dirname $0)
 # set applications theme to dark
 # gsettings set org.gnome.desktop.interface gtk-theme "'Adwaita-dark'"
 
-# enable user-theme
-gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com']"
-
-# install Nordic theme
-$current_dir/install_nordic_theme.sh
-
-# install GNOME Terminal Nord theme
-$current_dir/install_nord_theme_gnome-terminal.sh
-
 # set alternate characters key
 gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:rwin_switch']"
 
@@ -68,10 +59,6 @@ gsettings set org.gnome.desktop.calendar show-weekdate true
 # disable suspend
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type "'nothing'"
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type "'nothing'"
-
-# set cursor theme
-$current_dir/install_arch_cursor_theme.sh
-gsettings set org.gnome.desktop.interface cursor-theme "'ArchCursorTheme'"
 
 # set default folder viewer nautilus
 gsettings set org.gnome.nautilus.preferences default-folder-viewer "'list-view'"
