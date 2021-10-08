@@ -16,6 +16,9 @@ current_dir=$(dirname $0)
 # install Nordic theme
 $current_dir/install_nordic_theme.sh
 
+# install GNOME Terminal Nord theme
+$current_dir/install_nord_theme_gnome-terminal.sh
+
 # set alternate characters key
 gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:rwin_switch']"
 
