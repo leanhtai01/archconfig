@@ -13,6 +13,5 @@ $current_dir/install_nordic_theme.sh
 # install GNOME Terminal Nord theme
 $current_dir/install_nord_theme_gnome-terminal.sh
 
-# set cursor theme
+# install cursor theme
 $current_dir/install_arch_cursor_theme.sh
-gsettings set org.gnome.desktop.interface cursor-theme "'ArchCursorTheme'"

@@ -23,7 +23,3 @@ tar -C ~/.local/share/icons -xvf $parent_dir/data/Nordic-Folders.tar.xz
 mv ~/.local/share/icons/Nordic-Folders/* ~/.local/share/icons/
 rm -r ~/.local/share/icons/Nordic
 rmdir ~/.local/share/icons/Nordic-Folders
-
-gsettings set org.gnome.desktop.interface gtk-theme "'Nordic-darker-v40'"
-gsettings set org.gnome.desktop.interface icon-theme "'Nordic-Darker'"
-# gsettings set org.gnome.shell.extensions.user-theme name "'Nordic-darker-v40'"
