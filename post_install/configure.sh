@@ -8,6 +8,7 @@ if [ $2 = "GNOME" ]
 then
     $current_dir/configure_gnome.sh $1
     $current_dir/configure_gnome_custom_theme.sh
+    # $current_dir/set_gnome_themes.sh
     $current_dir/configure_gedit.sh
     $current_dir/make_shortcuts_gnome.sh
     $current_dir/configure_quadrapassel.sh
