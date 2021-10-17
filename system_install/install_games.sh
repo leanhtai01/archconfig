@@ -26,4 +26,4 @@ $install_command steam steam-native-runtime
 $install_command playonlinux
 
 # install some games and game's services
-$install_command kigo bovo gnome-chess gnuchess gnome-2048 discord wesnoth quadrapassel
+$install_command kigo bovo gnome-chess gnuchess gnome-2048 discord wesnoth quadrapassel 0ad
