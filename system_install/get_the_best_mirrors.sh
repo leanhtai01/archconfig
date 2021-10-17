@@ -3,7 +3,7 @@
 set -e
 
 current_dir=$(dirname $0)
-closest_countries="VN" # TW SG CN"
+closest_countries="VN HK" # TW SG CN"
 
 mkdir $current_dir/tmp
 
@@ -18,7 +18,7 @@ rankmirrors -n 3 $current_dir/tmp/closestmirrors > /etc/pacman.d/mirrorlist
 # try the best mirror 3 times before move forward
 linum=$(sed -n '/^Server.*/=' /etc/pacman.d/mirrorlist | head -1)
 lastlinum=$(sed -n '/^Server.*/=' /etc/pacman.d/mirrorlist | tail -1)
-specialmirror="Server = http://mirror.f4st.host/archlinux/\$repo/os/\$arch"
+specialmirror="Server = https://mirror.xtom.com.hk/archlinux/\$repo/os/\$arch"
 bestmirror=$(sed -n "${linum}"p /etc/pacman.d/mirrorlist)
 
 sed -i "${lastlinum} a ${specialmirror}" /etc/pacman.d/mirrorlist
