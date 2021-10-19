@@ -16,7 +16,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 $install_command ttf-fira-code ttf-roboto-mono ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts
 
 # audio
-$install_command pulseaudio-alsa alsa-utils
+$install_command pulseaudio-alsa alsa-utils pavucontrol
 
 # browsers
 $install_command firefox-developer-edition torbrowser-launcher #chromium
