@@ -17,7 +17,7 @@ $install_command ttf-fira-code ttf-roboto-mono ttf-dejavu ttf-liberation noto-fo
 
 # audio
 # $install_command pulseaudio-alsa alsa-utils pavucontrol pulseaudio-equalizer-ladspa
-$install_command pipewire pipewire-pulse pipewire-alsa alsa-utils easyeffects
+$install_command pipewire pipewire-pulse pipewire-alsa pipewire-jack alsa-utils easyeffects
 
 # browsers
 $install_command firefox-developer-edition torbrowser-launcher #chromium
