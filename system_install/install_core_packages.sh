@@ -19,6 +19,9 @@ $install_command ttf-fira-code ttf-roboto-mono ttf-dejavu ttf-liberation noto-fo
 # $install_command pulseaudio-alsa alsa-utils pavucontrol pulseaudio-equalizer-ladspa
 $install_command pipewire pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire-jack alsa-utils easyeffects xdg-desktop-portal-gtk gst-plugin-pipewire
 
+# install all optional dependencies of easyeffects
+$install_command $(printf "$(${prefix}pacman -Qi easyeffects)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
+
 # browsers
 $install_command firefox-developer-edition torbrowser-launcher #chromium
 
