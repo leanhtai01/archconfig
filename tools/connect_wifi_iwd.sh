@@ -43,4 +43,4 @@ fi
 sleep 10
 
 # test internet
-ping -c 3 www.google.com
+ping -c 3 8.8.8.8
