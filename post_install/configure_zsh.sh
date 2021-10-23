@@ -14,4 +14,6 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 $install_command zsh zsh-completions grml-zsh-config zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
 printf "source /etc/zsh/zshrc\n" > ~/.zshrc
 printf "source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh\n" >> ~/.zshrc
-printf "source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+printf "source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh\n" >> ~/.zshrc
+printf "source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh\n" >> ~/.zshrc
+printf "source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh\n" >> ~/.zshrc
