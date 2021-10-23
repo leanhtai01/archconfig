@@ -24,10 +24,10 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Google Chrome'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>c'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'google-chrome-stable'"
 
-# open GNOME Terminal
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ name "'GNOME Terminal'"
+# open Konsole - fish shell
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ name "'Konsole - fish shell'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ binding "'<Primary><Alt>t'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ command "'gnome-terminal'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ command "'konsole -e fish'"
 
 # open Nautilus
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ name "'Nautilus'"
@@ -39,10 +39,10 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ name "'Krusader'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ binding "'<Primary><Alt>k'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ command "'krusader'"
 
-# open GNOME Terminal - fish shell
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ name "'GNOME Terminal - fish shell'"
+# open GNOME Terminal - zsh
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ name "'GNOME Terminal - zsh'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ binding "'<Primary><Alt>r'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ command "'gnome-terminal -e fish'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ command "'gnome-terminal -e zsh'"
 
 # open Firefox Developer Edition
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Firefox Developer Edition'"
