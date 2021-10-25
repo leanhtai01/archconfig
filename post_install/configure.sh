@@ -12,7 +12,7 @@ then
     $current_dir/configure_fish_shell.sh
     $current_dir/configure_zsh.sh
     $current_dir/configure_konsole.sh
-    $current_dir/configure_gedit.sh
+    # $current_dir/configure_gedit.sh
     $current_dir/make_shortcuts_gnome.sh
     $current_dir/configure_quadrapassel.sh
 fi
