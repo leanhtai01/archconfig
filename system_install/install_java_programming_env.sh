@@ -11,5 +11,5 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
-$install_command netbeans maven
+$install_command maven
 $install_command jdk-openjdk openjdk-doc java-openjfx
