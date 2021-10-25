@@ -21,7 +21,7 @@ $install_command remmina libvncserver freerdp
 $install_command sweethome3d hexchat gnucash step librecad geogebra stellarium
 
 # multimedia
-$install_command blender audacity aegisub kid3 pencil2d mkvtoolnix-gui
+$install_command kid3 pencil2d
 
 # wireshark
 $install_command wireshark-qt
