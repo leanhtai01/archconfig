@@ -68,7 +68,7 @@ then
     $install_command calibre kchmviewer kolourpaint goldendict okular foliate
 
     # multimedia
-    $install_command kdenlive frei0r-plugins handbrake handbrake-cli
+    $install_command kdenlive frei0r-plugins handbrake handbrake-cli inkscape gimp
 
     # virtualbox
     $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
