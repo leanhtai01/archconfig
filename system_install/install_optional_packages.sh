@@ -11,6 +11,9 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
+# editor
+$install_command gvim
+
 # tools
 $install_command gprename pdftk bleachbit aircrack-ng reflector youtube-dl nfs-utils samba wget rclone
 

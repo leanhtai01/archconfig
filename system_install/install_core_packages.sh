@@ -26,7 +26,7 @@ $install_command $(printf "$(${prefix}pacman -Qi easyeffects)" | sed -n '/^Optio
 $install_command firefox-developer-edition torbrowser-launcher #chromium
 
 # editors
-$install_command emacs gvim
+$install_command emacs
 
 # programming packages
 $install_command git dia github-cli kdiff3 npm php-tidy tidy
