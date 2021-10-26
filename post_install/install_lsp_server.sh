@@ -15,7 +15,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 $install_command npm
 
 sudo npm i intelephense -g
-sudo npm i bash-language-server -g
+$install_command bash-language-server
 sudo npm i vscode-css-languageserver-bin -g
 sudo npm i vscode-html-languageserver-bin -g
 sudo npm i typescript-language-server -g
