@@ -39,9 +39,9 @@ $install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchive
 $install_command mtpfs gvfs-mtp gvfs-gphoto2
 
 # install krusader and its all optional dependencies
-$install_command krusader
+# $install_command krusader
 # $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
-$install_command xz unzip zip p7zip kde-cli-tools kdiff3 #ktexteditor krename konsole keditbookmarks lhasa cpio unrar arj unarj unace kompare
+# $install_command xz unzip zip p7zip kde-cli-tools kdiff3 #ktexteditor krename konsole keditbookmarks lhasa cpio unrar arj unarj unace kompare
 
 # install documentation for KDE Applications
 $install_command khelpcenter
