@@ -34,10 +34,10 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ name "'Nautilus'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ binding "'<Super>e'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ command "'nautilus'"
 
-# open Krusader
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ name "'Krusader'"
+# open KeePassXC
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ name "'KeePassXC'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ binding "'<Primary><Alt>k'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ command "'krusader'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ command "'keepassxc'"
 
 # open GNOME Terminal
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ name "'GNOME Terminal'"
