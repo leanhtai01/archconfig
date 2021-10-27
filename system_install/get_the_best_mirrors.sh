@@ -3,7 +3,7 @@
 set -e
 
 current_dir=$(dirname $0)
-closest_countries="HK" # TW SG CN VN"
+closest_countries="VN HK TW SG CN"
 
 mkdir $current_dir/tmp
 
