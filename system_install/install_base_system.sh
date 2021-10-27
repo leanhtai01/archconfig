@@ -29,6 +29,7 @@ desktop_install_type=
 gpu=
 hostname=
 system_install_type=
+simple_setup_mirror=
 
 # disable reflector
 . $current_dir/disable_reflector.sh
@@ -84,8 +85,12 @@ case $user_choice in
 esac
 
 # setup mirrors
-. $current_dir/setup_mirrors.sh
-# . $current_dir/simple_setup_mirrors.sh
+if [ $simple_setup_mirror = "y" ]
+then
+    . $current_dir/simple_setup_mirrors.sh
+else
+    . $current_dir/setup_mirrors.sh
+fi
 
 # install essential packages
 pacstrap /mnt base base-devel linux linux-headers linux-firmware man-pages man-db
