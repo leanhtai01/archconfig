@@ -16,8 +16,8 @@ $install_command npm
 
 sudo npm i intelephense -g
 $install_command bash-language-server
-$install_command vscode-css-languageserver-bin
-$install_command vscode-html-languageserver-bin
+$install_command vscode-css-languageserver
+$install_command vscode-html-languageserver
 sudo npm i typescript-language-server -g
 $install_command typescript
 $install_command vscode-json-languageserver
