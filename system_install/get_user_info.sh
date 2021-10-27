@@ -336,3 +336,9 @@ then
     printf "Enter hostname: "
     read hostname
 fi
+
+# ask for way to setup mirrors
+if [ -z "$simple_setup_mirror" ]
+then
+    read -e -p "Do you want using simple setup mirror? [y/N] " simple_setup_mirror
+fi

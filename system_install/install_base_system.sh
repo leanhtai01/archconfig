@@ -85,7 +85,8 @@ case $user_choice in
 esac
 
 # setup mirrors
-if [ $simple_setup_mirror = "y" ]
+re="[yY]"
+if [[ $simple_setup_mirror =~ $re ]]
 then
     . $current_dir/simple_setup_mirrors.sh
 else
