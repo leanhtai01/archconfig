@@ -14,7 +14,7 @@ sudo systemctl enable mariadb
 sudo systemctl start mariadb
 
 # install PHP
-sudo pacman -Syu --needed --noconfirm php php-apache
+sudo pacman -Syu --needed --noconfirm php php-apache php-gd
 
 # install phpMyAdmin
 sudo pacman -Syu --needed --noconfirm phpmyadmin
