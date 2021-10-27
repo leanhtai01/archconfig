@@ -93,7 +93,7 @@ else
 fi
 
 # install essential packages
-pacstrap /mnt base base-devel linux linux-headers linux-firmware man-pages man-db
+pacstrap /mnt base base-devel linux linux-headers linux-firmware man-pages man-db iptables-nft
 
 # CONFIGURE THE SYSTEM
 # fstab
