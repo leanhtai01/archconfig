@@ -84,8 +84,8 @@ case $user_choice in
 esac
 
 # setup mirrors
-# . $current_dir/setup_mirrors.sh
-. $current_dir/simple_setup_mirrors.sh
+. $current_dir/setup_mirrors.sh
+# . $current_dir/simple_setup_mirrors.sh
 
 # install essential packages
 pacstrap /mnt base base-devel linux linux-headers linux-firmware man-pages man-db
