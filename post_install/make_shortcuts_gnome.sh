@@ -7,7 +7,7 @@ SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/']"
+gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/']"
 
 # open Emacs
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
@@ -74,3 +74,8 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}9/ command "'inkscape'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}10/ name "'OBS Studio'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}10/ binding "'<Primary><Alt>o'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}10/ command "'obs'"
+
+# open Virt Manager
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}11/ name "'Virt Manager'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}11/ binding "'<Primary><Alt>v'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}11/ command "'virt-manager'"
