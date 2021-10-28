@@ -7,7 +7,7 @@ SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/']"
+gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/']"
 
 # open Emacs
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
@@ -59,3 +59,13 @@ cp $parent_dir/tools/toggle_touchpad_gnome.sh /home/$(whoami)/.toggle_touchpad_g
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ name "'Toggle Touchpad'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ binding "'<Super>t'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ command "'/home/$(whoami)/.toggle_touchpad_gnome.sh'"
+
+# open GIMP
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}8/ name "'GIMP'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}8/ binding "'<Primary><Alt>g'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}8/ command "'gimp'"
+
+# open Inkscape
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}9/ name "'Inkscape'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}9/ binding "'<Primary><Alt>i'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}9/ command "'inkscape'"
