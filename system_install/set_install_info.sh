@@ -17,3 +17,4 @@ gpu= # {intel, amd, nvidia, virtualbox, vmware}
 hostname=latarchlinux
 system_install_type="core python java javascript dotnet desktop" # {core optional python java javascript high_performance dotnet desktop games}
 simple_setup_mirror=
+install_pipewire_audio_server=

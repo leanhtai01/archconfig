@@ -342,3 +342,9 @@ if [ -z "$simple_setup_mirror" ]
 then
     read -e -p "Do you want using simple setup mirror? [y/N] " simple_setup_mirror
 fi
+
+# ask user whether in pipewire audio server
+if [ -z "$install_pipewire_audio_server" ]
+then
+    read -e -p "Do you want install pipewire audio server? [y/N] " install_pipewire_audio_server
+fi

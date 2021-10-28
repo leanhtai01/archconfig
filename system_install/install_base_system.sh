@@ -30,6 +30,7 @@ gpu=
 hostname=
 system_install_type=
 simple_setup_mirror=
+install_pipewire_audio_server=
 
 # disable reflector
 . $current_dir/disable_reflector.sh

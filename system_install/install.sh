@@ -10,6 +10,7 @@ gpu=
 connect_to_wifi=
 system_install_type=
 desktop_install_type=
+install_pipewire_audio_server=
 
 if [ -z $connect_to_wifi ]
 then
@@ -24,6 +25,7 @@ fi
 
 . $current_dir/install_base_system.sh
 . $current_dir/install_gpu_driver.sh $gpu $newusername in_chroot
+. $current_dir/install_audio.sh
 
 for type in $system_install_type
 do
