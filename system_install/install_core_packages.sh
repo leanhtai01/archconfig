@@ -15,10 +15,6 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 # fonts
 $install_command ttf-fira-code ttf-roboto-mono ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts
 
-# audio
-# $install_command pulseaudio-alsa alsa-utils pavucontrol pulseaudio-equalizer-ladspa
-$install_command pipewire pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire-jack alsa-utils easyeffects xdg-desktop-portal-gtk gst-plugin-pipewire helvum
-
 # install all optional dependencies of easyeffects
 $install_command $(printf "$(${prefix}pacman -Qi easyeffects)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
 
