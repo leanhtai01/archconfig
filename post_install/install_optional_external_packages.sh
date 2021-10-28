@@ -12,4 +12,4 @@ $current_dir/install_zoom.sh
 # $current_dir/install_logisim-evolution.sh
 # $current_dir/install_qtspim.sh
 # $current_dir/install_bna.sh
-$current_dir/install_hakuneko.sh
+# $current_dir/install_hakuneko.sh
