@@ -346,5 +346,5 @@ fi
 # ask user whether in pipewire audio server
 if [ -z "$install_pipewire_audio_server" ]
 then
-    read -e -p "Do you want install pipewire audio server? [y/N] " install_pipewire_audio_server
+    read -e -p "\nDo you want install pipewire audio server? [y/N] " install_pipewire_audio_server
 fi
