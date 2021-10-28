@@ -4,7 +4,7 @@ set -e
 
 prefix=
 
-if [ ! -z $2 ] && [ $2 = "in_chroot" ]
+if [ ! -z $1 ] && [ $1 = "in_chroot" ]
 then
     prefix="arch-chroot /mnt "
 fi
