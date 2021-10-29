@@ -11,4 +11,4 @@ then
 fi
 
 $current_dir/install_lamp_stack.sh
-# $current_dir/configure_ufw.sh $2
+$current_dir/configure_ufw.sh $2
