@@ -7,7 +7,7 @@ SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/']"
+gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/']"
 
 # open Emacs
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
@@ -84,3 +84,8 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}11/ command "'virt-manager'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}12/ name "'GNOME Authenticator'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}12/ binding "'<Primary><Alt>a'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}12/ command "'flatpak run com.belmoussaoui.Authenticator'"
+
+# open HakuNeko from flatpak
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}13/ name "'HakuNeko'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}13/ binding "'<Primary><Alt>h'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}13/ command "'flatpak run io.github.hakuneko.HakuNeko'"
