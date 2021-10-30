@@ -7,7 +7,7 @@ SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/']"
+gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/']"
 
 # open Emacs
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
@@ -79,3 +79,8 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}10/ command "'obs'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}11/ name "'Virt Manager'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}11/ binding "'<Primary><Alt>v'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}11/ command "'virt-manager'"
+
+# open GNOME Authenticator from flatpak
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}12/ name "'GNOME Authenticator'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}12/ binding "'<Primary><Alt>a'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}12/ command "'flatpak run com.belmoussaoui.Authenticator'"
