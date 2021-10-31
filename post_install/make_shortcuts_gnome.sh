@@ -7,7 +7,7 @@ SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/']"
+gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/', '${PATHTOCUSTOMKEY}14/']"
 
 # open Emacs
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
@@ -89,3 +89,8 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}12/ command "'flatpak run com.belm
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}13/ name "'HakuNeko'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}13/ binding "'<Primary><Alt>h'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}13/ command "'flatpak run io.github.hakuneko.HakuNeko'"
+
+# open Lutris
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}14/ name "'Lutris'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}14/ binding "'<Primary><Alt>l'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}14/ command "'lutris'"
