@@ -23,8 +23,14 @@ then
     $current_dir/configure_xsettingsd.sh
 fi
 
-# $current_dir/configure_pipewire.sh
-$current_dir/configure_pulseaudio.sh
+# configure sound server
+if pacman -Qi pipewire-pulse > /dev/null
+then
+    $current_dir/configure_pipewire.sh
+else
+    $current_dir/configure_pulseaudio.sh
+fi
+
 $current_dir/configure_editor.sh $(whoami)
 $current_dir/configure_git.sh
 $current_dir/configure_clamav.sh
