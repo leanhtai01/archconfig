@@ -34,3 +34,4 @@ fi
 $current_dir/configure_editor.sh $(whoami)
 $current_dir/configure_git.sh
 $current_dir/configure_clamav.sh
+$current_dir/configure_auto_mount_encrypted_disks.sh
