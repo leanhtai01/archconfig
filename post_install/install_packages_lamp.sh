@@ -23,4 +23,4 @@ sudo pacman -Syu --needed --noconfirm phpmyadmin
 # sudo pacman -Syu --needed --noconfirm mysql-workbench
 
 # install dbeaver
-sudo pacman -Syu --needed --noconfirm dbeaver
+# sudo pacman -Syu --needed --noconfirm dbeaver
