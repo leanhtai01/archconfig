@@ -5,6 +5,7 @@ set -e
 mysqlroot_pass1=123
 mysqlroot_pass2=123
 parent_dir=$(cd $(dirname $0)/..; pwd)
+current_dir=$(dirname $0)
 
 # set MySQL root's password
 printf "\nSET MYSQL ROOT'S PASSWORD\n"
@@ -115,6 +116,7 @@ printf "\n# phpMyAdmin configuration\n" | sudo tee -a /etc/httpd/conf/httpd.conf
 printf "Include conf/extra/phpmyadmin.conf\n" | sudo tee -a /etc/httpd/conf/httpd.conf > /dev/null
 printf "\n# Include user defined environment variables\n" | sudo tee -a /etc/httpd/conf/httpd.conf > /dev/null
 printf "Include /home/$(whoami)/apache_config/environment_variables.conf\n" | sudo tee -a /etc/httpd/conf/httpd.conf > /dev/null
+$current_dir/create_apache_conn_str_env_var.sh
 
 # to allow the usage of the phpMyAdmin setup script
 sudo mkdir /usr/share/webapps/phpMyAdmin/config
