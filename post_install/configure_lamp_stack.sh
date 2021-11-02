@@ -111,10 +111,10 @@ sudo sed -i "/^;extension=gd$/s/^;//" /etc/php/php.ini
 sudo cp $parent_dir/data/phpmyadmin.conf /etc/httpd/conf/extra/phpmyadmin.conf
 
 # include the Apache configuration file in /etc/httpd/conf/httpd.conf
-linum=$(sed -n $= /etc/httpd/conf/httpd.conf)
-sudo sed -i "${linum} a # phpMyAdmin configuration" /etc/httpd/conf/httpd.conf
-((linum++))
-sudo sed -i "${linum} a Include conf\/extra\/phpmyadmin.conf" /etc/httpd/conf/httpd.conf
+printf "\n# phpMyAdmin configuration\n" | sudo tee -a /etc/httpd/conf/httpd.conf > /dev/null
+printf "Include conf/extra/phpmyadmin.conf\n" | sudo tee -a /etc/httpd/conf/httpd.conf > /dev/null
+printf "\n# Include user defined environment variables\n" | sudo tee -a /etc/httpd/conf/httpd.conf > /dev/null
+printf "Include /home/$(whoami)/apache_config/environment_variables.conf\n" | sudo tee -a /etc/httpd/conf/httpd.conf > /dev/null
 
 # to allow the usage of the phpMyAdmin setup script
 sudo mkdir /usr/share/webapps/phpMyAdmin/config
