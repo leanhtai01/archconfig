@@ -36,7 +36,7 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ command "'nautilus'"
 
 # open KeePassXC
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ name "'KeePassXC'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ binding "'<Primary><Alt>k'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ binding "'<Primary><Alt>p'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ command "'keepassxc'"
 
 # open GNOME Terminal
