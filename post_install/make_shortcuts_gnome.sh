@@ -60,10 +60,11 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'firefox-developer-edi
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ command "'gvim'"
 
 # toggle touchpad
-cp $parent_dir/tools/toggle_touchpad_gnome.sh /home/$(whoami)/.toggle_touchpad_gnome.sh
+mkdir -p /home/$(whoami)/bash_scripts
+cp $parent_dir/tools/toggle_touchpad_gnome.sh /home/$(whoami)/bash_scripts
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ name "'Toggle Touchpad'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ binding "'<Super>t'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ command "'/home/$(whoami)/.toggle_touchpad_gnome.sh'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ command "'/home/$(whoami)/bash_scripts/toggle_touchpad_gnome.sh'"
 
 # open GIMP
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}8/ name "'GIMP'"
