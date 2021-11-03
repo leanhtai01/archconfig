@@ -19,10 +19,15 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ command "'emacs'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>c'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'chromium'"
 
-# open Google Chrome
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Google Chrome'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>c'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'google-chrome-stable'"
+# # open Google Chrome
+# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Google Chrome'"
+# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>c'"
+# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'google-chrome-stable'"
+
+# open LibreOffice
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'LibreOffice'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>w'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'libreoffice'"
 
 # open GNOME Terminal - zsh
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ name "'GNOME Terminal - zsh'"
