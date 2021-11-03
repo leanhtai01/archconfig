@@ -19,7 +19,7 @@ $install_command ttf-fira-code ttf-roboto-mono ttf-dejavu ttf-liberation noto-fo
 $install_command $(printf "$(${prefix}pacman -Qi easyeffects)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
 
 # browsers
-$install_command torbrowser-launcher #chromium firefox-developer-edition
+$install_command torbrowser-launcher firefox-developer-edition #chromium
 
 # editors
 $install_command emacs
