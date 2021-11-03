@@ -7,6 +7,11 @@ mysqlroot_pass2=123
 parent_dir=$(cd $(dirname $0)/..; pwd)
 current_dir=$(dirname $0)
 
+# backup config files before modify
+sudo cp /etc/php/php.ini /etc/php/php.ini.origin
+sudo cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.origin
+sudo cp /usr/share/webapps/phpMyAdmin/config.inc.php /usr/share/webapps/phpMyAdmin/config.inc.php.origin
+
 # set MySQL root's password
 printf "\nSET MYSQL ROOT'S PASSWORD\n"
 if [ -z $mysqlroot_pass1 ] || [ -z $mysqlroot_pass2 ] || [ $mysqlroot_pass1 != $mysqlroot_pass2 ]
