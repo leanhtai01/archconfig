@@ -7,7 +7,7 @@ SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/', '${PATHTOCUSTOMKEY}14/', '${PATHTOCUSTOMKEY}15/', '${PATHTOCUSTOMKEY}16/']"
+gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/', '${PATHTOCUSTOMKEY}14/', '${PATHTOCUSTOMKEY}15/', '${PATHTOCUSTOMKEY}16/', '${PATHTOCUSTOMKEY}17/']"
 
 # open Emacs
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
@@ -112,3 +112,8 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}15/ command "'steam-native'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}16/ name "'Krusader'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}16/ binding "'<Primary><Alt>k'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}16/ command "'krusader'"
+
+# open Foliate
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ name "'Foliate'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ binding "'<Primary><Alt>b'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ command "'foliate'"
