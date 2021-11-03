@@ -33,4 +33,4 @@ fi
 # $current_dir/install_dislocker.sh
 # $current_dir/install_mssql.sh
 # $current_dir/install_azure_data_studio.sh
-$current_dir/install_heroku.sh
+# $current_dir/install_heroku.sh
