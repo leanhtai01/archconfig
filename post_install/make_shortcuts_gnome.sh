@@ -50,9 +50,11 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ command "'gnome-terminal'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'foliate'"
 
 # open Firefox Developer Edition
+mkdir -p /home/$(whoami)/bash_scripts
+cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Firefox Developer Edition'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>f'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'firefox-developer-edition'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh'"
 
 # # open GVim
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ name "'GVim'"
