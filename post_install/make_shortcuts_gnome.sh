@@ -7,7 +7,7 @@ SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/', '${PATHTOCUSTOMKEY}14/', '${PATHTOCUSTOMKEY}15/', '${PATHTOCUSTOMKEY}16/', '${PATHTOCUSTOMKEY}17/']"
+gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/', '${PATHTOCUSTOMKEY}14/', '${PATHTOCUSTOMKEY}15/', '${PATHTOCUSTOMKEY}16/', '${PATHTOCUSTOMKEY}17/', '${PATHTOCUSTOMKEY}18/']"
 
 # open Emacs
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
@@ -54,7 +54,7 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ command "'gnome-terminal'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>f'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'foliate'"
 
-# open Firefox Developer Edition
+# open Firefox Developer Edition with HW Acceleration
 mkdir -p /home/$(whoami)/bash_scripts
 cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Firefox Developer Edition'"
@@ -122,3 +122,8 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}16/ command "'krusader'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ name "'Foliate'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ binding "'<Primary><Alt>b'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ command "'foliate'"
+
+# open Firefox Developer Edition
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ name "'Firefox Developer Edition'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ binding "'<Primary><Alt>f'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ command "'firefox-developer-edition'"
