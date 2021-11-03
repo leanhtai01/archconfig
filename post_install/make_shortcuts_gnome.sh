@@ -7,7 +7,7 @@ SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/', '${PATHTOCUSTOMKEY}14/', '${PATHTOCUSTOMKEY}15/']"
+gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/', '${PATHTOCUSTOMKEY}14/', '${PATHTOCUSTOMKEY}15/', '${PATHTOCUSTOMKEY}16/']"
 
 # open Emacs
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
@@ -107,3 +107,8 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}14/ command "'lutris'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}15/ name "'Steam'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}15/ binding "'<Primary><Alt>s'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}15/ command "'steam-native'"
+
+# open Krusader
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}16/ name "'Krusader'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}16/ binding "'<Primary><Alt>k'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}16/ command "'krusader'"
