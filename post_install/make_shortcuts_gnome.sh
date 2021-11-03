@@ -52,7 +52,7 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ command "'gnome-terminal'"
 # open Firefox Developer Edition
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Firefox Developer Edition'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>f'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'MOZ_ENABLE_WAYLAND=1 firefox-developer-edition'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'firefox-developer-edition'"
 
 # # open GVim
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ name "'GVim'"
