@@ -19,11 +19,6 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ command "'emacs'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>c'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'chromium'"
 
-# # open Google Chrome
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Google Chrome'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>c'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'google-chrome-stable'"
-
 # open LibreOffice
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'LibreOffice'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>w'"
@@ -54,12 +49,17 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ command "'gnome-terminal'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>f'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'foliate'"
 
-# open Firefox Developer Edition with HW Acceleration
-mkdir -p /home/$(whoami)/bash_scripts
-cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Firefox Developer Edition'"
+# # open Firefox Developer Edition with HW Acceleration
+# mkdir -p /home/$(whoami)/bash_scripts
+# cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
+# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Firefox Developer Edition'"
+# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>c'"
+# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh'"
+
+# open Google Chrome
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Google Chrome'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>c'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'google-chrome-stable'"
 
 # # open GVim
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ name "'GVim'"
