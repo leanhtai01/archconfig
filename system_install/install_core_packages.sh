@@ -58,12 +58,12 @@ then
     # multimedia
     $install_command kdenlive frei0r-plugins handbrake handbrake-cli inkscape gimp blender
 
-    # # virtualbox
-    # $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
-    # if [ ! -z $1 ]
-    # then
-    #     ${prefix}gpasswd -a $1 vboxusers
-    # fi
+    # virtualbox
+    $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
+    if [ ! -z $1 ]
+    then
+        ${prefix}gpasswd -a $1 vboxusers
+    fi
 fi
 
 # docker

@@ -11,7 +11,7 @@ then
     $current_dir/configure_java_environment.sh
 fi
 
-# $current_dir/install_virtualbox-ext-oracle.sh
+$current_dir/install_virtualbox-ext-oracle.sh
 $current_dir/install_ibus-bamboo.sh $2
 # $current_dir/install_visual_studio_code.sh
 $current_dir/install_flatpak_apps.sh
