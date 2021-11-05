@@ -49,13 +49,6 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ command "'gnome-terminal'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>f'"
 # gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'foliate'"
 
-# # open Firefox Developer Edition with HW Acceleration
-# mkdir -p /home/$(whoami)/bash_scripts
-# cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Firefox Developer Edition'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>c'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh'"
-
 # open Google Chrome
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Google Chrome'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>c'"
@@ -123,7 +116,14 @@ gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ name "'Foliate'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ binding "'<Primary><Alt>b'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ command "'foliate'"
 
-# open Firefox Developer Edition
+# # open Firefox Developer Edition
+# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ name "'Firefox Developer Edition'"
+# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ binding "'<Primary><Alt>f'"
+# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ command "'firefox-developer-edition'"
+
+# open Firefox Developer Edition with HW Acceleration
+mkdir -p /home/$(whoami)/bash_scripts
+cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ name "'Firefox Developer Edition'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ binding "'<Primary><Alt>f'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ command "'firefox-developer-edition'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ command "'/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh'"
