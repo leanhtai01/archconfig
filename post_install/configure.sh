@@ -16,6 +16,7 @@ then
     # $current_dir/configure_gedit.sh
     $current_dir/make_shortcuts_gnome.sh
     # $current_dir/configure_quadrapassel.sh
+    $current_dir/configure_environment_variables.sh
 fi
 
 if [ $2 = "KDEPlasma" ]
