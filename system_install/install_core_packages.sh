@@ -26,7 +26,7 @@ $install_command krusader
 $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
 
 # programming packages
-$install_command git dia github-cli kdiff3 npm php-tidy tidy
+$install_command git dia github-cli kdiff3 npm php-tidy tidy composer
 $install_command gdb cmake go valgrind clang gcc llvm gopls
 
 # tools
