@@ -42,6 +42,9 @@ do
 	java)
 	    . $current_dir/install_java_programming_env.sh in_chroot
 	    ;;
+        php)
+            . $current_dir/ install_php_programming_env.sh
+            ;;
 	javascript)
 	    . $current_dir/install_javascript_programming_env.sh in_chroot
 	    ;;
