@@ -112,6 +112,8 @@ sudo sed -i "/^;extension=zip$/s/^;//" /etc/php/php.ini
 sudo sed -i "/^;extension=iconv$/s/^;//" /etc/php/php.ini
 sudo sed -i "/^;extension=bcmath$/s/^;//" /etc/php/php.ini
 sudo sed -i "/^;extension=gd$/s/^;//" /etc/php/php.ini
+sudo sed -i "/^;extension=pdo_sqlite$/s/^;//" /etc/php/php.ini
+sudo sed -i "/^;extension=sqlite3$/s/^;//" /etc/php/php.ini
 
 # create the Apache configuration file
 sudo cp $parent_dir/data/phpmyadmin.conf /etc/httpd/conf/extra/phpmyadmin.conf
