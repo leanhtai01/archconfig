@@ -11,4 +11,4 @@ fi
 
 install_command="${prefix}pacman -Syu --needed --noconfirm"
 
-$install_command php composer php-tidy php-sqlite php-apache php-gd
+$install_command php composer php-tidy php-sqlite php-apache php-gd php-sqlite
