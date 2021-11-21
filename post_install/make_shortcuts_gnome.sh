@@ -7,7 +7,7 @@ SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/', '${PATHTOCUSTOMKEY}14/', '${PATHTOCUSTOMKEY}15/', '${PATHTOCUSTOMKEY}16/', '${PATHTOCUSTOMKEY}17/', '${PATHTOCUSTOMKEY}18/']"
+gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/', '${PATHTOCUSTOMKEY}14/', '${PATHTOCUSTOMKEY}15/', '${PATHTOCUSTOMKEY}16/', '${PATHTOCUSTOMKEY}17/', '${PATHTOCUSTOMKEY}18/', '${PATHTOCUSTOMKEY}19/']"
 
 # open Emacs
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
@@ -127,3 +127,8 @@ cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_script
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ name "'Firefox Developer Edition'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ binding "'<Primary><Alt>f'"
 gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ command "'/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh'"
+
+# open Konsole - fish
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}19/ name "'Konsole - fish'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}19/ binding "'<Primary><Alt>y'"
+gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}19/ command "'konsole -e fish'"
