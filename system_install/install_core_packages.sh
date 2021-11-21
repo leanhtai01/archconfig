@@ -30,7 +30,7 @@ $install_command git dia github-cli kdiff3 npm tidy
 $install_command gdb cmake go valgrind clang gcc llvm gopls
 
 # tools
-$install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion flatpak tree ibus clamav texlive-most archiso
+$install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion flatpak tree ibus clamav texlive-most archiso fish
 
 # setup connect android phone
 $install_command mtpfs gvfs-mtp gvfs-gphoto2
