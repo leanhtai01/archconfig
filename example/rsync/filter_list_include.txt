@@ -1,0 +1,8 @@
+# include dir2 and its subdir, files
++ /dir2/***
+
+# include dir3 and its subdir, files
++ /dir3/***
+
+# exclude all
+- /**

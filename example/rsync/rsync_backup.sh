@@ -6,8 +6,10 @@ set -e
 #       --exclude={"dir2","dir3","hello.txt"} \
 #       source/ dest/
 
-rsync -a --delete \
-      --exclude "dir2" \
-      --exclude "dir3" \
-      --exclude "hello.txt" \
-      source/ dest/
+# rsync -a --delete \
+#       --exclude "dir2" \
+#       --exclude "dir3" \
+#       --exclude "hello.txt" \
+#       source/ dest/
+
+rsync -a --delete -P --filter="merge filter-list.txt" SOURCE/ DESTINATION
