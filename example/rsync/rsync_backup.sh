@@ -12,4 +12,4 @@ set -e
 #       --exclude "hello.txt" \
 #       source/ dest/
 
-rsync -a --delete -P --filter="merge filter-list.txt" SOURCE/ DESTINATION
+rsync -a --delete -P --filter="merge filter_list.txt" SOURCE/ DESTINATION

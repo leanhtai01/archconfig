@@ -2,4 +2,4 @@
 
 set -e
 
-rclone sync -P --filter-from filter-list.txt SOURCE remote:DESTINATION
+rclone sync -P --filter-from filter_list.txt SOURCE remote:DESTINATION
