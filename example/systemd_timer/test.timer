@@ -1,0 +1,12 @@
+[Unit]
+Description=Run every 10 seconds
+RefuseManualStart=no
+RefuseManualStop=no
+
+[Timer]
+Persistent=true
+OnCalendar=*-*-* *:*:00/10
+Unit=test.service
+
+[Install]
+WantedBy=timers.target

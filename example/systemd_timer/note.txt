@@ -1,0 +1,4 @@
+Systemd user path: ~/.config/systemd/user
+
+For analyze schedule time:
+systemd-analyze --user calendar *-*-* *:*:00/20
