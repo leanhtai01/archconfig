@@ -6,7 +6,7 @@ set -e
 
 if pidof -x $(basename $0) -o %PPID > /dev/null
 then
-    printf "Already running!\n";
+    printf "Already running!\n"
 else
     printf "Do something!\n"
     sleep 20
