@@ -1,0 +1,8 @@
+# exclude dir2 and its subdir, files
+- /dir2/**
+
+# exclude dir3 and its subdir, files
+- /dir3/**
+
+# exclude file hello.txt
+- /*/hello.txt
