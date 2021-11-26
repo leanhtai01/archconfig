@@ -27,7 +27,7 @@ $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional
 
 # programming packages
 $install_command git dia github-cli kdiff3 npm tidy
-$install_command gdb cmake go valgrind clang gcc llvm gopls
+$install_command gdb cmake go valgrind clang gcc llvm gopls go-tools
 
 # tools
 $install_command keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion flatpak tree ibus clamav texlive-most archiso fish rclone rsync
