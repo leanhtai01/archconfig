@@ -6,6 +6,12 @@ set -e
 root_partnum=6
 luks_partnum=5
 
+case $bootloader in
+    1) # systemd-boot
+        root_partnum=7
+        ;;
+esac
+
 arch-chroot /mnt bootctl --esp-path=/efi --boot-path=/boot install
 echo "default archlinux" > /mnt/efi/loader/loader.conf
 echo "timeout 5" >> /mnt/efi/loader/loader.conf

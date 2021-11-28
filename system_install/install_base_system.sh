@@ -165,7 +165,7 @@ case $user_choice in
 	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
 	;;
     4) # dual-boot with Windows 10 (normal install)
-	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}5)
+	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}6)
 	;;
     2) # lvm on luks
 	;&
