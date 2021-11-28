@@ -6,11 +6,11 @@ set -e
 root_partnum=6
 luks_partnum=5
 
-arch-chroot /mnt bootctl install
-echo "default archlinux" > /mnt/boot/loader/loader.conf
-echo "timeout 5" >> /mnt/boot/loader/loader.conf
-echo "console-mode keep" >> /mnt/boot/loader/loader.conf
-echo "editor no" >> /mnt/boot/loader/loader.conf
+arch-chroot /mnt bootctl --esp-path=/efi --boot-path=/boot install
+echo "default archlinux" > /mnt/efi/loader/loader.conf
+echo "timeout 5" >> /mnt/efi/loader/loader.conf
+echo "console-mode keep" >> /mnt/efi/loader/loader.conf
+echo "editor no" >> /mnt/efi/loader/loader.conf
 
 echo "title Arch Linux" > /mnt/boot/loader/entries/archlinux.conf
 echo "linux /vmlinuz-linux" >> /mnt/boot/loader/entries/archlinux.conf
@@ -19,7 +19,7 @@ echo "initrd /initramfs-linux.img" >> /mnt/boot/loader/entries/archlinux.conf
 
 case $user_choice in
     1) # normal install
-	rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
+	rootuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}4)
 	echo "options root=UUID=${rootuuidvalue} rw" >> /mnt/boot/loader/entries/archlinux.conf
 	;;
     2) # lvm on luks

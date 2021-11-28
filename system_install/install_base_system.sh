@@ -162,7 +162,7 @@ fi
 # get swapuuidvalue
 case $user_choice in
     1) # normal install
-	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}2)
+	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}3)
 	;;
     4) # dual-boot with Windows 10 (normal install)
 	swapuuidvalue=$(arch-chroot /mnt blkid -s UUID -o value /dev/${install_dev}${part}5)
