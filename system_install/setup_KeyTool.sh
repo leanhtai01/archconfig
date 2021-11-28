@@ -9,8 +9,8 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm efitools
 
 case $bootloader in
     1) # systemd-boot
-	arch-chroot /mnt mkdir -p /boot/EFI/systemd/ # create dir if not exist
-	arch-chroot /mnt cp /usr/share/efitools/efi/KeyTool.efi /boot/EFI/systemd/
+	arch-chroot /mnt mkdir -p /efi/EFI/systemd/ # create dir if not exist
+	arch-chroot /mnt cp /usr/share/efitools/efi/KeyTool.efi /efi/EFI/systemd/
 	arch-chroot /mnt efibootmgr --verbose --disk /dev/$install_dev --part $partnum --create --label "KeyTool" --loader /EFI/systemd/KeyTool.efi
 	;;
     2) # GRUB (encrypted boot)

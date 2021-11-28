@@ -9,8 +9,8 @@ arch-chroot /mnt pacman -Syu --needed --noconfirm efitools
 
 case $bootloader in
     1) # systemd-boot
-        cp $parent_dir/data/preloader-signed/{PreLoader,HashTool}.efi /mnt/boot/EFI/systemd
-        cp /mnt/boot/EFI/systemd/systemd-bootx64.efi /mnt/boot/EFI/systemd/loader.efi
+        cp $parent_dir/data/preloader-signed/{PreLoader,HashTool}.efi /mnt/efi/EFI/systemd
+        cp /mnt/efi/EFI/systemd/systemd-bootx64.efi /mnt/efi/EFI/systemd/loader.efi
 	arch-chroot /mnt efibootmgr --verbose --disk /dev/$install_dev --part $partnum --create --label "Arch Linux SB" --loader /EFI/systemd/PreLoader.efi
 	;;
     2) # GRUB (encrypted boot)
