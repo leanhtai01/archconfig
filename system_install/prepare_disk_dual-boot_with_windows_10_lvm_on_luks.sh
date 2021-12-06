@@ -11,15 +11,15 @@ luks_partnum=6
 # partition the disk
 case $bootloader in
     1) # systemd-boot
-        sgdisk -n 0:0:+1G -t 0:ea00 -c 0:"XBOOTLDR" /dev/$install_dev
+        sgdisk -n 0:0:+550M -t 0:ea00 -c 0:"XBOOTLDR" /dev/$install_dev
         wipefs -a /dev/${install_dev}${part}${xbootldr_partnum}
         mkfs.vfat -F32 /dev/${install_dev}${part}${xbootldr_partnum}
         ;;
     2) # GRUB (encrypted boot)
-	sgdisk -n 0:0:+1G -t 0:8309 -c 0:"cryptboot" /dev/$install_dev
+	sgdisk -n 0:0:+550M -t 0:8309 -c 0:"cryptboot" /dev/$install_dev
 	;;
     3) # GRUB (non-encrypted boot)
-	sgdisk -n 0:0:+1G -t 0:8300 -c 0:"boot" /dev/$install_dev
+	sgdisk -n 0:0:+550M -t 0:8300 -c 0:"boot" /dev/$install_dev
 	;;
 esac
 sgdisk -n 0:0:0 -t 0:8309 -c 0:"cryptlvm" /dev/$install_dev
