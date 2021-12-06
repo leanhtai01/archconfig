@@ -11,6 +11,7 @@ current_dir=$(dirname $0)
 sudo cp /etc/php/php.ini /etc/php/php.ini.origin
 sudo cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.origin
 sudo cp /usr/share/webapps/phpMyAdmin/config.inc.php /usr/share/webapps/phpMyAdmin/config.inc.php.origin
+sudo cp /etc/httpd/conf/extra/httpd-userdir.conf /etc/httpd/conf/extra/httpd-userdir.conf.origin
 
 # set MySQL root's password
 printf "\nSET MYSQL ROOT'S PASSWORD\n"
