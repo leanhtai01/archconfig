@@ -5,8 +5,8 @@ set -e
 # partition the disks
 wipefs -a /dev/$install_dev
 sgdisk -Z /dev/$install_dev
-sgdisk -n 0:0:+1G -t 0:ef00 -c 0:"esp" /dev/$install_dev
-sgdisk -n 0:0:+1G -t 0:ea00 -c 0:"XBOOTLDR" /dev/$install_dev
+sgdisk -n 0:0:+550M -t 0:ef00 -c 0:"esp" /dev/$install_dev
+sgdisk -n 0:0:+550M -t 0:ea00 -c 0:"XBOOTLDR" /dev/$install_dev
 sgdisk -n 0:0:+`expr 2 \* $size_of_ram`G -t 0:8200 -c 0:"swap" /dev/$install_dev
 sgdisk -n 0:0:0 -t 0:8304 -c 0:"root" /dev/$install_dev
 
