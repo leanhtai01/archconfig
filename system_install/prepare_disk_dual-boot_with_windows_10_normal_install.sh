@@ -13,7 +13,7 @@ case $bootloader in
         swap_partnum=6
         root_partnum=7
 
-        sgdisk -n 0:0:+1G -t 0:ea00 -c 0:"XBOOTLDR" /dev/$install_dev
+        sgdisk -n 0:0:+550M -t 0:ea00 -c 0:"XBOOTLDR" /dev/$install_dev
         wipefs -a /dev/${install_dev}${part}${xbootldr_partnum}
         mkfs.vfat -F32 /dev/${install_dev}${part}${xbootldr_partnum}
         ;;
