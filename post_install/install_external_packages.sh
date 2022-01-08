@@ -13,7 +13,7 @@ fi
 
 $current_dir/install_virtualbox-ext-oracle.sh
 $current_dir/install_ibus-bamboo.sh $2
-# $current_dir/install_visual_studio_code.sh
+$current_dir/install_visual_studio_code.sh
 $current_dir/install_flatpak_apps.sh
 $current_dir/install_google-chrome.sh
 # $current_dir/install_gnome-shell-extensions.sh
@@ -29,7 +29,7 @@ then
     $current_dir/install_ventoy-bin.sh
 fi
 
-# $current_dir/install_sublime_tools.sh
+$current_dir/install_sublime_tools.sh
 # $current_dir/install_dislocker.sh
 # $current_dir/install_mssql.sh
 # $current_dir/install_azure_data_studio.sh
