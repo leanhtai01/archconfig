@@ -14,7 +14,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 # install dependencies
 $install_command npm go
 
-go get github.com/lighttiger2505/sqls
+# go get github.com/lighttiger2505/sqls
 sudo npm i intelephense -g
 $install_command bash-language-server
 # $install_command vscode-css-languageserver
