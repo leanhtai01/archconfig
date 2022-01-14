@@ -1,134 +1,72 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
+n_shortcuts=0
 parent_dir=$(cd $(dirname $0)/..; pwd)
 SCHEMATOLIST="org.gnome.settings-daemon.plugins.media-keys"
 SCHEMATOITEM="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding"
 PATHTOCUSTOMKEY="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom"
 
-gsettings set $SCHEMATOLIST custom-keybindings "['${PATHTOCUSTOMKEY}0/', '${PATHTOCUSTOMKEY}1/', '${PATHTOCUSTOMKEY}2/', '${PATHTOCUSTOMKEY}3/', '${PATHTOCUSTOMKEY}4/', '${PATHTOCUSTOMKEY}5/', '${PATHTOCUSTOMKEY}6/', '${PATHTOCUSTOMKEY}7/', '${PATHTOCUSTOMKEY}8/', '${PATHTOCUSTOMKEY}9/', '${PATHTOCUSTOMKEY}10/', '${PATHTOCUSTOMKEY}11/', '${PATHTOCUSTOMKEY}12/', '${PATHTOCUSTOMKEY}13/', '${PATHTOCUSTOMKEY}14/', '${PATHTOCUSTOMKEY}15/', '${PATHTOCUSTOMKEY}16/', '${PATHTOCUSTOMKEY}17/', '${PATHTOCUSTOMKEY}18/', '${PATHTOCUSTOMKEY}19/']"
+# function add a shortcut
+function add_shortcut() {
+    index=$1
+    name=$2
+    binding=$3
+    command=$4
+    
+    gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}${index}/ name "$name"
+    gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}${index}/ binding "$binding"
+    gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}${index}/ command "$command"
+}
 
-# open Emacs
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ name "'Emacs'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ binding "'<Primary><Alt>e'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}0/ command "'emacs'"
+# ADD SHORTCUTS HERE
+add_shortcut $((n_shortcuts++)) "Emacs" "<Primary><Alt>e" "emacs"
+# add_shortcut $((n_shortcuts++)) "Chromium" "<Primary><Alt>c" "chromium"
+add_shortcut $((n_shortcuts++)) "LibreOffice" "<Primary><Alt>w" "libreoffice"
+# add_shortcut $((n_shortcuts++)) "GNOME Terminal - zsh" "<Primary><Alt>r" "gnome-terminal -e zsh"
+add_shortcut $((n_shortcuts++)) "Nautilus" "<Super>e" "nautilus"
+add_shortcut $((n_shortcuts++)) "KeePassXC" "<Primary><Alt>p" "keepassxc"
+add_shortcut $((n_shortcuts++)) "GNOME Terminal" "<Primary><Alt>t" "gnome-terminal"
+add_shortcut $((n_shortcuts++)) "Foliate" "<Primary><Alt>b" "foliate"
+add_shortcut $((n_shortcuts++)) "Google Chrome" "<Primary><Alt>c" "google-chrome-stable"
+# add_shortcut $((n_shortcuts++)) "GVim" "<Primary><Alt>v" "gvim"
+add_shortcut $((n_shortcuts++)) "GIMP" "<Primary><Alt>g" "gimp"
+add_shortcut $((n_shortcuts++)) "Inkscape" "<Primary><Alt>i" "inkscape"
+# add_shortcut $((n_shortcuts++)) "OBS Studio" "<Primary><Alt>o" "obs"
+add_shortcut $((n_shortcuts++)) "Virt Manager" "<Primary><Alt>v" "virt-manager"
+add_shortcut $((n_shortcuts++)) "GNOME Authenticator" "<Primary><Alt>a" "flatpak run com.belmoussaoui.Authenticator"
+# add_shortcut $((n_shortcuts++)) "HakuNeko" "<Primary><Alt>h" "flatpak run io.github.hakuneko.HakuNeko"
+# add_shortcut $((n_shortcuts++)) "Lutris" "<Primary><Alt>l" "lutris"
+# add_shortcut $((n_shortcuts++)) "Steam" "<Primary><Alt>s" "steam-native"
+add_shortcut $((n_shortcuts++)) "Krusader" "<Primary><Alt>k" "krusader"
+# add_shortcut $((n_shortcuts++)) "Firefox Developer Edition" "<Primary><Alt>f" "firefox-developer-edition"
+# add_shortcut $((n_shortcuts++)) "Konsole - fish" "<Primary><Alt>y" "konsole -e fish"
 
-# # open Chromium
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'Chromium'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>c'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'chromium'"
-
-# open LibreOffice
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ name "'LibreOffice'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ binding "'<Primary><Alt>w'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}1/ command "'libreoffice'"
-
-# open GNOME Terminal - zsh
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ name "'GNOME Terminal - zsh'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ binding "'<Primary><Alt>r'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}2/ command "'gnome-terminal -e zsh'"
-
-# open Nautilus
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ name "'Nautilus'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ binding "'<Super>e'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}3/ command "'nautilus'"
-
-# open KeePassXC
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ name "'KeePassXC'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ binding "'<Primary><Alt>p'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}4/ command "'keepassxc'"
-
-# open GNOME Terminal
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ name "'GNOME Terminal'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ binding "'<Primary><Alt>t'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}5/ command "'gnome-terminal'"
-
-# # open Foliate
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Foliate'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>f'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'foliate'"
-
-# open Google Chrome
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ name "'Google Chrome'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ binding "'<Primary><Alt>c'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}6/ command "'google-chrome-stable'"
-
-# # open GVim
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ name "'GVim'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ binding "'<Primary><Alt>v'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ command "'gvim'"
-
-# toggle touchpad
-mkdir -p /home/$(whoami)/bash_scripts
-cp $parent_dir/tools/toggle_touchpad_gnome.sh /home/$(whoami)/bash_scripts
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ name "'Toggle Touchpad'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ binding "'<Super>t'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}7/ command "'/home/$(whoami)/bash_scripts/toggle_touchpad_gnome.sh'"
-
-# open GIMP
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}8/ name "'GIMP'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}8/ binding "'<Primary><Alt>g'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}8/ command "'gimp'"
-
-# open Inkscape
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}9/ name "'Inkscape'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}9/ binding "'<Primary><Alt>i'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}9/ command "'inkscape'"
-
-# open OBS Studio
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}10/ name "'OBS Studio'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}10/ binding "'<Primary><Alt>o'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}10/ command "'obs'"
-
-# open Virt Manager
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}11/ name "'Virt Manager'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}11/ binding "'<Primary><Alt>v'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}11/ command "'virt-manager'"
-
-# open GNOME Authenticator from flatpak
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}12/ name "'GNOME Authenticator'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}12/ binding "'<Primary><Alt>a'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}12/ command "'flatpak run com.belmoussaoui.Authenticator'"
-
-# open HakuNeko from flatpak
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}13/ name "'HakuNeko'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}13/ binding "'<Primary><Alt>h'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}13/ command "'flatpak run io.github.hakuneko.HakuNeko'"
-
-# open Lutris
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}14/ name "'Lutris'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}14/ binding "'<Primary><Alt>l'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}14/ command "'lutris'"
-
-# open Steam
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}15/ name "'Steam'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}15/ binding "'<Primary><Alt>s'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}15/ command "'steam-native'"
-
-# open Krusader
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}16/ name "'Krusader'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}16/ binding "'<Primary><Alt>k'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}16/ command "'krusader'"
-
-# open Foliate
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ name "'Foliate'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ binding "'<Primary><Alt>b'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}17/ command "'foliate'"
-
-# # open Firefox Developer Edition
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ name "'Firefox Developer Edition'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ binding "'<Primary><Alt>f'"
-# gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ command "'firefox-developer-edition'"
-
-# open Firefox Developer Edition with HW Acceleration
+# add short cut for Firefox Developer Edition with HW Acceleration
 mkdir -p /home/$(whoami)/bash_scripts
 cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ name "'Firefox Developer Edition'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ binding "'<Primary><Alt>f'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}18/ command "'/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh'"
+add_shortcut $((n_shortcuts++)) "Firefox Developer Edition" "<Primary><Alt>f" "/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh"
 
-# open Konsole - fish
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}19/ name "'Konsole - fish'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}19/ binding "'<Primary><Alt>y'"
-gsettings set $SCHEMATOITEM:${PATHTOCUSTOMKEY}19/ command "'konsole -e fish'"
+# add shortcut toggle touchpad
+mkdir -p /home/$(whoami)/bash_scripts
+cp $parent_dir/tools/toggle_touchpad_gnome.sh /home/$(whoami)/bash_scripts
+add_shortcut $((n_shortcuts++)) "Toggle Touchpad" "<Super>t" "/home/$(whoami)/bash_scripts/toggle_touchpad_gnome.sh"
+
+# set custom-keybindings
+((n_shortcuts--))
+
+index=0
+path_list="["
+while [ $index -le $n_shortcuts ]; do
+    # add a comma for all path other than 0
+    if [ $index != 0 ]; then
+	path_list+=", "
+    fi
+    
+    path_list+="'${PATHTOCUSTOMKEY}${index}/'"
+    index=$(( index + 1 ))
+done
+path_list+="]"
+
+gsettings set $SCHEMATOLIST custom-keybindings "$path_list"
