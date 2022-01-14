@@ -9,7 +9,7 @@ then
     $current_dir/configure_gnome.sh $1
     # $current_dir/configure_gnome_custom_theme.sh
     # $current_dir/install_nord_theme_gnome-terminal.sh
-    $current_dir/set_gnome_themes.sh
+    # $current_dir/set_gnome_themes.sh
     # $current_dir/configure_fish_shell.sh
     # $current_dir/configure_zsh.sh
     # $current_dir/configure_konsole.sh
