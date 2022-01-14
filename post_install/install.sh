@@ -82,7 +82,7 @@ fi
 $current_dir/configure.sh $install_type $desktop_environment
 $current_dir/install_packages.sh $install_type $desktop_environment
 $current_dir/install_external_packages.sh $install_type $desktop_environment $configure_java
-$current_dir/install_optional_external_packages.sh
+# $current_dir/install_optional_external_packages.sh
 
 if [ $install_type = "full" ]
 then
