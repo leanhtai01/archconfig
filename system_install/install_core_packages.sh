@@ -13,7 +13,7 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 
 # install and configure some packages, services
 # fonts
-$install_command ttf-fira-code ttf-roboto-mono ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts
+$install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-hack # adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts ttf-fira-code ttf-roboto-mono
 
 # browsers
 $install_command torbrowser-launcher firefox-developer-edition #chromium
@@ -23,14 +23,14 @@ $install_command emacs
 
 # install krusader and its all optional dependencies
 $install_command krusader
-$install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
+# $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
 
 # programming packages
-$install_command git dia github-cli kdiff3 npm tidy
+$install_command git dia github-cli kdiff3 npm # tidy
 $install_command gdb cmake go valgrind clang gcc llvm gopls go-tools
 
 # tools
-$install_command kruler keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion flatpak tree ibus clamav texlive-most archiso fish rclone rsync
+$install_command kruler keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion flatpak tree ibus texlive-most archiso rclone rsync # fish clamav
 
 # setup connect android phone
 $install_command mtpfs gvfs-mtp gvfs-gphoto2
@@ -39,21 +39,21 @@ $install_command mtpfs gvfs-mtp gvfs-gphoto2
 $install_command khelpcenter
 
 # office and learning
-$install_command thunderbird libreoffice-fresh
+$install_command libreoffice-fresh # thunderbird
 
 # multimedia
-$install_command obs-studio vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad
+$install_command vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad # obs-studio
 
 if [ $3 != "virtualbox" ]
 then
     # tools
-    $install_command wimlib transmission-gtk deja-dup lm_sensors ntfs-3g gparted exfatprogs bchunk cdrtools fuseiso efitools sbsigntools filezilla
+    $install_command wimlib transmission-gtk lm_sensors ntfs-3g gparted exfatprogs bchunk cdrtools fuseiso efitools sbsigntools filezilla # deja-dup
 
     # office and learning
-    $install_command calibre kchmviewer goldendict okular foliate
+    $install_command calibre kchmviewer foliate # okular goldendict
 
     # multimedia
-    $install_command kdenlive frei0r-plugins handbrake handbrake-cli inkscape gimp blender
+    $install_command kdenlive frei0r-plugins handbrake handbrake-cli inkscape gimp # blender
 
     # virtualbox
     $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
