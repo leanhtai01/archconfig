@@ -53,6 +53,9 @@ mkdir -p /home/$(whoami)/bash_scripts
 cp $parent_dir/tools/toggle_touchpad_gnome.sh /home/$(whoami)/bash_scripts
 add_shortcut $((n_shortcuts++)) "Toggle Touchpad" "<Super>t" "/home/$(whoami)/bash_scripts/toggle_touchpad_gnome.sh"
 
+# re-define lockscreen shortcut
+gsettings set $SCHEMATOLIST screensaver "['<Primary><Alt>l']"
+
 # set custom-keybindings
 ((n_shortcuts--))
 
