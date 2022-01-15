@@ -42,7 +42,7 @@ $install_command khelpcenter
 $install_command libreoffice-fresh # thunderbird
 
 # multimedia
-$install_command vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad # obs-studio
+$install_command vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad obs-studio
 
 if [ $3 != "virtualbox" ]
 then
@@ -53,7 +53,7 @@ then
     $install_command calibre kchmviewer foliate # okular goldendict
 
     # multimedia
-    $install_command kdenlive frei0r-plugins handbrake handbrake-cli inkscape gimp # blender
+    $install_command kdenlive frei0r-plugins handbrake handbrake-cli inkscape gimp blender
 
     # virtualbox
     $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
