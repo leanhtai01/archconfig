@@ -27,7 +27,7 @@ $install_command krusader
 
 # programming packages
 $install_command git dia github-cli kdiff3 npm # tidy
-$install_command gdb cmake go valgrind clang gcc llvm gopls go-tools
+$install_command gdb cmake go valgrind clang gcc llvm gopls go-tools lldb
 
 # tools
 $install_command kruler keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion flatpak tree ibus texlive-most archiso rclone rsync # fish clamav
