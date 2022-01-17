@@ -3,7 +3,7 @@
 set -e
 
 # set Adwaita Dark theme
-# gsettings set org.gnome.desktop.interface gtk-theme "'Adwaita-dark'"
+gsettings set org.gnome.desktop.interface gtk-theme "'Adwaita-dark'"
 
 # set Nordic theme
 # gsettings set org.gnome.desktop.interface gtk-theme "'Nordic-darker-v40'"
