@@ -39,7 +39,7 @@ $install_command mtpfs gvfs-mtp gvfs-gphoto2
 $install_command khelpcenter
 
 # office and learning
-$install_command libreoffice-fresh # thunderbird
+$install_command libreoffice-fresh kolourpaint # thunderbird
 
 # multimedia
 $install_command vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad obs-studio
