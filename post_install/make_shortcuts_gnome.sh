@@ -31,7 +31,7 @@ add_shortcut $((n_shortcuts++)) "GNOME Terminal" "<Primary><Alt>t" "gnome-termin
 add_shortcut $((n_shortcuts++)) "Foliate" "<Primary><Alt>b" "foliate"
 add_shortcut $((n_shortcuts++)) "Google Chrome" "<Primary><Alt>c" "google-chrome-stable"
 # add_shortcut $((n_shortcuts++)) "GVim" "<Primary><Alt>v" "gvim"
-add_shortcut $((n_shortcuts++)) "GIMP" "<Primary><Alt>g" "gimp"
+# add_shortcut $((n_shortcuts++)) "GIMP" "<Primary><Alt>g" "gimp"
 # add_shortcut $((n_shortcuts++)) "Inkscape" "<Primary><Alt>i" "inkscape"
 # add_shortcut $((n_shortcuts++)) "OBS Studio" "<Primary><Alt>o" "obs"
 add_shortcut $((n_shortcuts++)) "Virt Manager" "<Primary><Alt>v" "virt-manager"
