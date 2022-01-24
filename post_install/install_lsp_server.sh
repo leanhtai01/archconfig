@@ -20,5 +20,5 @@ $install_command bash-language-server
 # $install_command vscode-css-languageserver
 # $install_command vscode-html-languageserver
 sudo npm i typescript-language-server -g
-$install_command typescript
-$install_command vscode-json-languageserver
+# $install_command typescript
+# $install_command vscode-json-languageserver
