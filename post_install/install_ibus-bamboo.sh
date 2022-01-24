@@ -4,11 +4,11 @@ set -e
 
 parent_dir=$(cd $(dirname $0)/..; pwd)
 
-mkdir -p /home/$(whoami)/manual_install_packages/ibus-bamboo
-git clone https://github.com/BambooEngine/ibus-bamboo /home/$(whoami)/manual_install_packages/ibus-bamboo
-(cd /home/$(whoami)/manual_install_packages/ibus-bamboo && sudo make install)
-yay -Syu --noconfirm xorg-fonts-misc-otb
-# yay -Syu --noconfirm ibus-bamboo xorg-fonts-misc-otb
+# mkdir -p /home/$(whoami)/manual_install_packages/ibus-bamboo
+# git clone https://github.com/BambooEngine/ibus-bamboo /home/$(whoami)/manual_install_packages/ibus-bamboo
+# (cd /home/$(whoami)/manual_install_packages/ibus-bamboo && sudo make install)
+# yay -Syu --noconfirm xorg-fonts-misc-otb
+yay -Syu --noconfirm ibus-bamboo xorg-fonts-misc-otb
 
 if [ $1 = "KDEPlasma" ]
 then
