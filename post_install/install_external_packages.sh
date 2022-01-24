@@ -29,7 +29,7 @@ then
     $current_dir/install_ventoy-bin.sh
 fi
 
-$current_dir/install_sublime_tools.sh
+# $current_dir/install_sublime_tools.sh
 # $current_dir/install_dislocker.sh
 # $current_dir/install_mssql.sh
 # $current_dir/install_azure_data_studio.sh
