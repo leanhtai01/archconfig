@@ -23,7 +23,7 @@ function add_shortcut() {
 # ADD SHORTCUTS HERE
 add_shortcut $((n_shortcuts++)) "Emacs" "<Primary><Alt>e" "emacs"
 add_shortcut $((n_shortcuts++)) "Chromium" "<Primary><Alt>c" "chromium"
-add_shortcut $((n_shortcuts++)) "LibreOffice" "<Primary><Alt>w" "libreoffice"
+# add_shortcut $((n_shortcuts++)) "LibreOffice" "<Primary><Alt>w" "libreoffice"
 # add_shortcut $((n_shortcuts++)) "GNOME Terminal - zsh" "<Primary><Alt>r" "gnome-terminal -e zsh"
 add_shortcut $((n_shortcuts++)) "Nautilus" "<Super>e" "nautilus"
 add_shortcut $((n_shortcuts++)) "KeePassXC" "<Primary><Alt>p" "keepassxc"
