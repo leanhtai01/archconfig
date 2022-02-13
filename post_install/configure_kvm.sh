@@ -2,7 +2,7 @@
 
 set -e
 
-sudo pacman -Syu --needed --noconfirm virt-manager qemu vde2 dnsmasq bridge-utils virt-viewer dmidecode edk2-ovmf iptables-nft
+sudo pacman -Syu --needed --noconfirm virt-manager qemu vde2 dnsmasq bridge-utils virt-viewer dmidecode edk2-ovmf iptables-nft swtpm
 sudo systemctl enable libvirtd
 sudo systemctl start libvirtd
 # sudo systemctl enable cockpit.socket
