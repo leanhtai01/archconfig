@@ -24,7 +24,7 @@ sudo virsh dumpxml $vm_name > ${vm_name}/${xml_name}
 
 # dump snapshots
 mkdir -p ${vm_name}/snapshots
-snapshots=$(sudo virsh snapshot-list --name "$vm_name")
+snapshots=$(sudo virsh snapshot-list --name --topological "$vm_name")
 for s in $snapshots
 do
     sudo virsh snapshot-dumpxml "$vm_name" "$s" > ${vm_name}/snapshots/${s}.xml
