@@ -50,7 +50,7 @@ then
     $install_command wimlib transmission-gtk lm_sensors ntfs-3g gparted exfatprogs bchunk cdrtools fuseiso efitools sbsigntools filezilla # deja-dup
 
     # office and learning
-    $install_command calibre kchmviewer foliate # okular goldendict
+    $install_command calibre kchmviewer foliate goldendict # okular
 
     # multimedia
     $install_command kdenlive frei0r-plugins handbrake handbrake-cli inkscape gimp blender
