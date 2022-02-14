@@ -47,7 +47,7 @@ gsettings set org.gnome.desktop.interface clock-show-date true
 # change fonts to Hack
 # gsettings set org.gnome.desktop.interface font-name "'Hack 10'"
 # gsettings set org.gnome.desktop.interface document-font-name "'Hack 11'"
-gsettings set org.gnome.desktop.interface monospace-font-name "'Hack 10'"
+gsettings set org.gnome.desktop.interface monospace-font-name "'Cascadia Mono PL 12'"
 # gsettings set org.gnome.desktop.wm.preferences titlebar-font "'Hack Bold 11'"
 
 # show week number
