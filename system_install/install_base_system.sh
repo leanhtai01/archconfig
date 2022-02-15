@@ -133,7 +133,7 @@ arch-chroot /mnt useradd -G wheel,audio,lp,optical,storage,disk,video,power -s /
 echo -e "${userpass1}\n${userpass1}" | arch-chroot /mnt passwd $newusername
 
 # allow user in wheel group execute any command
-linum=$(arch-chroot /mnt sed -n "/^# %wheel ALL=(ALL) ALL$/=" /etc/sudoers)
+linum=$(arch-chroot /mnt sed -n "/^# %wheel ALL=(ALL:ALL) ALL$/=" /etc/sudoers)
 arch-chroot /mnt sed -i "${linum}s/^# //" /etc/sudoers # uncomment line
 
 # Reduce the number of times re-enter password using sudo
