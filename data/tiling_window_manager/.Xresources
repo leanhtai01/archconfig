@@ -7,10 +7,10 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.iso14755: false
 
 ! font
-URxvt*font: xft:Hack:style=Regular:size=11.5
-URxvt*boldFont: xft:Hack:style=Bold:size=11.5
-URxvt*italicFont: xft:Hack:style=Italic:size=11.5
-URxvt*boldItalicFont: xft:Hack:style=Bold Italic:size=11.5
+URxvt*font: xft:Cascadia Code PL:style=Regular:size=12
+URxvt*boldFont: xft:Cascadia Code PL:style=Bold:size=12
+URxvt*italicFont: xft:Cascadia Code PL:style=Italic:size=12
+URxvt*boldItalicFont: xft:Cascadia Code PL:style=Bold Italic:size=12
 
 ! tango color palette
 URxvt*background: #2e3436
