@@ -13,3 +13,4 @@ $current_dir/install_jetbrains-toolbox.sh
 # $current_dir/install_qtspim.sh
 # $current_dir/install_bna.sh
 # $current_dir/install_hakuneko.sh
+$current_dir/install_vmware_workstation.sh
