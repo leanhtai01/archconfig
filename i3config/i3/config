@@ -183,6 +183,7 @@ bar {
 
 # Open programs
 bindsym Ctrl+Mod1+f exec firefox-developer-edition
+bindsym Ctrl+Mod1+c exec chromium
 bindsym Ctrl+Mod1+e exec emacs
 bindsym Ctrl+Mod1+k exec krusader
 bindsym Ctrl+Mod1+t exec gnome-terminal
