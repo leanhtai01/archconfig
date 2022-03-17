@@ -50,7 +50,7 @@ $install_command vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad
 if [ $3 != "virtualbox" ]
 then
     # tools
-    $install_command transmission-gtk lm_sensors ntfs-3g gparted exfatprogs efitools filezilla # deja-dup wimlib bchunk cdrtools fuseiso sbsigntools
+    $install_command transmission-gtk lm_sensors ntfs-3g gparted exfatprogs efitools # deja-dup wimlib bchunk cdrtools fuseiso sbsigntools filezilla
 
     # office and learning
     $install_command calibre kchmviewer foliate #goldendict okular
