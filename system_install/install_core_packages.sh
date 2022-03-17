@@ -35,8 +35,8 @@ $install_command kruler keepassxc expect pacman-contrib curl dosfstools p7zip un
 # setup connect android phone
 $install_command mtpfs gvfs-mtp gvfs-gphoto2
 
-# install documentation for KDE Applications
-$install_command khelpcenter
+# # install documentation for KDE Applications
+# $install_command khelpcenter
 
 # office and learning
 $install_command libreoffice-fresh kolourpaint # thunderbird
