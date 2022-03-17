@@ -32,8 +32,8 @@ $install_command gdb cmake go valgrind clang gcc llvm gopls go-tools lldb
 # tools
 $install_command kruler keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion flatpak tree ibus archiso rclone rsync # fish clamav texlive-most
 
-# setup connect android phone
-$install_command mtpfs gvfs-mtp gvfs-gphoto2
+# # setup connect android phone
+# $install_command mtpfs gvfs-mtp gvfs-gphoto2
 
 # # install documentation for KDE Applications
 # $install_command khelpcenter
