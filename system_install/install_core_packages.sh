@@ -19,7 +19,7 @@ $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-cascadia-code # 
 $install_command torbrowser-launcher firefox-developer-edition chromium
 
 # editors
-$install_command emacs
+$install_command emacs gvim
 
 # install krusader and its all optional dependencies
 $install_command krusader
