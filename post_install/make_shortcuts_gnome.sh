@@ -39,7 +39,7 @@ add_shortcut $((n_shortcuts++)) "GNOME Authenticator" "<Primary><Alt>a" "flatpak
 # add_shortcut $((n_shortcuts++)) "HakuNeko" "<Primary><Alt>h" "flatpak run io.github.hakuneko.HakuNeko"
 # add_shortcut $((n_shortcuts++)) "Lutris" "<Primary><Alt>l" "lutris"
 # add_shortcut $((n_shortcuts++)) "Steam" "<Primary><Alt>s" "steam-native"
-add_shortcut $((n_shortcuts++)) "Krusader" "<Primary><Alt>k" "krusader"
+# add_shortcut $((n_shortcuts++)) "Krusader" "<Primary><Alt>k" "krusader"
 # add_shortcut $((n_shortcuts++)) "Firefox Developer Edition" "<Primary><Alt>f" "firefox-developer-edition"
 # add_shortcut $((n_shortcuts++)) "Konsole - fish" "<Primary><Alt>y" "konsole -e fish"
 
