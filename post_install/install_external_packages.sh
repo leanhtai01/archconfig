@@ -25,7 +25,7 @@ $current_dir/install_chrome-gnome-shell.sh
 
 if [ $1 != "virtualbox" ]
 then
-    $current_dir/install_cdemu.sh
+    # $current_dir/install_cdemu.sh
     $current_dir/install_ventoy-bin.sh
 fi
 
