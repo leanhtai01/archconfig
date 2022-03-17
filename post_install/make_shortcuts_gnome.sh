@@ -43,10 +43,10 @@ add_shortcut $((n_shortcuts++)) "Krusader" "<Primary><Alt>k" "krusader"
 # add_shortcut $((n_shortcuts++)) "Firefox Developer Edition" "<Primary><Alt>f" "firefox-developer-edition"
 # add_shortcut $((n_shortcuts++)) "Konsole - fish" "<Primary><Alt>y" "konsole -e fish"
 
-# add short cut for Firefox Developer Edition with HW Acceleration
-mkdir -p /home/$(whoami)/bash_scripts
-cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
-add_shortcut $((n_shortcuts++)) "Firefox Developer Edition" "<Primary><Alt>f" "/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh"
+# # add short cut for Firefox Developer Edition with HW Acceleration
+# mkdir -p /home/$(whoami)/bash_scripts
+# cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
+# add_shortcut $((n_shortcuts++)) "Firefox Developer Edition" "<Primary><Alt>f" "/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh"
 
 # add shortcut toggle touchpad
 mkdir -p /home/$(whoami)/bash_scripts
