@@ -21,6 +21,9 @@ $install_command torbrowser-launcher chromium # firefox-developer-edition
 # editors
 $install_command emacs gvim
 
+# install doublecmd-gtk2
+$install_command doublecmd-gtk2
+
 # # install krusader and its all optional dependencies
 # $install_command krusader
 # $install_command $(printf "$(${prefix}pacman -Qi krusader)" | sed -n '/^Optional Deps/,$p' | sed '/^Required By/q' | head -n -1 | cut -c19- | cut -d[ -f1 | cut -d: -f1)
