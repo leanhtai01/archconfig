@@ -29,7 +29,7 @@ then
     $current_dir/install_ventoy-bin.sh
 fi
 
-$current_dir/install_goldendict.sh
+# $current_dir/install_goldendict.sh
 $current_dir/install_sublime-merge.sh
 # $current_dir/install_sublime_tools.sh
 # $current_dir/install_dislocker.sh
