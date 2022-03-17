@@ -21,8 +21,8 @@ $install_command torbrowser-launcher chromium # firefox-developer-edition
 # editors
 $install_command emacs gvim
 
-# install doublecmd-gtk2
-$install_command doublecmd-gtk2
+# install doublecmd-qt5
+$install_command doublecmd-qt5
 
 # # install krusader and its all optional dependencies
 # $install_command krusader
