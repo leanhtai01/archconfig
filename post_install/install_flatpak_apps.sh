@@ -10,3 +10,4 @@ flatpak install com.belmoussaoui.Authenticator -y
 # flatpak install com.albiononline.AlbionOnline -y
 # flatpak install org.flightgear.FlightGear -y
 # flatpak install us.zoom.Zoom -y
+flatpak install org.goldendict.GoldenDict -y
