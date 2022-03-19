@@ -2,4 +2,4 @@
 
 set -e
 
-yay -Syu --noconfirm goldendict-webengine-git
+yay -Syu --noconfirm goldendict-git
