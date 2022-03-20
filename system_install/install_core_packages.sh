@@ -53,7 +53,7 @@ then
     $install_command transmission-gtk lm_sensors ntfs-3g gparted exfatprogs efitools # deja-dup wimlib bchunk cdrtools fuseiso sbsigntools filezilla
 
     # office and learning
-    $install_command calibre kchmviewer foliate #goldendict okular
+    $install_command calibre kchmviewer foliate okular #goldendict
 
     # multimedia
     $install_command inkscape gimp # blender kdenlive frei0r-plugins handbrake handbrake-cli
