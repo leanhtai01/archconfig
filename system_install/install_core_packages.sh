@@ -13,13 +13,13 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 
 # install and configure some packages, services
 # fonts
-$install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-cascadia-code adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts # ttf-fira-code ttf-roboto-mono ttf-hack
+$install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-cascadia-code # adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts # ttf-fira-code ttf-roboto-mono ttf-hack
 
-# browsers
-$install_command torbrowser-launcher # firefox-developer-edition chromium
+# # browsers
+# $install_command torbrowser-launcher # firefox-developer-edition chromium
 
 # editors
-$install_command emacs gvim
+$install_command emacs # gvim
 
 # install doublecmd-qt5
 $install_command doublecmd-qt5
@@ -35,17 +35,17 @@ $install_command gdb cmake go valgrind clang gcc llvm gopls go-tools lldb
 # tools
 $install_command kruler keepassxc expect pacman-contrib curl dosfstools p7zip unarchiver bash-completion flatpak tree ibus archiso rclone rsync # fish clamav texlive-most
 
-# setup connect android phone
-$install_command mtpfs gvfs-mtp gvfs-gphoto2
+# # setup connect android phone
+# $install_command mtpfs gvfs-mtp gvfs-gphoto2
 
 # # install documentation for KDE Applications
 # $install_command khelpcenter
 
-# office and learning
-$install_command libreoffice-fresh kolourpaint thunderbird
+# # office and learning
+# $install_command libreoffice-fresh kolourpaint thunderbird
 
-# multimedia
-$install_command vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad # obs-studio
+# # multimedia
+# $install_command vlc gst-libav gst-plugins-good gst-plugins-ugly gst-plugins-bad # obs-studio
 
 if [ $3 != "virtualbox" ]
 then
@@ -55,15 +55,15 @@ then
     # office and learning
     $install_command calibre kchmviewer foliate okular #goldendict
 
-    # multimedia
-    $install_command inkscape gimp # blender kdenlive frei0r-plugins handbrake handbrake-cli
+    # # multimedia
+    # $install_command inkscape gimp # blender kdenlive frei0r-plugins handbrake handbrake-cli
 
-    # virtualbox
-    $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
-    if [ ! -z $1 ]
-    then
-        ${prefix}gpasswd -a $1 vboxusers
-    fi
+    # # virtualbox
+    # $install_command virtualbox virtualbox-guest-iso virtualbox-host-dkms
+    # if [ ! -z $1 ]
+    # then
+    #     ${prefix}gpasswd -a $1 vboxusers
+    # fi
 fi
 
 # docker
