@@ -29,7 +29,7 @@ add_shortcut $((n_shortcuts++)) "Nautilus" "<Super>e" "nautilus"
 add_shortcut $((n_shortcuts++)) "KeePassXC" "<Primary><Alt>p" "keepassxc"
 add_shortcut $((n_shortcuts++)) "GNOME Terminal" "<Primary><Alt>t" "gnome-terminal"
 add_shortcut $((n_shortcuts++)) "Foliate" "<Primary><Alt>b" "foliate"
-add_shortcut $((n_shortcuts++)) "Google Chrome" "<Primary><Alt>c" "google-chrome-stable"
+# add_shortcut $((n_shortcuts++)) "Google Chrome" "<Primary><Alt>c" "google-chrome-stable"
 # add_shortcut $((n_shortcuts++)) "GVim" "<Primary><Alt>v" "gvim"
 # add_shortcut $((n_shortcuts++)) "GIMP" "<Primary><Alt>g" "gimp"
 # add_shortcut $((n_shortcuts++)) "Inkscape" "<Primary><Alt>i" "inkscape"
@@ -44,10 +44,10 @@ add_shortcut $((n_shortcuts++)) "Double Commander" "<Primary><Alt>k" "doublecmd"
 # add_shortcut $((n_shortcuts++)) "Firefox Developer Edition" "<Primary><Alt>f" "firefox-developer-edition"
 # add_shortcut $((n_shortcuts++)) "Konsole - fish" "<Primary><Alt>y" "konsole -e fish"
 
-# # add short cut for Firefox Developer Edition with HW Acceleration
-# mkdir -p /home/$(whoami)/bash_scripts
-# cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
-# add_shortcut $((n_shortcuts++)) "Firefox Developer Edition" "<Primary><Alt>f" "/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh"
+# add short cut for Firefox Developer Edition with HW Acceleration
+mkdir -p /home/$(whoami)/bash_scripts
+cp $parent_dir/tools/open_firefox_hw_acceleration.sh /home/$(whoami)/bash_scripts
+add_shortcut $((n_shortcuts++)) "Firefox Developer Edition" "<Primary><Alt>f" "/home/$(whoami)/bash_scripts/open_firefox_hw_acceleration.sh"
 
 # add shortcut toggle touchpad
 mkdir -p /home/$(whoami)/bash_scripts

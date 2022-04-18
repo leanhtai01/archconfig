@@ -15,8 +15,8 @@ install_command="${prefix}pacman -Syu --needed --noconfirm"
 # fonts
 $install_command ttf-dejavu ttf-liberation noto-fonts-emoji ttf-cascadia-code # adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts # ttf-fira-code ttf-roboto-mono ttf-hack
 
-# # browsers
-# $install_command torbrowser-launcher # firefox-developer-edition chromium
+# browsers
+$install_command torbrowser-launcher firefox-developer-edition # chromium
 
 # editors
 $install_command emacs # gvim
