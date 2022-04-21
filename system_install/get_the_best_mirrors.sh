@@ -28,4 +28,4 @@ do
 done
 
 # remove tmp directory after use
-rm -r tmp
+rm -r $current_dir/tmp
